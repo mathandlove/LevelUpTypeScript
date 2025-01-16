@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Watch WebSocket Logs",
+      "type": "shell",
+      "command": "Get-Content",
+      "args": ["-Path", "./logs/websocket.log", "-Wait", "-Tail", "10"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
