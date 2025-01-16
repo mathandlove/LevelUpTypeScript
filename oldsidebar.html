@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #28466c;
+        --secondary-color: #00afcc;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        font-family: "Press Start 2P", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .adventure-image-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100px;
+        overflow: hidden;
+        z-index: -1;
+        transition: height 1.5s ease-in-out;
+      }
+
+      .adventure-image {
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+      }
+
+      #side-panel {
+        width: 300px;
+        height: 100vh;
+        background-color: rgba(40, 70, 108, 0.9);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        overflow-y: hidden;
+        padding-bottom: 60px;
+      }
+
+      .sidebar-image-container {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+
+      .sidebar-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .card-content::after {
+        content: "";
+        display: block;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, #ffffff);
+        position: sticky;
+        bottom: 0;
+        pointer-events: none;
+      }
+
+      .card::-webkit-scrollbar,
+      .card-main-text::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .card::-webkit-scrollbar-track,
+      .card-main-text::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+
+      .card::-webkit-scrollbar-thumb,
+      .card-main-text::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+
+      .card::-webkit-scrollbar-thumb:hover,
+      .card-main-text::-webkit-scrollbar-thumb:hover {
+        background: #999;
+      }
+
+      .card p {
+        margin: 0 0 10px 0;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      button {
+        padding: 20px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .topic-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .topic-button:hover {
+        transform: none;
+        background: #e0e0e0;
+      }
+
+      .progress-bar {
+        width: 50px;
+        height: 20px;
+        background-color: #59cc01;
+        border-radius: 15px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+      }
+
+      .inner-pill {
+        width: 70%;
+        height: 25%;
+        background-color: #80d741;
+        border-radius: 15px;
+        position: absolute;
+        left: 5px;
+        top: 35%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .inner-empty-pill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #838282;
+        border-radius: 0 15px 15px 0;
+        transition: width 0.3s ease;
+        z-index: 2;
+      }
+
+      .progress-bar span {
+        position: relative;
+        z-index: 3;
+      }
+
+      .label {
+        color: var(--primary-color);
+        font-size: 14px;
+        text-align: left;
+        flex-grow: 1;
+        font-weight: 600;
+      }
+
+      /* Apply Inter font to everything */
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .stats-box {
+        margin-top: auto;
+        margin-top: 20px;
+        padding-top: 5px;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .stat-row {
+        display: flex;
+        flex-direction: column;
+        color: var(--primary-color);
+      }
+
+      .stat-label {
+        font-size: 12px;
+        font-weight: 400;
+        color: #666;
+      }
+
+      .stat-value {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .card-title,
+      .card-title-home {
+        color: var(--primary-color);
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: left;
+        font-family: "Inter", sans-serif; /* Professional font */
+        margin-bottom: 14px; /* Space below the title */
+        margin-top: 0px; /* Space below the title */
+      }
+      .card-title-subtitle {
+        font-size: 1em;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 30px;
+      }
+      .card-title-subtitle-feedback {
+        font-size: 1em;
+        font-weight: 600;
+        color: #666;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card-title-home {
+        font-size: 0.8em;
+      }
+
+      .card-main-text {
+        white-space: pre-wrap;
+
+        margin: 0;
+        font-size: 12px;
+        font-weight: normal;
+        flex: 0 1 auto;
+      }
+
+      .card-content,
+      .card-main-text {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 10px;
+        position: relative;
+      }
+
+      .card-main-text,
+      .card-content {
+        font-size: 13px; /* Standard font size for body text */
+        font-weight: 400; /* Normal weight for readability */
+        color: #555; /* Medium gray for a softer look */
+        line-height: 1.6; /* Increased line height for readability */
+        font-family: "Inter", sans-serif; /* Consistent font choice */
+      }
+
+      #focus-sentence .card-main-text {
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .level-up-button {
+        background: var(
+          --secondary-color
+        ); /* Use secondary color for background */
+        border: none;
+        padding: 8px 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 12px;
+        color: white; /* Ensure text is readable on secondary color */
+        transition: background-color 0.3s ease;
+        width: 90%;
+        margin: 10px 5px;
+      }
+
+      .level-up-button:hover {
+        background: #00c2e3; /* Slightly lighter shade for hover effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: scale(1.05);
+      }
+      #next-button,
+      #back-button,
+      #check-work-button {
+        display: inline-block; /* Ensure buttons are displayed */
+      }
+
+      #back-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      #back-button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color);
+        transform: scale(1.05);
+      }
+
+      #next-button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 2px 4px rgba(0, 175, 204, 0.3);
+      }
+
+      #next-button:hover {
+        background-color: #00c2e3;
+        border-color: #00c2e3;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 175, 204, 0.4);
+      }
+
+      /* Original height when buttons are visible */
+      .button-box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 8px 8px 0px 0px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin: 100px 20px 20px 20px;
+        box-sizing: border-box;
+        height: calc(100vh - 100px);
+        position: relative;
+        z-index: 1;
+        padding: 0;
+      }
+
+      .button-box {
+        position: relative;
+        /* Existing styles... */
+        padding: 20px; /* Add padding for better spacing */
+        padding-top: 30px;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .button-box.is-scrollable {
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+
+      .example-block {
+        margin-bottom: 30px;
+      }
+
+      .example-title {
+        font-size: 0.9em;
+        font-weight: 600;
+        font-size: 12px;
+        font-weight: 400;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .original::before,
+      .fixed::before {
+        display: none;
+      }
+
+      .spinner-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 8px; /* match button-box border radius */
+        flex-direction: column;
+        gap: 20px; /* space between spinner and text */
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--primary-color);
+        border-top: 4px solid var(--secondary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .spinner-text {
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .cards-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 20px; /* Add margin to match button container */
+      }
+
+      .card {
+        display: none; /* Hide all cards by default */
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .card-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 20px 0px 20px;
+        box-sizing: border-box;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+      }
+      .button-container.is-scrollable {
+        padding-right: 20px;
+      }
+      .scroll-container {
+        flex: 1;
+        overflow-y: auto;
+        position: relative;
+        margin: 0;
+        padding: 0px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .scroll-container::after {
+        content: "";
+        display: none;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, #ffffff);
+        position: sticky;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .scroll-container.is-scrollable::after {
+        display: block; /* Show when scrollable */
+      }
+
+      .scroll-container.is-scrollable::before {
+        content: "";
+        display: block;
+        height: 40px;
+        background: linear-gradient(to top, transparent, #ffffff);
+        position: sticky;
+        top: 0px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(40, 70, 108, 0.5);
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+        min-height: 70px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(40, 70, 108, 0.8);
+      }
+
+      .card-content {
+        flex: 1;
+      }
+
+      #pillHolder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+      .home-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        font-size: 16px; /* Adjust font size if needed */
+        color: var(--primary-color); /* Use primary color */
+      }
+
+      .select-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        margin-bottom: 20px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        font-size: 16px; /* Adjust font size if needed */
+        color: var(--primary-color); /* Use primary color */
+      }
+      .home-button,
+      .select-button:hover {
+        background: #e0e0e0;
+        transform: none;
+      }
+
+      .topic-button {
+        width: 80%;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+      }
+
+      /* Add this new style for the challenge complete button */
+      #next-button.challenge-complete {
+        background-color: #59cc01; /* Same green as progress bars */
+        border-color: #59cc01;
+      }
+
+      #next-button.challenge-complete:hover {
+        background-color: #80d741; /* Lighter green on hover */
+        border-color: #80d741;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(89, 204, 1, 0.4);
+      }
+
+      #skip-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        opacity: 0.7;
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        flex: 1; /* Allow it to grow */
+      }
+      #skip-button:hover {
+        background-color: lightcoral;
+        opacity: 0.9;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(40, 70, 108, 0.4);
+      }
+
+      /* Add styles for the check work button */
+      #check-work-button {
+        display: block; /* Ensure it's visible */
+        background-color: #59cc01;
+        color: white;
+        border: 2px solid #4ba001;
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        flex: 1; /* Allow it to grow */
+        margin-right: 20px;
+      }
+
+      #check-work-button:hover {
+        background-color: #80d741;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(89, 204, 1, 0.4);
+      }
+
+      /* Add this to ensure proper button container layout */
+      .challenge-button-container {
+        display: flex;
+        justify-content: space-between; /* Space out the buttons to opposite ends */
+        margin-top: 10px;
+        padding: 0 10px; /* Optional: Add some padding for spacing */
+      }
+
+      .task-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+      }
+
+      .task-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .task-checkbox {
+        margin-top: 3px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+      }
+
+      .task-text {
+        flex: 1;
+        color: var(--primary-color);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .alert-message {
+        color: #d73a49;
+        background-color: #ffeef0;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid #f97583;
+      }
+
+      #check-work-button:disabled {
+        background-color: #cccccc;
+        border-color: #bbbbbb;
+        cursor: not-allowed;
+        opacity: 0.7;
+        transform: none;
+        box-shadow: none;
+      }
+
+      #check-work-button:disabled:hover {
+        background-color: #cccccc;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .alert-message.info {
+        color: #0366d6;
+        background-color: #f1f8ff;
+        border: 1px solid #79b8ff;
+      }
+
+      .hot-air-balloon {
+        position: absolute;
+        left: 0; /* Align to the left side */
+        bottom: 100%; /* Align the bottom of the image with the top of the button-box */
+        height: 50px; /* Set the height of the image */
+        transition: transform 1.5s ease, background-image 1.5s ease; /* Smooth transition */
+      }
+
+      .customize-link {
+        font-size: 12px; /* Smaller text size */
+        color: var(
+          --primary-color
+        ); /* Use primary color or any color you prefer */
+        text-decoration: none; /* Remove underline */
+        margin-top: 0; /* Remove space above the link */
+        text-align: left; /* Align text to the left */
+        display: block; /* Make it a block element for full width */
+        transition: color 0.3s ease; /* Smooth color transition on hover */
+        width: 70%; /* Match the width of the pill buttons */
+        margin-left: auto; /* Align with the left side of the pill buttons */
+        margin-right: auto; /* Center within the container */
+      }
+
+      .customize-divider {
+        width: 80%; /* Match the width of the pill buttons */
+        margin: 10px auto; /* Center the line and add vertical spacing */
+        border: none; /* Remove default border */
+        border-top: 1px solid var(--primary-color); /* Add custom border */
+      }
+
+      .customize-link:hover {
+        color: var(--secondary-color); /* Change color on hover */
+      }
+
+      /* Fade out effect at the top */
+    </style>
+    <style>
+      :root {
+        --primary-color: #28466c;
+        --secondary-color: #00afcc;
+        --base-blue: #28466c;
+        --stroke-color: #058c46;
+        --gradient-light: #e5ff3c;
+        --gradient-medium: #b8f043;
+        --gradient-dark: #8fe045;
+      }
+      .pixelated-gradient-text {
+        font-family: "Press Start 2P", sans-serif;
+        font-size: 12px; /* Reduced size to fit container */
+        -webkit-text-stroke: 0.5px var(--stroke-color);
+        background: linear-gradient(
+          to bottom,
+          var(--gradient-light) 0%,
+          var(--gradient-light) 40%,
+          var(--gradient-medium) 40%,
+          var(--gradient-medium) 55%,
+          var(--gradient-dark) 55%,
+          var(--gradient-dark) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+        line-height: 30px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .level-text-container {
+        width: 130px;
+        height: 30px;
+        background-color: var(--base-blue);
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 2s ease, transform 2s ease;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 85px; /* 100px -30/2 */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.1),
+          3px 3px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+          inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+        transition: all 0.2s ease;
+      }
+
+      .level-text {
+        color: var(--primary-color);
+        font-size: 3px;
+        text-align: left;
+        flex-grow: 1;
+        font-weight: 600;
+      }
+
+      .reflection-textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px 16px;
+        border: 1px solid #dfe1e6;
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: #172b4d;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        resize: vertical;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        margin-top: 12px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      .reflection-textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 2px rgba(0, 175, 204, 0.2);
+      }
+
+      .reflection-textarea::placeholder {
+        color: #97a0af;
+      }
+
+      .reflection-question {
+        color: var(--primary-color);
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        margin-top: 24px;
+      }
+
+      /* Optional: Add a character count display */
+      .reflection-char-count {
+        font-size: 12px;
+        color: #97a0af;
+        text-align: right;
+        margin-top: 4px;
+      }
+
+      /* Optional: Add error state */
+      .reflection-textarea.error {
+        border-color: #ff5630;
+      }
+
+      .reflection-textarea.error:focus {
+        box-shadow: 0 0 0 2px rgba(255, 86, 48, 0.2);
+      }
+    </style>
+   <style>
+    .full-width {
+      width: 50%; /* Make buttons full width */
+       margin: 0px 5px;; /* Add space between buttons */
+    }
+  
+    .rubric-actions {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 10px; /* Add space between buttons */
+      margin-top:20px;
+    }
+  
+    .url-container {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Add space between input and button */
+    }
+  
+    .share-url {
+      flex: 1; /* Allow input to take up remaining space */
+    }
+    .rubric-section {
+    margin-bottom: 20px; /* Add space below the section */
+    padding: 10px; /* Add padding around the section */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Round the corners */
+    background-color: #f9f9f9; /* Light background color */
+  }
+
+  .rubric-label {
+    font-size: 12px; /* Smaller font size for the label */
+    color: #666; /* Subtle color for the label */
+    margin-bottom: 5px; /* Space between label and title */
+  }
+
+  .rubric-title {
+    font-size: 18px; /* Larger font size for the title */
+    font-weight: bold; /* Make the title bold */
+    color: var(--primary-color);
+    text-align: center; /* Center the title */
+    padding: 5px 0; /* Add vertical padding */
+  }
+
+  </style>
+    </style>
+  </head>
+  <body>
+    <div id="side-panel">
+      <div class="adventure-image-container">
+        <img
+          src="https://wondersa.blob.core.windows.net/levelup/1.png"
+          alt="Sky Background"
+          class="adventure-image"
+        />
+      </div>
+
+      <div class="content-wrapper">
+        <div class="level-text-container">
+          <div class="text-container">
+            <div class="pixelated-gradient-text">Level 1</div>
+          </div>
+        </div>
+        <div class="button-box">
+          <img
+            src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
+            alt="Hot Air Balloon"
+            class="hot-air-balloon"
+          />
+          <div class="spinner-overlay">
+            <div class="spinner"></div>
+            <div class="spinner-text">Reading Your Paper</div>
+          </div>
+
+          <div class="card" id="home-page" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title-home">Select Challenge:</div>
+
+              <div
+                id="pillHolder"
+                style="display: flex; flex-direction: column"
+              ></div>
+              <a href="#" class="customize-link">Customize</a>
+              <div class="stats-box">
+                <div class="stat-row">
+                  <span class="stat-label">Copy/Pasted</span>
+                  <span class="stat-value">60%</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Time Spent</span>
+                  <span class="stat-value">10 Hours 33 Minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="AI-Feeling" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">First Take</div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="challenge-card" style="display: none">
+            <div class="scroll-container">
+              <div class="card-title">Challenge</div>
+              <div class="card-title-subtitle">Subtitle</div>
+              <div class="alert-message" style="display: none"></div>
+              <div class="fail-reason-message" style="display: none"></div>
+              <div class="task-list">
+                <!-- Tasks will be inserted here -->
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            id="feel-response-card"
+            style="display: none; flex: 1"
+          >
+            <div class="scroll-container">
+              <div class="card-title-subtitle">
+                Let's work on the highlighted text in your document.
+              </div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="focus-sentence" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">
+                Let's Focus On The Highlighted Sentence:
+              </div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="reflection-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="reflection-container">
+                <div class="reflection-question"></div>
+                <textarea
+                  class="reflection-textarea"
+                  placeholder="Share your thoughts..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="example-card" style="display: none; flex: 1">
+            <div class="card feedback-panel">
+              <h3 class="card-title">Example</h3>
+              <div class="example-block">
+                <div class="example-title">Poor Sentence</div>
+                <div class="original">The leaves fell everywhere. Round 6</div>
+              </div>
+              <div class="example-block">
+                <div class="example-title">Great Sentence</div>
+                <div class="fixed">
+                  The leaves fell on the ground, making a crunchy carpet for
+                  walking.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card"
+            id="challenge-feedback-card"
+            style="display: none; flex: 1"
+          >
+            <div class="scroll-container">
+              <div class="card-title">Challenge Completed!</div>
+              <div class="card-main-text">
+                Well done. Here's some more text two
+              </div>
+              <hr />
+              <div class="card-title-subtitle-feedback">Now I want to:</div>
+              <button class="level-up-button" id="improve-more-button">
+                Improve this Sentence More
+              </button>
+
+              <button class="level-up-button" id="start-new-button">
+                Start a New Sentence
+              </button>
+            </div>
+          </div>
+          <div class="card" id="customize-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <!-- Current Rubric Section -->
+              <div class="rubric-section">
+                <div class="rubric-label">Current Rubric:</div>
+                <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
+              </div>
+          
+              <!-- Action Buttons -->
+              <div class="rubric-actions">
+                <button class="level-up-button full-width" id="share-rubric-button">Share</button>
+                <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+              <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
+              <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+            </div>
+          </div>
+
+
+        </div>
+          <div class="button-container">
+            <div class="button-left-group">
+              <button id="back-button" class="nav-button">Back</button>
+              <button id="home-button" class="nav-button">Back</button>
+              <button id="skip-button" class="nav-button">Skip</button>
+            </div>
+
+            <div class="button-right-group">
+              <button id="next-button" class="nav-button">Next</button>
+              <button id="check-work-button" class="nav-button">
+                Check Work
+              </button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <script src="schemas.js"></script>
+    <script src="data.js"></script>
+    <script src="dataStorage.js"></script>
+    <script src="paperReader.js"></script>
+    <script>
+      //Meed to move this dataStorage out of sidebar.html if appscript
+
+      // Define server functions mapping
+
+      //const topics = loadTopics();
+      //Note will need to turn sidebarManager and Logic back into html to test in google.
+      //below script
+    </script>
+    <script>
+      const loadingState = {
+        topics: null,
+        scores: null,
+
+        // Try to initialize pills when either topics or scores are received
+        tryInitializePills() {
+          if (this.topics && this.scores) {
+            handleInitializePills(this.topics, this.scores);
+            handleSetupPaperLevel(this.scores);
+          }
+        },
+      };
+
+      const backgroundSystem = {
+        imageUrls: [
+          "https://wondersa.blob.core.windows.net/levelup/1.png",
+          "https://wondersa.blob.core.windows.net/levelup/2.png",
+          "https://wondersa.blob.core.windows.net/levelup/3.png",
+        ],
+        pxPerLevel: 100,
+        levelsPerImage: 10,
+        totalPxPerImage: 1000,
+
+        getRequiredImages(currentLevel) {
+          const totalPxNeeded = currentLevel * this.pxPerLevel;
+          return Math.ceil(totalPxNeeded / this.totalPxPerImage);
+        },
+
+        getNextImageUrl(imageIndex) {
+          return this.imageUrls[imageIndex % this.imageUrls.length];
+        },
+      };
+
+      function handleClearFocusObj() {
+        window.sidebarManager.loadedState.focusClear = true;
+        window.sidebarManager.loadedState.feel = false;
+        window.sidebarManager.loadedState.challenge = false;
+        window.sidebarManager.loadedState.challengeFeedbackLoaded = true; //We check this when getting to challenge and then set it false for the next check on challenge.
+        window.sidebarManager.loadedState.challengeCompliment = false;
+      }
+
+      function handleTopicsReceived(topics) {
+        loadingState.topics = topics;
+        window.topics = topics;
+        console.log(topics);
+        loadingState.tryInitializePills();
+      }
+
+      function handleGetScore(scores) {
+        loadingState.scores = scores;
+        loadingState.tryInitializePills();
+      }
+
+      function handleSetupPaperLevel(scores) {
+        //calculate the level of the paper by totalling all the scores in topics
+        const levelTextContainer = document.querySelector(
+          ".level-text-container"
+        );
+        let totalScore = scores.reduce((total, score) => total + score, 0) + 1;
+        if (totalScore > 1) {
+          increaseLevel(totalScore);
+        }
+      }
+
+      // ==========================
+      // Sidebar Logic
+      // ==========================
+      window.addEventListener("DOMContentLoaded", function () {
+        initRequests();
+        if (!window.sidebarManager) {
+          window.sidebarManager = new SidebarManager();
+        }
+        resetLoadedState(true);
+        var firstCard = window.CardFlow.sequence[0];
+        window.sidebarManager.showCard(firstCard.type, firstCard.data);
+        window.sidebarManager.updateNavigationButtons();
+        window.sidebarManager.updateSpinner();
+      });
+
+      function changeScore(topicIndex) {
+        const pillHolder = document.getElementById("pillHolder");
+        if (!pillHolder) return;
+
+        const pills = pillHolder.getElementsByClassName("topic-button");
+        const scores = loadingState.scores; // Get current scores
+
+        // Update the specific pill that needs changing
+        const pill = pills[topicIndex];
+        if (!pill) return;
+
+        // Increment score for this topic
+        scores[topicIndex]++;
+
+        const topic = window.topics[topicIndex];
+        const score = scores[topicIndex];
+
+        const progressBar = pill.querySelector(".progress-bar");
+        const progressSpan = progressBar.querySelector("span");
+
+        // Update score display
+        progressSpan.textContent = `${score}/${topic.outOfTotal}`;
+
+        // Update loadingState scores
+        loadingState.scores = scores;
+      }
+      function handleInitializePills(topics, scores) {
+        window.sidebarManager.addTopicPills(topics);
+        // Update pills with scores
+        const pillHolder = document.getElementById("pillHolder");
+        if (pillHolder) {
+          // Update progress bars with scores
+          const pills = pillHolder.getElementsByClassName("topic-button");
+          for (let i = 0; i < pills.length; i++) {
+            const pill = pills[i];
+            const score = scores[i];
+            const topic = topics[i];
+
+            const progressBar = pill.querySelector(".progress-bar");
+            const progressSpan = progressBar.querySelector("span");
+            const innerEmptyPill =
+              progressBar.querySelector(".inner-empty-pill");
+            innerEmptyPill.style.transition = "width 1s ease-in-out";
+            innerEmptyPill.style.width = "100%";
+            // Update score display
+            progressSpan.textContent = `${score}/${topic.outOfTotal}`;
+          }
+
+          // Add click listeners to pill buttons
+          pillHolder.addEventListener("click", function (event) {
+            const pillButton = event.target.closest(".topic-button");
+            if (!pillButton) return;
+
+            const topicLabel = pillButton.querySelector(".label");
+            const topicName = topicLabel ? topicLabel.textContent : "";
+            const topicIndex = topics.findIndex(
+              (topic) => topic.name === topicName
+            );
+
+            if (topicIndex !== -1 && topics[topicIndex].type === "basic") {
+              pillButtonClicked(topicIndex);
+            } else if (
+              topicIndex !== -1 &&
+              topics[topicIndex].type === "reflection"
+            ) {
+              startReflectionFlow(topicIndex);
+            }
+          });
+        }
+
+        const challengeFeedbackCard = document.querySelector(
+          "#challenge-feedback-card"
+        );
+        if (challengeFeedbackCard) {
+          const improveMoreButton = challengeFeedbackCard.querySelector(
+            "#improve-more-button"
+          );
+          if (improveMoreButton) {
+            improveMoreButton.addEventListener(
+              "click",
+              challengePlusButtonClicked
+            );
+          }
+          const startNewButton =
+            challengeFeedbackCard.querySelector("#start-new-button");
+          if (startNewButton) {
+            startNewButton.addEventListener("click", function () {
+              window.sidebarManager.handleNavigation("skip");
+            });
+          }
+        }
+      }
+
+      async function initRequests() {
+        callServer("organizeRubrics", handleReceivedRubricsList);
+        callServer("getTopics", handleTopicsReceived);
+        callServer("loadAllFocusesAndTopics", () => {});
+        callServer("getCompliment", handleComplimentReceived);
+        callServer("getScore", handleGetScore);
+      }
+
+      function resetLoadedState(firstReset = false) {
+        window.sidebarManager.loadedState = {
+          compliment: false,
+          sentence: false,
+          feel: false,
+          challenge: false,
+          challengeFeedbackLoaded: true,
+          challengeCompliment: false,
+          focusClear: true,
+          // Add other data elements as needed
+        };
+
+        window.CardFlow = {
+          current: 0,
+          sequence: [
+            {
+              type: window.CardTypes.HOME,
+              data: {},
+            },
+            {
+              type: window.CardTypes.FEEL_RESPONSE,
+              data: "",
+            },
+
+            {
+              type: window.CardTypes.CHALLENGE,
+              data: "",
+            },
+            {
+              type: window.CardTypes.CHALLENGE_FEEDBACK,
+              data: "",
+            },
+            {
+              type: window.CardTypes.AI_FEEDBACK,
+              data: "",
+            },
+          ],
+        };
+      }
+
+      function scrollToTop() {
+        // Try to scroll all possible scroll containers
+        const scrollContainers = document.querySelectorAll(".scroll-container");
+        scrollContainers.forEach((container) => {
+          container.scrollTop = 0;
+        });
+      }
+      function checkWorkButtonClicked() {
+        scrollToTop();
+
+        window.sidebarManager.loadedState.challengeFeedbackLoaded = false;
+        window.sidebarManager.updateSpinner();
+
+        callServer("getChallengeSuccess", handleChallengeSuccessReceived);
+      }
+
+      function handleReceivedRubricsList(rubricsList) {
+        console.log(rubricsList);
+      }
+
+      function handleComplimentReceived(paperCompliment) {
+        const aiFeedbackCard = window.CardFlow.sequence.find(
+          (card) => card.type === window.CardTypes.AI_FEEDBACK
+        );
+
+        aiFeedbackCard.data = paperCompliment;
+
+        const aiFeeling = document.querySelector("#AI-Feeling .card-main-text");
+        if (aiFeeling) {
+          aiFeeling.textContent = paperCompliment;
+        }
+
+        window.sidebarManager.loadedState.compliment = true;
+        window.sidebarManager.updateSpinner();
+      }
+
+      function handleChallengeSuccessReceived(focusObject) {
+        window.sidebarManager.loadedState.challengeFeedbackLoaded = true;
+        const challengeCard = document.querySelector("#challenge-card");
+
+        let alertDiv = challengeCard.querySelector(".alert-message");
+        let failReasonDiv = challengeCard.querySelector(".fail-reason-message");
+
+        if (!alertDiv) {
+          alertDiv = document.createElement("div");
+          alertDiv.className = "alert-message";
+          const taskList = challengeCard.querySelector(".task-list");
+          taskList.insertAdjacentElement("beforebegin", alertDiv);
+        }
+
+        if (
+          focusObject.sentenceEvolution[
+            focusObject.sentenceEvolution.length - 1
+          ].noChange === true
+        ) {
+          alertDiv.className = "alert-message"; // Reset class
+          alertDiv.innerHTML =
+            "⚠️ Make the suggested changes before clicking submit!";
+        } else if (
+          focusObject.sentenceEvolution[
+            focusObject.sentenceEvolution.length - 1
+          ].farEdits === true
+        ) {
+          alertDiv.className = "alert-message"; // Reset class
+          alertDiv.innerHTML = `⚠️ Please only edit around the highlighted sentence during Level Up.
+
+                    I can't find the original sentence now, and we'll need to choose a new challenge.`;
+          document.getElementById("check-work-button").disabled = true;
+        } else if (
+          focusObject.sentenceEvolution[
+            focusObject.sentenceEvolution.length - 1
+          ].improved === false
+        ) {
+          if (!failReasonDiv) {
+            failReasonDiv = document.createElement("div");
+            failReasonDiv.className = "alert-message fail-reason-message";
+            failReasonDiv.style.textAlign = "left";
+            alertDiv.insertAdjacentElement("afterend", failReasonDiv);
+          } else {
+            failReasonDiv.style.textAlign = "left";
+          }
+          alertDiv.className = "alert-message error"; // Add error class for red styling
+          alertDiv.innerHTML = "❌ Challenge Failed.";
+          failReasonDiv.className = "alert-message fail-reason-message";
+          const failReason =
+            focusObject.sentenceEvolution[
+              focusObject.sentenceEvolution.length - 1
+            ].failReason || "No specific reason provided.";
+          failReasonDiv.innerHTML = failReason;
+        } else {
+          handleChallengeComplimentReceived(focusObject);
+        }
+
+        window.sidebarManager.updateSpinner();
+
+        function handleChallengeComplimentReceived(focusObject) {
+          //Note that we also receive the changed scores here as well.
+          const challengeFeedbackCard = window.CardFlow.sequence.find(
+            (card) => card.type === window.CardTypes.CHALLENGE_FEEDBACK
+          );
+          challengeFeedbackCard.data =
+            focusObject.sentenceEvolution[
+              focusObject.sentenceEvolution.length - 1
+            ].passReason;
+          window.sidebarManager.loadedState.challengeCompliment = true;
+          window.sidebarManager.handleNavigation("next");
+          increaseLevel();
+          changeScore(focusObject.topicNumber);
+        }
+      }
+
+      async function callServer(functionName, thenFunction, ...args) {
+        if (typeof google !== "undefined" && google.script) {
+          // Google Apps Script execution
+          return google.script.run
+            .withSuccessHandler(thenFunction)
+            .withFailureHandler((error) => {
+              console.error("Server error:", error);
+              throw error;
+            })
+            [functionName](...args);
+        } else {
+          // Local execution - import from window object
+          const localFunction = window[functionName];
+          if (!localFunction) {
+            throw new Error(
+              `Function ${functionName} not found in local environment`
+            );
+          }
+
+          const result = await localFunction(...args);
+          if (thenFunction) {
+            thenFunction(result);
+          }
+          return result;
+        }
+      }
+      async function pillButtonClicked(topicIndex) {
+        callServer("selectFocusSentence", null, topicIndex);
+        callServer("highlightFocus", null);
+        callServer("getFeelResponse", handleFeelResponseReceived);
+        callServer("getChallenge", handleChallengeReceived);
+        window.sidebarManager.handleNavigation("next");
+
+        function handleFeelResponseReceived(focusObjectText) {
+          window.sidebarManager.loadedState.feel = true;
+
+          // Find the FEEL_RESPONSE card in the sequence and update its data
+          const feelResponseCard = window.CardFlow.sequence.find(
+            (card) => card.type === window.CardTypes.FEEL_RESPONSE
+          );
+          if (feelResponseCard) feelResponseCard.data = focusObjectText.feel;
+
+          window.sidebarManager.handleNavigation("update");
+        }
+      }
+
+      function handleChallengeReceived(focusObjectText) {
+
+        let challenge =
+          focusObjectText.sentenceEvolution[
+            focusObjectText.sentenceEvolution.length - 1
+          ].challenge;
+        window.sidebarManager.loadedState.challenge = true;
+
+        // Get the task list container and title element
+        const taskList = document.querySelector("#challenge-card .task-list");
+        const titleElement = document.querySelector(
+          "#challenge-card .card-title-subtitle"
+        );
+        if (!taskList || !titleElement) return;
+
+        // Clear existing content
+        taskList.innerHTML = "";
+
+        // Update title with first item (goal)
+        titleElement.textContent = challenge[0];
+
+        // Create elements for each task, starting from index 1 to skip the goal
+        challenge.slice(1).forEach((task, index) => {
+          const taskItem = document.createElement("div");
+          taskItem.className = "task-item";
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.className = "task-checkbox";
+          checkbox.id = `task-${index}`;
+
+          const taskText = document.createElement("label");
+          taskText.className = "task-text";
+          taskText.htmlFor = `task-${index}`;
+          taskText.textContent = task;
+
+          taskItem.appendChild(checkbox);
+          taskItem.appendChild(taskText);
+          taskList.appendChild(taskItem);
+        });
+
+        // Find the CHALLENGE card in the sequence and update its data
+        const challengeCard = window.CardFlow.sequence.find(
+          (card) => card.type === window.CardTypes.CHALLENGE
+        );
+        if (challengeCard) challengeCard.data = challenge;
+        window.sidebarManager.handleNavigation("update");
+      }
+      function challengePlusButtonClicked() {
+        window.sidebarManager.loadedState.challenge = false;
+        window.sidebarManager.loadedState.challengeFeedbackLoaded = true;
+        window.sidebarManager.handleNavigation("challenge");
+        callServer("getChallengePlus", handleChallengeReceived);
+      }
+    </script>
+    <script>
+      // ==========================
+      // SidebarManager
+      // ==========================
+      // Define card types globally
+      window.CardTypes = {
+        HOME: "home-page",
+        AI_FEEDBACK: "AI-Feeling",
+        FOCUS_SENTENCE: "focus-sentence",
+        EXAMPLE: "example-card",
+        FEEL_RESPONSE: "feel-response-card",
+        CHALLENGE: "challenge-card",
+        CHALLENGE_FEEDBACK: "challenge-feedback-card",
+        REFLECTION: "reflection-card",
+        CUSTOMIZE: "customize-card",
+      };
+
+      window.SubCardType = null;
+      // Make our manager available globally
+      window.SidebarManager = (function () {
+        document
+          .querySelector(".customize-link")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+          });
+        // Sidebar Manager constructor
+        function SidebarManager() {
+          this.currentCard = null;
+          this.buttonVisibility = true;
+          this.loadedState = {
+            compliment: false,
+            sentence: false,
+            feel: false,
+            challenge: false,
+            challengeFeedbackLoaded: true,
+            challengeCompliment: false,
+            score: false,
+          };
+          this.initializeSidebar();
+        }
+
+        SidebarManager.prototype.isDataLoadedForCard = function (cardType) {
+          switch (cardType) {
+            case window.CardTypes.AI_FEEDBACK:
+              return this.loadedState.compliment;
+            case window.CardTypes.HOME:
+              return true;
+            case window.CardTypes.FOCUS_SENTENCE:
+              return this.loadedState.sentence;
+            case window.CardTypes.FEEL_RESPONSE:
+              return this.loadedState.feel;
+            case window.CardTypes.CHALLENGE:
+              return (
+                this.loadedState.challenge &&
+                this.loadedState.challengeFeedbackLoaded
+              );
+            case window.CardTypes.CHALLENGE_FEEDBACK:
+              return this.loadedState.challengeCompliment;
+            default:
+              return true; // Assume other cards don't need specific data
+          }
+        };
+
+        SidebarManager.prototype.updateSpinner = function () {
+          const currentCardType =
+            window.CardFlow.sequence[window.CardFlow.current].type;
+
+          // Check if the data for the current card is loaded
+          const isDataLoaded = this.isDataLoadedForCard(currentCardType);
+
+          if (!isDataLoaded) {
+            this.showSpinner();
+          } else {
+            this.hideSpinner();
+          }
+        };
+
+        SidebarManager.prototype.showSpinner = function () {
+          const spinnerOverlay = document.querySelector(".spinner-overlay");
+          if (spinnerOverlay) {
+            spinnerOverlay.style.display = "flex";
+          }
+        };
+
+        SidebarManager.prototype.hideSpinner = function () {
+          const spinnerOverlay = document.querySelector(".spinner-overlay");
+          if (spinnerOverlay) {
+            spinnerOverlay.style.display = "none";
+          }
+        };
+        // Add methods to the prototype
+        SidebarManager.prototype.initializeSidebar = function () {
+          var backBtn = document.getElementById("back-button");
+          var nextBtn = document.getElementById("next-button");
+          var skipBtn = document.getElementById("skip-button");
+          var homeBtn = document.getElementById("home-button");
+          var checkWorkBtn = document.getElementById("check-work-button");
+          var backDumbBtn = document.getElementById("back-dumb-button");
+          var submitBtn = document.getElementById("submit-button");
+          var shareButton = document.getElementById("share-rubric-button");
+ var editButton = document.getElementById("edit-rubric-button");
+  var loadButton = document.getElementById("load-rubric-button");
+  var newButton = document.getElementById("new-rubric-button");
+          var self = this;
+
+          if (backBtn) {
+            backBtn.addEventListener("click", function () {
+              self.handleNavigation("back");
+            });
+          }
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+              self.handleNavigation("next");
+            });
+          }
+          if (skipBtn) {
+            skipBtn.addEventListener("click", function () {
+              self.handleNavigation("skip");
+            });
+          }
+          if (homeBtn) {
+            homeBtn.addEventListener("click", function () {
+              self.handleNavigation("home");
+            });
+
+          }
+          if (checkWorkBtn) {
+            checkWorkBtn.addEventListener("click", function () {
+              checkWorkButtonClicked();
+            });
+          }
+
+          if (shareButton) {
+            shareButton.addEventListener("click",  () => this.handleShareButtonClick());
+  }
+  if (editButton) {
+    editButton.addEventListener("click", () => this.handleEditButtonClick());
+  }
+  if (loadButton) {
+    loadButton.addEventListener("click", () => this.handleLoadButtonClick());
+  }
+  if (newButton) {
+    newButton.addEventListener("click", () => this.handleNewButtonClick());
+  }
+          
+
+          this.hideSpinner();
+
+          //Customize Rubric Setup
+
+          document
+            .querySelector(".customize-link")
+            .addEventListener("click", function (e) {
+              e.preventDefault();
+              self.showCard(window.CardTypes.CUSTOMIZE);
+            });
+
+
+            
+
+        };
+
+        SidebarManager.prototype.showCard = function (cardType, data = null) {
+          // Hide all cards first
+          const cards = document.querySelectorAll(".card");
+          cards.forEach((card) => (card.style.display = "none"));
+
+          // Show the requested card
+          const card = document.getElementById(cardType);
+          if (card) {
+            card.style.display = "flex";
+            card.style.flex = "1";
+          }
+
+          // Update the card content if data is provided
+          this.updateCardContent(cardType, data);
+
+          // Update button visibility and state
+          this.updateButtonContainerVisibility(cardType);
+
+          // Check for scroll overflow after card is shown and content is updated
+          // Check for scroll overflow after card is shown and content is updated
+          setTimeout(() => {
+            this.checkScrollOverflow();
+          }, 0);
+        };
+
+        SidebarManager.prototype.updateButtonContainerVisibility = function (
+          cardType
+        ) {
+          const buttonContainer = document.querySelector(".button-container");
+          const buttonBox = document.querySelector(".button-box");
+          const nextButton = document.getElementById("next-button");
+          const backButton = document.getElementById("back-button");
+          const homeButton = document.getElementById("home-button");
+          const skipButton = document.getElementById("skip-button");
+          const checkWorkButton = document.getElementById("check-work-button");
+
+          if (!buttonContainer || !buttonBox) return;
+
+          // Define which cards should show navigation buttons
+          const hideButtonsFor = [window.CardTypes.HOME];
+          const hideBackButtonFor = [window.CardTypes.AI_FEEDBACK];
+
+          const shouldHideButtons = hideButtonsFor.includes(cardType);
+          const shouldHideBackButton = hideBackButtonFor.includes(cardType);
+
+          // Update button container visibility
+          buttonContainer.style.display = shouldHideButtons ? "none" : "flex";
+
+          // Update Next button text based on card type
+          if (nextButton) {
+            nextButton.textContent =
+              cardType === window.CardTypes.AI_FEEDBACK ? "Start" : "Next";
+          }
+          //if the current cards data has isLast and isLast is true
+          if (
+            window.CardFlow.sequence[window.CardFlow.current].data
+              .isLastReflection
+          ) {
+            nextButton.textContent = "Submit";
+          }
+          if (homeButton) {homeButton.style.display = "none";}
+          if (cardType === window.CardTypes.CHALLENGE) {
+            if (nextButton) nextButton.style.display = "none";
+            if (backButton) backButton.style.display = "none";
+            if (skipButton) skipButton.style.display = "block";
+            if (checkWorkButton) {
+              checkWorkButton.style.display = "block";
+              checkWorkButton.disabled = false;
+            }
+          } else if (cardType === window.CardTypes.CHALLENGE_FEEDBACK) {
+            if (nextButton) nextButton.style.display = "none";
+            if (backButton) backButton.style.display = "none";
+            if (skipButton) skipButton.style.display = "none";
+            if (checkWorkButton) {
+              checkWorkButton.style.display = "none";
+            }
+          } else if (cardType === window.CardTypes.REFLECTION) {
+            if (nextButton) nextButton.style.display = "block";
+            if (backButton) backButton.style.display = "none";
+            if (skipButton) skipButton.style.display = "none";
+            if (checkWorkButton) {
+              checkWorkButton.style.display = "none";
+            }
+          } else if (cardType === window.CardTypes.CUSTOMIZE) {
+            if (nextButton) nextButton.style.display = "none";
+            if (backButton) backButton.style.display = "none";
+            if (skipButton) skipButton.style.display = "none";
+            if (checkWorkButton) {
+              checkWorkButton.style.display = "none";
+            }
+            if (homeButton) {homeButton.style.display = "block";}
+          } else {
+            if (nextButton) nextButton.style.display = "block";
+            if (backButton) {
+              backButton.style.display = shouldHideBackButton
+                ? "none"
+                : "block";
+            }
+            if (skipButton) skipButton.style.display = "none";
+            if (checkWorkButton) checkWorkButton.style.display = "none";
+          }
+        };
+
+        SidebarManager.prototype.handleNavigation = function (direction) {
+          // Remove any existing alert messages
+          const alertMessages = document.querySelectorAll(".alert-message");
+          alertMessages.forEach((alert) => alert.remove());
+
+          if (typeof CardFlow !== "undefined") {
+            var card = CardFlow.sequence[CardFlow.current];
+            if (
+              direction === "next" &&
+              card.type === window.CardTypes.REFLECTION
+            ) {
+              const textarea = document.querySelector(".reflection-textarea");
+              if (!textarea.value.trim()) {
+                addInvalidInput(textarea);
+                return;
+              } else if (card.data.isLastReflection) {
+                saveReflection(textarea.value);
+                handleReflectionSubmit(card);
+              } else {
+                saveReflection(textarea.value);
+              }
+            }
+            if(direction === "home"){
+              CardFlow.current = 0;
+            }
+            if (direction === "skip" || direction === "back") {
+              resetLoadedState();
+              CardFlow.current = 1;
+              //There will be a problem here if focusObject does not finish before a new focus is selected.
+              callServer("clearFocusObj", handleClearFocusObj);
+              callServer("clearHighlightText", null);
+            } else if (direction == "challenge") {
+              //Note that this is a hack to get the challenge card to show up. Will need to change if more cards are added.
+              CardFlow.current = 3;
+            } else if (
+              direction === "next" &&
+              card.data &&
+              card.data.isLastReflection
+            ) {
+              CardFlow.current = 1; //TODO this is a hack to go back to home.
+            } else if (
+              direction === "next" &&
+              CardFlow.current < CardFlow.sequence.length - 1
+            ) {
+              CardFlow.current++;
+            }
+
+            var card = CardFlow.sequence[CardFlow.current];
+            this.updateNavigationButtons();
+            this.showCard(card.type, card.data);
+            this.updateSpinner();
+            if (direction === "next" || direction === "back") {
+              scrollToTop();
+            }
+
+            if (this.checkCurrentCard(window.CardTypes.HOME)) {
+              this.animatePillScores();
+            }
+          }
+        };
+
+        SidebarManager.prototype.checkCurrentCard = function (cardType) {
+          return (
+            window.CardFlow.sequence[window.CardFlow.current].type === cardType
+          );
+        };
+
+        SidebarManager.prototype.animatePillScores = function (
+          stagger = false
+        ) {
+          const pillHolder = document.getElementById("pillHolder");
+          if (!pillHolder) return;
+
+          const pills = pillHolder.getElementsByClassName("topic-button");
+
+          // Force a reflow
+          pillHolder.offsetHeight;
+
+          // Then animate to the correct widths
+          for (let i = 0; i < pills.length; i++) {
+            const pill = pills[i];
+            const score = loadingState.scores[i];
+            const topic = window.topics[i];
+
+            const progressBar = pill.querySelector(".progress-bar");
+            const progressSpan = progressBar.querySelector("span");
+            const innerEmptyPill =
+              progressBar.querySelector(".inner-empty-pill");
+
+            // Update score display
+            progressSpan.textContent = `${score}/${topic.outOfTotal}`;
+            const delay = stagger ? i * 200 : 0;
+            // Delay each pill slightly for cascade effect
+            setTimeout(() => {
+              const targetWidth =
+                100 - Math.min((score / topic.outOfTotal) * 100, 100);
+              innerEmptyPill.style.width = targetWidth + "%";
+
+              if (score >= topic.outOfTotal) {
+                setTimeout(() => {
+                  pill.style.animation = "none"; // Reset animation
+                  pill.offsetHeight; // Force reflow
+                  progressBar.style.animation = "pulse 1s ease-in-out";
+                }, 1000);
+              }
+              // Add completion effect if 100%
+              if (targetWidth >= 100) {
+                pill.classList.add("completed");
+              }
+            }, delay); // Stagger the animations
+          }
+        };
+
+        SidebarManager.prototype.checkScrollOverflow = function () {
+          // Get the current card type from CardFlow
+          const currentCardType = CardFlow.sequence[CardFlow.current].type;
+          const currentCard = document.getElementById(currentCardType);
+          const buttonBox = document.querySelector(".button-box");
+          const buttonContainer = document.querySelector(".button-container");
+
+          if (currentCard) {
+            // Find the scroll container within the current card
+            const container = currentCard.querySelector(".scroll-container");
+
+            if (container) {
+              // Check if content is taller than container
+              const hasOverflow =
+                container.scrollHeight > container.clientHeight;
+
+              // Add or remove is-scrollable class from both elements
+              if (hasOverflow) {
+                buttonBox.classList.add("is-scrollable");
+                container.classList.add("is-scrollable");
+                buttonContainer.classList.add("is-scrollable");
+              } else {
+                buttonBox.classList.remove("is-scrollable");
+                container.classList.remove("is-scrollable");
+                buttonContainer.classList.remove("is-scrollable");
+              }
+            }
+          }
+        };
+
+        SidebarManager.prototype.updateCardContent = function (cardType, data) {
+          switch (cardType) {
+            case window.CardTypes.AI_FEEDBACK:
+              this.updateAIFeedback(data);
+              break;
+            case window.CardTypes.FOCUS_SENTENCE:
+              this.updateFocusFeedback(data);
+              break;
+            case window.CardTypes.EXAMPLE:
+              this.updateExample(data);
+              break;
+            case window.CardTypes.CHALLENGE:
+              this.updateChallengeExample(data);
+              break;
+            case window.CardTypes.FEEL_RESPONSE:
+              this.updateFeelExample(data);
+              break;
+            case window.CardTypes.CHALLENGE_FEEDBACK:
+              this.updateChallengeFeedback(data);
+              break;
+            case window.CardTypes.REFLECTION:
+              this.updateReflection(data);
+              break;
+            case window.CardTypes.CUSTOMIZE:
+              this.updateCustomize();
+              break;
+          }
+          SidebarManager.prototype.updateReflection = function (data) {
+            var textElement = document.querySelector(
+              "#reflection-card .reflection-question"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = data.question;
+            }
+
+            const textarea = document.querySelector(".reflection-textarea");
+            if (textarea) {
+              textarea.value = "";
+            }
+          };
+          SidebarManager.prototype.updateChallengeFeedback = function (
+            feedback
+          ) {
+            var textElement = document.querySelector(
+              "#challenge-feedback-card .card-main-text"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = feedback;
+            }
+          };
+          SidebarManager.prototype.updateAIFeedback = function (feedback) {
+            var textElement = document.querySelector(
+              "#AI-Feeling .card-main-text"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = feedback;
+            }
+          };
+          SidebarManager.prototype.updateFeelExample = function (feedback) {
+            var textElement = document.querySelector(
+              "#feel-response-card .card-main-text"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = feedback;
+            }
+          };
+          SidebarManager.prototype.updateChallengeExample = function (data) {
+            var textElement = document.querySelector(
+              "#challenge-card .card-main-text"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = data;
+            }
+          };
+          SidebarManager.prototype.updateFocusFeedback = function (data) {
+            var textElement = document.querySelector(
+              "#focus-sentence .card-main-text"
+            );
+
+            if (textElement) {
+              textElement.innerHTML = data;
+            }
+          };
+
+          SidebarManager.prototype.updateCustomize = function () {
+            // Set current rubric title
+            const currentRubricTitle = document.getElementById(
+              "current-rubric-title"
+            );
+            if (currentRubricTitle) {
+              currentRubricTitle.textContent = this.getCurrentRubricTitle();
+            }
+
+            // Set rubric URL
+            const rubricUrl = document.getElementById("rubric-url");
+            if (rubricUrl) {
+              rubricUrl.value = this.getRubricUrl();
+            }
+          };
+
+          SidebarManager.prototype.handleShareButtonClick = function () {
+  alert("Share button clicked!");
+  // Add more complex logic here later
+}
+
+SidebarManager.prototype.handleEditButtonClick = function () {
+  alert("Edit button clicked!");
+  // Add more complex logic here later
+}
+
+SidebarManager.prototype.handleLoadButtonClick = function () {
+  alert("Load Rubric button clicked!");
+  // Add more complex logic here later
+}
+
+SidebarManager.prototype.handleNewButtonClick = function () {
+  alert("New Rubric button clicked!");
+  // Add more complex logic here later
+}
+          // Define these as separate prototype methods (outside of updateCustomize)
+          SidebarManager.prototype.getCurrentRubricTitle = function () {
+            // Return the current rubric title
+            return "My Custom Rubric"; // Placeholder
+          };
+
+          SidebarManager.prototype.getRubricUrl = function () {
+            // Return the shareable URL for the current rubric
+            return "https://docs.google.com/spreadsheets/d/..."; // Placeholder
+          };
+        };
+
+        SidebarManager.prototype.updateNavigationButtons = function () {
+          if (typeof CardFlow !== "undefined") {
+            var backBtn = document.getElementById("back-button");
+            var nextBtn = document.getElementById("next-button");
+
+            if (backBtn) {
+              backBtn.disabled = CardFlow.current === 0;
+            }
+            if (nextBtn) {
+              nextBtn.disabled =
+                CardFlow.current === CardFlow.sequence.length - 1;
+            }
+          }
+        };
+
+        SidebarManager.prototype.addTopicPills = function (topics) {
+          const homePage = document.getElementById("pillHolder");
+
+          if (homePage) {
+            topics.forEach((topic) => {
+              const button = document.createElement("button");
+              button.className = "topic-button";
+              button.innerHTML = `
+                            <div class="progress-bar" data-progress="0/5">
+                              <div class="inner-pill"></div>
+                              <div class="inner-empty-pill"></div>
+                              <span>0/${topic.outOfTotal}</span>
+                            </div>
+                            <span class="label">${topic.name}</span>
+                          `;
+              homePage.appendChild(button);
+            });
+          }
+        };
+
+        SidebarManager.prototype.showSpinner = function () {
+          const spinnerOverlay = document.querySelector(".spinner-overlay");
+          if (spinnerOverlay) {
+            spinnerOverlay.style.display = "flex";
+          }
+        };
+
+        SidebarManager.prototype.hideSpinner = function () {
+          const spinnerOverlay = document.querySelector(".spinner-overlay");
+          if (spinnerOverlay) {
+            spinnerOverlay.style.display = "none";
+          }
+        };
+
+        return SidebarManager;
+      })();
+    </script>
+
+    <script>
+      //Level Up Box Animations
+      function adjustColors(baseColor) {
+        document.documentElement.style.setProperty("--base-blue", baseColor);
+        const textContainer = document.querySelector(".text-container");
+        textContainer.style.backgroundColor = baseColor;
+        const icons = document.querySelectorAll(".home-icon, .settings-icon");
+        icons.forEach((icon) => {
+          icon.style.fill = baseColor;
+        });
+      }
+
+      function increaseLevel(newLevel = null) {
+        setTimeout(() => {
+          const levelText = document.querySelector(".pixelated-gradient-text");
+
+          let startLevel = parseInt(levelText.textContent.split(" ")[1]);
+          let targetLevel = newLevel !== null ? newLevel : startLevel + 1;
+          let currentLevel = startLevel;
+
+          // Calculate total distance to move
+          const totalDistance = (targetLevel - startLevel) * 100;
+          const levelsToAnimate = targetLevel - startLevel;
+
+          // Animate balloon and background
+
+          const hotAirBalloon = document.querySelector(".hot-air-balloon");
+
+          // Start balloon animation
+          hotAirBalloon.style.transform = "translateY(-40px)";
+          hotAirBalloon.src =
+            "https://wondersa.blob.core.windows.net/levelup/hotAirBaloonFire.png";
+
+          updateBackgroundImages(targetLevel);
+
+          // Animate level counting up
+          const adventureImage = document.querySelector(
+            ".adventure-image-container"
+          );
+          adventureImage.style.height = `${targetLevel * 100}px`;
+          // Start the level animation
+          const delay = 1500 / levelsToAnimate;
+
+          setTimeout(animateLevels(currentLevel, targetLevel, delay), delay);
+        }, 100);
+
+        function updateBackgroundImages(targetLevel) {
+          const container = document.querySelector(
+            ".adventure-image-container"
+          );
+          const imagesNeeded = backgroundSystem.getRequiredImages(targetLevel);
+
+          // Create/update images as needed
+          for (let i = 0; i < imagesNeeded; i++) {
+            const imageUrl = backgroundSystem.getNextImageUrl(i);
+
+            // Only create new image if it doesn't exist
+            if (!container.querySelector(`[data-image-index="${i}"]`)) {
+              console.log(
+                `Adding new image for level ${targetLevel}, image index ${i}`
+              );
+              const img = document.createElement("img");
+              img.src = imageUrl;
+              img.className = "adventure-image";
+              img.dataset.imageIndex = i;
+              img.style.position = "absolute";
+              img.style.bottom = `${i * backgroundSystem.totalPxPerImage}px`;
+              img.style.width = "100%";
+              container.appendChild(img);
+            }
+          }
+        }
+
+        function animateLevels(currentLevel, targetLevel, delay) {
+          const levelText = document.querySelector(".pixelated-gradient-text");
+          if (currentLevel < targetLevel) {
+            currentLevel++;
+            levelText.textContent = `Level ${currentLevel}`;
+            setTimeout(animateLevels, delay, currentLevel, targetLevel, delay);
+          } else {
+            // Final animations after reaching target level
+            finishLevelAnimation();
+          }
+        }
+
+        function finishLevelAnimation() {
+          const levelTextContainer = document.querySelector(
+            ".level-text-container"
+          );
+          const levelText = document.querySelector(".pixelated-gradient-text");
+          // Your existing final animation code
+          const textContainer = document.querySelector(".text-container");
+          const hotAirBalloon = document.querySelector(".hot-air-balloon");
+          const currentWidth = parseFloat(
+            getComputedStyle(levelTextContainer).width
+          );
+          const currentHeight = parseFloat(
+            getComputedStyle(levelTextContainer).height
+          );
+
+          setTimeout(() => {
+            const currentWidth = parseFloat(
+              getComputedStyle(levelTextContainer).width
+            );
+            const currentHeight = parseFloat(
+              getComputedStyle(levelTextContainer).height
+            );
+
+            levelTextContainer.style.width = `${currentWidth * 1.05}px`;
+            levelTextContainer.style.height = `${currentHeight * 1.05}px`;
+
+            setTimeout(() => {
+              levelTextContainer.style.width = `${currentWidth}px`;
+              levelTextContainer.style.height = `${currentHeight}px`;
+
+              setTimeout(() => {
+                textContainer.style.animation = "";
+                const originalColors = {
+                  dark: getComputedStyle(document.documentElement)
+                    .getPropertyValue("--gradient-dark")
+                    .trim(),
+                  medium: getComputedStyle(document.documentElement)
+                    .getPropertyValue("--gradient-medium")
+                    .trim(),
+                  light: getComputedStyle(document.documentElement)
+                    .getPropertyValue("--gradient-light")
+                    .trim(),
+                };
+
+                document.documentElement.style.setProperty(
+                  "--gradient-dark",
+                  "#ffffff"
+                );
+
+                setTimeout(() => {
+                  document.documentElement.style.setProperty(
+                    "--gradient-dark",
+                    originalColors.dark
+                  );
+                  document.documentElement.style.setProperty(
+                    "--gradient-medium",
+                    "#ffffff"
+                  );
+
+                  setTimeout(() => {
+                    document.documentElement.style.setProperty(
+                      "--gradient-medium",
+                      originalColors.medium
+                    );
+                    document.documentElement.style.setProperty(
+                      "--gradient-light",
+                      "#ffffff"
+                    );
+
+                    setTimeout(() => {
+                      document.documentElement.style.setProperty(
+                        "--gradient-light",
+                        originalColors.light
+                      );
+
+                      hotAirBalloon.style.transform = "translateY(0px)"; // Move back to original position
+                      hotAirBalloon.src =
+                        "https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"; // Change back to original image
+                    }, 100);
+                  }, 100);
+                }, 200);
+              }, 400);
+            }, 200);
+          }, 1600);
+        }
+      }
+    </script>
+    <script>
+      ///Reflection Functions
+      window.reflectionResponses = [];
+      function startReflectionFlow(topicIndex) {
+        window.reflectionResponses = []; //Clear the reflection responses
+
+        const topic = window.topics[topicIndex];
+        let questions = [...topic.questions]; // Create copy of questions
+
+        if (topic.includeAIReflect) {
+          questions.unshift("How did you use AI in this paper?");
+        }
+
+        // Create reflection card sequence
+        const reflectionSequence = questions.map((question) => ({
+          type: window.CardTypes.REFLECTION,
+          data: {
+            question,
+            topicIndex,
+            isLastReflection: false,
+          },
+        }));
+
+        reflectionSequence[
+          reflectionSequence.length - 1
+        ].data.isLastReflection = true;
+
+        window.CardFlow.sequence.splice(3, 0, ...reflectionSequence);
+        window.CardFlow.current = 3;
+        window.sidebarManager.handleNavigation("update");
+      }
+
+      function handleReflectionSubmit(card) {
+        // Last question completed
+
+        const scores = callServer("plusOneScore", null, card.data.topicIndex);
+        changeScore(card.data.topicIndex);
+        callServer("printReflection", null, window.reflectionResponses);
+        //todo: save reflection to paper
+        //clear the reflection cards
+        clearReflectionCards();
+      }
+      function clearReflectionCards() {
+        window.CardFlow.sequence = window.CardFlow.sequence.filter(
+          (card) => card.type !== window.CardTypes.REFLECTION
+        );
+        window.CardFlow.current = 1; //after clearing cards, go back to home
+      }
+      function addInvalidInput(textarea) {
+        const alert = document.createElement("div");
+        alert.className = "alert-message";
+        alert.textContent = "Please write a response before continuing.";
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "alert-message";
+        errorMessage.textContent = "Please write a response before continuing.";
+        textarea.parentNode.insertBefore(errorMessage, textarea);
+        textarea.classList.add("error");
+        textarea.addEventListener(
+          "input",
+          function () {
+            this.classList.remove("error");
+            const errorMsg = document.querySelector(".alert-message");
+            if (errorMsg) errorMsg.remove();
+          },
+          { once: true }
+        );
+      }
+      function saveReflection(response) {
+        var textElement = document.querySelector(
+          "#reflection-card .reflection-question"
+        );
+        var question = textElement.innerHTML;
+        window.reflectionResponses.push({
+          question: question,
+          response: response,
+        });
+        console.log("saved Reflection", window.reflectionResponses);
+      }
+    </script>
+  </body>
+</html>

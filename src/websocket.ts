@@ -2,7 +2,13 @@ import { WebSocketServer, WebSocket } from "ws";
 import { Server } from "http";
 import logger from "./utils/logger";
 import dataStore from "./dataStore";
-import { LevelUpWebSocket, TokenData, isTokenData } from "./common/types";
+import {
+  LevelUpWebSocket,
+  TokenData,
+  isTokenData,
+  UIState,
+  defaultUIState,
+} from "./common/types";
 import { getClientId } from "./services/dataService";
 
 interface Message {
@@ -57,30 +63,17 @@ export function initializeWebSocket(server: Server): void {
     });
 
     // Send welcome message
-    const welcomeMsg: Message = {
-      type: "welcome",
-      message: "Connected to WebSocket server",
-    };
-    logger.info("📤 Sending welcome message", { message: welcomeMsg });
-    ws.send(JSON.stringify(welcomeMsg));
+    sendMessage(ws, "welcome", "Connected to WebSocket server");
+    sendMessage(ws, "state", undefined, defaultUIState);
 
     // Example: Send a command to request updated OAuth scope
     setupIntervals(ws);
-
-    logger.info("✨ WebSocket server initialized");
   });
 
   function setupIntervals(ws: LevelUpWebSocket) {
     const intervalId = setInterval(() => {
       if (ws.readyState === WebSocket.OPEN) {
-        const updateScopeMsg: Message = {
-          type: "updateScope",
-          message: "Please update your OAuth scope",
-        };
-        logger.info("📤 Sending updateScope message", {
-          message: updateScopeMsg,
-        });
-        ws.send(JSON.stringify(updateScopeMsg));
+        sendMessage(ws, "updateScope", "Please update your OAuth scope");
       }
     }, 30 * 60 * 1000); // 30 minutes in milliseconds
 
@@ -134,6 +127,24 @@ export function initializeWebSocket(server: Server): void {
 
   function handleError(ws: LevelUpWebSocket) {
     console.log("At some point we will redirect sidebar.html here");
+  }
+
+  function sendMessage(
+    ws: LevelUpWebSocket,
+    type: string,
+    message?: string,
+    state?: UIState
+  ) {
+    const msg: Message = {
+      type, // type is required
+      ...(message && { message }), // only add if message exists
+      ...(state && { state }), // only add if state exists
+    };
+    ws.send(JSON.stringify(msg));
+    logger.info("📤 Sending message", {
+      type: msg.type,
+      message: msg.message,
+    });
   }
 }
 //TODO will need this error state later
