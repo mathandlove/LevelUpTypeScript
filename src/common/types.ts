@@ -1,9 +1,48 @@
 import { WebSocket } from "ws";
 // First, define the interface
-export interface TokenData {
+
+export type WebSocketMessageType =
+  | "state" // UI state updates
+  | "token" // Token authentication
+  | "welcome" // Server welcome message
+  | "updateScope" // Scope updates
+  | "buttonClicked"; // Button clicked on sidebar
+
+export interface TokenPayload {
   clientId: string;
   documentId: string;
   token: string;
+}
+
+export type ButtonClickedPayload = {
+  buttonId: ButtonId;
+  buttonTitle?: string;
+};
+
+export interface WebSocketMessage {
+  type: WebSocketMessageType;
+  payload?: UIState | ButtonClickedPayload | TokenPayload;
+  message?: string; // Optional message field
+}
+
+export interface StateMessage {
+  type: "state";
+  state: UIState;
+}
+
+export interface WelcomeMessage {
+  type: "welcome";
+  message: string;
+}
+
+export interface TokenMessage {
+  type: "token";
+  payload: TokenPayload;
+}
+
+export interface ButtonClickedMessage {
+  type: "buttonClicked";
+  payload: ButtonClickedPayload;
 }
 
 // Then define the interface that uses it
@@ -27,8 +66,8 @@ export interface UIState {
     | "challenge-feedback-card"
     | "customize-card";
   waitingAnimationOn: boolean;
-  visibleButtons?: ButtonId[]; // Now enforces specific button IDs
-  buttonsDisabled?: ButtonId[];
+  visibleButtons: ButtonId[]; // Now enforces specific button IDs
+  buttonsDisabled: ButtonId[];
   level: number;
   pills: Array<{
     title: string;
@@ -63,13 +102,8 @@ export interface UIState {
 export const defaultUIState: UIState = {
   currentPage: "home-page",
   waitingAnimationOn: false,
-  buttons: {
-    "next-button": true,
-    "back-button": false,
-    "check-work-button": false,
-    "home-button": false,
-    "skip-button": false,
-  },
+  visibleButtons: [],
+  buttonsDisabled: [],
   level: 0,
   pills: [
     { title: "Pirate Slang", outOf: 2, current: 5 },
@@ -81,7 +115,7 @@ export const defaultUIState: UIState = {
 };
 
 // Finally, define any functions that use the types
-export function isTokenData(message: any): message is TokenData {
+export function isTokenData(message: any): message is TokenPayload {
   return (
     message &&
     typeof message.clientId === "string" &&

@@ -1,25 +1,19 @@
-import { WebSocketServer, WebSocket } from "ws";
+import { WebSocketServer, WebSocket, RawData } from "ws";
 import { Server } from "http";
 import logger from "./utils/logger";
 import dataStore from "./dataStore";
 import {
   LevelUpWebSocket,
-  TokenData,
+  TokenPayload,
   isTokenData,
   UIState,
   defaultUIState,
+  WebSocketMessage,
+  TokenMessage,
+  WebSocketMessageType,
+  ButtonClickedPayload,
 } from "./common/types";
 import { getClientId } from "./services/dataService";
-
-interface Message {
-  type: string;
-  token?: string;
-  clientId?: string;
-  documentId?: string;
-  data?: any;
-  payload?: any;
-  message?: string;
-}
 
 const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
 const TOKEN_WAIT_TIMEOUT = 15 * 1000; // 15 seconds in milliseconds
@@ -35,23 +29,11 @@ export function initializeWebSocket(server: Server): void {
 
     let idleTimeout = resetIdleTimeout(ws, null);
 
-    ws.on("message", (message) => {
+    ws.on("message", (message: RawData) => {
       try {
-        const parsedMessage: Message = JSON.parse(message.toString());
-        logger.info("📥 Received WebSocket message", parsedMessage);
+        const data = JSON.parse(message.toString()) as WebSocketMessage;
+        handleWebSocketMessage(ws, data);
         idleTimeout = resetIdleTimeout(ws, idleTimeout);
-
-        if (
-          parsedMessage.type === "token" &&
-          isTokenData(parsedMessage.payload.token)
-        ) {
-          console.log("🔑 New Token Saved");
-          handleTokenMessage(ws, parsedMessage.payload.token);
-        } else {
-          console.log("failed to load token");
-          console.log(parsedMessage.payload);
-          throw new Error("Failed to load token");
-        }
       } catch (err) {
         logger.error("❌ Failed to parse message", { error: err });
         console.log(err);
@@ -102,49 +84,71 @@ export function initializeWebSocket(server: Server): void {
     return idleTimeout;
   }
 
-  async function handleTokenMessage(ws: LevelUpWebSocket, token: TokenData) {
-    if (ws.clientId === "" && token.clientId === "") {
-      //sidebar.html may or may not return clientId, depending on security.
-      try {
-        ws.clientId = await getClientId(token.token);
-      } catch (err) {
-        console.log(err);
-        handleError(ws);
-      }
-    }
-    let data = dataStore.getData(token.clientId, token.documentId);
-    data.currentToken = token.token;
-    ws.clientId = token.clientId;
-    ws.documentId = token.documentId;
-    dataStore.storeData(ws.clientId, ws.documentId, data);
-
-    logger.info("🔑 New Token Saved", {
-      clientId: ws.clientId,
-      documentId: ws.documentId,
-      token: token.token,
-    });
-  }
-
   function handleError(ws: LevelUpWebSocket) {
     console.log("At some point we will redirect sidebar.html here");
   }
 
   function sendMessage(
     ws: LevelUpWebSocket,
-    type: string,
+    type: WebSocketMessageType,
     message?: string,
-    state?: UIState
+    payload?: UIState | ButtonClickedPayload | TokenPayload
   ) {
-    const msg: Message = {
-      type, // type is required
+    const msg: WebSocketMessage = {
+      type,
       ...(message && { message }), // only add if message exists
-      ...(state && { state }), // only add if state exists
+      ...(payload && { payload }), // only add if payload exists
     };
     ws.send(JSON.stringify(msg));
     logger.info("📤 Sending message", {
       type: msg.type,
       message: msg.message,
+      payload: msg.payload,
     });
+  }
+
+  function handleWebSocketMessage(
+    ws: LevelUpWebSocket,
+    data: WebSocketMessage
+  ) {
+    try {
+      console.log("📥 Received:", data);
+
+      switch (data.type) {
+        case "token":
+          handleTokenMessage(ws, data as TokenMessage);
+          break;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    async function handleTokenMessage(
+      ws: LevelUpWebSocket,
+      tokenMessage: TokenMessage
+    ) {
+      const token = tokenMessage.payload;
+      if (ws.clientId === "" && token.clientId === "") {
+        //sidebar.html may or may not return clientId, depending on security.
+        try {
+          ws.clientId = await getClientId(token.token);
+        } catch (err) {
+          console.log(err);
+          handleError(ws);
+        }
+      }
+      let data = dataStore.getData(token.clientId, token.documentId);
+      data.currentToken = token.token;
+      ws.clientId = token.clientId;
+      ws.documentId = token.documentId;
+      dataStore.storeData(ws.clientId, ws.documentId, data);
+
+      logger.info("🔑 New Token Saved", {
+        clientId: ws.clientId,
+        documentId: ws.documentId,
+        token: token.token,
+      });
+    }
   }
 }
 //TODO will need this error state later
