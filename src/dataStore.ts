@@ -1,16 +1,37 @@
-interface DataEntry {
+// Define the structure of our stored data
+interface DocumentData {
   documentId: string;
   lastUpdated: number;
+  currentToken?: string;
 }
 
-const dataStore: Record<string, DataEntry> = {};
+// Main data store with double-key lookup
+interface DataStore {
+  [clientId: string]: {
+    [documentId: string]: DocumentData;
+  };
+}
 
-export default {
-  storeData: (token: string, data: DataEntry): void => {
-    dataStore[token] = data;
-    console.log(`Data stored for token: ${token}`);
+// Initialize the store
+const store: DataStore = {};
+
+// Helper functions to manage the store
+const dataStore = {
+  storeData: (clientId: string, documentId: string, data: DocumentData) => {
+    if (!store[clientId]) {
+      store[clientId] = {};
+    }
+    store[clientId][documentId] = data;
   },
-  getData: (token: string): DataEntry | null => {
-    return dataStore[token] || null;
+
+  getData: (clientId: string, documentId: string): DocumentData | null => {
+    return store[clientId]?.[documentId] || null;
+  },
+
+  // Optional: get all documents for a client
+  getClientDocs: (clientId: string) => {
+    return store[clientId] || {};
   },
 };
+
+export default dataStore;

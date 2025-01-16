@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #28466c;
+        --secondary-color: #00afcc;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        font-family: "Press Start 2P", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .adventure-image-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100px;
+        overflow: hidden;
+        z-index: -1;
+        transition: height 1.5s ease-in-out;
+      }
+
+      .adventure-image {
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+      }
+
+      #side-panel {
+        width: 300px;
+        height: 100vh;
+        background-color: rgba(40, 70, 108, 0.9);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        overflow-y: hidden;
+        padding-bottom: 60px;
+      }
+
+      .sidebar-image-container {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+
+      .sidebar-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .card-content::after {
+        content: "";
+        display: block;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, #ffffff);
+        position: sticky;
+        bottom: 0;
+        pointer-events: none;
+      }
+
+      .card::-webkit-scrollbar,
+      .card-main-text::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .card::-webkit-scrollbar-track,
+      .card-main-text::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+
+      .card::-webkit-scrollbar-thumb,
+      .card-main-text::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+
+      .card::-webkit-scrollbar-thumb:hover,
+      .card-main-text::-webkit-scrollbar-thumb:hover {
+        background: #999;
+      }
+
+      .card p {
+        margin: 0 0 10px 0;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      button {
+        padding: 20px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .topic-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .topic-button:hover {
+        transform: none;
+        background: #e0e0e0;
+      }
+
+      .progress-bar {
+        width: 50px;
+        height: 20px;
+        background-color: #59cc01;
+        border-radius: 15px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+      }
+
+      .inner-pill {
+        width: 70%;
+        height: 25%;
+        background-color: #80d741;
+        border-radius: 15px;
+        position: absolute;
+        left: 5px;
+        top: 35%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .inner-empty-pill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #838282;
+        border-radius: 0 15px 15px 0;
+        transition: width 0.3s ease;
+        z-index: 2;
+      }
+
+      .progress-bar span {
+        position: relative;
+        z-index: 3;
+      }
+
+      .label {
+        color: var(--primary-color);
+        font-size: 14px;
+        text-align: left;
+        flex-grow: 1;
+        font-weight: 600;
+      }
+
+      /* Apply Inter font to everything */
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .stats-box {
+        margin-top: auto;
+        margin-top: 20px;
+        padding-top: 5px;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .stat-row {
+        display: flex;
+        flex-direction: column;
+        color: var(--primary-color);
+      }
+
+      .stat-label {
+        font-size: 12px;
+        font-weight: 400;
+        color: #666;
+      }
+
+      .stat-value {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .card-title,
+      .card-title-home {
+        color: var(--primary-color);
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: left;
+        font-family: "Inter", sans-serif; /* Professional font */
+        margin-bottom: 14px; /* Space below the title */
+        margin-top: 0px; /* Space below the title */
+      }
+      .card-title-subtitle {
+        font-size: 1em;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 30px;
+      }
+      .card-title-subtitle-feedback {
+        font-size: 1em;
+        font-weight: 600;
+        color: #666;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card-title-home {
+        font-size: 0.8em;
+      }
+
+      .card-main-text {
+        white-space: pre-wrap;
+
+        margin: 0;
+        font-size: 12px;
+        font-weight: normal;
+        flex: 0 1 auto;
+      }
+
+      .card-content,
+      .card-main-text {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 10px;
+        position: relative;
+      }
+
+      .card-main-text,
+      .card-content {
+        font-size: 13px; /* Standard font size for body text */
+        font-weight: 400; /* Normal weight for readability */
+        color: #555; /* Medium gray for a softer look */
+        line-height: 1.6; /* Increased line height for readability */
+        font-family: "Inter", sans-serif; /* Consistent font choice */
+      }
+
+      #focus-sentence .card-main-text {
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .level-up-button {
+        background: var(
+          --secondary-color
+        ); /* Use secondary color for background */
+        border: none;
+        padding: 8px 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 12px;
+        color: white; /* Ensure text is readable on secondary color */
+        transition: background-color 0.3s ease;
+        width: 90%;
+        margin: 10px 5px;
+      }
+
+      .level-up-button:hover {
+        background: #00c2e3; /* Slightly lighter shade for hover effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: scale(1.05);
+      }
+      #next-button,
+      #back-button,
+      #check-work-button {
+        display: inline-block; /* Ensure buttons are displayed */
+      }
+
+      #back-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      #back-button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color);
+        transform: scale(1.05);
+      }
+
+      #next-button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 2px 4px rgba(0, 175, 204, 0.3);
+      }
+
+      #next-button:hover {
+        background-color: #00c2e3;
+        border-color: #00c2e3;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 175, 204, 0.4);
+      }
+
+      /* Original height when buttons are visible */
+      .button-box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 8px 8px 0px 0px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin: 100px 20px 20px 20px;
+        box-sizing: border-box;
+        height: calc(100vh - 100px);
+        position: relative;
+        z-index: 1;
+        padding: 0;
+      }
+
+      .button-box {
+        position: relative;
+        /* Existing styles... */
+        padding: 20px; /* Add padding for better spacing */
+        padding-top: 30px;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .button-box.is-scrollable {
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+
+      .example-block {
+        margin-bottom: 30px;
+      }
+
+      .example-title {
+        font-size: 0.9em;
+        font-weight: 600;
+        font-size: 12px;
+        font-weight: 400;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .original::before,
+      .fixed::before {
+        display: none;
+      }
+
+      .spinner-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 8px; /* match button-box border radius */
+        flex-direction: column;
+        gap: 20px; /* space between spinner and text */
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--primary-color);
+        border-top: 4px solid var(--secondary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .spinner-text {
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .cards-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 20px; /* Add margin to match button container */
+      }
+
+      .card {
+        display: none; /* Hide all cards by default */
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .card-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 20px 0px 20px;
+        box-sizing: border-box;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+      }
+      .button-container.is-scrollable {
+        padding-right: 20px;
+      }
+      .scroll-container {
+        flex: 1;
+        overflow-y: auto;
+        position: relative;
+        margin: 0;
+        padding: 0px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .scroll-container::after {
+        content: "";
+        display: none;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, #ffffff);
+        position: sticky;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .scroll-container.is-scrollable::after {
+        display: block; /* Show when scrollable */
+      }
+
+      .scroll-container.is-scrollable::before {
+        content: "";
+        display: block;
+        height: 40px;
+        background: linear-gradient(to top, transparent, #ffffff);
+        position: sticky;
+        top: 0px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(40, 70, 108, 0.5);
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+        min-height: 70px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(40, 70, 108, 0.8);
+      }
+
+      .card-content {
+        flex: 1;
+      }
+
+      #pillHolder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+      .home-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        font-size: 16px; /* Adjust font size if needed */
+        color: var(--primary-color); /* Use primary color */
+      }
+
+      .select-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: #ececec;
+        border: none;
+        padding: 8px;
+        margin-bottom: 20px;
+        width: 90%;
+        cursor: pointer;
+        border-radius: 40px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        font-size: 16px; /* Adjust font size if needed */
+        color: var(--primary-color); /* Use primary color */
+      }
+      .home-button,
+      .select-button:hover {
+        background: #e0e0e0;
+        transform: none;
+      }
+
+      .topic-button {
+        width: 80%;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+      }
+
+      /* Add this new style for the challenge complete button */
+      #next-button.challenge-complete {
+        background-color: #59cc01; /* Same green as progress bars */
+        border-color: #59cc01;
+      }
+
+      #next-button.challenge-complete:hover {
+        background-color: #80d741; /* Lighter green on hover */
+        border-color: #80d741;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(89, 204, 1, 0.4);
+      }
+
+      #skip-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        opacity: 0.7;
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        flex: 1; /* Allow it to grow */
+      }
+      #skip-button:hover {
+        background-color: lightcoral;
+        opacity: 0.9;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(40, 70, 108, 0.4);
+      }
+
+      /* Add styles for the check work button */
+      #check-work-button {
+        display: block; /* Ensure it's visible */
+        background-color: #59cc01;
+        color: white;
+        border: 2px solid #4ba001;
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        flex: 1; /* Allow it to grow */
+        margin-right: 20px;
+      }
+
+      #check-work-button:hover {
+        background-color: #80d741;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(89, 204, 1, 0.4);
+      }
+
+      /* Add this to ensure proper button container layout */
+      .challenge-button-container {
+        display: flex;
+        justify-content: space-between; /* Space out the buttons to opposite ends */
+        margin-top: 10px;
+        padding: 0 10px; /* Optional: Add some padding for spacing */
+      }
+
+      .task-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+      }
+
+      .task-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .task-checkbox {
+        margin-top: 3px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+      }
+
+      .task-text {
+        flex: 1;
+        color: var(--primary-color);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .alert-message {
+        color: #d73a49;
+        background-color: #ffeef0;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid #f97583;
+      }
+
+      #check-work-button:disabled {
+        background-color: #cccccc;
+        border-color: #bbbbbb;
+        cursor: not-allowed;
+        opacity: 0.7;
+        transform: none;
+        box-shadow: none;
+      }
+
+      #check-work-button:disabled:hover {
+        background-color: #cccccc;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .alert-message.info {
+        color: #0366d6;
+        background-color: #f1f8ff;
+        border: 1px solid #79b8ff;
+      }
+
+      .hot-air-balloon {
+        position: absolute;
+        left: 0; /* Align to the left side */
+        bottom: 100%; /* Align the bottom of the image with the top of the button-box */
+        height: 50px; /* Set the height of the image */
+        transition: transform 1.5s ease, background-image 1.5s ease; /* Smooth transition */
+      }
+
+      .customize-link {
+        font-size: 12px; /* Smaller text size */
+        color: var(
+          --primary-color
+        ); /* Use primary color or any color you prefer */
+        text-decoration: none; /* Remove underline */
+        margin-top: 0; /* Remove space above the link */
+        text-align: left; /* Align text to the left */
+        display: block; /* Make it a block element for full width */
+        transition: color 0.3s ease; /* Smooth color transition on hover */
+        width: 70%; /* Match the width of the pill buttons */
+        margin-left: auto; /* Align with the left side of the pill buttons */
+        margin-right: auto; /* Center within the container */
+      }
+
+      .customize-divider {
+        width: 80%; /* Match the width of the pill buttons */
+        margin: 10px auto; /* Center the line and add vertical spacing */
+        border: none; /* Remove default border */
+        border-top: 1px solid var(--primary-color); /* Add custom border */
+      }
+
+      .customize-link:hover {
+        color: var(--secondary-color); /* Change color on hover */
+      }
+
+      /* Fade out effect at the top */
+    </style>
+    <style>
+      :root {
+        --primary-color: #28466c;
+        --secondary-color: #00afcc;
+        --base-blue: #28466c;
+        --stroke-color: #058c46;
+        --gradient-light: #e5ff3c;
+        --gradient-medium: #b8f043;
+        --gradient-dark: #8fe045;
+      }
+      .pixelated-gradient-text {
+        font-family: "Press Start 2P", sans-serif;
+        font-size: 12px; /* Reduced size to fit container */
+        -webkit-text-stroke: 0.5px var(--stroke-color);
+        background: linear-gradient(
+          to bottom,
+          var(--gradient-light) 0%,
+          var(--gradient-light) 40%,
+          var(--gradient-medium) 40%,
+          var(--gradient-medium) 55%,
+          var(--gradient-dark) 55%,
+          var(--gradient-dark) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+        line-height: 30px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .level-text-container {
+        width: 130px;
+        height: 30px;
+        background-color: var(--base-blue);
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 2s ease, transform 2s ease;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 85px; /* 100px -30/2 */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.1),
+          3px 3px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+          inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+        transition: all 0.2s ease;
+      }
+
+      .level-text {
+        color: var(--primary-color);
+        font-size: 3px;
+        text-align: left;
+        flex-grow: 1;
+        font-weight: 600;
+      }
+
+      .reflection-textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px 16px;
+        border: 1px solid #dfe1e6;
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: #172b4d;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        resize: vertical;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        margin-top: 12px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      .reflection-textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 2px rgba(0, 175, 204, 0.2);
+      }
+
+      .reflection-textarea::placeholder {
+        color: #97a0af;
+      }
+
+      .reflection-question {
+        color: var(--primary-color);
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        margin-top: 24px;
+      }
+
+      /* Optional: Add a character count display */
+      .reflection-char-count {
+        font-size: 12px;
+        color: #97a0af;
+        text-align: right;
+        margin-top: 4px;
+      }
+
+      /* Optional: Add error state */
+      .reflection-textarea.error {
+        border-color: #ff5630;
+      }
+
+      .reflection-textarea.error:focus {
+        box-shadow: 0 0 0 2px rgba(255, 86, 48, 0.2);
+      }
+    </style>
+   <style>
+    .full-width {
+      width: 50%; /* Make buttons full width */
+       margin: 0px 5px;; /* Add space between buttons */
+    }
+  
+    .rubric-actions {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 10px; /* Add space between buttons */
+      margin-top:20px;
+    }
+  
+    .url-container {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Add space between input and button */
+    }
+  
+    .share-url {
+      flex: 1; /* Allow input to take up remaining space */
+    }
+    .rubric-section {
+    margin-bottom: 20px; /* Add space below the section */
+    padding: 10px; /* Add padding around the section */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Round the corners */
+    background-color: #f9f9f9; /* Light background color */
+  }
+
+  .rubric-label {
+    font-size: 12px; /* Smaller font size for the label */
+    color: #666; /* Subtle color for the label */
+    margin-bottom: 5px; /* Space between label and title */
+  }
+
+  .rubric-title {
+    font-size: 18px; /* Larger font size for the title */
+    font-weight: bold; /* Make the title bold */
+    color: var(--primary-color);
+    text-align: center; /* Center the title */
+    padding: 5px 0; /* Add vertical padding */
+  }
+
+  </style>
+    </style>
+  </head>
+  <body>
+    <div id="side-panel">
+      <div class="adventure-image-container">
+        <img
+          src="https://wondersa.blob.core.windows.net/levelup/1.png"
+          alt="Sky Background"
+          class="adventure-image"
+        />
+      </div>
+
+      <div class="content-wrapper">
+        <div class="level-text-container">
+          <div class="text-container">
+            <div class="pixelated-gradient-text">Level 1</div>
+          </div>
+        </div>
+        <div class="button-box">
+          <img
+            src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
+            alt="Hot Air Balloon"
+            class="hot-air-balloon"
+          />
+          <div class="spinner-overlay">
+            <div class="spinner"></div>
+            <div class="spinner-text">Reading Your Paper</div>
+          </div>
+          <div class="card" id="data-container" style="display: flex; flex: 1"></div>
+          <button id="fetch-data">Fetch Data</button>
+          <div class="card" id="home-page" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title-home">Select Challenge:</div>
+
+              <div
+                id="pillHolder"
+                style="display: flex; flex-direction: column"
+              ></div>
+              <a href="#" class="customize-link">Customize</a>
+              <div class="stats-box">
+                <div class="stat-row">
+                  <span class="stat-label">Copy/Pasted</span>
+                  <span class="stat-value">60%</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Time Spent</span>
+                  <span class="stat-value">10 Hours 33 Minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="AI-Feeling" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">First Take</div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="challenge-card" style="display: none">
+            <div class="scroll-container">
+              <div class="card-title">Challenge</div>
+              <div class="card-title-subtitle">Subtitle</div>
+              <div class="task-list">
+                <!-- Tasks will be inserted here -->
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            id="feel-response-card"
+            style="display: none; flex: 1"
+          >
+            <div class="scroll-container">
+              <div class="card-title-subtitle">
+                Let's work on the highlighted text in your document.
+              </div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="focus-sentence" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">
+                Let's Focus On The Highlighted Sentence:
+              </div>
+              <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="reflection-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="reflection-container">
+                <div class="reflection-question"></div>
+                <textarea
+                  class="reflection-textarea"
+                  placeholder="Share your thoughts..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="example-card" style="display: none; flex: 1">
+            <div class="card feedback-panel">
+              <h3 class="card-title">Example</h3>
+              <div class="example-block">
+                <div class="example-title">Poor Sentence</div>
+                <div class="original">The leaves fell everywhere. Round 6</div>
+              </div>
+              <div class="example-block">
+                <div class="example-title">Great Sentence</div>
+                <div class="fixed">
+                  The leaves fell on the ground, making a crunchy carpet for
+                  walking.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card"
+            id="challenge-feedback-card"
+            style="display: none; flex: 1"
+          >
+            <div class="scroll-container">
+              <div class="card-title">Challenge Completed!</div>
+              <div class="card-main-text">
+                Well done. Here's some more text two
+              </div>
+              <hr />
+              <div class="card-title-subtitle-feedback">Now I want to:</div>
+              <button class="level-up-button" id="improve-more-button">
+                Improve this Sentence More
+              </button>
+
+              <button class="level-up-button" id="start-new-button">
+                Start a New Sentence
+              </button>
+            </div>
+          </div>
+          <div class="card" id="customize-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <!-- Current Rubric Section -->
+              <div class="rubric-section">
+                <div class="rubric-label">Current Rubric:</div>
+                <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
+              </div>
+          
+              <!-- Action Buttons -->
+              <div class="rubric-actions">
+                <button class="level-up-button full-width" id="share-rubric-button">Share</button>
+                <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+              <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
+              <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+            </div>
+          </div>
+
+
+        </div>
+          <div class="button-container">
+            <div class="button-left-group">
+              <button id="back-button" class="nav-button">Back</button>
+              <button id="home-button" class="nav-button">Back</button>
+              <button id="skip-button" class="nav-button">Skip</button>
+            </div>
+
+            <div class="button-right-group">
+              <button id="next-button" class="nav-button">Next</button>
+              <button id="check-work-button" class="nav-button">
+                Check Work
+              </button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <script>
+
+
+// Global variables
+let clientId = null;
+let documentId = null;
+const backendURL = "https://47e6-174-63-70-145.ngrok-free.app";
+
+
+
+async function init() {
+  const tokenData = await getStoredTokenData();
+  if (tokenData) {
+    clientId = tokenData.clientId;
+    documentId =  tokenData.documentId;
+    // Use these values as needed
+  }
+  document.getElementById('fetch-data').addEventListener('click', getDocumentData);
+  
+
+}
+async function getDocumentData() {
+  if (!clientId || !documentId) {
+    console.error('No token data available');
+    return null;
+  }
+
+  const payload = {
+    clientId: clientId,
+    documentId: documentId
+  };
+
+  const data= await sendToBackend("/get-data", payload);
+  console.log(data);
+}
+async function sendToBackend(endpoint, payload) {
+  try {
+  const options = {
+    method: "POST",
+    contentType: "application/json",
+    muteHttpExceptions: true,
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+        'Origin': window.location.origin
+      },
+      body: JSON.stringify(payload)
+  };
+
+  const response = await fetch(backendURL + endpoint, options);
+  if (!response.ok) {
+      console.error(`Server responded with status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    try {
+    return await response.json();
+    } catch (e) {
+      return response.text();  // Return as text if not JSON
+    }
+  } catch (e) {
+    console.error("Error:", e.message);
+    throw e;
+  }
+}
+async function getStoredTokenData() {
+  try {
+    const response =   await fetch('./tokenData.json');
+    if (!response.ok) {
+      console.error('No token data found');
+      return null;
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error reading token data:', error);
+    return null;
+  }
+}
+document.addEventListener('DOMContentLoaded', init);
+    </script>

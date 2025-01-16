@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Prevent scrolling */
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        box-sizing: border-box;
+      }
+
+      header {
+        height: 100px;
+        background-color: #ccc; /* Example header color */
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        height: calc(100vh - 100px); /* Adjust for header height */
+      }
+
+      #text-area {
+        flex: 1;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow-y: auto;
+        outline: none;
+        white-space: pre-wrap; /* Preserve whitespace */
+      }
+
+      .highlight {
+        background-color: #00afcc; /* Highlight color */
+      }
+
+      .sidebar-container {
+        width: 300px;
+        border-left: 1px solid #ccc;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header Content</header>
+    <div class="main-content">
+      <div id="text-area" contenteditable="true"></div>
+      <div class="sidebar-container">
+        <iframe src="sidebar.html"></iframe>
+      </div>
+    </div>
+
+    <script>
+      const docText = `First of all, the plot of the story is pretty interesting. What gets interesting in the plot is the rising action when things start to get intense, like killing an old man. For example, it was mentioned in the story how he cuts the old man's body and hides the corpse in the ground.\nPeople like the feeling of getting scared because of how it feels and how you can't move when you are scared. For example, in the story it mentions how the old man got scared when he heard a noise. He jumped up and he asked, "Who is there?" I can relate to this because once I heard a noise and I jumped and woke up my sister. \nLastly, some people might like suspense in their life; that is why they like scary stories. They like suspense because they are excited to see what is going to happen. For example, in the story it said, "The beating grew louder and louder." The old man did not know what was going to happen at night. That means that after the repetition something strong is going to happen next. I can relate to that because every time I watch a TV show I want to know what is going to happen next.`;
+
+      const textArea = document.getElementById("text-area");
+      textArea.textContent = docText;
+    </script>
+  </body>
+</html>

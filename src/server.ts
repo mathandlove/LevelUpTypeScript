@@ -1,42 +1,93 @@
 import express, { Request, Response } from "express";
+import { storeToken } from "./services/dataService";
 import dataStore from "./dataStore";
+import cors from "cors";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json()); // Parse incoming JSON requests
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "ngrok-skip-browser-warning",
+      "Accept",
+      "Origin",
+    ],
+  })
+);
 
 // Define the shape of the expected request body
-interface StoreDataRequestBody {
+
+app.get("/test", (req: Request, res: Response) => {
+  res.json({ message: "Server is running!" });
+});
+
+// POST endpoint to store data
+interface StoreTokenRequestBody {
   token: string;
   documentId: string;
 }
-
-// POST endpoint to store data
 app.post(
-  "/store-data",
-  (req: Request<{}, {}, StoreDataRequestBody>, res: Response) => {
+  "/store-token",
+  async (req: Request<{}, {}, StoreTokenRequestBody>, res: Response) => {
     const { token, documentId } = req.body;
 
     if (!token || !documentId) {
       return res.status(400).send("Missing token or documentId");
     }
 
-    dataStore.storeData(token, { documentId, lastUpdated: Date.now() });
-    res.send("Data stored successfully!");
+    try {
+      const result = await storeToken(token, documentId);
+      //Will eventually process data here
+      res.send(result);
+    } catch (error) {
+      console.error("Error verifying token:", error);
+      res.status(500).send("Error processing request");
+    }
   }
 );
 
-// GET endpoint to retrieve data
-app.get("/get-data/:token", (req: Request, res: Response) => {
-  const token = req.params.token;
-  const data = dataStore.getData(token);
+app.post(
+  "/update-token",
+  async (req: Request<{}, {}, StoreTokenRequestBody>, res: Response) => {
+    const { token, documentId } = req.body;
 
+    if (!token || !documentId) {
+      return res.status(400).send("Missing token or documentId");
+    }
+
+    try {
+      const result = await storeToken(token, documentId);
+      res.send(result);
+    } catch (error) {
+      console.error("Error verifying token:", error);
+      res.status(500).send("Error processing request");
+    }
+  }
+);
+
+// GET endpoint becomes a POST endpoint
+app.post("/get-data", (req: Request, res: Response) => {
+  const { clientId, documentId } = req.body;
+
+  if (!clientId || !documentId) {
+    return res.status(400).send("Missing clientId or documentId");
+  }
+  const data = dataStore.getData(clientId, documentId);
+  console.log("Retrieved data:", data);
+  console.log(clientId);
   if (!data) {
-    return res.status(404).send("No data found for this token");
+    return res
+      .status(404)
+      .send("No data found for this client/document combination");
   }
 
   res.json(data);
+  return res.json(data);
 });
 
 // Start the server
