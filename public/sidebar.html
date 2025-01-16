@@ -1185,8 +1185,8 @@ handleStateChange(state);
 }
 
 async function init() {
-testChangeState();
-  //connectWebSocket();
+//testChangeState();
+connectWebSocket();
 
 
 }
@@ -1330,8 +1330,8 @@ function handleWebSocketMessage(event) {
         handleUpdateScope();
         break;
       case 'state':
-        console.log('🚌 State Change Requested', data.state);
-        handleStateChange(data.state);
+        console.log('🚌 State Change Requested', data.payload);
+        handleStateChange(data.payload);
         break;
       default:
         console.log('📝 Message received:', data);
@@ -1377,7 +1377,7 @@ function handleStateChange(state) {
     const button = document.getElementById(buttonId);
     if (button) {
       button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
-      button.disabled = state.disabledButtons.includes(buttonId) || false;
+      button.disabled = state.buttonsDisabled.includes(buttonId) || false;
 
     }
   });

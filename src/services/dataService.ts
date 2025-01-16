@@ -1,13 +1,6 @@
 import dataStore from "../dataStore";
 import fs from "fs";
 import path from "path";
-import { TokenData } from "../../src/common/types";
-interface TokenInfo {
-  audience: string; // clientId
-  email?: string;
-  expires_in?: number;
-  // ... other fields from Google's response
-}
 
 const DATA_FILE = path.join(__dirname, "../../public/tokenData.json");
 
