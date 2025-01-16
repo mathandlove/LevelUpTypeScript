@@ -974,7 +974,7 @@
             alt="Hot Air Balloon"
             class="hot-air-balloon"
           />
-          <div class="spinner-overlay">
+          <div class="spinner-overlay" id="spinner-overlay">
             <div class="spinner"></div>
             <div class="spinner-text">Reading Your Paper</div>
           </div>
@@ -1006,6 +1006,13 @@
             <div class="scroll-container">
               <div class="card-title">First Take</div>
               <div class="card-main-text"></div>
+            </div>
+          </div>
+
+          <div class="card" id="server-error" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">Server Error</div>
+              <div class="card-main-text">We cannot get ahold of the Level Up Servers right now. Please try again later. If this problem persists, please contact support.</div>
             </div>
           </div>
 
@@ -1132,17 +1139,17 @@
 // Global variables
 let clientId = null;
 let documentId = null;
-const backendURL = "https://47e6-174-63-70-145.ngrok-free.app";
+let ws = null;
+let currentToken=null;
+const backendURL = "https://3f71-174-63-70-145.ngrok-free.app";
+//ngrok http 3000
 
 
 
 async function init() {
-  const tokenData = await getStoredTokenData();
-  if (tokenData) {
-    clientId = tokenData.clientId;
-    documentId =  tokenData.documentId;
-    // Use these values as needed
-  }
+
+  connectWebSocket();
+//buttons set
   document.getElementById('fetch-data').addEventListener('click', getDocumentData);
   
 
@@ -1205,5 +1212,163 @@ async function getStoredTokenData() {
     return null;
   }
 }
+
 document.addEventListener('DOMContentLoaded', init);
     </script>
+
+    //Websocket
+    <script>
+      function connectWebSocket() {
+  // Convert http to ws URL
+  const wsUrl = backendURL.replace('http', 'ws');
+  
+  ws = new WebSocket(wsUrl);
+
+  ws.onopen = () => {
+    console.log('WebSocket Connected');
+    sendTokenToServer();
+  };
+
+  ws.onmessage = handleWebSocketMessage;
+
+  ws.onclose = () => {
+    console.log('WebSocket Disconnected');
+    // Attempt to reconnect after 5 seconds
+    setTimeout(connectWebSocket, 5000);
+    //todo after 20 seconds of trying to reconnect, gracefully navigate to error page.
+  };
+
+  ws.onerror = (error) => {
+    console.error('WebSocket Error:', error);
+  };
+}
+
+// Helper function to send messages through WebSocket
+async function sendWebSocketMessage(type, payload) {
+  await waitForWebSocket();
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({
+      type,
+      payload,
+    }));
+  } else {
+    console.error('WebSocket is not connected');
+  }
+}
+
+async function waitForWebSocket() {
+  return new Promise((resolve, reject) => {
+    const maxAttempts = 10;
+    let attempts = 0;
+
+    const checkConnection = () => {
+      attempts++;
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        resolve();
+      } else if (attempts >= maxAttempts) {
+        reject(new Error('WebSocket failed to connect'));
+      } else {
+        setTimeout(checkConnection, 500); // Check every 500ms
+      }
+    };
+
+    checkConnection();
+  });
+}
+
+function handleWebSocketMessage(event) {
+  try {
+    const data = JSON.parse(event.data);
+    console.log('📥 Received:', data);
+    
+    switch(data.type) {
+      case 'welcome':
+        console.log('👋 Connected to server');
+        break;
+      case 'update':
+        console.log('🔄 Update received:', data.payload);
+        break;
+      case 'updateScope':
+        console.log('🔔 Update scope message received:', data.message);
+        handleUpdateScope();
+        break;
+      case 'state':
+        console.log('🚌 State Change Requested', data.state);
+        handleStateChange(data.state);
+        break;
+      default:
+        console.log('📝 Message received:', data);
+    }
+  } catch (error) {
+    console.error('❌ Error processing message:', error);
+  }
+}
+    </script>
+    <script>
+function handleStateChange(state) {
+  console.log('🚌 Changing State', state);
+
+document.querySelectorAll('.card').forEach(card => {
+  card.style.display = 'none';
+});
+
+  switch(state.currentPage) {
+    case 'home':
+      document.getElementById('home-page').style.display = 'block';
+      break;
+    case 'error':
+      document.getElementById('server-error').style.display = 'block';
+      break;
+  }
+
+  
+  if(state.waitingAnimationOn) {
+    document.getElementById('spinner-overlay').style.display = 'block';
+  } else {
+    document.getElementById('spinner-overlay').style.display = 'none';
+  }
+    
+
+}
+
+      function handleUpdateScope() {
+sendTokenToServer();
+      }
+
+  async function sendTokenToServer() {
+        if(isGoogleApp()) {
+    callGoogleAppFunction('updateTokenData', receivedTokenData, googleServerError);
+    //currentToken will be an object with clientId, documentId, and token
+  }
+  else{
+    receivedTokenData(await getStoredTokenData());
+  }
+  }
+function receivedTokenData(currentToken) {
+  if (currentToken) {
+    clientId = currentToken.clientId;
+    documentId =  currentToken.documentId;
+  }
+  sendWebSocketMessage('token', { token: currentToken });
+}
+  
+    </script>
+    //Utilty functions
+    <script>
+      function callGoogleAppFunction(functionName, successHandler, failureHandler, ...args) {
+  google.script.run
+    .withSuccessHandler(successHandler)
+    .withFailureHandler(failureHandler)
+    [functionName](...args);
+  }
+
+function googleServerError(error) {
+  //todo: tell the server gracefully and it will navigate us to error page.
+  console.error('Google Server Error:', error);
+}
+
+function isGoogleApp() {
+  return typeof google !== 'undefined' && google.script;
+}
+    </script>
+

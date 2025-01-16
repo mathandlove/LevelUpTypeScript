@@ -1,8 +1,11 @@
+import { defaultUIState, UIState } from "./common/types";
+
 // Define the structure of our stored data
 interface DocumentData {
   documentId: string;
   lastUpdated: number;
   currentToken?: string;
+  state: UIState;
 }
 
 // Main data store with double-key lookup
@@ -17,20 +20,39 @@ const store: DataStore = {};
 
 // Helper functions to manage the store
 const dataStore = {
-  storeData: (clientId: string, documentId: string, data: DocumentData) => {
+  newDocumentData: (documentId: string, clientId: string): DocumentData => {
     if (!store[clientId]) {
-      store[clientId] = {};
+      store[clientId] = {}; // Initialize the clientId object if it doesn't exist
     }
+    return {
+      documentId,
+      lastUpdated: Date.now(),
+      state: defaultUIState,
+    };
+  },
+  storeData: (clientId: string, documentId: string, data: DocumentData) => {
+    data.lastUpdated = Date.now();
     store[clientId][documentId] = data;
   },
 
-  getData: (clientId: string, documentId: string): DocumentData | null => {
-    return store[clientId]?.[documentId] || null;
+  getData: (clientId: string, documentId: string): DocumentData => {
+    if (!store[clientId] || !store[clientId][documentId]) {
+      const data = dataStore.newDocumentData(documentId, clientId);
+      store[clientId][documentId] = data;
+    }
+    return store[clientId][documentId];
   },
 
-  // Optional: get all documents for a client
-  getClientDocs: (clientId: string) => {
-    return store[clientId] || {};
+  getState: (clientId: string, documentId: string): UIState => {
+    return dataStore.getData(clientId, documentId).state;
+  },
+
+  setState: (clientId: string, documentId: string, state: UIState) => {
+    if (!store[clientId] || !store[clientId][documentId]) {
+      const data = dataStore.newDocumentData(documentId, clientId);
+      store[clientId][documentId] = data;
+    }
+    store[clientId][documentId].state = state;
   },
 };
 

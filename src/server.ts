@@ -1,7 +1,8 @@
 import express, { Request, Response } from "express";
-import { storeToken } from "./services/dataService";
 import dataStore from "./dataStore";
 import cors from "cors";
+import { initializeWebSocket } from "./websocket";
+import { createServer } from "http";
 
 const app = express();
 const port = 3000;
@@ -31,44 +32,6 @@ interface StoreTokenRequestBody {
   token: string;
   documentId: string;
 }
-app.post(
-  "/store-token",
-  async (req: Request<{}, {}, StoreTokenRequestBody>, res: Response) => {
-    const { token, documentId } = req.body;
-
-    if (!token || !documentId) {
-      return res.status(400).send("Missing token or documentId");
-    }
-
-    try {
-      const result = await storeToken(token, documentId);
-      //Will eventually process data here
-      res.send(result);
-    } catch (error) {
-      console.error("Error verifying token:", error);
-      res.status(500).send("Error processing request");
-    }
-  }
-);
-
-app.post(
-  "/update-token",
-  async (req: Request<{}, {}, StoreTokenRequestBody>, res: Response) => {
-    const { token, documentId } = req.body;
-
-    if (!token || !documentId) {
-      return res.status(400).send("Missing token or documentId");
-    }
-
-    try {
-      const result = await storeToken(token, documentId);
-      res.send(result);
-    } catch (error) {
-      console.error("Error verifying token:", error);
-      res.status(500).send("Error processing request");
-    }
-  }
-);
 
 // GET endpoint becomes a POST endpoint
 app.post("/get-data", (req: Request, res: Response) => {
@@ -86,11 +49,15 @@ app.post("/get-data", (req: Request, res: Response) => {
       .send("No data found for this client/document combination");
   }
 
-  res.json(data);
   return res.json(data);
 });
 
 // Start the server
-app.listen(port, () => {
+
+const server = createServer(app);
+initializeWebSocket(server);
+
+// Start the server
+server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
