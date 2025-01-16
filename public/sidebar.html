@@ -716,6 +716,7 @@
         color: var(--primary-color);
         font-size: 14px;
         line-height: 1.4;
+        padding-bottom: 15px;
       }
 
       .alert-message {
@@ -725,7 +726,7 @@
         border-radius: 4px;
         margin: 10px 0;
         font-size: 14px;
-        text-align: center;
+        text-align: left;
         border: 1px solid #f97583;
       }
 
@@ -974,13 +975,11 @@
             alt="Hot Air Balloon"
             class="hot-air-balloon"
           />
-          <div class="spinner-overlay" id="spinner-overlay">
+          <div class="spinner-overlay" id="spinner-overlay"  style="display: none">
             <div class="spinner"></div>
             <div class="spinner-text">Reading Your Paper</div>
           </div>
-          <div class="card" id="data-container" style="display: flex; flex: 1"></div>
-          <button id="fetch-data">Fetch Data</button>
-          <div class="card" id="home-page" style="display: none; flex: 1">
+          <div class="card" id="home-page" style="display: flex; flex: 1">
             <div class="scroll-container">
               <div class="card-title-home">Select Challenge:</div>
 
@@ -992,11 +991,11 @@
               <div class="stats-box">
                 <div class="stat-row">
                   <span class="stat-label">Copy/Pasted</span>
-                  <span class="stat-value">60%</span>
+                  <span class="stat-value"  id="copyPasted">60%</span>
                 </div>
                 <div class="stat-row">
                   <span class="stat-label">Time Spent</span>
-                  <span class="stat-value">10 Hours 33 Minutes</span>
+                  <span class="stat-value"  id="timeSpent">10 Hours 33 Minutes</span>
                 </div>
               </div>
             </div>
@@ -1020,7 +1019,9 @@
             <div class="scroll-container">
               <div class="card-title">Challenge</div>
               <div class="card-title-subtitle">Subtitle</div>
-              <div class="task-list">
+              <div class="alert-message" style="display: none"></div>
+              <div class="alert-message fail-reason-message" style="display: none"></div>
+              <div class="tasks-list">
                 <!-- Tasks will be inserted here -->
               </div>
             </div>
@@ -1145,13 +1146,48 @@ const backendURL = "https://3f71-174-63-70-145.ngrok-free.app";
 //ngrok http 3000
 
 
+function testChangeState() {
+  const state ={
+  currentPage: "challenge-card",
+  waitingAnimationOn: false,
+  visibleButtons: [
+    "next-button",
+    "back-button"
+  ],
+  disabledButtons: ["next-button"],
+  level: 0,
+  pills: [
+    { title: "Pirate Slang", outOf: 5, current: 2 },
+    { title: "Robot Slang", outOf: 5, current: 5 },
+  ],
+  copypasted:32,
+  timeSpentHours:7,
+  timeSpentMinutes:45,
+  cardMainText: "Some say this text is a bit too long. What do you think?",
+  cardSubtitle: "Why not?",
+  tasks: [
+    { text: "✍️ Review the highlighted text in your document", checked: false },
+    { text: "🤔 Consider how you could make it more engaging", checked: false },
+    { text: "📝 Make your revisions in the document", checked: false },
+    { text: "✨ Click 'Check My Work' when you're ready", checked: false }
+  ],
+  reflection: {
+    question: "Here's a long string!",
+    placeholder:"placeholder"
+  },
+  taskFeedback: "no-changes",
+  taskFeedbackMessage: "What a birthday treat!",
+  disabledButtons: ["check-work-button"]
+};
+
+
+handleStateChange(state);
+}
 
 async function init() {
+testChangeState();
+  //connectWebSocket();
 
-  connectWebSocket();
-//buttons set
-  document.getElementById('fetch-data').addEventListener('click', getDocumentData);
-  
 
 }
 async function getDocumentData() {
@@ -1216,8 +1252,9 @@ async function getStoredTokenData() {
 document.addEventListener('DOMContentLoaded', init);
     </script>
 
-    //Websocket
+
     <script>
+          //Websocket
       function connectWebSocket() {
   // Convert http to ws URL
   const wsUrl = backendURL.replace('http', 'ws');
@@ -1234,7 +1271,7 @@ document.addEventListener('DOMContentLoaded', init);
   ws.onclose = () => {
     console.log('WebSocket Disconnected');
     // Attempt to reconnect after 5 seconds
-    setTimeout(connectWebSocket, 5000);
+    setTimeout(connectWebSocket, 50);
     //todo after 20 seconds of trying to reconnect, gracefully navigate to error page.
   };
 
@@ -1308,30 +1345,150 @@ function handleWebSocketMessage(event) {
 function handleStateChange(state) {
   console.log('🚌 Changing State', state);
 
-document.querySelectorAll('.card').forEach(card => {
-  card.style.display = 'none';
-});
+  // Hide all cards first
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = 'none';
+  });
 
-  switch(state.currentPage) {
-    case 'home':
-      document.getElementById('home-page').style.display = 'block';
-      break;
-    case 'error':
-      document.getElementById('server-error').style.display = 'block';
-      break;
+  // Show the appropriate card based on current page
+  const currentCard = document.getElementById(state.currentPage);
+  if (currentCard) {
+    currentCard.style.display = 'block';
+
+    const subtitleElement = currentCard.querySelector('.card-title-subtitle');
+    if (subtitleElement && state.cardSubtitle) {
+      subtitleElement.textContent = state.cardSubtitle;
+    }
+
+    const mainTextElement = currentCard.querySelector('.card-main-text');
+    if (mainTextElement && state.cardMainText) {
+      mainTextElement.textContent = state.cardMainText;
+    } 
+
   }
 
-  
-  if(state.waitingAnimationOn) {
-    document.getElementById('spinner-overlay').style.display = 'block';
-  } else {
-    document.getElementById('spinner-overlay').style.display = 'none';
+  // Handle loading spinner
+  document.getElementById('spinner-overlay').style.display = 
+    state.waitingAnimationOn ? 'block' : 'none';
+
+  // Handle navigation buttons
+  const buttonVisibility = state.buttons;
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button'].forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if (button) {
+      button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
+      button.disabled = state.disabledButtons.includes(buttonId) || false;
+
+    }
+  });
+
+  // Handle level display
+  if (state.level) {
+    document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.level}`;
   }
-    
+
+
+
+  // Handle pill buttons
+  const pillHolder = document.getElementById('pillHolder');
+if (state.pills) {
+  pillHolder.innerHTML = ''; // Clear existing pills
+  state.pills.forEach(pill => {
+    const button = document.createElement('button');
+    button.className = 'topic-button';
+    button.innerHTML = `
+      <div class="progress-bar" data-progress="${pill.current}/${pill.outOf}">
+        <div class="inner-pill"></div>
+        <div class="inner-empty-pill" style="width: ${100 - (pill.current/pill.outOf * 100)}%"></div>
+        <span>${pill.current}/${pill.outOf}</span>
+      </div>
+      <span class="label">${pill.title}</span>
+    `;
+    button.onclick = () => handlePillClick(pill.id);
+    pillHolder.appendChild(button);
+  });
 
 }
 
-      function handleUpdateScope() {
+//update copyPasted text and time spent text.
+document.getElementById('copyPasted').textContent = state.copypasted+"%";
+document.getElementById('timeSpent').textContent = state.timeSpentHours + " hours and " + state.timeSpentMinutes + " minutes";
+
+
+
+  //Handle challenge card tasks
+  if (state.tasks) {
+    const tasksContainer = document.querySelector('#challenge-card .tasks-list');
+    console.log(tasksContainer);
+    if (tasksContainer) {
+      tasksContainer.innerHTML = state.tasks.map(task => `
+        <div class="task-text">
+          <input type="checkbox"}>
+          <span>${task.text}</span>
+        </div>
+      `).join('');
+    }
+  }
+
+  //Handle task feedback
+
+    const alertDiv = document.querySelector('#challenge-card .alert-message');
+    const failReasonDiv = document.querySelector('#challenge-card .fail-reason-message');
+    alertDiv.style.display = 'none';
+    failReasonDiv.style.display = 'none';
+    if (state.taskFeedback) {
+      switch(state.taskFeedback) {
+      case 'no-changes':
+      if (alertDiv) {
+        alertDiv.className = "alert-message info";
+        alertDiv.style.display = 'block';
+        alertDiv.innerHTML = "⚠️ Make the suggested changes before clicking submit!";
+      }
+      break;
+      case 'wrong-location':
+      if (alertDiv) {
+        alertDiv.style.display = 'block';
+        alertDiv.className = "alert-message info";
+        alertDiv.innerHTML = `⚠️ Please only edit around the highlighted sentence during Level Up.
+
+        I can't find the original sentence now, and we'll need to choose a new challenge.`;
+      }
+      break;
+      case 'invalid-edit':
+      if (alertDiv) {
+        alertDiv.className = "alert-message error";
+        alertDiv.style.display = 'block';
+        alertDiv.className = "alert-message error";
+        alertDiv.innerHTML = "❌ Challenge Failed.";
+      }
+      if (failReasonDiv) {
+        failReasonDiv.style.display = 'block';
+        failReasonDiv.innerHTML = state.taskFeedbackMessage;
+      }
+      break;
+    }
+  }
+
+    // 9. Handle reflection card content
+    if (state.reflection) {
+    const questionElement = document.querySelector('#reflection-card .reflection-question');
+    const textArea = document.querySelector('#reflection-card textarea');
+    if (questionElement && state.reflection.question) {
+      questionElement.innerHTML = state.reflection.question;
+    }
+    if (textArea && state.reflection.placeholder) {
+      textArea.placeholder = state.reflection.placeholder;
+    }
+  }
+}
+
+    </script>
+
+    <script>
+          //Utilty functions
+
+
+          function handleUpdateScope() {
 sendTokenToServer();
       }
 
@@ -1352,9 +1509,7 @@ function receivedTokenData(currentToken) {
   sendWebSocketMessage('token', { token: currentToken });
 }
   
-    </script>
-    //Utilty functions
-    <script>
+
       function callGoogleAppFunction(functionName, successHandler, failureHandler, ...args) {
   google.script.run
     .withSuccessHandler(successHandler)
