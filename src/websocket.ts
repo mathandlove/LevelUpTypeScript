@@ -13,7 +13,7 @@ import {
   WebSocketMessageType,
   ButtonClickedPayload,
 } from "./common/types";
-import { createNewState, transitionFromInit } from "./stateMachine";
+import { orchestrate } from "./stateMachine";
 
 const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
 
@@ -100,25 +100,6 @@ export function initializeWebSocket(server: Server): void {
     console.log("At some point we will redirect sidebar.html here");
   }
 
-  function sendMessage(
-    ws: LevelUpWebSocket,
-    type: WebSocketMessageType,
-    message?: string,
-    payload?: UIState | ButtonClickedPayload | TokenPayload
-  ) {
-    const msg: WebSocketMessage = {
-      type,
-      ...(message && { message }), // only add if message exists
-      ...(payload && { payload }), // only add if payload exists
-    };
-    ws.send(JSON.stringify(msg));
-    logger.info("📤 Sending message", {
-      type: msg.type,
-      message: msg.message,
-      payload: msg.payload,
-    });
-  }
-
   function handleWebSocketMessage(
     ws: LevelUpWebSocket,
     data: WebSocketMessage
@@ -139,32 +120,20 @@ export function initializeWebSocket(server: Server): void {
       tokenMessage: TokenMessage
     ) {
       const token = tokenMessage.payload;
-
       ws.clientId = token.clientId;
       ws.documentId = token.documentId;
 
       let state = dataStore.getState(token.clientId, token.documentId);
-
-      // Update token
       state.app.token = token.token;
       state.app.clientId = token.clientId;
       state.app.documentId = token.documentId;
 
-      // Transition from INIT if new state
-      if (state.app.currentState === "INIT") {
-        state = transitionFromInit(state);
+      try {
+        state = await orchestrate(ws, state);
+      } catch (error) {
+        logger.error("State transition failed", error);
+        // Handle error
       }
-
-      // Save state changes
-      dataStore.storeState(ws.clientId, ws.documentId, state);
-
-      // Send UI state to client
-      sendMessage(ws, "state", undefined, state.ui);
-
-      logger.info("🔑 Token Processed", {
-        clientId: ws.clientId,
-        documentId: ws.documentId,
-      });
     }
   }
 
@@ -187,6 +156,25 @@ export function initializeWebSocket(server: Server): void {
         return false;
     }
   }
+}
+
+export function sendMessage(
+  ws: LevelUpWebSocket,
+  type: WebSocketMessageType,
+  message?: string,
+  payload?: UIState | ButtonClickedPayload | TokenPayload
+) {
+  const msg: WebSocketMessage = {
+    type,
+    ...(message && { message }), // only add if message exists
+    ...(payload && { payload }), // only add if payload exists
+  };
+  ws.send(JSON.stringify(msg));
+  logger.info("📤 Sending message", {
+    type: msg.type,
+    message: msg.message,
+    payload: msg.payload,
+  });
 }
 //TODO will need this error state later
 /*
