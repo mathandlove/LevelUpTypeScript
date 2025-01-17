@@ -1,58 +1,52 @@
-import { defaultUIState, UIState } from "./common/types";
+import { UIState } from "./common/types";
+import { State, AppState, createNewState } from "./stateMachine";
 
-// Define the structure of our stored data
-interface DocumentData {
-  documentId: string;
-  lastUpdated: number;
-  currentToken?: string;
-  state: UIState;
-}
-
-// Main data store with double-key lookup
+// No longer need separate DocumentData interface since State contains everything
 interface DataStore {
   [clientId: string]: {
-    [documentId: string]: DocumentData;
+    [documentId: string]: {
+      lastUpdated: number;
+      state: State;
+    };
   };
 }
 
-// Initialize the store
 const store: DataStore = {};
 
-// Helper functions to manage the store
 const dataStore = {
-  newDocumentData: (documentId: string, clientId: string): DocumentData => {
+  newState: (clientId: string, documentId: string): State => {
     if (!store[clientId]) {
-      store[clientId] = {}; // Initialize the clientId object if it doesn't exist
+      store[clientId] = {};
     }
-    return {
-      documentId,
+
+    const newState = createNewState(); // From stateMachine
+    newState.app.clientId = clientId; // Store clientId
+    newState.app.documentId = documentId; // Store documentId
+
+    store[clientId][documentId] = {
       lastUpdated: Date.now(),
-      state: defaultUIState,
+      state: newState,
+    };
+
+    return newState;
+  },
+
+  storeState: (clientId: string, documentId: string, state: State) => {
+    if (!store[clientId]) {
+      store[clientId] = {};
+    }
+
+    store[clientId][documentId] = {
+      lastUpdated: Date.now(),
+      state: state,
     };
   },
-  storeData: (clientId: string, documentId: string, data: DocumentData) => {
-    data.lastUpdated = Date.now();
-    store[clientId][documentId] = data;
-  },
 
-  getData: (clientId: string, documentId: string): DocumentData => {
+  getState: (clientId: string, documentId: string): State => {
     if (!store[clientId] || !store[clientId][documentId]) {
-      const data = dataStore.newDocumentData(documentId, clientId);
-      store[clientId][documentId] = data;
+      return dataStore.newState(clientId, documentId);
     }
-    return store[clientId][documentId];
-  },
-
-  getState: (clientId: string, documentId: string): UIState => {
-    return dataStore.getData(clientId, documentId).state;
-  },
-
-  setState: (clientId: string, documentId: string, state: UIState) => {
-    if (!store[clientId] || !store[clientId][documentId]) {
-      const data = dataStore.newDocumentData(documentId, clientId);
-      store[clientId][documentId] = data;
-    }
-    store[clientId][documentId].state = state;
+    return store[clientId][documentId].state;
   },
 };
 

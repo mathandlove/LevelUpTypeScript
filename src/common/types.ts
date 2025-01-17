@@ -51,7 +51,8 @@ export type ButtonId =
   | "back-button"
   | "check-work-button"
   | "home-button"
-  | "skip-button";
+  | "skip-button"
+  | "pill-button";
 
 export interface UIState {
   currentPage:
@@ -102,7 +103,7 @@ export interface UIState {
 export const defaultUIState: UIState = {
   currentPage: "home-page",
   waitingAnimationOn: false,
-  visibleButtons: [],
+  visibleButtons: ["next-button"],
   buttonsDisabled: [],
   level: 0,
   pills: [

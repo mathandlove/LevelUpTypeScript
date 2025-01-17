@@ -1,0 +1,2 @@
+{"expectedFormat":{"payload":"object matching type requirements","type":"string (token, state, etc)"},"level":"error","message":"❌ Invalid message format","received":"hi","timestamp":"2025-01-17T00:14:24.927Z"}
+{"expectedFormat":{"payload":"object matching type requirements","type":"string (token, state, etc)"},"level":"error","message":"❌ Invalid message format","received":"hi","timestamp":"2025-01-17T00:14:31.281Z"}
