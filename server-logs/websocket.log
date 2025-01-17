@@ -1,50 +1,102 @@
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:50:34.471Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:50:34.471Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:50:34.471Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:50:34.677Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:50:34.678Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","timestamp":"2025-01-16T21:50:34.679Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:50:34.777Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:51:58.895Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:51:58.899Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:51:58.899Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:51:59.014Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:52:53.444Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:52:53.444Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:52:53.445Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:52:53.593Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:52:53.594Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:52:53.594Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:53:27.909Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:53:27.911Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:53:27.911Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:53:27.911Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:53:28.115Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:53:28.116Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:53:28.116Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:53:28.221Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:54:32.532Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:54:32.535Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:54:32.536Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:54:32.630Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:34.139Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:34.140Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:34.140Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:54:34.313Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:54:34.313Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:54:34.313Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:54:34.438Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:43.433Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:43.433Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:54:43.433Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:54:43.591Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:54:43.592Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:54:43.592Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:55:31.292Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:55:31.298Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:55:31.298Z"}
-{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-16T21:55:31.298Z"}
-{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-16T21:55:31.483Z"}
-{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-16T21:55:31.483Z","type":"welcome"}
-{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":false},"timestamp":"2025-01-16T21:55:31.484Z","type":"state"}
-{"level":"info","message":"🔑 New Token Saved","timestamp":"2025-01-16T21:55:34.729Z","token":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"}}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:06:17.227Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:06:17.228Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:06:17.229Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:06:17.412Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:06:17.412Z","type":"welcome"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:06:49.557Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:06:49.561Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:01.578Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:01.578Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:01.579Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:07:01.744Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:07:01.745Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:11.163Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:11.164Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:07:11.164Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:07:11.330Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:07:11.331Z","type":"welcome"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:07:54.033Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:07:54.036Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:52.007Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:52.008Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:52.008Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:09:52.204Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:09:52.205Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:56.361Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:56.361Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:09:56.361Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:09:56.517Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:09:56.518Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:11:14.785Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:11:14.785Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:11:14.785Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:11:15.078Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:11:15.078Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:12:43.371Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:12:43.372Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:12:43.372Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:12:43.556Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:12:43.557Z","type":"welcome"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:12:43.650Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:12:43.651Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:14:05.283Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:14:05.286Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:14:05.372Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:14:05.379Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:14:05.380Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:14:24.652Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:14:24.653Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:14:24.653Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:14:24.831Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:14:24.832Z","type":"welcome"}
+{"expectedFormat":{"payload":"object matching type requirements","type":"string (token, state, etc)"},"level":"error","message":"❌ Invalid message format","received":"hi","timestamp":"2025-01-17T00:14:24.927Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:14:31.033Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:14:31.033Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:14:31.189Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:14:31.189Z","type":"welcome"}
+{"expectedFormat":{"payload":"object matching type requirements","type":"string (token, state, etc)"},"level":"error","message":"❌ Invalid message format","received":"hi","timestamp":"2025-01-17T00:14:31.281Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:14:57.795Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:14:57.799Z","type":"welcome"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:15:16.220Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T00:15:16.221Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:15:16.401Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:15:16.402Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:15:16.481Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:15:16.488Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:15:16.489Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:16:00.063Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:16:00.066Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:16:00.164Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:16:00.164Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:16:00.170Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:16:00.171Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:16:13.403Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:16:13.406Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:16:13.484Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:16:13.484Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:16:13.490Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:16:13.491Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:16:45.391Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:16:45.394Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:16:45.492Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:16:45.493Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:16:45.497Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:16:45.498Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:17:07.563Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:17:07.566Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:17:07.663Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:17:07.664Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:17:07.673Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:17:07.673Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:17:23.467Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:17:23.470Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:17:23.562Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:17:23.562Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:17:23.567Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:17:23.568Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T00:17:46.034Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T00:17:46.038Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T00:17:46.134Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T00:17:46.134Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"cardMainText":"Loading your topics...","copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T00:17:46.135Z","type":"state"}
+{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","level":"info","message":"🔑 Token Processed","timestamp":"2025-01-17T00:17:46.136Z"}

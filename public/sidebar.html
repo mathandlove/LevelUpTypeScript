@@ -785,6 +785,10 @@
         color: var(--secondary-color); /* Change color on hover */
       }
 
+      .no-clicks {
+    pointer-events: none;
+}
+
       /* Fade out effect at the top */
     </style>
     <style>
@@ -1140,9 +1144,12 @@
 // Global variables
 let clientId = null;
 let documentId = null;
-let ws = null;
 let currentToken=null;
 const backendURL = "https://3f71-174-63-70-145.ngrok-free.app";
+let currentPillCount = 0;
+let ws = null;  // Global WebSocket instance
+let messageQueue = [];  
+let isReconnecting = false;
 //ngrok http 3000
 
 
@@ -1255,62 +1262,67 @@ document.addEventListener('DOMContentLoaded', init);
 
     <script>
           //Websocket
-      function connectWebSocket() {
-  // Convert http to ws URL
-  const wsUrl = backendURL.replace('http', 'ws');
-  
-  ws = new WebSocket(wsUrl);
+function connectWebSocket() {
+  // Only create a new connection if one doesn't exist or is closed
+  if (!ws || ws.readyState === WebSocket.CLOSED) {
+    const wsUrl = backendURL.replace('http', 'ws');
+    ws = new WebSocket(wsUrl);
 
-  ws.onopen = () => {
-    console.log('WebSocket Connected');
-    sendTokenToServer();
-  };
-
-  ws.onmessage = handleWebSocketMessage;
-
-  ws.onclose = () => {
-    console.log('WebSocket Disconnected');
-    // Attempt to reconnect after 5 seconds
-    setTimeout(connectWebSocket, 50);
-    //todo after 20 seconds of trying to reconnect, gracefully navigate to error page.
-  };
-
-  ws.onerror = (error) => {
-    console.error('WebSocket Error:', error);
-  };
-}
-
-// Helper function to send messages through WebSocket
-async function sendWebSocketMessage(type, payload) {
-  await waitForWebSocket();
-  if (ws && ws.readyState === WebSocket.OPEN) {
-    ws.send(JSON.stringify({
-      type,
-      payload,
-    }));
-  } else {
-    console.error('WebSocket is not connected');
-  }
-}
-
-async function waitForWebSocket() {
-  return new Promise((resolve, reject) => {
-    const maxAttempts = 10;
-    let attempts = 0;
-
-    const checkConnection = () => {
-      attempts++;
-      if (ws && ws.readyState === WebSocket.OPEN) {
-        resolve();
-      } else if (attempts >= maxAttempts) {
-        reject(new Error('WebSocket failed to connect'));
-      } else {
-        setTimeout(checkConnection, 500); // Check every 500ms
+    ws.onopen = () => {
+      console.log('🟢 WebSocket Connected');
+      isReconnecting = false;
+      sendTokenToServer();
+      
+      // Process any queued messages
+      while (messageQueue.length > 0) {
+        const message = messageQueue.shift();
+        sendWebSocketMessage(message);
       }
     };
 
-    checkConnection();
-  });
+    ws.onmessage = handleWebSocketMessage;
+
+    ws.onclose = () => {
+      console.log('🔴 WebSocket Disconnected');
+      ws = null;
+      
+      // Attempt to reconnect after a delay
+      setTimeout(() => {
+        if (!ws || ws.readyState === WebSocket.CLOSED) {
+          connectWebSocket();
+        }
+      }, 3000);
+    };
+
+    ws.onerror = (error) => {
+      console.error('❌ WebSocket Error:', error);
+    };
+  }
+}
+// Initial connection
+connectWebSocket();
+
+function sendWebSocketMessage(message) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    try {
+      ws.send(JSON.stringify(message));
+      console.log('📤 Sent:', message);
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      queueMessage(message);
+    }
+  } else {
+    console.log('WebSocket not connected, queueing message');
+    queueMessage(message);
+    if (!isReconnecting) {
+      connectWebSocket();
+    }
+  }
+}
+
+function queueMessage(message) {
+  messageQueue.push(message);
+  console.log('📩 Message queued. Queue size:', messageQueue.length);
 }
 
 function handleWebSocketMessage(event) {
@@ -1390,25 +1402,16 @@ function handleStateChange(state) {
 
 
   // Handle pill buttons
-  const pillHolder = document.getElementById('pillHolder');
+    // Only update pills if they've changed
+// Only rebuild pills if the count changed
 if (state.pills) {
-  pillHolder.innerHTML = ''; // Clear existing pills
-  state.pills.forEach(pill => {
-    const button = document.createElement('button');
-    button.className = 'topic-button';
-    button.innerHTML = `
-      <div class="progress-bar" data-progress="${pill.current}/${pill.outOf}">
-        <div class="inner-pill"></div>
-        <div class="inner-empty-pill" style="width: ${100 - (pill.current/pill.outOf * 100)}%"></div>
-        <span>${pill.current}/${pill.outOf}</span>
-      </div>
-      <span class="label">${pill.title}</span>
-    `;
-    button.onclick = () => handlePillClick(pill.id);
-    pillHolder.appendChild(button);
-  });
-
-}
+if (currentPillCount !== state.pills.length) {
+      createPillStructure(state.pills);
+      currentPillCount = state.pills.length;
+    }
+    // Always update progress
+    updatePillProgress(state.pills);
+  }
 
 //update copyPasted text and time spent text.
 document.getElementById('copyPasted').textContent = state.copypasted+"%";
@@ -1480,8 +1483,63 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
       textArea.placeholder = state.reflection.placeholder;
     }
   }
+
+
+  function createPillStructure(pills) {
+  const pillHolder = document.getElementById('pillHolder');
+  if (!pillHolder) return;
+
+  pillHolder.innerHTML = ''; 
+
+  pills.forEach((pill, index) => {
+    const button = document.createElement('button');
+    button.className = 'topic-button';
+    button.setAttribute('data-pill-index', index.toString());
+    button.innerHTML = `
+      <div class="progress-bar">
+        <div class="inner-pill"></div>
+        <div class="inner-empty-pill"></div>
+        <span class="progress-text"></span>
+      </div>
+      <span class="label">${pill.title}</span>
+    `;
+    button.onclick = () => handlePillClick(pill.id);
+    pillHolder.appendChild(button);
+  });
 }
 
+function updatePillProgress(pills) {
+  pills.forEach((pill, index) => {
+    const button = document.querySelector(`[data-pill-index="${index}"]`);
+    if (button) {
+      const emptyPill = button.querySelector('.inner-empty-pill');
+      const progressText = button.querySelector('.progress-text');
+      
+      if (emptyPill && progressText) {
+        emptyPill.style.width = `${100 - (pill.current/pill.outOf * 100)}%`;
+        progressText.textContent = `${pill.current}/${pill.outOf}`;
+      }
+    }
+  });
+}
+
+  // Re-enable buttons unless we're in a waiting state
+  if (!state.waitingAnimationOn) {
+    enableAllButtons();
+  }
+}
+
+function disableAllButtons() {
+  document.querySelectorAll('button').forEach(button => {
+    button.classList.add('no-clicks');
+  });
+}
+
+function enableAllButtons() {
+  document.querySelectorAll('button').forEach(button => {
+    button.classList.remove('no-clicks');
+  });
+}
     </script>
 
     <script>
@@ -1506,7 +1564,14 @@ function receivedTokenData(currentToken) {
     clientId = currentToken.clientId;
     documentId =  currentToken.documentId;
   }
-  sendWebSocketMessage('token', { token: currentToken });
+  sendWebSocketMessage({
+    type: "token",
+    payload: {
+        clientId: currentToken.clientId,
+        documentId: currentToken.documentId,
+        token: currentToken.token
+    }
+});
 }
   
 
@@ -1526,4 +1591,106 @@ function isGoogleApp() {
   return typeof google !== 'undefined' && google.script;
 }
     </script>
+
+    <script>
+function setupEventHandlers() {
+  // Button clicks
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button'].forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if (button) {
+      button.onclick = () => {
+        disableAllButtons();
+        messageQueue = [];  // Clear any queued messages
+        
+        sendWebSocketMessage({
+          type: 'button-click',undefined,
+          payload: {
+            buttonId: buttonId,
+          }
+        });
+      };
+    }
+  });
+
+
+  // Reflection submit
+  const reflectionForm = document.querySelector('#reflection-card form');
+  if (reflectionForm) {
+    reflectionForm.onsubmit = (e) => {
+      e.preventDefault();
+      const textarea = reflectionForm.querySelector('textarea');
+      if (textarea) {
+        sendWebSocketMessage({
+          type: 'action',
+          payload: {
+            type: 'reflection-submit',
+            text: textarea.value
+          }
+        });
+      }
+    };
+  }
+}
+
+
+    
+
+
+// Call this after the DOM is loaded
+document.addEventListener('DOMContentLoaded', setupEventHandlers);
+
+function handlePillClick(pillButtonId){
+        sendWebSocketMessage({
+          type: 'button-click',
+          payload: {
+            buttonId: 'pill-button',
+            buttonTitle: pillButtonId
+          }
+        });
+      }
+
+ 
+
+    </script>
+    <script>
+//test functions
+function testConnectionLoss() {
+    // Force close the connection
+    if (ws) {
+        console.log("🧪 Testing: Forcing WebSocket close");
+        ws.close();
+        
+        // Try to send a message right after
+        setTimeout(() => {
+            console.log("🧪 Testing: Sending message while disconnected");
+            sendWebSocketMessage({
+                type: 'action',
+                payload: {
+                    type: 'test',
+                    message: 'This message should be queued'
+                }
+            });
+        }, 100);
+    }
+}
+
+function testMessageQueue() {
+    console.log("🧪 Testing: Sending multiple messages while disconnected");
+    // Force close first
+    if (ws) ws.close();
+    
+    // Send multiple messages
+    for(let i = 1; i <= 3; i++) {
+        sendWebSocketMessage({
+            type: 'action',
+            payload: {
+                type: 'test',
+                message: `Queued message ${i}`
+            }
+        });
+    }
+    
+    console.log("Current queue length:", messageQueue.length);
+}
+</script>
 

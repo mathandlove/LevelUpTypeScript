@@ -40,16 +40,18 @@ app.post("/get-data", (req: Request, res: Response) => {
   if (!clientId || !documentId) {
     return res.status(400).send("Missing clientId or documentId");
   }
-  const data = dataStore.getData(clientId, documentId);
-  console.log("Retrieved data:", data);
+
+  const state = dataStore.getState(clientId, documentId);
+  console.log("Retrieved data:", state);
   console.log(clientId);
-  if (!data) {
+
+  if (!state) {
     return res
       .status(404)
       .send("No data found for this client/document combination");
   }
 
-  return res.json(data);
+  return res.json(state.ui);
 });
 
 // Start the server
