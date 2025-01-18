@@ -6,3 +6,33 @@
 {"level":"error","message":"State transition failed Cannot transition from INIT: current state is LOADING_TOPICS","stack":"Error: Cannot transition from INIT: current state is LOADING_TOPICS\n    at transitionFromInit (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\stateMachine.ts:87:11)\n    at handleTokenMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:151:41)\n    at handleWebSocketMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:130:11)\n    at WebSocket.<anonymous> (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:47:9)\n    at WebSocket.emit (node:events:513:28)\n    at WebSocket.emit (node:domain:489:12)\n    at Receiver.receiverOnMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\websocket.js:1220:20)\n    at Receiver.emit (node:events:513:28)\n    at Receiver.emit (node:domain:489:12)\n    at Receiver.dataMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\receiver.js:596:14)","timestamp":"2025-01-17T00:45:09.402Z"}
 {"level":"error","message":"State transition failed Cannot transition from INIT: current state is LOADING_TOPICS","stack":"Error: Cannot transition from INIT: current state is LOADING_TOPICS\n    at transitionFromInit (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\stateMachine.ts:87:11)\n    at handleTokenMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:151:41)\n    at handleWebSocketMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:130:11)\n    at WebSocket.<anonymous> (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:47:9)\n    at WebSocket.emit (node:events:513:28)\n    at WebSocket.emit (node:domain:489:12)\n    at Receiver.receiverOnMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\websocket.js:1220:20)\n    at Receiver.emit (node:events:513:28)\n    at Receiver.emit (node:domain:489:12)\n    at Receiver.dataMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\receiver.js:596:14)","timestamp":"2025-01-17T00:50:13.351Z"}
 {"level":"error","message":"State transition failed Cannot transition from INIT: current state is LOADING_TOPICS","stack":"Error: Cannot transition from INIT: current state is LOADING_TOPICS\n    at transitionFromInit (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\stateMachine.ts:87:11)\n    at handleTokenMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:151:41)\n    at handleWebSocketMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:130:11)\n    at WebSocket.<anonymous> (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\src\\websocket.ts:47:9)\n    at WebSocket.emit (node:events:513:28)\n    at WebSocket.emit (node:domain:489:12)\n    at Receiver.receiverOnMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\websocket.js:1220:20)\n    at Receiver.emit (node:events:513:28)\n    at Receiver.emit (node:domain:489:12)\n    at Receiver.dataMessage (C:\\Users\\matha\\OneDrive\\Documents\\Consulting\\LevelUp\\Code\\LeveUpBackendNode\\node_modules\\ws\\lib\\receiver.js:596:14)","timestamp":"2025-01-17T00:55:17.382Z"}
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+

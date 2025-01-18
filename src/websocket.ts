@@ -14,6 +14,7 @@ import {
   ButtonClickedPayload,
 } from "./common/types";
 import { orchestrate } from "./stateMachine";
+import { getOrCreateActor } from "./xStateMachine";
 
 const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
 
@@ -105,35 +106,23 @@ export function initializeWebSocket(server: Server): void {
     data: WebSocketMessage
   ) {
     try {
-      logger.info("📥 Received:", data);
+      logger.info(`### Received: ${JSON.stringify(data, null, 2)}`);
       switch (data.type) {
         case "token":
-          handleTokenMessage(ws, data as TokenMessage);
+          const tokenMessage = data as TokenMessage;
+          const actor = getOrCreateActor(
+            tokenMessage.payload.clientId,
+            tokenMessage.payload.documentId
+          );
+          actor.send({
+            type: "RECEIVE_TOKEN",
+            token: tokenMessage.payload.token,
+            clientId: tokenMessage.payload.clientId,
+          });
           break;
       }
     } catch (err) {
       console.log(err);
-    }
-
-    async function handleTokenMessage(
-      ws: LevelUpWebSocket,
-      tokenMessage: TokenMessage
-    ) {
-      const token = tokenMessage.payload;
-      ws.clientId = token.clientId;
-      ws.documentId = token.documentId;
-
-      let state = dataStore.getState(token.clientId, token.documentId);
-      state.app.token = token.token;
-      state.app.clientId = token.clientId;
-      state.app.documentId = token.documentId;
-
-      try {
-        state = await orchestrate(ws, state);
-      } catch (error) {
-        logger.error("State transition failed", error);
-        // Handle error
-      }
     }
   }
 
@@ -170,11 +159,7 @@ export function sendMessage(
     ...(payload && { payload }), // only add if payload exists
   };
   ws.send(JSON.stringify(msg));
-  logger.info("📤 Sending message", {
-    type: msg.type,
-    message: msg.message,
-    payload: msg.payload,
-  });
+  logger.info(`\n%%% Sending message: ${JSON.stringify(msg)}\n`);
 }
 //TODO will need this error state later
 /*
