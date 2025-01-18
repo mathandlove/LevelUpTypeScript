@@ -8,8 +8,10 @@
     "start": "node dist/server.js",
     "logs": "powershell Get-Content -Path ./server-logs/websocket.log -Wait -Tail 10",
     "errors": "Get-Content -Path ./logs/websocket-error.log -Wait -Tail 10",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "jest --bail",
+    "test:watch": "jest --watch",
+    "test:integration": "jest src/utils/dataService.integration.test.ts",
+    "test:unit": "jest src/utils/xStateMachine.test.ts --bail=1 --verbose --testTimeout=1000"
   },
   "dependencies": {
     "cors": "^2.8.5",

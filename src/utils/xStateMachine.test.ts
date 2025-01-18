@@ -1,62 +1,120 @@
 import { interpret } from "xstate";
 import { appMachine } from "../xStateMachine";
+import { getClientId, AuthError } from "../services/dataService";
 
-describe("App State Machine", () => {
-  it("should set clientId and transition to authenticated for valid token", (done) => {
-    const mockWs = { send: jest.fn() } as unknown as WebSocket;
+// Mock the getClientId function
+jest.mock("../services/dataService", () => ({
+  getClientId: jest.fn(),
+  AuthError: class extends Error {
+    constructor(message: string) {
+      super(message);
+      this.name = "AuthError";
+    }
+  },
+}));
 
-    // Start the machine
+describe("App Machine - Authentication", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("should transition to authenticated state with valid token", (done) => {
+    (getClientId as jest.Mock).mockResolvedValueOnce("valid-client-id");
+
     const service = interpret(appMachine)
       .onTransition((state) => {
         if (state.matches("authenticated")) {
-          // We made it to authenticated, so let's do our checks:
-          expect(state.context.clientId).toBe(
-            "508326749735-t64udcmgjj2u3h8225nhljkn95vlq4ab.apps.googleusercontent.com"
-          );
-          done();
+          try {
+            expect(state.context.clientId).toBe("valid-client-id");
+            service.stop();
+            done();
+          } catch (error) {
+            service.stop();
+            done(error);
+          }
         }
       })
       .start();
 
-    // Send RECEIVE_TOKEN with a presumably valid token
-    service.send({
-      type: "RECEIVE_TOKEN",
-      token:
-        "ya29.a0ARW5m74ZTIQyFpvjHO1QV5Uq6s1uef1ClVMwMjtA1kd0rLHxSCJwkae0G0_0Zntf7eflBgQrCtHS8u3x_qzTO_PhhdYJSo19e9yw5AuOTN2LM8jaDEXjabIxIjGDAMglnqaExVCrxV3XvWyddGwlkX49v114zEIxx8sUeboyVjw7vD6VQCTMnKoaCgYKAekSARMSFQHGX2MihbSCQ9Vus9yWHLMJGpK7Pg0190",
-      ws: mockWs,
-    });
+    service.send({ type: "RECEIVE_TOKEN", token: "valid-token" });
   });
 
-  it("should send error message, then reset context", (done) => {
-    const mockWs = {
-      send: jest.fn(),
-    } as unknown as WebSocket;
+  it("should transition to serverErrorAuth state with invalid token", (done) => {
+    (getClientId as jest.Mock).mockRejectedValueOnce(
+      new AuthError("Invalid token")
+    );
 
-    const actor = interpret(appMachine).onTransition((state) => {
-      if (
-        state.matches("initial") &&
-        state.history?.matches("loadingClientId")
-      ) {
-        // 1) Confirm the error message was sent
-        expect(mockWs.send).toHaveBeenCalledWith(
-          JSON.stringify({
-            type: "ERROR",
-            payload: {
-              code: "AUTH_ERROR",
-              message: "Authentication failed",
-            },
-          })
-        );
+    const service = interpret(appMachine)
+      .onTransition((state) => {
+        if (state.matches("serverErrorAuth")) {
+          try {
+            const { uiState } = state.context;
+            expect(uiState.currentPage).toBe("server-error");
+            expect(uiState.cardMainText).toBe(
+              "Error: Invalid or expired token. Please try again."
+            );
+            service.stop();
+            done();
+          } catch (error) {
+            service.stop();
+            done(error);
+          }
+        }
+      })
+      .start();
 
-        done();
-      }
-    });
+    service.send({ type: "RECEIVE_TOKEN", token: "invalid-token" });
+  });
 
-    actor.start();
-    actor.send({
-      type: "RECEIVE_TOKEN",
-      token: "invalid-token",
-      ws: mockWs,
-    });
+  it("should transition to serverErrorNetwork state with network error", (done) => {
+    (getClientId as jest.Mock).mockRejectedValueOnce(new Error("fetch failed"));
+
+    const service = interpret(appMachine)
+      .onTransition((state) => {
+        if (state.matches("serverErrorNetwork")) {
+          try {
+            const { uiState } = state.context;
+            expect(uiState.currentPage).toBe("server-error");
+            expect(uiState.cardMainText).toBe(
+              "Error: Unable to reach Google servers. Please wait or retry later."
+            );
+            service.stop();
+            done();
+          } catch (error) {
+            service.stop();
+            done(error);
+          }
+        }
+      })
+      .start();
+
+    service.send({ type: "RECEIVE_TOKEN", token: "any-token" });
+  });
+
+  it("should transition to serverErrorGeneral state with unexpected error", (done) => {
+    (getClientId as jest.Mock).mockRejectedValueOnce(
+      new Error("Unexpected error")
+    );
+
+    const service = interpret(appMachine)
+      .onTransition((state) => {
+        if (state.matches("serverErrorGeneral")) {
+          try {
+            const { uiState } = state.context;
+            expect(uiState.currentPage).toBe("server-error");
+            expect(uiState.cardMainText).toBe(
+              "An unexpected error occurred. Please contact support."
+            );
+            service.stop();
+            done();
+          } catch (error) {
+            service.stop();
+            done(error);
+          }
+        }
+      })
+      .start();
+
+    service.send({ type: "RECEIVE_TOKEN", token: "any-token" });
   });
 });
