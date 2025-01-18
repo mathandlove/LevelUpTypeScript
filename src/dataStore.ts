@@ -1,6 +1,5 @@
 import { UIState } from "./common/types";
-import { State, AppState, createNewState } from "./stateMachine";
-
+/*
 // No longer need separate DocumentData interface since State contains everything
 interface DataStore {
   [clientId: string]: {
@@ -51,3 +50,4 @@ const dataStore = {
 };
 
 export default dataStore;
+*/

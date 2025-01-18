@@ -1,6 +1,8 @@
 import { WebSocket } from "ws";
 // First, define the interface
 
+//websocket Types
+
 export type WebSocketMessageType =
   | "state" // UI state updates
   | "token" // Token authentication
@@ -54,6 +56,14 @@ export type ButtonId =
   | "skip-button"
   | "pill-button";
 
+export interface Topic {
+  title: string;
+  outOf: number;
+  current: number;
+  description?: string;
+  isReflection: boolean;
+}
+
 export interface UIState {
   currentPage:
     | "home-page"
@@ -70,11 +80,7 @@ export interface UIState {
   visibleButtons: ButtonId[]; // Now enforces specific button IDs
   buttonsDisabled: ButtonId[];
   level: number;
-  pills: Array<{
-    title: string;
-    outOf: number;
-    current: number;
-  }>;
+  pills: Array<Topic>;
   copypasted: number;
   timeSpentHours: number;
   timeSpentMinutes: number;
@@ -106,10 +112,7 @@ export const defaultUIState: UIState = {
   visibleButtons: ["next-button"],
   buttonsDisabled: [],
   level: 0,
-  pills: [
-    { title: "Pirate Slang", outOf: 2, current: 5 },
-    { title: "Robot Slang", outOf: 5, current: 5 },
-  ],
+  pills: [],
   copypasted: 0,
   timeSpentHours: 0,
   timeSpentMinutes: 0,

@@ -1,31 +1,48 @@
-import dataStore from "../dataStore";
-import fs from "fs";
-import path from "path";
+import fetch from "node-fetch";
 
-const DATA_FILE = path.join(__dirname, "../../public/tokenData.json");
+export class AuthError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "AuthError";
+  }
+}
 
 export async function getClientId(tokenString: string): Promise<string> {
   try {
-    // Verify token with Google and get clientId
+    const requestBody = JSON.stringify({ access_token: tokenString });
+    debugger;
     const response = await fetch(
       "https://www.googleapis.com/oauth2/v1/tokeninfo",
       {
         method: "POST",
-        body: JSON.stringify({ access_token: tokenString }),
-        headers: { "Content-Type": "application/json" },
+        body: requestBody,
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
 
-    if (!response.ok) {
-      throw new Error("Invalid token");
+    const responseText = await response.text();
+
+    const responseData = JSON.parse(responseText);
+
+    if (responseData.error) {
+      throw new AuthError(responseData.error_description || responseData.error);
     }
 
-    const tokenInfo = await response.json();
-    const clientId = tokenInfo.audience;
+    if (!response.ok) {
+      throw new AuthError("Authentication failed");
+    }
 
-    return clientId;
+    if (!responseData.audience) {
+      throw new AuthError("Invalid token response");
+    }
+
+    return responseData.audience;
   } catch (error) {
-    console.error("Error storing token:", error);
-    throw error;
+    if (error instanceof AuthError) {
+      throw error;
+    }
+    throw new AuthError("Unexpected Authentication failed");
   }
 }

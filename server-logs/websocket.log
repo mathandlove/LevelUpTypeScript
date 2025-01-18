@@ -195,3 +195,1849 @@
 {"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:06:01.431Z","type":"token"}
 {"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:06:01.432Z","type":"state"}
 {"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:06:01.432Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.726Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.726Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.727Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.727Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.727Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:08:00.728Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:08:56.617Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:08:56.618Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:08:56.710Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:08:56.711Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:08:56.712Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:08:56.713Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:08:56.817Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:08:56.817Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:08:56.917Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:08:56.917Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:08:56.917Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:08:56.918Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:10:44.370Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:15:34.127Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:15:34.127Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:15:34.228Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:15:34.228Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:15:34.229Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:15:34.229Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:15:34.334Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:15:34.335Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:15:34.432Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:15:34.432Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:15:34.433Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:15:34.433Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.276Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.277Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.277Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.484Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.484Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:20:34.484Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:20:38.261Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:20:38.261Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:20:38.374Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:20:38.374Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:20:38.374Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:20:38.375Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:20:38.486Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:20:38.486Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:20:38.576Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:20:38.576Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:20:38.576Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:20:38.577Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.430Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.430Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.430Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.623Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.623Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:25:38.623Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:25:42.161Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:25:42.161Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:25:42.262Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:25:42.262Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:25:42.263Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:25:42.263Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T01:25:42.372Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T01:25:42.372Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T01:25:42.476Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T01:25:42.476Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T01:25:42.477Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T01:25:42.477Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.338Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.338Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.338Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.340Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.340Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T01:26:09.340Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:17:32.724Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:17:32.725Z","type":"welcome"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:17:33.118Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:17:33.118Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:17:33.156Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:17:33.157Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:17:33.158Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:17:33.158Z","type":"state"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:17:35.978Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:17:35.978Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:17:35.979Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:17:35.980Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:33.212Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:33.213Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:33.213Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:36.036Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:36.036Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:22:36.036Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:22:36.533Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:22:36.534Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:22:36.718Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:22:36.718Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:22:36.719Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:22:36.719Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:22:40.051Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:22:40.051Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:22:40.152Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:22:40.152Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:22:40.153Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:22:40.154Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:36.870Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:36.871Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:36.871Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:27:40.069Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:27:40.070Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:27:40.159Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:27:40.160Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:27:40.160Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:27:40.161Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:40.209Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:40.210Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:27:40.210Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:27:44.054Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:27:44.054Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:27:44.160Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:27:44.160Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:27:44.161Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:27:44.161Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:40.283Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:40.283Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:40.283Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:32:43.469Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:32:43.470Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:32:43.570Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:32:43.571Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:32:43.571Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:32:43.572Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:44.219Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:44.219Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:32:44.219Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:32:48.049Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:32:48.050Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:32:48.154Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:32:48.155Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:32:48.155Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:32:48.156Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:43.700Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:43.700Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:43.700Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:37:46.901Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:37:46.902Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:37:46.997Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:37:46.997Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:37:46.998Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:37:46.998Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:48.225Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:48.225Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:37:48.225Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:37:52.060Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:37:52.060Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:37:52.179Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:37:52.180Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:37:52.180Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:37:52.181Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:47.048Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:47.048Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:47.048Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:42:50.231Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:42:50.231Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:42:50.330Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:42:50.331Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:42:50.331Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:42:50.332Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:52.237Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:52.237Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:42:52.237Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:42:56.057Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:42:56.058Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:42:56.155Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:42:56.155Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:42:56.156Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:42:56.156Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:50.380Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:50.380Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:50.380Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:47:53.578Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:47:53.578Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:47:53.672Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:47:53.672Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:47:53.673Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:47:53.674Z","type":"state"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:56.256Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:56.256Z"}
+{"level":"info","message":"🔴 WebSocket connection closed","timestamp":"2025-01-17T15:47:56.256Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:48:00.055Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:48:00.055Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:48:00.160Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:48:00.160Z","type":"token"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:48:00.161Z","type":"state"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:48:00.162Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:49:45.113Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:49:45.121Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:49:45.225Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:49:45.226Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:49:45.228Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:49:45.230Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:49:45.231Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:49:45.233Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:49:45.325Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:49:45.326Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:49:45.422Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:49:45.423Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:49:45.423Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:49:45.424Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:49:45.425Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:49:45.425Z","type":"state"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:49:57.062Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:49:57.070Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:49:57.167Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:49:57.168Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:49:57.171Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:49:57.173Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:49:57.173Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:49:57.174Z","type":"state"}
+{"level":"info","message":"\n\nNO TRANSITION","timestamp":"2025-01-17T15:49:57.175Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:49:57.273Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:49:57.273Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:49:57.364Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:49:57.364Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:49:57.365Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:49:57.366Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:49:57.366Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:49:57.366Z","type":"state"}
+{"level":"info","message":"\n\nNO TRANSITION","timestamp":"2025-01-17T15:49:57.366Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:50:17.060Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:50:17.071Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:50:17.155Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:50:17.155Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:50:17.156Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:50:17.157Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:50:17.157Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:50:17.158Z","type":"state"}
+{"level":"info","message":"//n//nNO TRANSITION","timestamp":"2025-01-17T15:50:17.159Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:50:17.243Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:50:17.243Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:50:17.333Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:50:17.333Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:50:17.333Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:50:17.335Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:50:17.335Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:50:17.336Z","type":"state"}
+{"level":"info","message":"//n//nNO TRANSITION","timestamp":"2025-01-17T15:50:17.336Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:52:04.095Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:52:04.103Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:52:04.194Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:52:04.195Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:52:04.197Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:52:04.199Z","type":"state"}
+{"level":"info","message":"\n        \n        Transitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:52:04.200Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:52:04.201Z","type":"state"}
+{"level":"info","message":"\n        \n        NO TRANSITION","timestamp":"2025-01-17T15:52:04.201Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:52:04.298Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:52:04.299Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:52:04.386Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:52:04.386Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:52:04.386Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:52:04.387Z","type":"state"}
+{"level":"info","message":"\n        \n        Transitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:52:04.387Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:52:04.387Z","type":"state"}
+{"level":"info","message":"\n        \n        NO TRANSITION","timestamp":"2025-01-17T15:52:04.387Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:53:42.076Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:53:42.085Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:53:42.179Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:53:42.179Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:53:42.180Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:53:42.181Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:53:42.182Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:53:42.182Z","type":"state"}
+{"level":"info","message":"//n//nNO TRANSITION","timestamp":"2025-01-17T15:53:42.183Z"}
+{"level":"info","message":"🟢 New WebSocket connection established","timestamp":"2025-01-17T15:53:42.267Z"}
+{"level":"info","message":"📤 Sending message Connected to WebSocket server","timestamp":"2025-01-17T15:53:42.267Z","type":"welcome"}
+{"level":"info","message":"✅ Valid message received","timestamp":"2025-01-17T15:53:42.359Z","type":"token"}
+{"level":"info","message":"📥 Received:","payload":{"clientId":"fakeTokenRUs","documentId":"1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE","token":"ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"},"timestamp":"2025-01-17T15:53:42.359Z","type":"token"}
+{"level":"info","message":"\n\nTransitioning from INIT","timestamp":"2025-01-17T15:53:42.359Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[{"current":5,"outOf":2,"title":"Pirate Slang"},{"current":5,"outOf":5,"title":"Robot Slang"}],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":[],"waitingAnimationOn":true},"timestamp":"2025-01-17T15:53:42.360Z","type":"state"}
+{"level":"info","message":"\n\nTransitioning from LOADING_TOPICS","timestamp":"2025-01-17T15:53:42.360Z"}
+{"level":"info","message":"📤 Sending message","payload":{"buttonsDisabled":[],"copypasted":0,"currentPage":"home-page","level":0,"pills":[],"timeSpentHours":0,"timeSpentMinutes":0,"visibleButtons":["pill-button"],"waitingAnimationOn":false},"timestamp":"2025-01-17T15:53:42.360Z","type":"state"}
+{"level":"info","message":"//n//nNO TRANSITION","timestamp":"2025-01-17T15:53:42.360Z"}
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+
+
+Transitioning from INIT
+📤 Sending message
+
+
+Transitioning from LOADING_TOPICS
+📤 Sending message
+//n//nNO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+
+
+Transitioning from INIT
+📤 Sending message
+
+
+Transitioning from LOADING_TOPICS
+📤 Sending message
+//n//nNO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+
+
+Transitioning from INIT
+📤 Sending message
+
+
+Transitioning from LOADING_TOPICS
+📤 Sending message
+//n//nNO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+
+
+Transitioning from INIT
+📤 Sending message
+
+
+Transitioning from LOADING_TOPICS
+📤 Sending message
+//n//nNO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+📤 Sending message Connected to WebSocket server
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+📤 Sending message
+Transitioning from LOADING_TOPICS
+📤 Sending message
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: "Connected to WebSocket server"
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: "undefined"
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: "undefined"
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: "Connected to WebSocket server"
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: "undefined"
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: "undefined"
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: "[object Object]"
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: "[object Object]"
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: "[object Object]"
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: "[object Object]"
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: "[object Object]"
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: "[object Object]"
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: JSON.stringify(msg)
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: JSON.stringify(msg)
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: JSON.stringify(msg)
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: JSON.stringify(msg)
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: JSON.stringify(msg)
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: JSON.stringify(msg)
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+📥 Received:
+Transitioning from INIT
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received:
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received:
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received:
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received:
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5},{"title":"Robot Slang","outOf":5,"current":5}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5,"description":"Description1","isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5,"description":"Description1","isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5,"description":"Description1","isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":2,"current":5,"description":"Description1","isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"description":"Description4","isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"description":"Description4","isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":2,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":5,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":0,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":0,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":0,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":0,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":0,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":0,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":0,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":0,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":0,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+✅ Valid message received
+### Received: {
+  "type": "token",
+  "payload": {
+    "clientId": "fakeTokenRUs",
+    "documentId": "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE",
+    "token": "ya29.a0ARW5m76IvNjVHwo8zawMHQHm_CAgxzilJgP6K8iOb6fFCmE3Sgd125N7kU2CsDCcC3u26xFs6lEj6fl5K-KY2CuyCDfBpAHXeURyQYzloyV90QgY0ckkqANMFygVib7t6kegW86Xyvcqj8q5gkRnB4_ywI7f3zCtkXtRiAQyzMVq1Rcwd_4h38waCgYKAUsSARASFQHGX2MiMc6Lz-mE4fxjpg3Vvh9loQ0190"
+  }
+}
+Transitioning from INIT
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+Transitioning from LOADING_TOPICS
+
+%%% Sending message: {"type":"state","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":["pill-button"],"buttonsDisabled":[],"level":0,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+NO TRANSITION, current state: HOME_WAITING
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+Error in state machine: Error: Invalid token
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"welcome","message":"Connected to WebSocket server"}
+
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
+Error in state machine: Error: Invalid token: 400 {
+  "error": "invalid_token",
+  "error_description": "Invalid Value"
+}
+
