@@ -10,7 +10,6 @@ export class AuthError extends Error {
 export async function getClientId(tokenString: string): Promise<string> {
   try {
     const requestBody = JSON.stringify({ access_token: tokenString });
-    debugger;
     const response = await fetch(
       "https://www.googleapis.com/oauth2/v1/tokeninfo",
       {

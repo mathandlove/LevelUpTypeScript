@@ -1,105 +1,133 @@
-import { Machine, interpret, assign, DoneInvokeEvent } from "xstate";
-import logger from "./utils/logger";
+import {
+  createMachine,
+  assign,
+  BaseActionObject,
+  ServiceMap,
+  TypegenDisabled,
+  ResolveTypegenMeta,
+  Typestate,
+  MachineOptions,
+  MachineConfig,
+} from "xstate";
 import { getClientId, AuthError } from "./services/dataService";
+import { UIState, defaultUIState } from "./common/types";
 
 interface AppContext {
   token?: string;
   clientId?: string;
-  ws?: WebSocket;
+  uiState: UIState;
 }
 
 type AppEvent =
-  | { type: "RECEIVE_TOKEN"; token: string; ws: WebSocket }
-  | { type: "SEND_ERROR"; message: string };
+  | { type: "RECEIVE_TOKEN"; token: string }
+  | { type: "ERROR_OCCURRED"; message: string };
 
-const sendAuthError = (context: AppContext, event: any) => {
-  if (context.ws) {
-    const errorMessage = JSON.stringify({
-      type: "ERROR",
-      payload: {
-        code: "AUTH_ERROR",
-        message: "Authentication failed",
-      },
-    });
-    context.ws.send(errorMessage);
-  }
-  resetContext;
-};
-
-const resetContext = assign<AppContext>({
-  token: () => {
-    console.log("Resetting token,Websocket,andclientID");
-    return undefined;
-  },
-  ws: () => {
-    return undefined;
-  },
-  clientId: () => {
-    return undefined;
-  },
-});
-
-const appMachine = Machine<AppContext, any, AppEvent>({
+const machineConfig: MachineConfig<AppContext, any, AppEvent> = {
+  predictableActionArguments: true,
   id: "app",
   initial: "initial",
   context: {
     token: undefined,
     clientId: undefined,
-    ws: undefined,
+    uiState: { ...defaultUIState },
   },
   states: {
     initial: {
       on: {
         RECEIVE_TOKEN: {
           target: "loadingClientId",
-          actions: [
-            assign<AppContext, AppEvent & { type: "RECEIVE_TOKEN" }>({
-              token: (context, event) => {
-                console.log("Setting token:", event.token);
-                return event.token;
-              },
-              ws: (context, event) => {
-                console.log("Setting WebSocket:", event.ws);
-                return event.ws;
-              },
-            }),
-            (context) =>
-              console.log("WebSocket set in initial state:", context.ws),
-          ],
+          actions: assign({
+            token: (_, event) => event.token,
+          }),
         },
       },
     },
     loadingClientId: {
-      onEntry: (context) => {
-        console.log("Entering loadingClientId state with context:", context);
-      },
       invoke: {
-        id: "getClientId",
         src: (context) => getClientId(context.token!),
         onDone: {
           target: "authenticated",
-          actions: assign<AppContext, DoneInvokeEvent<string>>({
-            clientId: (context, event) => event.data,
+          actions: assign({
+            clientId: (_, event) => event.data,
           }),
         },
-        onError: {
-          target: "initial",
-          actions: [
-            // 1) This uses context.ws to send the error
-            (context, event) => {
-              sendAuthError(context, event);
-            },
-            // 2) Now that the error is sent, clear token, clientId, and ws
-          ],
-        },
+        onError: [
+          {
+            cond: "isAuthError",
+            target: "serverErrorAuth",
+          },
+          {
+            cond: "isNetworkError",
+            target: "serverErrorNetwork",
+          },
+          {
+            target: "serverErrorGeneral",
+          },
+        ],
       },
     },
     authenticated: {
-      // This state represents that we have a valid token and clientId
+      // Good token & clientId
+    },
+    serverErrorAuth: {
+      entry: assign((context, event) => ({
+        ...context,
+        uiState: {
+          ...context.uiState,
+          currentPage: "server-error",
+          waitingAnimationOn: false,
+          visibleButtons: [],
+          buttonsDisabled: [],
+          cardMainText: "Error: Invalid or expired token. Please try again.",
+        },
+      })),
+    },
+    serverErrorNetwork: {
+      entry: assign((context, event) => ({
+        ...context,
+        uiState: {
+          ...context.uiState,
+          currentPage: "server-error",
+          waitingAnimationOn: false,
+          visibleButtons: [],
+          buttonsDisabled: [],
+          cardMainText:
+            "Error: Unable to reach Google servers. Please wait or retry later.",
+        },
+      })),
+    },
+    serverErrorGeneral: {
+      entry: assign((context, event) => ({
+        ...context,
+        uiState: {
+          ...context.uiState,
+          currentPage: "server-error",
+          waitingAnimationOn: false,
+          visibleButtons: [],
+          buttonsDisabled: [],
+          cardMainText: "An unexpected error occurred. Please contact support.",
+        },
+      })),
     },
   },
-});
+};
 
-// Rest of the file remains the same...
+const machineOptions: MachineOptions<AppContext, AppEvent> = {
+  guards: {
+    isAuthError: (_, event) => {
+      const e = event as any;
+      return e?.data instanceof AuthError;
+    },
+    isNetworkError: (_, event) => {
+      const e = event as any;
+      const err = e?.data as Error;
+      return err.message?.toLowerCase().includes("fetch");
+    },
+  },
+};
 
-export { appMachine, AppContext, AppEvent };
+export const appMachine = createMachine<
+  AppContext,
+  AppEvent,
+  Typestate<AppContext>
+>(machineConfig, machineOptions);
