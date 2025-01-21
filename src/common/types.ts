@@ -3,51 +3,6 @@ import { WebSocket } from "ws";
 
 //websocket Types
 
-export type WebSocketMessageType =
-  | "state" // UI state updates
-  | "token" // Token authentication
-  | "welcome" // Server welcome message
-  | "updateScope" // Scope updates
-  | "buttonClicked"; // Button clicked on sidebar
-
-export interface TokenPayload {
-  clientId: string;
-  documentId: string;
-  token: string;
-}
-
-export type ButtonClickedPayload = {
-  buttonId: ButtonId;
-  buttonTitle?: string;
-};
-
-export interface WebSocketMessage {
-  type: WebSocketMessageType;
-  payload?: UIState | ButtonClickedPayload | TokenPayload;
-  message?: string; // Optional message field
-}
-
-export interface StateMessage {
-  type: "state";
-  state: UIState;
-}
-
-export interface WelcomeMessage {
-  type: "welcome";
-  message: string;
-}
-
-export interface TokenMessage {
-  type: "token";
-  payload: TokenPayload;
-}
-
-export interface ButtonClickedMessage {
-  type: "buttonClicked";
-  payload: ButtonClickedPayload;
-}
-
-// Then define the interface that uses it
 export type ButtonId =
   | "next-button"
   | "back-button"
@@ -117,18 +72,3 @@ export const defaultUIState: UIState = {
   timeSpentHours: 0,
   timeSpentMinutes: 0,
 };
-
-// Finally, define any functions that use the types
-export function isTokenData(message: any): message is TokenPayload {
-  return (
-    message &&
-    typeof message.clientId === "string" &&
-    typeof message.documentId === "string" &&
-    typeof message.token === "string"
-  );
-}
-
-export interface LevelUpWebSocket extends WebSocket {
-  clientId: string;
-  documentId: string;
-}

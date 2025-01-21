@@ -1,12 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /*
+import
+
 // No longer need separate DocumentData interface since State contains everything
 interface DataStore {
   [clientId: string]: {
     [documentId: string]: {
       lastUpdated: number;
-      state: State;
+      state: UIstate;
     };
   };
 }

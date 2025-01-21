@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-//import dataStore from "./dataStore";
 const cors_1 = __importDefault(require("cors"));
 const websocket_1 = require("./websocket");
 const http_1 = require("http");
@@ -21,26 +20,6 @@ app.use((0, cors_1.default)({
         "Origin",
     ],
 }));
-// Define the shape of the expected request body
-app.get("/test", (req, res) => {
-    res.json({ message: "Server is running!" });
-});
-// GET endpoint becomes a POST endpoint
-app.post("/get-data", (req, res) => {
-    const { clientId, documentId } = req.body;
-    if (!clientId || !documentId) {
-        return res.status(400).send("Missing clientId or documentId");
-    }
-    const state = dataStore.getState(clientId, documentId);
-    console.log("Retrieved data:", state);
-    console.log(clientId);
-    if (!state) {
-        return res
-            .status(404)
-            .send("No data found for this client/document combination");
-    }
-    return res.json(state.ui);
-});
 // Start the server
 const server = (0, http_1.createServer)(app);
 (0, websocket_1.initializeWebSocket)(server);

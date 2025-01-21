@@ -1,38 +1,33 @@
 {
-  "name": "leveupbackendnode",
+  "name": "levelupv2",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon --watch src --ignore public/ --ignore logs/ src/server.ts",
+    "dev": "nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "logs": "powershell Get-Content -Path ./server-logs/websocket.log -Wait -Tail 10",
-    "errors": "Get-Content -Path ./logs/websocket-error.log -Wait -Tail 10",
-    "test": "jest --bail",
-    "test:watch": "jest --watch",
-    "test:integration": "jest src/utils/dataService.integration.test.ts",
-    "test:unit": "jest src/utils/xStateMachine.test.ts --bail=1 --verbose --testTimeout=1000"
+    "start": "node --loader ts-node/esm src/server.ts"
   },
-  "dependencies": {
-    "@xstate/inspect": "^0.8.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "node-fetch": "^2.7.0",
-    "winston": "^3.17.0",
-    "ws": "^8.18.0",
-    "xstate": "^4.38.3"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.17",
-    "@types/jest": "^29.5.14",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
     "@types/node-fetch": "^2.6.12",
+    "@types/winston": "^2.4.4",
     "@types/ws": "^8.5.13",
-    "jest": "^29.7.0",
     "nodemon": "^3.1.9",
-    "parcel": "^2.13.3",
-    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.18.0",
+    "xstate": "^4.38.3"
   }
 }

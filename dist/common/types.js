@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultUIState = void 0;
-exports.isTokenData = isTokenData;
 // Then define any constants
 exports.defaultUIState = {
     currentPage: "home-page",
@@ -14,10 +13,3 @@ exports.defaultUIState = {
     timeSpentHours: 0,
     timeSpentMinutes: 0,
 };
-// Finally, define any functions that use the types
-function isTokenData(message) {
-    return (message &&
-        typeof message.clientId === "string" &&
-        typeof message.documentId === "string" &&
-        typeof message.token === "string");
-}
