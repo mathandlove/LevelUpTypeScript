@@ -20,12 +20,13 @@ app.use(
   })
 );
 
-// Start the server
-
+// Create HTTP server from Express app
 const server = createServer(app);
+
+// Initialize WebSocket server with HTTP server
 initializeWebSocket(server);
 
-// Start the server
+// Start the server using the HTTP server, not the Express app
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
