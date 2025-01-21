@@ -1,11 +1,14 @@
 import winston from "winston";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 
-//   Get-Content -Path .\server-logs\websocket.log -Wait -Tail 10
+// Get current directory in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Create logs directory in project root, not in public
-const logDir = path.join(__dirname, "../../server-logs"); // Changed from 'logs' to 'server-logs'
+const logDir = path.join(__dirname, "../../server-logs");
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
 }
@@ -13,12 +16,10 @@ if (!fs.existsSync(logDir)) {
 const logger = winston.createLogger({
   format: winston.format.printf(({ message }) => message as any),
   transports: [
-    // File for all logs
     new winston.transports.File({
       filename: path.join(logDir, "websocket.log"),
       silent: false,
     }),
-    // Separate file for errors
     new winston.transports.File({
       filename: path.join(logDir, "websocket-error.log"),
       level: "error",

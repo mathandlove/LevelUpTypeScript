@@ -1,3 +1,4 @@
+"use strict";
 /*
 import { interpret } from "xstate";
 import { appMachine } from "./stateMachine";
