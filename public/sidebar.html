@@ -1145,7 +1145,7 @@
 let clientId = null;
 let documentId = null;
 let currentToken=null;
-const backendURL = "https://3f71-174-63-70-145.ngrok-free.app";
+const backendURL = "http://localhost:3000";//"https://3f71-174-63-70-145.ngrok-free.app";
 let currentPillCount = 0;
 let ws = null;  // Global WebSocket instance
 let messageQueue = [];  
@@ -1194,7 +1194,7 @@ handleStateChange(state);
 async function init() {
 //testChangeState();
 connectWebSocket();
-
+getStoredTokenData()
 
 }
 async function getDocumentData() {
@@ -1300,7 +1300,6 @@ function connectWebSocket() {
   }
 }
 // Initial connection
-connectWebSocket();
 
 function sendWebSocketMessage(message) {
   if (ws && ws.readyState === WebSocket.OPEN) {

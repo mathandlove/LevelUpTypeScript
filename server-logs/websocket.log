@@ -2041,3 +2041,47 @@ Error in state machine: Error: Invalid token: 400 {
   "error_description": "Invalid Value"
 }
 
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+🟢 New WebSocket connection established
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
