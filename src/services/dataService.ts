@@ -1,5 +1,7 @@
 import fetch from "node-fetch";
 
+//Error Messages
+// Define custom error classes
 export class AuthError extends Error {
   constructor(message: string) {
     super(message);
@@ -7,6 +9,12 @@ export class AuthError extends Error {
   }
 }
 
+export class NetworkError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "NetworkError";
+  }
+}
 export async function getClientId(tokenString: string): Promise<string> {
   try {
     const requestBody = JSON.stringify({ access_token: tokenString });

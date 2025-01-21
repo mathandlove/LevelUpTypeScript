@@ -1,3 +1,4 @@
+/*
 import express, { Request, Response } from "express";
 import dataStore from "./dataStore";
 import cors from "cors";
@@ -63,3 +64,4 @@ initializeWebSocket(server);
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+*/

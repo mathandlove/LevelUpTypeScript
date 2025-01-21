@@ -84,9 +84,9 @@ export interface UIState {
   copypasted: number;
   timeSpentHours: number;
   timeSpentMinutes: number;
-
-  cardMainText?: string;
   cardSubtitle?: string;
+  cardMainText?: string;
+  errorMessage?: string;
   // Reflection card content
   reflection?: {
     question?: string;
