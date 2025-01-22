@@ -35,6 +35,56 @@
         height: calc(100vh - 100px); /* Adjust for header height */
       }
 
+      /* New left sidebar styles */
+      .state-monitor-container {
+        width: 500px;
+        border-right: 1px solid #ccc;
+        background-color: #f8f9fa;
+        overflow-y: auto;
+        padding: 15px;
+        font-family: monospace;
+      }
+
+      .state-monitor-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #28466c;
+      }
+
+      .state-section {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .state-label {
+        font-weight: bold;
+        color: #28466c;
+        margin-bottom: 5px;
+      }
+
+      .state-value {
+        color: #00afcc;
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+
+      .event-list {
+        max-height: 200px;
+        overflow-y: auto;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+      }
+
+      .event-item {
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+        font-size: 12px;
+      }
+
       #text-area {
         flex: 1;
         padding: 15px;
@@ -62,11 +112,54 @@
         height: 100%;
         border: none;
       }
+
+      .state-item {
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+        font-size: 12px;
+        color: #28466c;
+      }
+
+      .state-list {
+        max-height: 200px;
+        overflow-y: auto;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
     <header>Header Content</header>
     <div class="main-content">
+      <!-- New left sidebar for state machine monitoring -->
+      <div class="state-monitor-container">
+        <div class="state-monitor-title">State Machine Monitor</div>
+
+        <div class="state-section">
+          <div class="state-label">Current State:</div>
+          <div id="current-state" class="state-value">-</div>
+        </div>
+
+        <div class="state-section">
+          <div class="state-label">Context:</div>
+          <div id="context-value" class="state-value">-</div>
+        </div>
+
+        <div class="state-section">
+          <div class="state-label">Recent Events:</div>
+          <div id="event-list" class="event-list">
+            <!-- Events will be added here dynamically -->
+          </div>
+        </div>
+
+        <div class="state-section">
+          <div class="state-label">State History:</div>
+          <div id="state-list" class="state-list">
+            <!-- States will be added here dynamically -->
+          </div>
+        </div>
+      </div>
+
       <div id="text-area" contenteditable="true"></div>
       <div class="sidebar-container">
         <iframe src="sidebar.html"></iframe>
@@ -78,6 +171,95 @@
 
       const textArea = document.getElementById("text-area");
       textArea.textContent = docText;
+      const backendURL = "http://localhost:3000";
+      // State machine monitoring logic
+      function updateStateMonitor() {
+        fetch(backendURL + "/monitor")
+          .then((response) => response.json())
+          .then((statesArray) => {
+            const currentState = document.getElementById("current-state");
+            const contextValue = document.getElementById("context-value");
+            const eventList = document.getElementById("event-list");
+            const stateList = document.getElementById("state-list");
+
+            if (statesArray.length > 0) {
+              const [key, stateData] = statesArray[0];
+
+              // Update current state display
+              currentState.textContent = JSON.stringify(
+                stateData.state,
+                null,
+                2
+              );
+
+              // Update context display
+              contextValue.textContent = JSON.stringify(
+                stateData.context,
+                null,
+                2
+              );
+
+              // Handle state history
+              if (stateData.stateHistory) {
+                stateData.stateHistory.forEach((historyItem) => {
+                  const stateId = `state-${historyItem.timestamp}`;
+
+                  if (!document.getElementById(stateId)) {
+                    const stateItem = document.createElement("div");
+                    stateItem.className = "state-item";
+                    stateItem.id = stateId;
+
+                    const time = new Date(
+                      historyItem.timestamp
+                    ).toLocaleTimeString();
+                    stateItem.textContent = `${time}: ${JSON.stringify(
+                      historyItem.state
+                    )}`;
+
+                    stateList.insertBefore(stateItem, stateList.firstChild);
+
+                    while (stateList.children.length > 10) {
+                      stateList.removeChild(stateList.lastChild);
+                    }
+                  }
+                });
+              }
+
+              // Handle event history
+              if (stateData.eventHistory) {
+                // Clear existing events
+                eventList.innerHTML = "";
+
+                // Add all events from history in reverse order (newest first)
+                [...stateData.eventHistory].reverse().forEach((eventItem) => {
+                  const eventDiv = document.createElement("div");
+                  eventDiv.className = "event-item";
+
+                  const eventType = eventItem.type
+                    .replace("error.platform.app.", "Error in: ")
+                    .replace(":invocation[0]", "")
+                    .replace(/\./g, " ");
+
+                  const time = new Date(
+                    eventItem.timestamp
+                  ).toLocaleTimeString();
+                  eventDiv.textContent = `${time}: ${eventType}`;
+                  if (eventItem.data?.name) {
+                    eventDiv.textContent += ` (${eventItem.data.name})`;
+                  }
+
+                  eventList.appendChild(eventDiv);
+                });
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching state:", error);
+          });
+      }
+
+      // Update every second
+      setInterval(updateStateMonitor, 1000);
     </script>
   </body>
 </html>

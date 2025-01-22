@@ -8,8 +8,9 @@ import {
   OutgoingWebSocketMessage,
 } from "./common/wsTypes.js";
 
-interface LevelUpWebSocket extends WebSocket {
+export interface LevelUpWebSocket extends WebSocket {
   sendMessage: (message: OutgoingWebSocketMessage) => void;
+  actor?: ReturnType<typeof getOrCreateActor>;
 }
 
 const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
@@ -18,26 +19,44 @@ export function initializeWebSocket(server: Server): void {
   const wss = new WebSocketServer({ server });
 
   wss.on("connection", (ws: LevelUpWebSocket) => {
-    logger.info("🟢 New WebSocket connection established");
+    console.log("🌐 New WebSocket connection");
+
+    // Initialize the WebSocket with a sendMessage method
+    ws.sendMessage = function (message: OutgoingWebSocketMessage) {
+      this.send(JSON.stringify(message));
+      console.log(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
+    };
 
     ws.on("message", (rawMessage: RawData) => {
-      const message: IncomingWebSocketMessage = JSON.parse(
-        rawMessage.toString()
-      );
-      if (isValidIncomingWebSocketMessage(message)) {
-        console.log("Received message:", message);
-      } else {
-        console.error("Invalid message received:", message);
+      try {
+        const message: IncomingWebSocketMessage = JSON.parse(
+          rawMessage.toString()
+        );
+
+        if (isValidIncomingWebSocketMessage(message)) {
+          console.log("📨 Received message:", message);
+
+          // Create or get the actor for this connection
+          ws.actor = getOrCreateActor(
+            message.payload.clientId,
+            message.payload.documentId,
+            ws
+          );
+          if (ws.actor) {
+            ws.actor.send(message);
+          } else {
+            console.error("❌ No actor available for message:", message);
+          }
+        }
+      } catch (error) {
+        console.error("❌ Error processing message:", error);
       }
     });
 
-    ws.sendMessage = function (message: OutgoingWebSocketMessage) {
-      this.send(JSON.stringify(message));
-      logger.info(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
-    };
-
     ws.on("close", () => {
       logger.info("🔴 WebSocket connection closed");
+      // Clean up the actor when the connection closes
+      ws.actor.stopAll(); // Stop the actor
     });
 
     // Send welcome message

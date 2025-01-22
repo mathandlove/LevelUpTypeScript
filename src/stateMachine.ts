@@ -1,4 +1,10 @@
-import { createMachine, assign, interpret } from "xstate";
+import {
+  createMachine,
+  assign,
+  interpret,
+  Interpreter,
+  StateMachine,
+} from "xstate";
 import {
   getClientId,
   AuthError,
@@ -6,11 +12,16 @@ import {
 } from "./services/dataService.js";
 import { UIState, defaultUIState } from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
+import { LevelUpWebSocket } from "./websocket.js";
+import { inspect } from "@xstate/inspect";
+
+// Initialize the inspector (add this before creating the machine)
 
 interface AppState {
   token: string;
   clientId: string;
   documentId: string;
+  ws: LevelUpWebSocket;
 }
 
 // Define the DocState type
@@ -24,6 +35,7 @@ const defaultAppState: AppState = {
   token: "Waiting for token...",
   clientId: "Waiting for clientID",
   documentId: "waiting for documentID",
+  ws: null,
 };
 
 interface AppContext {
@@ -38,16 +50,156 @@ const defaultAppContext: AppContext = {
   docState: defaultDocState,
 };
 
-export const appMachine = createMachine<AppContext, AppEvent>(
+// Extend the interpreter type to include stopAll
+interface ExtendedInterpreter
+  extends Interpreter<AppContext, any, IncomingWebSocketMessage, any> {
+  stopAll: () => void;
+}
+
+// Store to track actors with explicit typing
+const actorStore = new Map<string, ExtendedInterpreter>();
+
+// Add a store for final states
+const finalStateStore = new Map<
+  string,
   {
-    id: "app",
-    initial: "initial",
-    predictableActionArguments: true,
-    context: defaultAppContext,
-    states: {
-      initial: {
+    state: any;
+    context: AppContext;
+    lastEvent: any;
+    timestamp: number;
+    stateHistory: StateHistoryItem[];
+    eventHistory: Array<{
+      type: string;
+      timestamp: number;
+      data?: any;
+    }>;
+  }
+>();
+
+// Add type for state history
+type StateHistoryItem = {
+  state: any;
+  timestamp: number;
+};
+
+// Add state history to the stores
+const stateHistoryStore = new Map<string, StateHistoryItem[]>();
+
+// Add an event history store
+const eventHistoryStore = new Map<
+  string,
+  Array<{
+    type: string;
+    timestamp: number;
+    data?: any;
+  }>
+>();
+
+// Add helper function for sending UI updates
+function sendUIUpdate(context: AppContext) {
+  const ws = context.appState.ws;
+  if (ws?.sendMessage) {
+    ws.sendMessage({
+      type: "STATE",
+      payload: context.uiState,
+    });
+  }
+}
+
+// Define a function to create the machine with initial context
+export function createAppMachine(ws: LevelUpWebSocket) {
+  return createMachine<AppContext, AppEvent>(
+    {
+      id: "app",
+      initial: "initial",
+      predictableActionArguments: true,
+      context: {
+        ...defaultAppContext,
+        appState: {
+          ...defaultAppState,
+          ws: ws, // Initialize ws here
+        },
+      },
+      states: {
+        initial: {
+          on: {
+            GIVE_TOKEN: {
+              target: "tokenReceived",
+              actions: assign({
+                appState: (context, event) => ({
+                  ...context.appState,
+                  token: event.payload.token,
+                  clientId: event.payload.clientId,
+                  documentId: event.payload.documentId,
+                  ws: context.appState.ws, // Preserve the ws reference
+                }),
+              }),
+            },
+          },
+        },
+        tokenReceived: {
+          invoke: {
+            src: "validateTokenService",
+            onDone: {
+              target: "authenticated",
+              actions: [
+                (context, event) => {
+                  console.log(
+                    "Received valid token. Transitioning to authenticate"
+                  );
+                },
+              ],
+            },
+            onError: [
+              {
+                target: "authenticationError",
+                cond: "isAuthError",
+              },
+              {
+                target: "networkError",
+                cond: "isNetworkError",
+                actions: assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState, // Spread the current uiState
+                    currentPage: "server-error",
+                    waitingAnimationOn: false,
+                    visibleButtons: [],
+                    buttonsDisabled: [],
+                    errorMessage:
+                      "We cannot connect to Google Servers at this time. Please try again later.",
+                  }),
+                }),
+              },
+              {
+                target: "initial",
+                actions: (context, event) => {
+                  console.log("Found Error that was not accounted for.");
+                  console.log(event);
+                },
+              },
+            ],
+          },
+        },
+        authenticationError: {
+          type: "final",
+          entry: [
+            assign({
+              uiState: (context, event) => ({
+                ...context.uiState, // Spread the current uiState
+                currentPage: "server-error",
+                waitingAnimationOn: false,
+                visibleButtons: [],
+                buttonsDisabled: [],
+                errorMessage: `We were not able to access this Google Document.<br><br>Please try restarting Level Up.`,
+              }),
+            }),
+            (context) => sendUIUpdate(context),
+          ],
+        },
+        /*
         on: {
-          RECEIVE_TOKEN: {
+
+          GIVE_TOKEN: {
             target: "tokenReceived",
             actions: assign({
               appState: (context, event) => ({
@@ -59,122 +211,192 @@ export const appMachine = createMachine<AppContext, AppEvent>(
             }),
           },
         },
+        
       },
-      tokenReceived: {
-        invoke: {
-          src: "validateTokenService",
-          onDone: {
-            target: "authenticated",
-            actions: [
-              (context, event) => {
-                console.log(
-                  "Received valid token. Transitioning to authenticate"
-                );
-              },
-            ],
-          },
-          onError: [
-            {
-              target: "authenticationError",
-              cond: "isAuthError",
-              actions: assign({
-                uiState: (context, event) => ({
-                  ...context.uiState, // Spread the current appState
-                  errorMessage:
-                    "We cannot connect to Google Servers at this time. Please try again later.",
-                }),
-              }),
+          */
+        networkError: {
+          type: "final",
+          entry: [
+            (context, event) => {
+              console.log("Entered network error state");
             },
-            {
-              target: "networkError",
-              cond: "isNetworkError",
-              actions: assign({
-                uiState: (context, event) => ({
-                  ...context.uiState, // Spread the current uiState
-                  errorMessage:
-                    "We cannot connect to Google Servers at this time. Please try again later.",
-                }),
-              }),
-            },
-            {
-              target: "initial",
-              actions: (context, event) => {
-                console.log("Found Error that was not accounted for.");
-                console.log(event);
-              },
+          ],
+        },
+        authenticated: {
+          type: "final",
+          entry: [
+            (context, event) => {
+              console.log("Entered authenticated state");
             },
           ],
         },
       },
-      authenticationError: {
-        on: {
-          RECEIVE_TOKEN: {
-            target: "tokenReceived",
-            actions: assign({
-              appState: (context, event) => ({
-                ...context.appState, // Spread the current appState
-                token: event.payload.token, // Update the token property
-                clientId: event.payload.clientId, // Optionally update clientId
-                documentId: event.payload.documentId, // Optionally update documentId
-              }),
-            }),
-          },
+    },
+    {
+      actions: {
+        requestNewTokenAction: () => {
+          console.log("Requesting new token from server...");
         },
       },
-      networkError: {
-        type: "final",
+      services: {
+        validateTokenService: (context: AppContext) => {
+          return getClientId(context.appState.token);
+        },
       },
-      authenticated: {
-        type: "final",
+      guards: {
+        isAuthError: (_: any, event: any) => {
+          const error = event.data;
+          return error?.name === "AuthError";
+        },
+        isNetworkError: (_: any, event: any) => {
+          const error = event.data;
+          return error?.name === "NetworkError";
+        },
       },
-    },
-  },
-  {
-    actions: {
-      requestNewTokenAction: () => {
-        console.log("Requesting new token from server...");
-      },
-    },
-    services: {
-      validateTokenService: (context: AppContext) => {
-        return getClientId(context.appState.token);
-      },
-    },
-    guards: {
-      isAuthError: (_: any, event: any) => {
-        const error = event.data;
-        return error?.name === "AuthError";
-      },
-      isNetworkError: (_: any, event: any) => {
-        const error = event.data;
-        return error?.name === "NetworkError";
-      },
-    },
-  }
-);
+    }
+  );
+}
 
-// Store to track actors
-const actorStore = new Map<string, ReturnType<typeof interpret>>();
-
-// Utility function
-export function getOrCreateActor(clientId: string, documentId: string) {
-  const key = `${clientId}:${documentId}`; // Unique key for each client-document combination
+// Update the actor creation function
+export function getOrCreateActor(
+  clientId: string,
+  documentId: string,
+  ws: LevelUpWebSocket
+): ExtendedInterpreter {
+  const key = `${clientId}:${documentId}`;
 
   if (actorStore.has(key)) {
-    // Return existing actor if it exists
     return actorStore.get(key)!;
   }
 
-  // Create a new interpreted actor
-  const actor = interpret(appMachine).start();
+  let previousUIState: UIState | null = null;
 
-  // Save the actor in the store
-  actorStore.set(key, actor as any);
+  const baseActor = interpret(createAppMachine(ws))
+    .onTransition((state) => {
+      console.log(`🔄 [${key}] State Changed:`, state.value);
 
-  // Handle actor cleanup
-  actor.onStop(() => {
-    actorStore.delete(key); // Remove from store when stopped
-  });
+      // Track state history
+      const historyItem = {
+        state: state.value,
+        timestamp: Date.now(),
+      };
 
+      const stateHistory = stateHistoryStore.get(key) || [];
+      if (
+        stateHistory.length > 0 &&
+        stateHistory[0].timestamp === historyItem.timestamp
+      ) {
+        stateHistory.splice(1, 0, historyItem);
+      } else {
+        stateHistory.unshift(historyItem);
+      }
+      if (stateHistory.length > 10) {
+        stateHistory.pop();
+      }
+      stateHistoryStore.set(key, stateHistory);
+
+      // Track event history
+
+      const eventHistory = eventHistoryStore.get(key) || [];
+      const eventItem = {
+        type: state.event.type,
+        timestamp: Date.now(),
+        data: state.event.payload,
+      };
+
+      if (
+        eventHistory.length > 0 &&
+        eventHistory[0].timestamp === eventItem.timestamp
+      ) {
+        eventHistory.splice(1, 0, eventItem);
+      } else {
+        eventHistory.unshift(eventItem);
+      }
+      if (eventHistory.length > 10) {
+        eventHistory.pop();
+      }
+      eventHistoryStore.set(key, eventHistory);
+      // Check if UI state has changed
+      const currentUIState = state.context.uiState;
+      if (
+        previousUIState === null ||
+        JSON.stringify(previousUIState) !== JSON.stringify(currentUIState)
+      ) {
+        // UI state has changed, notify client
+        const ws = state.context.appState.ws;
+        if (ws?.sendMessage) {
+          ws.sendMessage({
+            type: "STATE",
+            payload: currentUIState,
+          });
+        }
+        previousUIState = { ...currentUIState };
+      }
+    })
+    .onStop(() => {
+      console.log(`🛑 [${key}] Actor stopped`);
+    })
+    .start();
+
+  // Create the extended actor with the stopAll method
+  const actor = Object.assign(baseActor, {
+    stopAll: () => {
+      console.log(`Stopping all activities for actor [${key}]`);
+      baseActor.stop();
+      actorStore.delete(key);
+      stateHistoryStore.delete(key);
+      eventHistoryStore.delete(key);
+    },
+  }) as ExtendedInterpreter;
+
+  actorStore.set(key, actor);
   return actor;
 }
+
+export function getActiveStates() {
+  const states = new Map();
+
+  actorStore.forEach((actor, key) => {
+    try {
+      const state = actor.getSnapshot();
+      if (state) {
+        // Add logging to debug state history
+        const history = stateHistoryStore.get(key) || [];
+
+        states.set(key, {
+          state: state.value,
+          context: state.context,
+          isFinal: state.done,
+          timestamp: Date.now(),
+          stateHistory: history,
+          eventHistory: eventHistoryStore.get(key) || [],
+        });
+      }
+    } catch (error) {
+      console.error(`Error getting state for actor ${key}:`, error);
+    }
+  });
+
+  return states;
+}
+
+// Optional: Add a function to clear history for a specific actor
+export function clearHistory(clientId: string, documentId: string) {
+  const key = `${clientId}:${documentId}`;
+  stateHistoryStore.delete(key);
+  eventHistoryStore.delete(key);
+}
+
+// Optional: Add a cleanup function for very old final states
+function cleanupOldFinalStates(maxAgeMs = 1000 * 60 * 60) {
+  // default 1 hour
+  const now = Date.now();
+  finalStateStore.forEach((state, key) => {
+    if (now - state.timestamp > maxAgeMs) {
+      finalStateStore.delete(key);
+    }
+  });
+}
+
+// Run cleanup periodically
+setInterval(cleanupOldFinalStates, 1000 * 60 * 15); // every 15 minutes

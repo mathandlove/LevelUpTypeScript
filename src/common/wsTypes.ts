@@ -1,7 +1,7 @@
 import { UIState, ButtonId } from "./types.js";
 
 interface BaseIncomingMessage {
-  type: "RECEIVE_TOKEN" | "BUTTON_CLICKED";
+  type: "GIVE_TOKEN" | "BUTTON_CLICKED";
   payload: BasePayload;
 }
 
@@ -19,7 +19,7 @@ function isValidBasePayload(payload: any): payload is BasePayload {
 }
 
 export interface TokenIncomingMessage extends BaseIncomingMessage {
-  type: "RECEIVE_TOKEN";
+  type: "GIVE_TOKEN";
   payload: BasePayload & { token: string };
 }
 
@@ -28,7 +28,7 @@ export function isValidTokenIncomingMessage(
 ): message is TokenIncomingMessage {
   return (
     message &&
-    message.type === "RECEIVE_TOKEN" &&
+    message.type === "GIVE_TOKEN" &&
     isValidBasePayload(message.payload) &&
     typeof message.payload.token === "string"
   );
