@@ -1,55 +1,92 @@
-import fetch from "node-fetch";
+import fetch, { Response, RequestInit } from "node-fetch";
+import { DocumentMetaData, defaultDocumentMetaData } from "../common/types.js";
+import { AppContext } from "../stateMachine.js";
 
 //Error Messages
 // Define custom error classes
-export class AuthError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "AuthError";
-  }
+
+interface TokenInfoResponse {
+  audience: string;
 }
 
-export class NetworkError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "NetworkError";
-  }
-}
 export async function getClientId(tokenString: string): Promise<string> {
+  const requestBody = JSON.stringify({ access_token: tokenString });
+  const url = "https://www.googleapis.com/oauth2/v1/tokeninfo";
+  const options = {
+    method: "POST",
+    body: requestBody,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   try {
-    const requestBody = JSON.stringify({ access_token: tokenString });
-    const response = await fetch(
-      "https://www.googleapis.com/oauth2/v1/tokeninfo",
-      {
-        method: "POST",
-        body: requestBody,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    const response: TokenInfoResponse = await fetchWithRetriesAndTimeout(
+      url,
+      options
     );
-
-    const responseText = await response.text();
-
-    const responseData = JSON.parse(responseText);
-
-    if (responseData.error) {
-      throw new AuthError(responseData.error_description || responseData.error);
-    }
-
-    if (!response.ok) {
-      throw new AuthError("Authentication failed");
-    }
-
-    if (!responseData.audience) {
-      throw new AuthError("Invalid token response");
-    }
-
-    return responseData.audience;
-  } catch (error) {
-    if (error instanceof AuthError) {
-      throw error;
-    }
-    throw new AuthError("Unexpected Authentication failed");
+    return response.audience;
+  } catch {
+    throw new Error(
+      "Google servers sent an invalid token. Please refresh the page and try again."
+    );
   }
+}
+
+export async function getDocumentMetaData(
+  context: AppContext
+): Promise<DocumentMetaData> {
+  const token = context.appState.token;
+  return defaultDocumentMetaData;
+}
+
+interface FetchOptions extends RequestInit {
+  retries?: number; // Number of retry attempts
+  timeout?: number; // Timeout in milliseconds
+}
+
+async function fetchWithRetriesAndTimeout<T = unknown>(
+  url: string,
+  options: FetchOptions = {}
+): Promise<T> {
+  const { retries = 3, timeout = 5000, ...fetchOptions } = options;
+
+  const fetchWithTimeout = (
+    url: string,
+    options: RequestInit,
+    timeout: number
+  ): Promise<Response> => {
+    return Promise.race([
+      fetch(url, options),
+      new Promise<Response>((_, reject) =>
+        setTimeout(() => reject(new Error("Request timeout")), timeout)
+      ),
+    ]);
+  };
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await fetchWithTimeout(url, fetchOptions, timeout);
+
+      if (!response.ok) {
+        throw new Error(
+          `Fetch error: ${response.status} ${response.statusText}`
+        );
+      }
+
+      // Assume response.json() returns data of type T
+      return (await response.json()) as T;
+    } catch (error) {
+      if (attempt < retries - 1) {
+        console.warn(
+          `Fetch attempt ${attempt + 1} failed. Retrying...`,
+          (error as Error).message
+        );
+      } else {
+        console.error(`All fetch attempts failed:`, (error as Error).message);
+        throw error;
+      }
+    }
+  }
+
+  // This line is unreachable, but TypeScript requires it.
+  throw new Error("Fetch operation failed unexpectedly.");
 }

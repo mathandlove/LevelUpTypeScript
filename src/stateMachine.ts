@@ -5,15 +5,15 @@ import {
   Interpreter,
   StateMachine,
 } from "xstate";
+import { getClientId, getDocumentMetaData } from "./services/dataService.js";
 import {
-  getClientId,
-  AuthError,
-  NetworkError,
-} from "./services/dataService.js";
-import { UIState, defaultUIState } from "./common/types.js";
+  UIState,
+  defaultUIState,
+  DocumentMetaData,
+  defaultDocumentMetaData,
+} from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
 import { LevelUpWebSocket } from "./websocket.js";
-import { inspect } from "@xstate/inspect";
 
 // Initialize the inspector (add this before creating the machine)
 
@@ -27,9 +27,17 @@ interface AppState {
 // Define the DocState type
 type DocState = string;
 
+type ErrorMessageEvent = {
+  type: "error";
+  data: {
+    name: string;
+    message: string;
+  };
+};
+
 const defaultDocState: DocState = "waiting for documentID";
 
-type AppEvent = IncomingWebSocketMessage;
+type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent;
 
 const defaultAppState: AppState = {
   token: "Waiting for token...",
@@ -38,16 +46,16 @@ const defaultAppState: AppState = {
   ws: null,
 };
 
-interface AppContext {
+export interface AppContext {
   appState: AppState;
   uiState: UIState;
-  docState: DocState;
+  documentMetaData: DocumentMetaData;
 }
 
 const defaultAppContext: AppContext = {
   appState: defaultAppState,
   uiState: defaultUIState,
-  docState: defaultDocState,
+  documentMetaData: defaultDocumentMetaData,
 };
 
 // Extend the interpreter type to include stopAll
@@ -141,7 +149,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           invoke: {
             src: "validateTokenService",
             onDone: {
-              target: "authenticated",
+              target: "fetchingDocumentMetadata",
               actions: [
                 (context, event) => {
                   console.log(
@@ -150,98 +158,73 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               ],
             },
-            onError: [
-              {
-                target: "authenticationError",
-                cond: "isAuthError",
-              },
-              {
-                target: "networkError",
-                cond: "isNetworkError",
-                actions: assign({
-                  uiState: (context, event) => ({
-                    ...context.uiState, // Spread the current uiState
-                    currentPage: "server-error",
-                    waitingAnimationOn: false,
-                    visibleButtons: [],
-                    buttonsDisabled: [],
-                    errorMessage:
-                      "We cannot connect to Google Servers at this time. Please try again later.",
+            onError: {
+              target: "error",
+              actions: "displayError",
+            },
+          },
+        },
+        error: {
+          type: "final",
+          entry: [
+            (context, event) => {
+              console.log("Entered error state");
+            },
+          ],
+        },
+        fetchingDocumentMetadata: {
+          invoke: {
+            src: "getDocumentMetaData", // Reference to the fetching service
+            onDone: {
+              target: "homePage", // Transition to the success state
+              actions: [
+                assign({
+                  appState: (context, event) => ({
+                    ...context.appState,
+                    documentMetaData: event.data, // Save fetched metadata
                   }),
                 }),
-              },
-              {
-                target: "initial",
-                actions: (context, event) => {
-                  console.log("Found Error that was not accounted for.");
-                  console.log(event);
-                },
-              },
-            ],
+                assignDocMetaDataToUIState,
+              ],
+            },
           },
         },
-        authenticationError: {
-          type: "final",
-          entry: [
+        homePage: {
+          onEntry: [
             assign({
               uiState: (context, event) => ({
-                ...context.uiState, // Spread the current uiState
-                currentPage: "server-error",
-                waitingAnimationOn: false,
-                visibleButtons: [],
-                buttonsDisabled: [],
-                errorMessage: `We were not able to access this Google Document.<br><br>Please try restarting Level Up.`,
+                ...context.uiState,
+                currentPage: "home-page",
               }),
             }),
-            (context) => sendUIUpdate(context),
+            sendUIUpdate,
           ],
-        },
-        /*
-        on: {
-
-          GIVE_TOKEN: {
-            target: "tokenReceived",
-            actions: assign({
-              appState: (context, event) => ({
-                ...context.appState, // Spread the current appState
-                token: event.payload.token, // Update the token property
-                clientId: event.payload.clientId, // Optionally update clientId
-                documentId: event.payload.documentId, // Optionally update documentId
-              }),
-            }),
-          },
-        },
-        
-      },
-          */
-        networkError: {
           type: "final",
-          entry: [
-            (context, event) => {
-              console.log("Entered network error state");
-            },
-          ],
-        },
-        authenticated: {
-          type: "final",
-          entry: [
-            (context, event) => {
-              console.log("Entered authenticated state");
-            },
-          ],
         },
       },
     },
+
     {
       actions: {
         requestNewTokenAction: () => {
           console.log("Requesting new token from server...");
         },
+        displayError: (context, event: ErrorMessageEvent) => {
+          console.log("Displaying error...");
+
+          context.uiState.currentPage = "server-error";
+          context.uiState.waitingAnimationOn = false;
+          context.uiState.visibleButtons = ["back-button"];
+          context.uiState.buttonsDisabled = [];
+          context.uiState.errorMessage = event.data.message;
+        },
+        assignDocMetaDataToUIState,
       },
       services: {
         validateTokenService: (context: AppContext) => {
           return getClientId(context.appState.token);
         },
+        getDocumentMetaData,
       },
       guards: {
         isAuthError: (_: any, event: any) => {
@@ -301,7 +284,6 @@ export function getOrCreateActor(
       const eventItem = {
         type: state.event.type,
         timestamp: Date.now(),
-        data: state.event.payload,
       };
 
       if (
@@ -316,6 +298,7 @@ export function getOrCreateActor(
         eventHistory.pop();
       }
       eventHistoryStore.set(key, eventHistory);
+
       // Check if UI state has changed
       const currentUIState = state.context.uiState;
       if (
@@ -397,6 +380,15 @@ function cleanupOldFinalStates(maxAgeMs = 1000 * 60 * 60) {
     }
   });
 }
+
+const assignDocMetaDataToUIState = assign({
+  uiState: (context: AppContext, event: any) => ({
+    ...context.uiState,
+    lastUpdated: new Date().toISOString(),
+    level: context.documentMetaData.level, // Assign level from documentMetaData
+    pills: context.documentMetaData.pills, // Assign pills from documentMetaData
+  }),
+});
 
 // Run cleanup periodically
 setInterval(cleanupOldFinalStates, 1000 * 60 * 15); // every 15 minutes

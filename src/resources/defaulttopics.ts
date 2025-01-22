@@ -1,4 +1,6 @@
-export const defaultTopics = [
+import { Topic } from "../common/types.js";
+
+export const defaultTopics: Topic[] = [
   {
     title: "Pirate Slang",
     outOf: 5,

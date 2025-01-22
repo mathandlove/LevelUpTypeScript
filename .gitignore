@@ -1,0 +1,8 @@
+# Ignore specific files
+public/tokenData.json
+path/to/another-file.js
+
+# Ignore all files in a directory
+dist
+node_modules
+

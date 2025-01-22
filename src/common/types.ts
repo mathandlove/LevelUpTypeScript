@@ -1,4 +1,5 @@
 import { WebSocket } from "ws";
+import { defaultTopics } from "../resources/defaulttopics.js";
 // First, define the interface
 
 //websocket Types
@@ -71,4 +72,23 @@ export const defaultUIState: UIState = {
   copypasted: 0,
   timeSpentHours: 0,
   timeSpentMinutes: 0,
+};
+
+//----------------------------------------------------------
+
+export interface DocumentMetaData {
+  level: number;
+  pills: Array<Topic>;
+  reflection?: {
+    question?: string;
+    placeholder?: string;
+  };
+  rubric?: {
+    title: string;
+  };
+}
+
+export const defaultDocumentMetaData: DocumentMetaData = {
+  level: 0,
+  pills: defaultTopics,
 };
