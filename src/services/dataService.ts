@@ -16,7 +16,8 @@ interface TokenInfoResponse {
   audience: string;
 }
 
-export async function getClientId(tokenString: string): Promise<string> {
+export async function validateToken(context: AppContext): Promise<boolean> {
+  const tokenString = context.appState.token;
   const requestBody = JSON.stringify({ access_token: tokenString });
   const url = "https://www.googleapis.com/oauth2/v1/tokeninfo";
   const options = {
@@ -31,7 +32,7 @@ export async function getClientId(tokenString: string): Promise<string> {
       url,
       options
     );
-    return response.audience;
+    return true;
   } catch {
     throw new Error(
       "Google servers sent an invalid token. Please refresh the page and try again."

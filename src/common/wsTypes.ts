@@ -52,16 +52,43 @@ export function isValidButtonClickedIncomingMessage(
 
 // Discriminated union for incoming messages
 export type IncomingWebSocketMessage =
-  | TokenIncomingMessage
-  | ButtonClickedIncomingMessage;
+  | {
+      type: "GIVE_TOKEN";
+      payload: { token: string; clientId: string; documentId: string };
+    }
+  | {
+      type: "BUTTON_CLICKED";
+      payload: {
+        buttonId: string;
+        buttonTitle?: number;
+        clientId: string;
+        documentId: string;
+      };
+    };
 
 export function isValidIncomingWebSocketMessage(
   message: any
 ): message is IncomingWebSocketMessage {
-  return (
-    isValidTokenIncomingMessage(message) ||
-    isValidButtonClickedIncomingMessage(message)
-  );
+  if (!message || typeof message !== "object") return false;
+  switch (message.type) {
+    case "GIVE_TOKEN":
+      return (
+        message.payload &&
+        typeof message.payload.token === "string" &&
+        typeof message.payload.clientId === "string" &&
+        typeof message.payload.documentId === "string"
+      );
+
+    case "BUTTON_CLICKED":
+      return (
+        message.payload &&
+        typeof message.payload.buttonId === "string" &&
+        typeof message.payload.clientId === "string" &&
+        typeof message.payload.documentId === "string" &&
+        (message.payload.buttonTitle === undefined ||
+          typeof message.payload.buttonTitle === "number")
+      );
+  }
 }
 
 export interface OutgoingWebSocketMessage {

@@ -1,12 +1,6 @@
+import { createMachine, assign, interpret, Interpreter, send } from "xstate";
 import {
-  createMachine,
-  assign,
-  interpret,
-  Interpreter,
-  StateMachine,
-} from "xstate";
-import {
-  getClientId,
+  validateToken,
   getOrLoadDocumentMetaData,
   getPersistentDataFileId,
 } from "./services/dataService.js";
@@ -40,9 +34,14 @@ type ErrorMessageEvent = {
   };
 };
 
+type InternalEvent = {
+  type: "TOPICS_UPDATED";
+};
+
 const defaultDocState: DocState = "waiting for documentID";
 
-type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent;
+// Add button click to AppEvent type
+type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent | InternalEvent;
 
 const defaultAppState: AppState = {
   token: "Waiting for token...",
@@ -64,9 +63,9 @@ const defaultAppContext: AppContext = {
   documentMetaData: null,
 };
 
-// Extend the interpreter type to include stopAll
+// Update the ExtendedInterpreter interface to use AppEvent
 interface ExtendedInterpreter
-  extends Interpreter<AppContext, any, IncomingWebSocketMessage, any> {
+  extends Interpreter<AppContext, any, AppEvent, any> {
   stopAll: () => void;
 }
 
@@ -125,7 +124,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
   return createMachine<AppContext, AppEvent>(
     {
       id: "app",
-      initial: "initial",
+      type: "parallel",
       predictableActionArguments: true,
       context: {
         ...defaultAppContext,
@@ -135,136 +134,219 @@ export function createAppMachine(ws: LevelUpWebSocket) {
         },
       },
       states: {
-        initial: {
-          on: {
-            GIVE_TOKEN: {
-              target: "tokenReceived",
-              actions: assign({
-                appState: (context, event) => ({
-                  ...context.appState,
-                  token: event.payload.token,
-                  clientId: event.payload.clientId,
-                  documentId: event.payload.documentId,
-                  ws: context.appState.ws, // Preserve the ws reference
-                }),
-              }),
+        challengeData: {
+          initial: "initial",
+          states: {
+            initial: {
+              on: {
+                GIVE_TOKEN: {
+                  target: "validatingToken",
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        token: event.payload.token,
+                        clientId: event.payload.clientId,
+                        documentId: event.payload.documentId,
+                        ws: context.appState.ws, // Preserve the ws reference
+                      }),
+                    }),
+                  ],
+                },
+              },
             },
-          },
-        },
-        tokenReceived: {
-          invoke: {
-            src: "validateTokenService",
-            onDone: {
-              target: "fetchingDocumentMetadata",
-              actions: [
+            validatingToken: {
+              invoke: {
+                src: validateToken,
+                onDone: {
+                  target: "loadingPersistentData",
+                },
+                onError: {
+                  target: "error",
+                },
+              },
+            },
+            loadingPersistentData: {
+              invoke: {
+                src: getPersistentDataFileId,
+                onDone: {
+                  target: "loadingDocumentMetaData",
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        persistentDataFileId: event.data,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "error",
+                  actions: [],
+                },
+              },
+            },
+            loadingDocumentMetaData: {
+              invoke: {
+                src: getOrLoadDocumentMetaData,
+                onDone: {
+                  target: "creatingChallenges",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => event.data,
+                    }),
+                    "assignDocMetaDataToUIState",
+                    send({
+                      type: "TOPICS_UPDATED",
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "error",
+                },
+              },
+            },
+            creatingChallenges: {},
+            Ready: {},
+            error: {
+              entry: [
                 (context, event) => {
-                  console.log(
-                    "Received valid token. Transitioning to authenticate"
-                  );
+                  console.log("Entered error state");
                 },
               ],
             },
-            onError: {
-              target: "error",
-              actions: "displayError",
-            },
           },
         },
-        error: {
-          type: "final",
-          entry: [
-            (context, event) => {
-              console.log("Entered error state");
-            },
-          ],
-        },
-        fetchingDocumentMetadata: {
-          invoke: {
-            src: async (context: AppContext) => {
-              // Fetch persistentDataFileId
-              const persistentDataFileId = await getPersistentDataFileId(
-                context
-              );
-
-              // Fetch document metadata
-              const documentMetaData = await getOrLoadDocumentMetaData({
-                ...context,
-                appState: {
-                  ...context.appState,
-                  persistentDataFileId, // Pass the updated state to the next function
-                },
-              });
-
-              // Return document metadata as the event result
-              return { documentMetaData, persistentDataFileId }; // Reference to the fetching service
-            },
-            onDone: {
-              target: "homePage", // Transition to the success state
-              actions: [
+        ui: {
+          initial: "home",
+          states: {
+            home: {
+              entry: [
                 assign({
-                  appState: (context, event) => ({
-                    ...context.appState,
-                    persistentDataFileId: event.data.persistentDataFileId, // Update persistentDataFileId
+                  uiState: (context: AppContext) => ({
+                    ...context.uiState,
+                    waitingAnimationOn: context.uiState.pills.length === 0,
                   }),
                 }),
                 assign({
-                  documentMetaData: (context, event) =>
-                    event.data.documentMetaData, // Save the document metadata
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "home-page",
+                    visibleButtons: [],
+                  }),
                 }),
-                assignDocMetaDataToUIState,
+                sendUIUpdate,
               ],
+              on: {
+                TOPICS_UPDATED: {
+                  actions: [
+                    assign({
+                      uiState: (context: AppContext) => ({
+                        ...context.uiState,
+                        waitingAnimationOn: false, //weird corner case if you make your default topics 0!
+                      }),
+                    }),
+                    sendUIUpdate,
+                  ],
+                },
+                BUTTON_CLICKED: {
+                  target: "waitForChallenge",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => {
+                        if (event.payload.buttonId === "pill-button") {
+                          return {
+                            ...context.documentMetaData,
+                            selectedChallengeNumber: event.payload.buttonTitle,
+                          };
+                        }
+                        return context.documentMetaData; // Return unchanged context if no match
+                      },
+                    }),
+                    send({
+                      type: "CHALLENGE_SELECTED",
+                    }),
+                  ],
+                },
+              },
+            },
+            waitForChallenge: {
+              entry: [
+                (context) => {
+                  console.log(context.documentMetaData.challengeArray);
+                },
+                assign({
+                  uiState: (context) => ({
+                    ...context.uiState,
+                    currentPage: "home-page",
+                    visibleButtons: [],
+                    waitingAnimationOn: true, // Show waiting animation if challenge is not ready
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              always: [
+                {
+                  target: "aiFeel", // Go to the "ai-feel" state if the condition is met
+                  cond: (context) => {
+                    const { challengeArray, selectedChallengeNumber } =
+                      context.documentMetaData;
+
+                    // Check if the challenge exists and is ready
+                    return (
+                      Array.isArray(challengeArray) &&
+                      challengeArray[selectedChallengeNumber]?.[0]?.ready ===
+                        true
+                    );
+                  },
+                },
+                {
+                  // No target, stays in the current state if the condition is not met
+                  actions: (context) => {
+                    console.log("Challenge not ready or does not exist.");
+                  },
+                },
+              ],
+            },
+            aiFeel: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "AI-Feeling",
+                    visibleButtons: ["back-button"],
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+            },
+            error: {
+              on: {
+                BUTTON_CLICKED: {
+                  // Add button click handling for error state
+                },
+              },
             },
           },
         },
-        homePage: {
-          onEntry: [
-            assign({
-              uiState: (context, event) => ({
-                ...context.uiState,
-                currentPage: "home-page",
-              }),
-            }),
-            sendUIUpdate,
-          ],
-        },
       },
     },
-
     {
       actions: {
-        requestNewTokenAction: () => {
-          console.log("Requesting new token from server...");
-        },
-        displayError: (context, event: ErrorMessageEvent) => {
-          console.log("Displaying error...");
-
-          context.uiState.currentPage = "server-error";
-          context.uiState.waitingAnimationOn = false;
-          context.uiState.visibleButtons = ["back-button"];
-          context.uiState.buttonsDisabled = [];
-          context.uiState.errorMessage = event.data.message;
-        },
-        assignDocMetaDataToUIState,
-      },
-      services: {
-        validateTokenService: (context: AppContext) => {
-          return getClientId(context.appState.token);
-        },
-      },
-      guards: {
-        isAuthError: (_: any, event: any) => {
-          const error = event.data;
-          return error?.name === "AuthError";
-        },
-        isNetworkError: (_: any, event: any) => {
-          const error = event.data;
-          return error?.name === "NetworkError";
-        },
+        assignDocMetaDataToUIState: assign({
+          uiState: (context: AppContext, event: any) => ({
+            ...context.uiState,
+            lastUpdated: new Date().toISOString(),
+            level: context.documentMetaData.level, // Assign level from documentMetaData
+            pills: context.documentMetaData.pills, // Assign pills from documentMetaData
+          }),
+        }),
       },
     }
   );
 }
 
+// Update the actor creation function
 // Update the actor creation function
 export function getOrCreateActor(
   clientId: string,
@@ -281,7 +363,7 @@ export function getOrCreateActor(
 
   const baseActor = interpret(createAppMachine(ws))
     .onTransition((state) => {
-      console.log(`🔄 [${key}] State Changed:`, state.value);
+      console.log(`🔄 State Changed:`, state.value); //[${key}]
 
       // Track state history
       const historyItem = {
@@ -323,23 +405,6 @@ export function getOrCreateActor(
         eventHistory.pop();
       }
       eventHistoryStore.set(key, eventHistory);
-
-      // Check if UI state has changed
-      const currentUIState = state.context.uiState;
-      if (
-        previousUIState === null ||
-        JSON.stringify(previousUIState) !== JSON.stringify(currentUIState)
-      ) {
-        // UI state has changed, notify client
-        const ws = state.context.appState.ws;
-        if (ws?.sendMessage) {
-          ws.sendMessage({
-            type: "STATE",
-            payload: currentUIState,
-          });
-        }
-        previousUIState = { ...currentUIState };
-      }
     })
     .onStop(() => {
       console.log(`🛑 [${key}] Actor stopped`);
@@ -355,7 +420,7 @@ export function getOrCreateActor(
       stateHistoryStore.delete(key);
       eventHistoryStore.delete(key);
     },
-  }) as ExtendedInterpreter;
+  }) as unknown as ExtendedInterpreter;
 
   actorStore.set(key, actor);
   return actor;
@@ -405,15 +470,6 @@ function cleanupOldFinalStates(maxAgeMs = 1000 * 60 * 60) {
     }
   });
 }
-
-const assignDocMetaDataToUIState = assign({
-  uiState: (context: AppContext, event: any) => ({
-    ...context.uiState,
-    lastUpdated: new Date().toISOString(),
-    level: context.documentMetaData.level, // Assign level from documentMetaData
-    pills: context.documentMetaData.pills, // Assign pills from documentMetaData
-  }),
-});
 
 // Run cleanup periodically
 setInterval(cleanupOldFinalStates, 1000 * 60 * 15); // every 15 minutes
