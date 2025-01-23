@@ -32,10 +32,8 @@ export function initializeWebSocket(server: Server): void {
         const message: IncomingWebSocketMessage = JSON.parse(
           rawMessage.toString()
         );
-
         if (isValidIncomingWebSocketMessage(message)) {
           logger.info("📨 Received message:", message);
-
           // Create or get the actor for this connection
           ws.actor = getOrCreateActor(
             message.payload.clientId,
@@ -47,6 +45,8 @@ export function initializeWebSocket(server: Server): void {
           } else {
             console.error("❌ No actor available for message:", message);
           }
+        } else {
+          console.error("❌ Invalid message:", message);
         }
       } catch (error) {
         console.error("❌ Error processing message:", error);

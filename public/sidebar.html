@@ -452,13 +452,18 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+        background: rgba(255, 255, 255, 0.9);
         justify-content: center;
         align-items: center;
         z-index: 1000;
-        border-radius: 8px; /* match button-box border radius */
+        border-radius: 8px;
         flex-direction: column;
-        gap: 20px; /* space between spinner and text */
+        gap: 20px;
+        display: none;
+      }
+
+      .spinner-overlay[style*="display: block"] {
+        display: flex !important;
       }
 
       .spinner {
@@ -1505,7 +1510,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
       </div>
       <span class="label">${pill.title}</span>
     `;
-    button.onclick = () => handlePillClick(pill.id);
+    button.onclick = () => handlePillClick(index);
     pillHolder.appendChild(button);
   });
 }
@@ -1605,9 +1610,11 @@ function setupEventHandlers() {
         messageQueue = [];  // Clear any queued messages
         
         sendWebSocketMessage({
-          type: 'button-click',undefined,
+          type: 'BUTTON_CLICKED',undefined,
           payload: {
             buttonId: buttonId,
+            clientId: clientId,
+            documentId: documentId
           }
         });
       };
@@ -1643,10 +1650,12 @@ document.addEventListener('DOMContentLoaded', setupEventHandlers);
 
 function handlePillClick(pillButtonId){
         sendWebSocketMessage({
-          type: 'button-click',
+          type: 'BUTTON_CLICKED',
           payload: {
             buttonId: 'pill-button',
-            buttonTitle: pillButtonId
+            buttonTitle: pillButtonId,
+            clientId: clientId,
+            documentId: documentId
           }
         });
       }
