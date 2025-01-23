@@ -92,3 +92,42 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   level: 1,
   pills: defaultTopics,
 };
+
+export interface DocumentMetaDataMap {
+  [key: string]: DocumentMetaData;
+}
+
+export function verifyDocumentMetaDataMap(
+  data: unknown
+): data is DocumentMetaDataMap {
+  try {
+    if (typeof data !== "object" || data === null) {
+      return false;
+    }
+    for (const key in data) {
+      const metaData = data[key];
+
+      if (
+        typeof metaData.level !== "number" ||
+        !Array.isArray(metaData.pills) ||
+        metaData.pills.some(
+          (pill) =>
+            typeof pill !== "object" ||
+            typeof pill.title !== "string" ||
+            typeof pill.outOf !== "number" ||
+            typeof pill.current !== "number" ||
+            typeof pill.isReflection !== "boolean" ||
+            (pill.description !== undefined &&
+              typeof pill.description !== "string")
+        )
+      ) {
+        console.error(`Invalid metadata at key: ${key}`, metaData);
+        return false;
+      }
+    }
+    return true;
+  } catch (error) {
+    console.error("Error verifying persistent data:", error);
+    return false;
+  }
+}
