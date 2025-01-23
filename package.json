@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/server.ts",
+    "dev": "nodemon",
     "build": "tsc",
     "start": "node --loader ts-node/esm src/server.ts"
   },
@@ -21,12 +21,14 @@
     "@types/ws": "^8.5.13",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "googleapis": "^144.0.0",
+    "jwt-decode": "^4.0.0",
     "node-fetch": "^3.3.2",
     "ws": "^8.18.0",
     "xstate": "^4.38.3"
