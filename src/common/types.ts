@@ -89,6 +89,6 @@ export interface DocumentMetaData {
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
-  level: 0,
+  level: 1,
   pills: defaultTopics,
 };
