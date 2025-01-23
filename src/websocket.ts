@@ -24,7 +24,7 @@ export function initializeWebSocket(server: Server): void {
     // Initialize the WebSocket with a sendMessage method
     ws.sendMessage = function (message: OutgoingWebSocketMessage) {
       this.send(JSON.stringify(message));
-      console.log(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
+      logger.info(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
     };
 
     ws.on("message", (rawMessage: RawData) => {
@@ -34,7 +34,7 @@ export function initializeWebSocket(server: Server): void {
         );
 
         if (isValidIncomingWebSocketMessage(message)) {
-          console.log("📨 Received message:", message);
+          logger.info("📨 Received message:", message);
 
           // Create or get the actor for this connection
           ws.actor = getOrCreateActor(

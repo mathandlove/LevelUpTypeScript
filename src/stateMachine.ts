@@ -5,7 +5,11 @@ import {
   Interpreter,
   StateMachine,
 } from "xstate";
-import { getClientId, getDocumentMetaData } from "./services/dataService.js";
+import {
+  getClientId,
+  getOrLoadDocumentMetaData,
+  getPersistentDataFileId,
+} from "./services/dataService.js";
 import {
   UIState,
   defaultUIState,
@@ -22,6 +26,7 @@ interface AppState {
   clientId: string;
   documentId: string;
   ws: LevelUpWebSocket;
+  persistentDataFileId: string;
 }
 
 // Define the DocState type
@@ -44,6 +49,7 @@ const defaultAppState: AppState = {
   clientId: "Waiting for clientID",
   documentId: "waiting for documentID",
   ws: null,
+  persistentDataFileId: null,
 };
 
 export interface AppContext {
@@ -55,7 +61,7 @@ export interface AppContext {
 const defaultAppContext: AppContext = {
   appState: defaultAppState,
   uiState: defaultUIState,
-  documentMetaData: defaultDocumentMetaData,
+  documentMetaData: null,
 };
 
 // Extend the interpreter type to include stopAll
@@ -174,15 +180,36 @@ export function createAppMachine(ws: LevelUpWebSocket) {
         },
         fetchingDocumentMetadata: {
           invoke: {
-            src: "getDocumentMetaData", // Reference to the fetching service
+            src: async (context: AppContext) => {
+              // Fetch persistentDataFileId
+              const persistentDataFileId = await getPersistentDataFileId(
+                context
+              );
+
+              // Fetch document metadata
+              const documentMetaData = await getOrLoadDocumentMetaData({
+                ...context,
+                appState: {
+                  ...context.appState,
+                  persistentDataFileId, // Pass the updated state to the next function
+                },
+              });
+
+              // Return document metadata as the event result
+              return { documentMetaData, persistentDataFileId }; // Reference to the fetching service
+            },
             onDone: {
               target: "homePage", // Transition to the success state
               actions: [
                 assign({
                   appState: (context, event) => ({
                     ...context.appState,
-                    documentMetaData: event.data, // Save fetched metadata
+                    persistentDataFileId: event.data.persistentDataFileId, // Update persistentDataFileId
                   }),
+                }),
+                assign({
+                  documentMetaData: (context, event) =>
+                    event.data.documentMetaData, // Save the document metadata
                 }),
                 assignDocMetaDataToUIState,
               ],
@@ -199,7 +226,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             }),
             sendUIUpdate,
           ],
-          type: "final",
         },
       },
     },
@@ -224,7 +250,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
         validateTokenService: (context: AppContext) => {
           return getClientId(context.appState.token);
         },
-        getDocumentMetaData,
       },
       guards: {
         isAuthError: (_: any, event: any) => {
