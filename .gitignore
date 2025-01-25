@@ -6,3 +6,4 @@ src/resources/key.ts
 dist
 node_modules
 
+src/resources/keys.ts
