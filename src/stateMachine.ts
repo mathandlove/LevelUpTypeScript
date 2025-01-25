@@ -12,6 +12,10 @@ import {
 } from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
 import { LevelUpWebSocket } from "./websocket.js";
+import { addChallengesToChallengeArrays } from "./services/aiService.js";
+import { chatGPTKey } from "./resources/keys.js";
+import { OAuth2Client } from "google-auth-library";
+import { savePersistentDocData } from "./services/dataService.js";
 
 // Initialize the inspector (add this before creating the machine)
 
@@ -21,6 +25,13 @@ interface AppState {
   documentId: string;
   ws: LevelUpWebSocket;
   persistentDataFileId: string;
+  chatGPTKey: string;
+  GoogleServices: {
+    oauth2Client: OAuth2Client; // Authenticated OAuth2 client
+    drive: any; // Google Drive API client
+    docs: any; // Google Docs API client
+    sheets: any; // Google Sheets API client
+  };
 }
 
 // Define the DocState type
@@ -49,6 +60,8 @@ const defaultAppState: AppState = {
   documentId: "waiting for documentID",
   ws: null,
   persistentDataFileId: null,
+  chatGPTKey,
+  GoogleServices: null,
 };
 
 export interface AppContext {
@@ -162,7 +175,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   target: "loadingPersistentData",
                 },
                 onError: {
-                  target: "error",
+                  target: ["#app.ui.uiError", "error"],
                 },
               },
             },
@@ -175,14 +188,14 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     assign({
                       appState: (context, event) => ({
                         ...context.appState,
-                        persistentDataFileId: event.data,
+                        persistentDataFileId: event.data.persistentDataFileId,
+                        GoogleServices: event.data.GoogleServices,
                       }),
                     }),
                   ],
                 },
                 onError: {
-                  target: "error",
-                  actions: [],
+                  target: ["#app.ui.uiError", "error"],
                 },
               },
             },
@@ -202,11 +215,40 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   ],
                 },
                 onError: {
-                  target: "error",
+                  target: ["#app.ui.uiError", "error"],
                 },
               },
             },
-            creatingChallenges: {},
+            creatingChallenges: {
+              invoke: {
+                src: addChallengesToChallengeArrays,
+                onDone: {
+                  target: "addChallengeDetails",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        challengeArray: event.data,
+                      }),
+                    }),
+                    (context) => {
+                      savePersistentDocData(
+                        context.appState.GoogleServices.oauth2Client,
+                        context.appState.documentId,
+                        context.appState.persistentDataFileId,
+                        context.documentMetaData
+                      );
+                    },
+                    //TODO there's an inefficiency here when we are saving without editing.
+                  ],
+                },
+                onError: {
+                  target: ["#app.ui.uiError", "error"],
+                },
+              },
+            },
+
+            addChallengeDetails: {},
             Ready: {},
             error: {
               entry: [
@@ -320,12 +362,18 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 sendUIUpdate,
               ],
             },
-            error: {
-              on: {
-                BUTTON_CLICKED: {
-                  // Add button click handling for error state
-                },
-              },
+            uiError: {
+              entry: [
+                assign({
+                  uiState: (context, event: ErrorMessageEvent) => ({
+                    ...context.uiState,
+                    currentPage: "server-error",
+                    errorMessage: event.data.message,
+                    waitingAnimationOn: false,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
             },
           },
         },
