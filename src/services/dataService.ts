@@ -41,16 +41,22 @@ export async function validateToken(context: AppContext): Promise<boolean> {
 }
 export async function getPersistentDataFileId(
   context: AppContext
-): Promise<string> {
+): Promise<{ persistentDataFileId: string; GoogleServices: object }> {
   let persistentDataFileId = context.appState.persistentDataFileId;
+  const token = context.appState.token;
+  const documentId = context.appState.documentId;
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({ access_token: token });
   if (!persistentDataFileId) {
-    const token = context.appState.token;
-    const documentId = context.appState.documentId;
-    const oauth2Client = new google.auth.OAuth2();
-    oauth2Client.setCredentials({ access_token: token });
     persistentDataFileId = await createOrGetPersistentDataFileId(oauth2Client);
   }
-  return persistentDataFileId;
+  const GoogleServices = {
+    oauth2Client,
+    drive: google.drive({ version: "v3", auth: oauth2Client }),
+    docs: google.docs({ version: "v1", auth: oauth2Client }),
+    sheets: google.sheets({ version: "v4", auth: oauth2Client }),
+  };
+  return { persistentDataFileId, GoogleServices };
 }
 
 export async function getOrLoadDocumentMetaData(
@@ -63,8 +69,9 @@ export async function getOrLoadDocumentMetaData(
     const token = context.appState.token;
     const documentId = context.appState.documentId;
     const oauth2Client = new google.auth.OAuth2();
-    const persistentDataFileId = context.appState.persistentDataFileId;
     oauth2Client.setCredentials({ access_token: token });
+
+    const persistentDataFileId = context.appState.persistentDataFileId;
 
     //Find Storage Location
 
@@ -215,9 +222,6 @@ async function createOrGetPersistentDataFileId(oauth2Client: any) {
         fields: "id, name", // Return the folder ID and name
       });
 
-      console.log(
-        `Folder created successfully. ID: ${createResponse.data.id}, Name: ${createResponse.data.name}`
-      );
       return createResponse.data.id; // Return the folder ID
     } catch (error) {
       console.error("Error creating folder:", error.message);
@@ -268,7 +272,7 @@ async function getPersistentDocDataMap(
   }
 }
 
-async function savePersistentDocData(
+export async function savePersistentDocData(
   oauth2Client: any,
   documentId: string,
   persistentDataId: string,
@@ -280,11 +284,7 @@ async function savePersistentDocData(
     persistentDataId
   );
   metaDocRecords[documentId] = persistentDocData;
-  console.log("metaDocRecords", metaDocRecords);
-  console.log(
-    "verifyDocumentMetaDataMap",
-    verifyDocumentMetaDataMap(metaDocRecords)
-  );
+
   await drive.files.update({
     fileId: persistentDataId,
     media: {

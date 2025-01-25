@@ -718,3 +718,1483 @@
 
 %%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:40:19.027Z"}}
 
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:45:10.475Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:45:36.379Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:46:19.742Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:46:32.429Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:47:19.191Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:48:34.379Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:52:22.942Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:53:11.490Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:55:42.465Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:56:15.427Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:58:05.290Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T21:58:36.377Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:01:09.467Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:03:13.643Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:03:23.405Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:03:37.341Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:07:56.480Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:09:55.321Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:10:20.378Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:12:13.377Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:15:21.601Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:18:54.572Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:19:17.248Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:21:39.451Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:21:40.582Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:40:44.814Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:41:21.497Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:44:46.371Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:45:18.336Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:45:26.356Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:45:35.640Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:46:13.905Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:47:25.655Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:50:01.327Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:50:10.501Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:51:55.486Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:52:06.367Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:53:02.541Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:53:36.309Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Pirate Slang","outOf":5,"current":3,"description":"Description1","isReflection":false},{"title":"Robot Slang","outOf":5,"current":1,"description":"Description2","isReflection":false},{"title":"Evidence","outOf":5,"current":4,"description":"Description3","isReflection":false},{"title":"Reflection","outOf":1,"current":0,"isReflection":true}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:57:57.658Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"type":"basic"},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"type":"basic"},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"type":"basic"},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"type":"basic"}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:58:34.647Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T22:59:19.356Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:01:06.689Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:02:22.410Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:03:33.372Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:04:13.576Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:04:25.969Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:06:47.987Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:07:04.557Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:16:37.847Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:17:16.874Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:18:23.716Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:21:42.338Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:22:15.420Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:22:44.632Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:23:15.578Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:24:37.506Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:27:01.115Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:27:15.345Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:27:46.516Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:32:32.344Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:33:50.393Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:38:20.356Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:38:52.405Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-23T23:40:12.399Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:00:16.738Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:03:45.162Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:08:26.253Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:23:07.411Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:28:00.428Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:28:34.573Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:44:11.028Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:44:11.028Z","errorMessage":"AI returned invalid areas of work"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Speak like a pirate","description":"Include language and voice like a 17th century pirate.","outOf":5,"current":0,"isReflection":false},{"title":"Evidence","description":"Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.","outOf":5,"current":0,"isReflection":false},{"title":"Word Choice","description":"Paragraphs start with main ideas and other sentences support the main idea","outOf":5,"current":0,"isReflection":false},{"title":"Voice","description":"Provide personal opinions.","outOf":5,"current":0,"isReflection":false}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T00:44:50.809Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:46:04.125Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:46:04.125Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:48:07.662Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:48:07.662Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:50:45.352Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:50:45.352Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:52:42.372Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:52:42.372Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:53:27.989Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:53:27.989Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:55:37.165Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:55:37.165Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:55:54.381Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:55:54.381Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:57:43.432Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:57:43.432Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:59:09.355Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T20:59:09.355Z","errorMessage":"Cannot read properties of null (reading 'response')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:01:03.133Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:01:03.133Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:02:08.836Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:02:08.836Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:02:43.508Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:02:43.508Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:03:22.506Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:03:22.506Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:03:52.118Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:03:52.118Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:06:50.520Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:08:16.379Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:08:16.379Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:11:14.759Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:12:12.533Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:12:12.533Z","errorMessage":"Cannot read properties of undefined (reading 'push')"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:15:32.973Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:18:51.654Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:19:31.433Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:22:42.926Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:22:48.524Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:22:58.213Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:23:30.239Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-24T21:26:15.549Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:29:19.015Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:30:58.772Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:41:15.202Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:48:47.317Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:50:56.232Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:51:38.772Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:51:38.772Z","errorMessage":"Challenge array is not the right size"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:52:45.864Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:53:06.878Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:57:02.300Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:57:37.112Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:58:20.444Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:59:12.718Z"}}
+
+🔴 WebSocket connection closed
