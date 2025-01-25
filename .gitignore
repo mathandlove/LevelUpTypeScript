@@ -1,9 +1,9 @@
 # Ignore specific files
 public/tokenData.json
-src/resources/key.ts
+src/resources/keys.ts
 
 # Ignore all files in a directory
 dist
 node_modules
 
-src/resources/keys.ts
+
