@@ -1,5 +1,6 @@
 import { WebSocket } from "ws";
 import { defaultTopics } from "../resources/defaulttopics.js";
+import { TasksArray, validateTasksArray } from "../resources/schemas.js";
 // First, define the interface
 
 //websocket Types
@@ -51,9 +52,7 @@ export interface UIState {
   taskFeedbackMessage?: string;
 
   // Challenge card content
-  tasks?: Array<{
-    text: string;
-  }>;
+  tasks?: TasksArray;
 
   // Customize card content
   rubric?: {
@@ -217,6 +216,8 @@ export function validateChallengeInfo(challenge: any): boolean {
   }
 
   return (
+    (typeof challenge.challengeTitle === "string" ||
+      challenge.challengeTitle === undefined) &&
     typeof challenge.aiSuggestion === "object" &&
     challenge.aiSuggestion !== null &&
     typeof challenge.aiSuggestion.originalSentence === "string" &&
@@ -230,11 +231,14 @@ export function validateChallengeInfo(challenge: any): boolean {
     (challenge.sentenceStartIndex === undefined ||
       typeof challenge.sentenceStartIndex === "number") &&
     (challenge.sentenceEndIndex === undefined ||
-      typeof challenge.sentenceEndIndex === "number")
+      typeof challenge.sentenceEndIndex === "number") &&
+    (challenge.taskArray === undefined ||
+      validateTasksArray(challenge.taskArray))
   );
 }
 
 export type ChallengeInfo = {
+  challengeTitle?: string;
   aiSuggestion: {
     originalSentence: string;
     aiImprovedSentence: string;
@@ -245,4 +249,5 @@ export type ChallengeInfo = {
   ready?: boolean;
   sentenceStartIndex?: number;
   sentenceEndIndex?: number;
+  taskArray?: TasksArray;
 };

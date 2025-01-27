@@ -1,4 +1,3 @@
-"use strict";
 /*
 import { interpret } from "xstate";
 import { appMachine } from "./stateMachine";
@@ -78,3 +77,4 @@ describe("appMachine", () => {
   });
 });
 */
+//# sourceMappingURL=stateMachine.test.js.map

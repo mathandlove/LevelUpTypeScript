@@ -32,27 +32,21 @@ Some solutions will have multiple changes. Only have the student do one. Ignore 
   return instructions;
 }
 
-export function getInstructForGeFeelingAI() {
-  const instructions = `1. Take the "What needs to be improved" as reference for what is wrong with the sentence.
-2. Determine how it would make the reader feel without that improvement.
-5. Start the first sentence with "Reading this sentence, I felt". 
-6. Then describe the emotional experience of reading.
-7. No Solutions: Do not tell students how to fix the problem at all.
-8. Write in language that a 6th grader would understand.
-9. The entire feedback should only be 1 sentence.
-
-
-
-Example emotional experiences for "Reading this made me feel:"
-Confused
-Lost
-Missing
-Better Understand
-Hear your voice
-Experience
-Seemed
-How do
+export function getInstructForGetFeelingAI() {
+  const instructions = `1. Take the "Reasoning" as reference for what is wrong with the sentence.
+2. Determine how it would make the reader feel reading the original sentence instead of the improved sentence.
+3. Start the first sentence with "Reading this made me feel". 
+4. Then describe the emotional experience of reading.
+5. No Solutions: Do not tell students how to fix the problem at all.
+6. Write in language that a 6th grader would understand.
+7. The entire feedback should only be 1 sentence.
+8. Use specific examples from the originalSentence.
 
 `;
+  return instructions;
+}
+
+export function getInstructForGetChallengeTitle() {
+  const instructions = `Based on the student task, describe in 5 words or less what the students overall goal is for improving the sentence. Do not give answers or quote text in the goal. Start your sentence with "Big Goal:"`;
   return instructions;
 }

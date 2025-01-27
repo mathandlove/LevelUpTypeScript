@@ -1,32 +1,43 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.initializeWebSocket = initializeWebSocket;
-const ws_1 = require("ws");
-const logger_js_1 = __importDefault(require("./utils/logger.js"));
-const wsTypes_js_1 = require("./common/wsTypes.js");
+import { WebSocketServer } from "ws";
+import logger from "./utils/logger.js";
+import { getOrCreateActor } from "./stateMachine.js";
+import { isValidIncomingWebSocketMessage, } from "./common/wsTypes.js";
 const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
-function initializeWebSocket(server) {
-    const wss = new ws_1.WebSocketServer({ server });
+export function initializeWebSocket(server) {
+    const wss = new WebSocketServer({ server });
     wss.on("connection", (ws) => {
-        logger_js_1.default.info("🟢 New WebSocket connection established");
-        ws.on("message", (rawMessage) => {
-            const message = JSON.parse(rawMessage.toString());
-            if ((0, wsTypes_js_1.isValidIncomingWebSocketMessage)(message)) {
-                console.log("Received message:", message);
-            }
-            else {
-                console.error("Invalid message received:", message);
-            }
-        });
+        console.log("🌐 New WebSocket connection");
+        // Initialize the WebSocket with a sendMessage method
         ws.sendMessage = function (message) {
             this.send(JSON.stringify(message));
-            logger_js_1.default.info(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
+            logger.info(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
         };
+        ws.on("message", (rawMessage) => {
+            try {
+                const message = JSON.parse(rawMessage.toString());
+                if (isValidIncomingWebSocketMessage(message)) {
+                    logger.info("📨 Received message:", message);
+                    // Create or get the actor for this connection
+                    ws.actor = getOrCreateActor(message.payload.clientId, message.payload.documentId, ws);
+                    if (ws.actor) {
+                        ws.actor.send(message);
+                    }
+                    else {
+                        console.error("❌ No actor available for message:", message);
+                    }
+                }
+                else {
+                    console.error("❌ Invalid message:", message);
+                }
+            }
+            catch (error) {
+                console.error("❌ Error processing message:", error);
+            }
+        });
         ws.on("close", () => {
-            logger_js_1.default.info("🔴 WebSocket connection closed");
+            logger.info("🔴 WebSocket connection closed");
+            // Clean up the actor when the connection closes
+            ws.actor.stopAll(); // Stop the actor
         });
         // Send welcome message
         ws.sendMessage({
@@ -76,3 +87,4 @@ function initializeWebSocket(server) {
     }
       */
 }
+//# sourceMappingURL=websocket.js.map

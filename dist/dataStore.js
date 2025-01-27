@@ -1,4 +1,3 @@
-"use strict";
 /*
 import
 
@@ -53,3 +52,4 @@ const dataStore = {
 
 export default dataStore;
 */
+//# sourceMappingURL=dataStore.js.map

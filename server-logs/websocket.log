@@ -2198,3 +2198,1115 @@
 %%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T15:59:12.718Z"}}
 
 🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T16:52:05.211Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T16:52:31.017Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:02:18.144Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:03:51.143Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:04:26.246Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:06:47.163Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:09:10.300Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:10:51.200Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:11:10.795Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:12:14.123Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:12:25.209Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:12:51.349Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:17:18.323Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:19:09.663Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:19:36.826Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:22:01.313Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-25T17:22:28.558Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:33:11.509Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:33:56.359Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:37:41.374Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:43:10.141Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:46:01.148Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:47:30.742Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:49:28.470Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:50:31.232Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:51:10.774Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:51:44.168Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:52:19.542Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:52:19.542Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":true,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:52:19.542Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:56:09.103Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:56:09.103Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T21:56:09.103Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:06:03.744Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:06:03.744Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:06:03.744Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:07:04.053Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:08:00.226Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:08:00.226Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:08:00.226Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:10:04.622Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the sentence was just ordinary and vague because it said the plot was only \"pretty interesting\" without explaining why, which made it hard to get excited about it."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the sentence was just ordinary and vague because it said the plot was only \"pretty interesting\" without explaining why, which made it hard to get excited about it."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the sentence was just ordinary and vague because it said the plot was only \"pretty interesting\" without explaining why, which made it hard to get excited about it."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the story was only kind of interesting, which didn't make me very excited to read more."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the story was only kind of interesting, which didn't make me very excited to read more."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel like the story was only kind of interesting, which didn't make me very excited to read more."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel a bit confused because the phrase \"killing an old man\" sounded abrupt and unclear, making it hard to understand what was getting intense."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:12:47.551Z","cardMainText":"Reading this made me feel a bit confused because the phrase \"killing an old man\" sounded abrupt and unclear, making it hard to understand what was getting intense."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:22:53.273Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:24:47.272Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:25:17.084Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:25:34.084Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:26:22.191Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:26:22.191Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:26:22.191Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:26:22.191Z","cardMainText":"Reading this made me feel a bit confused because saying \"First of all\" made it seem like there was supposed to be a list, but then there wasn't one."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:29:03.276Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:29:03.276Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z","cardMainText":"Reading this made me feel like the sentence started abruptly with \"First of all,\" which was a bit jarring and made it sound like there was already a conversation going on."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z","cardMainText":"Reading this made me feel like the sentence started abruptly with \"First of all,\" which was a bit jarring and made it sound like there was already a conversation going on."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z","cardMainText":"Reading this made me feel like the sentence started abruptly with \"First of all,\" which was a bit jarring and made it sound like there was already a conversation going on."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z","cardMainText":"Reading this made me feel like the description was a bit bland and didn't really capture how special or exciting the plot is because saying it's 'pretty interesting' sounds ordinary and doesn't get me excited to read the story."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:17.930Z","cardMainText":"Reading this made me feel like the description was a bit bland and didn't really capture how special or exciting the plot is because saying it's 'pretty interesting' sounds ordinary and doesn't get me excited to read the story."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel unsure and uninterested, because saying the plot is just \"pretty interesting\" doesn't really get me excited or make the story sound special."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel unsure and uninterested, because saying the plot is just \"pretty interesting\" doesn't really get me excited or make the story sound special."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel unsure and uninterested, because saying the plot is just \"pretty interesting\" doesn't really get me excited or make the story sound special."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel confused and a little startled because the phrase \"like killing an old man\" was abruptly added without enough context, making the sentence jarring."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel confused and a little startled because the phrase \"like killing an old man\" was abruptly added without enough context, making the sentence jarring."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel confused and a little startled because the phrase \"like killing an old man\" was abruptly added without enough context, making the sentence jarring."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel like the description with \"pretty interesting\" was a bit plain and didn't really express how exciting the plot could actually be."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:46:45.958Z","cardMainText":"Reading this made me feel like the description with \"pretty interesting\" was a bit plain and didn't really express how exciting the plot could actually be."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:52:07.888Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-26T22:56:16.946Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:29:58.092Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:31:29.375Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:31:41.084Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:33:43.195Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:35:29.143Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:37:59.285Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:39:38.321Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:39:58.276Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:41:02.158Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:41:58.077Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:41:58.077Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:41:58.077Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T01:41:58.077Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:47:10.269Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:47:10.269Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:47:10.269Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:47:10.269Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body.","tasks":{"tasks":["Identify the transition word or phrase at the beginning of the sentence.","Consider how changing this word or phrase might improve the sentence.","Rewrite the sentence with a different transition that provides a smoother flow."]}}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:49:56.688Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:49:56.688Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:49:56.688Z","cardMainText":"Reading this made me feel a little confused because it just says the plot is \"pretty interesting\" without telling me why it's interesting or what exciting things happen in the story."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:49:56.688Z","cardMainText":"Reading this made me feel a little confused because it just says the plot is \"pretty interesting\" without telling me why it's interesting or what exciting things happen in the story.","tasks":{"tasks":["Identify a more engaging adjective to replace 'interesting' that more accurately describes the plot.","Consider how the sentence structure can be made more concise and direct.","Think about word choice improvements for 'gets intense' to express the change in the plot more vividly."]}}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:50:27.347Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:50:27.347Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:50:27.347Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:50:27.347Z","cardMainText":"Reading this made me feel like the story was too harsh and shocking because of the part about killing an old man and hiding the body.","tasks":{"tasks":["Identify the transition word or phrase at the beginning of the sentence.","Consider how changing this word or phrase might improve the sentence.","Rewrite the sentence with a different transition that provides a smoother flow."]}}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:14.034Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:14.034Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:14.034Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:14.034Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how.","tasks":["Identify a more descriptive adjective to replace 'pretty interesting'.","Consider what specific elements make the plot interesting.","Think about how the plot captures readers' attention."]}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:53.418Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:53.418Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:53.418Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T03:57:53.418Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how.","tasks":["Identify a more descriptive adjective to replace 'pretty interesting'.","Consider what specific elements make the plot interesting.","Think about how the plot captures readers' attention."]}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:00:37.682Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:00:37.682Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:00:37.682Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:00:37.682Z","cardMainText":"Reading this made me feel a bit unsure about what makes the story interesting since it just says \"pretty interesting\" without explaining why or how.","tasks":["Identify a more descriptive adjective to replace 'pretty interesting'.","Consider what specific elements make the plot interesting.","Think about how the plot captures readers' attention."]}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:10:11.615Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:15:11.812Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:17:25.094Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:17:50.096Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:18:32.274Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:19:16.265Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:19:49.590Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:20:06.338Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:20:30.110Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:20:50.770Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:29.167Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:29.167Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:29.167Z","cardMainText":"Reading this made me feel like the sentence started too abruptly because \"First of all\" sounded a bit harsh and it didn't flow smoothly into talking about the interesting plot."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:29.167Z","cardMainText":"Reading this made me feel like the sentence started too abruptly because \"First of all\" sounded a bit harsh and it didn't flow smoothly into talking about the interesting plot.","tasks":["Identify the transitional phrase used at the beginning of the sentence.","Think of an alternative transitional phrase that can be used to start the sentence.","Replace the original phrase with the new transitional phrase you have chosen."],"challengeTitle":"Big Goal: Enhance sentence clarity and structure."}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":0,"pills":[],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:50.167Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:50.167Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:50.167Z","cardMainText":"Reading this made me feel like the sentence was boring and didn't really show why the story is interesting, just saying it's \"pretty interesting\" without giving any exciting details to get me curious."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","outOf":5,"current":0},{"title":"Organization","description":"Has Logical flow with effective transitions.","outOf":5,"current":0},{"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary.","outOf":5,"current":0},{"title":"Grammar","description":"Is Free of major grammatical errors .","outOf":5,"current":0}],"copypasted":0,"timeSpentHours":0,"timeSpentMinutes":0,"lastUpdated":"2025-01-27T04:21:50.167Z","cardMainText":"Reading this made me feel like the sentence was boring and didn't really show why the story is interesting, just saying it's \"pretty interesting\" without giving any exciting details to get me curious.","tasks":["Identify a stronger adjective to replace 'pretty interesting' that precisely describes the plot.","Think about how the plot makes the reader feel and choose a descriptive word.","Make a list of words that describe strong emotions or excitement to find the right adjective."],"cardSubtitle":"Big Goal: Enhance clarity and engagement."}}
+
