@@ -24,9 +24,9 @@ export async function addChallengeDetailsToChallengeArray(
   const promises = [];
   const localChallengeArray = Array.from(
     { length: context.documentMetaData.pills.length },
-    (_, i) => context.documentMetaData.challengeArray[i] || [] // Ensure a valid array exists
+    (_, i) => context.documentMetaData.newChallengesArray[i]
   );
-  const fullText = await getFullText(context);
+  const fullText = context.documentMetaData.currentText;
 
   for (let i = 0; i < localChallengeArray.length; i++) {
     for (let j = 0; j < localChallengeArray[i].length; j++) {
@@ -42,17 +42,15 @@ export async function addChallengeDetailsToChallengeArray(
           )
         );
       }
-      if (!localChallengeArray[i][j].sentenceStartIndex)
+      if (true || !localChallengeArray[i][j].sentenceStartIndex)
         promises.push(
-          getSentenceStartAndEndToChallenge(aiOriginalSentence, fullText).then(
-            ({ currentSentence, startIndex, endIndex }) => {
-              // Safely merge results into the local co   py
-              localChallengeArray[i][j].aiSuggestion.originalSentence =
-                currentSentence;
-              localChallengeArray[i][j].sentenceStartIndex = startIndex;
-              localChallengeArray[i][j].sentenceEndIndex = endIndex;
-            }
-          )
+          Promise.resolve(
+            getSentenceStartAndEndToChallenge(aiOriginalSentence, fullText)
+          ).then(({ currentSentence, startIndex, endIndex }) => {
+            localChallengeArray[i][j].sentenceInDoc = currentSentence;
+            localChallengeArray[i][j].sentenceStartIndex = startIndex;
+            localChallengeArray[i][j].sentenceEndIndex = endIndex;
+          })
         );
 
       if (!localChallengeArray[i][j].taskArray)
@@ -76,17 +74,14 @@ export async function addChallengeDetailsToChallengeArray(
   await Promise.all(promises);
 
   //Remove all challenges that have a startIndex of -1, mark all challenges as now ready to be used.
-
   const filteredChallengeArray = localChallengeArray.map((row) =>
     row.filter((challenge) => {
       if (challenge.sentenceStartIndex === -1) {
         return false;
       }
-      challenge.ready = true; // Mark remaining challenges as ready
       return true;
     })
   );
-
   return filteredChallengeArray;
 
   async function addAIFeelToChallenge(
@@ -160,11 +155,13 @@ export async function addChallengesToChallengeArrays(
 
   const localChallengeArray = Array.from(
     { length: context.documentMetaData.pills.length },
-    (_, i) => context.documentMetaData.challengeArray[i] || [] // Ensure a valid array exists
+    () => [] // Initialize each element as an empty array
   );
 
+  //When loading doc, we verified the length of the challengeArray.
+
   for (let i = 0; i < localChallengeArray.length; i++) {
-    if (localChallengeArray[i].length < 2) {
+    if (context.documentMetaData.challengeArray[i]?.length < 2) {
       promises.push(
         addChallengesToTopic(context, i).then((challenges) => {
           // Safely merge results into the local copy
@@ -181,7 +178,7 @@ export async function addChallengesToChallengeArrays(
     selectTopicNumber: number
   ): Promise<Array<ChallengeInfo>> {
     // Add the function logic here to return a Promise
-    const fullText = await getFullText(context);
+    const fullText = context.documentMetaData.currentText;
     const selectTopic = context.documentMetaData.pills[selectTopicNumber];
     const selectTopicDescription = selectTopic.description;
     const instructions = getInstructForTopicSentencesToImprove();

@@ -62,15 +62,9 @@ export async function getPersistentDataFileId(
 export async function getOrLoadDocumentMetaData(
   context: AppContext
 ): Promise<DocumentMetaData> {
-  if (context.documentMetaData != null) {
-    return context.documentMetaData;
-  }
   try {
-    const token = context.appState.token;
+    const oauth2Client = context.appState.GoogleServices.oauth2Client;
     const documentId = context.appState.documentId;
-    const oauth2Client = new google.auth.OAuth2();
-    oauth2Client.setCredentials({ access_token: token });
-
     const persistentDataFileId = context.appState.persistentDataFileId;
 
     //Find Storage Location
@@ -83,6 +77,10 @@ export async function getOrLoadDocumentMetaData(
     );
     if (persistentDocData == null) {
       persistentDocData = defaultDocumentMetaData;
+      persistentDocData.challengeArray = Array.from(
+        { length: persistentDocData.pills.length },
+        () => []
+      ); //Now we are guranteed to have the right challengeArray size!
       savePersistentDocData(
         oauth2Client,
         documentId,
@@ -278,6 +276,11 @@ export async function savePersistentDocData(
   persistentDataId: string,
   persistentDocData: DocumentMetaData
 ) {
+  //We do not neeed to save the document text as it is already saved in the google doc.
+  persistentDocData.currentText = "";
+  persistentDocData.textBeforeEdits = "";
+  persistentDocData.selectedChallengeNumber = -1;
+
   const drive = google.drive({ version: "v3", auth: oauth2Client });
   const metaDocRecords = await getPersistentDocDataMap(
     oauth2Client,
