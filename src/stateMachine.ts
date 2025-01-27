@@ -12,7 +12,10 @@ import {
 } from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
 import { LevelUpWebSocket } from "./websocket.js";
-import { addChallengesToChallengeArrays } from "./services/aiService.js";
+import {
+  addChallengesToChallengeArrays,
+  addChallengeDetailsToChallengeArray,
+} from "./services/aiService.js";
 import { chatGPTKey } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
 import { savePersistentDocData } from "./services/dataService.js";
@@ -46,7 +49,7 @@ type ErrorMessageEvent = {
 };
 
 type InternalEvent = {
-  type: "TOPICS_UPDATED";
+  type: "TOPICS_UPDATED" | "CHALLENGE_ARRAY_UPDATED" | "INITIAL_ARRAY_CHECK";
 };
 
 const defaultDocState: DocState = "waiting for documentID";
@@ -248,7 +251,33 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               },
             },
 
-            addChallengeDetails: {},
+            addChallengeDetails: {
+              invoke: {
+                src: addChallengeDetailsToChallengeArray,
+                onDone: {
+                  target: "Ready",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        challengeArray: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "CHALLENGE_ARRAY_UPDATED",
+                    }),
+                    (context) => {
+                      savePersistentDocData(
+                        context.appState.GoogleServices.oauth2Client,
+                        context.appState.documentId,
+                        context.appState.persistentDataFileId,
+                        context.documentMetaData
+                      );
+                    },
+                  ],
+                },
+              },
+            },
             Ready: {},
             error: {
               entry: [
@@ -305,18 +334,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         return context.documentMetaData; // Return unchanged context if no match
                       },
                     }),
-                    send({
-                      type: "CHALLENGE_SELECTED",
-                    }),
                   ],
                 },
               },
             },
             waitForChallenge: {
               entry: [
-                (context) => {
-                  console.log(context.documentMetaData.challengeArray);
-                },
                 assign({
                   uiState: (context) => ({
                     ...context.uiState,
@@ -326,29 +349,23 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   }),
                 }),
                 sendUIUpdate,
+                send({
+                  type: "INITIAL_ARRAY_CHECK", // This feels like cheating as we are initializing CHALLENGE_ARRAY not updating it.
+                }),
               ],
-              always: [
-                {
-                  target: "aiFeel", // Go to the "ai-feel" state if the condition is met
-                  cond: (context) => {
-                    const { challengeArray, selectedChallengeNumber } =
-                      context.documentMetaData;
-
-                    // Check if the challenge exists and is ready
-                    return (
-                      Array.isArray(challengeArray) &&
-                      challengeArray[selectedChallengeNumber]?.[0]?.ready ===
-                        true
-                    );
+              //TODO: when our we've updated challenges, this needs to be called as well.
+              on: {
+                CHALLENGE_ARRAY_UPDATED: [
+                  {
+                    target: "aiFeel", // Go to the "ai-feel" state if the condition is met
+                    cond: "isChallengeReady",
                   },
+                ],
+                INITIAL_ARRAY_CHECK: {
+                  target: "aiFeel",
+                  cond: "isChallengeReady",
                 },
-                {
-                  // No target, stays in the current state if the condition is not met
-                  actions: (context) => {
-                    console.log("Challenge not ready or does not exist.");
-                  },
-                },
-              ],
+              },
             },
             aiFeel: {
               entry: [
@@ -356,7 +373,47 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   uiState: (context, event) => ({
                     ...context.uiState,
                     currentPage: "AI-Feeling",
-                    visibleButtons: ["back-button"],
+                    visibleButtons: ["back-button", "next-button"],
+                    cardMainText:
+                      context.documentMetaData.challengeArray[
+                        context.documentMetaData.selectedChallengeNumber
+                      ][0].aiFeeling,
+                    waitingAnimationOn: false,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: "home",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button",
+                  },
+                  {
+                    target: "challengeTaskDisplay",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "next-button",
+                  },
+                ],
+              },
+            },
+            challengeTaskDisplay: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "challenge-card",
+                    visibleButtons: ["skip-button", "check-work-button"],
+                    waitingAnimationOn: false,
+                    tasks:
+                      context.documentMetaData.challengeArray[
+                        context.documentMetaData.selectedChallengeNumber
+                      ][0].taskArray,
+                    cardSubtitle:
+                      context.documentMetaData.challengeArray[
+                        context.documentMetaData.selectedChallengeNumber
+                      ][0].challengeTitle,
                   }),
                 }),
                 sendUIUpdate,
@@ -385,10 +442,20 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           uiState: (context: AppContext, event: any) => ({
             ...context.uiState,
             lastUpdated: new Date().toISOString(),
-            level: context.documentMetaData.level, // Assign level from documentMetaData
-            pills: context.documentMetaData.pills, // Assign pills from documentMetaData
+            level: context.documentMetaData.level,
+            pills: context.documentMetaData.pills,
           }),
         }),
+      },
+      guards: {
+        isChallengeReady: (context) => {
+          const { challengeArray, selectedChallengeNumber } =
+            context.documentMetaData;
+          return (
+            Array.isArray(challengeArray) &&
+            challengeArray[selectedChallengeNumber]?.[0]?.ready === true
+          );
+        },
       },
     }
   );

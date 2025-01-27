@@ -87,3 +87,48 @@ export const ImprovedSentenceArraySchema = {
     },
   },
 };
+
+export const TasksArraySchema = {
+  type: "json_schema",
+  json_schema: {
+    name: "student_task",
+    strict: true,
+    schema: {
+      type: "object",
+      properties: {
+        tasks: {
+          type: "array",
+          description:
+            "An array containing exactly 3 tasks that the student must complete.",
+          items: {
+            type: "string",
+            description: "A specific task assigned to the student.",
+          },
+        },
+      },
+      required: ["tasks"],
+      additionalProperties: false,
+    },
+  },
+};
+
+export type TasksArray = string[];
+
+export const validateTasksArray = (data: any): data is TasksArray => {
+  // Check if `data` is an array
+  if (!Array.isArray(data)) {
+    return false;
+  }
+
+  // Check if the array has exactly 3 elements
+  if (data.length !== 3) {
+    return false;
+  }
+
+  // Check if all elements in the array are strings
+  if (data.some((task) => typeof task !== "string")) {
+    return false;
+  }
+
+  return true;
+};

@@ -1,16 +1,12 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
-const websocket_1 = require("./websocket");
-const http_1 = require("http");
-const app = (0, express_1.default)();
+import express from "express";
+import cors from "cors";
+import { initializeWebSocket } from "./websocket.js";
+import { createServer } from "http";
+import { getActiveStates } from "./stateMachine.js";
+const app = express();
 const port = 3000;
-app.use(express_1.default.json()); // Parse incoming JSON requests
-app.use((0, cors_1.default)({
+app.use(express.json()); // Parse incoming JSON requests
+app.use(cors({
     origin: "*",
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: [
@@ -20,10 +16,25 @@ app.use((0, cors_1.default)({
         "Origin",
     ],
 }));
-// Start the server
-const server = (0, http_1.createServer)(app);
-(0, websocket_1.initializeWebSocket)(server);
-// Start the server
+// Serve static files from the public directory
+app.use(express.static("public"));
+// Add monitoring endpoint
+app.get("/monitor", (req, res) => {
+    try {
+        const states = getActiveStates();
+        res.json(Array.from(states));
+    }
+    catch (error) {
+        console.error("Error in /monitor endpoint:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+// Create HTTP server from Express app
+const server = createServer(app);
+// Initialize WebSocket server with HTTP server
+initializeWebSocket(server);
+// Start the server using the HTTP server, not the Express app
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+//# sourceMappingURL=server.js.map

@@ -1,32 +1,27 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.defaultTopics = void 0;
-exports.defaultTopics = [
+export const defaultTopics = [
     {
-        title: "Pirate Slang",
+        title: "Thesis Statement",
+        description: "Has Clear, specific, and well-developed thesis.",
         outOf: 5,
-        current: 3,
-        description: "Description1",
-        isReflection: false,
-    },
-    {
-        title: "Robot Slang",
-        outOf: 5,
-        current: 1,
-        description: "Description2",
-        isReflection: false,
-    },
-    {
-        title: "Evidence",
-        outOf: 5,
-        current: 4,
-        description: "Description3",
-        isReflection: false,
-    },
-    {
-        title: "Reflection",
-        outOf: 1,
         current: 0,
-        isReflection: true,
+    },
+    {
+        title: "Organization",
+        description: "Has Logical flow with effective transitions.",
+        outOf: 5,
+        current: 0,
+    },
+    {
+        title: "Word Choice",
+        description: "Uses precise, varied, and appropriate vocabulary.",
+        outOf: 5,
+        current: 0,
+    },
+    {
+        title: "Grammar",
+        description: "Is Free of major grammatical errors .",
+        outOf: 5,
+        current: 0,
     },
 ];
+//# sourceMappingURL=defaulttopics.js.map

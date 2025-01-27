@@ -1434,7 +1434,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
       tasksContainer.innerHTML = state.tasks.map(task => `
         <div class="task-text">
           <input type="checkbox"}>
-          <span>${task.text}</span>
+          <span>${task}</span>
         </div>
       `).join('');
     }

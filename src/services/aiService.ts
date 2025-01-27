@@ -4,15 +4,153 @@ import {
   ImprovedSentenceArraySchema,
   validateImprovedSentenceArray,
   ImprovedSentenceArray,
+  validateTasksArray,
+  TasksArray,
+  TasksArraySchema,
 } from "../resources/schemas";
 import { getFullText } from "./googleServices";
 import {
   getInstructForTurnSentencesIntoTasks,
-  getInstructForGeFeelingAI,
   getInstructForTopicSentencesToImprove,
+  getInstructForGetFeelingAI,
+  getInstructForGetChallengeTitle,
 } from "../resources/InstructionsAI.js";
 import { chatGPTKey } from "../resources/keys";
+import { getSentenceStartAndEndToChallenge } from "./docServices";
 
+export async function addChallengeDetailsToChallengeArray(
+  context: AppContext
+): Promise<Array<Array<ChallengeInfo>>> {
+  const promises = [];
+  const localChallengeArray = Array.from(
+    { length: context.documentMetaData.pills.length },
+    (_, i) => context.documentMetaData.challengeArray[i] || [] // Ensure a valid array exists
+  );
+  const fullText = await getFullText(context);
+
+  for (let i = 0; i < localChallengeArray.length; i++) {
+    for (let j = 0; j < localChallengeArray[i].length; j++) {
+      const aiOriginalSentence =
+        localChallengeArray[i][j].aiSuggestion.originalSentence;
+      if (!localChallengeArray[i][j].aiFeeling) {
+        promises.push(
+          addAIFeelToChallenge(localChallengeArray[i][j].aiSuggestion).then(
+            (AIFeelString) => {
+              // Safely merge results into the local copy
+              localChallengeArray[i][j].aiFeeling = AIFeelString;
+            }
+          )
+        );
+      }
+      if (!localChallengeArray[i][j].sentenceStartIndex)
+        promises.push(
+          getSentenceStartAndEndToChallenge(aiOriginalSentence, fullText).then(
+            ({ currentSentence, startIndex, endIndex }) => {
+              // Safely merge results into the local co   py
+              localChallengeArray[i][j].aiSuggestion.originalSentence =
+                currentSentence;
+              localChallengeArray[i][j].sentenceStartIndex = startIndex;
+              localChallengeArray[i][j].sentenceEndIndex = endIndex;
+            }
+          )
+        );
+
+      if (!localChallengeArray[i][j].taskArray)
+        promises.push(
+          getTasksForChallenge(localChallengeArray[i][j].aiSuggestion).then(
+            (tasks) => {
+              localChallengeArray[i][j].taskArray = tasks;
+            }
+          )
+        );
+      if (!localChallengeArray[i][j].challengeTitle)
+        promises.push(
+          getChallengeTitle(localChallengeArray[i][j].aiSuggestion).then(
+            (challengeTitle) => {
+              localChallengeArray[i][j].challengeTitle = challengeTitle;
+            }
+          )
+        );
+    }
+  }
+  await Promise.all(promises);
+
+  //Remove all challenges that have a startIndex of -1, mark all challenges as now ready to be used.
+
+  const filteredChallengeArray = localChallengeArray.map((row) =>
+    row.filter((challenge) => {
+      if (challenge.sentenceStartIndex === -1) {
+        return false;
+      }
+      challenge.ready = true; // Mark remaining challenges as ready
+      return true;
+    })
+  );
+
+  return filteredChallengeArray;
+
+  async function addAIFeelToChallenge(
+    aiFeedback: ChallengeInfo["aiSuggestion"]
+  ): Promise<string> {
+    const instructions = getInstructForGetFeelingAI();
+    const messages = [];
+    messages.push({
+      role: "system",
+      content: instructions,
+    });
+    messages.push({
+      role: "assistant",
+      content: JSON.stringify(aiFeedback),
+    });
+    const returnDataSchema = null;
+    const model = "gpt-4o";
+    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+    return openAIobj.response;
+  }
+
+  async function getTasksForChallenge(
+    aiFeedback: ChallengeInfo["aiSuggestion"]
+  ): Promise<TasksArray> {
+    const instructions = getInstructForTurnSentencesIntoTasks();
+    const messages = [];
+    messages.push({
+      role: "system",
+      content: instructions,
+    });
+    messages.push({
+      role: "assistant",
+      content: JSON.stringify(aiFeedback),
+    });
+    const returnDataSchema = TasksArraySchema;
+    const model = "gpt-4o";
+    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+    let response: TasksArray = JSON.parse(openAIobj.response).tasks;
+    if (!validateTasksArray(response)) {
+      console.warn("AI returned invalid areas of work");
+      response = await getTasksForChallenge(aiFeedback);
+    }
+    return response;
+  }
+
+  async function getChallengeTitle(
+    aiFeedback: ChallengeInfo["aiSuggestion"]
+  ): Promise<string> {
+    const instructions = getInstructForGetChallengeTitle();
+    const messages = [];
+    messages.push({
+      role: "system",
+      content: instructions,
+    });
+    messages.push({
+      role: "assistant",
+      content: JSON.stringify(aiFeedback),
+    });
+    const returnDataSchema = null;
+    const model = "gpt-4o-mini";
+    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+    return openAIobj.response;
+  }
+}
 export async function addChallengesToChallengeArrays(
   context: AppContext
 ): Promise<Array<Array<ChallengeInfo>>> {
@@ -37,48 +175,47 @@ export async function addChallengesToChallengeArrays(
   }
   await Promise.all(promises);
   return localChallengeArray;
-}
-export async function addChallengesToTopic(
-  context: AppContext,
-  selectTopicNumber: number
-): Promise<Array<ChallengeInfo>> {
-  // Add the function logic here to return a Promise
-  const fullText = await getFullText(context);
-  const selectTopic = context.documentMetaData.pills[selectTopicNumber];
-  const selectTopicDescription = selectTopic.description;
 
-  const instructions = getInstructForTopicSentencesToImprove();
+  async function addChallengesToTopic(
+    context: AppContext,
+    selectTopicNumber: number
+  ): Promise<Array<ChallengeInfo>> {
+    // Add the function logic here to return a Promise
+    const fullText = await getFullText(context);
+    const selectTopic = context.documentMetaData.pills[selectTopicNumber];
+    const selectTopicDescription = selectTopic.description;
+    const instructions = getInstructForTopicSentencesToImprove();
 
-  const messages = [];
-  messages.push({
-    role: "system",
-    content: instructions,
-  });
-  messages.push({
-    role: "user",
-    content: `Criteria: Edit this paper so it ${selectTopicDescription}. Do not make other edits outside the criteria.\n
-    Paper: ${fullText}`,
-  });
-  const model = "gpt-4o-mini";
-  const returnDataSchema = ImprovedSentenceArraySchema;
-  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+    const messages = [];
+    messages.push({
+      role: "system",
+      content: instructions,
+    });
+    messages.push({
+      role: "user",
+      content: `Criteria: Edit this paper so it ${selectTopicDescription}. Do not make other edits outside the criteria.\n
+      Paper: ${fullText}`,
+    });
+    const model = "gpt-4o-mini";
+    const returnDataSchema = ImprovedSentenceArraySchema;
+    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
 
-  let response: ImprovedSentenceArray = await JSON.parse(openAIobj.response);
-
-  if (!validateImprovedSentenceArray(response)) {
-    throw new Error("AI returned invalid areas of work");
-    //eventually call again.
-  } else {
-    // Convert improved sentences to ChallengeInfo array
-    const challenges: ChallengeInfo[] = response.sentencePair.map(
-      (sentence) => ({
+    let response: ImprovedSentenceArray = await JSON.parse(openAIobj.response);
+    let challenges: ChallengeInfo[];
+    if (!validateImprovedSentenceArray(response)) {
+      console.warn("AI returned invalid areas of work");
+      challenges = await addChallengesToTopic(context, selectTopicNumber);
+      //eventually call again.
+    } else {
+      // Convert improved sentences to ChallengeInfo array
+      challenges = response.sentencePair.map((sentence) => ({
         aiSuggestion: {
           originalSentence: sentence.originalSentence,
           aiImprovedSentence: sentence.improvedSentence,
           aiReasoning: sentence.reasoning,
         },
-      })
-    );
+      }));
+    }
     // Add to your challengeArray
     return challenges;
   }
@@ -86,8 +223,8 @@ export async function addChallengesToTopic(
 
 interface OpenAICallResponse {
   response: string;
-  cost: number;
   callDuration: number;
+  cost: number;
 }
 
 interface ChatMessage {
@@ -155,7 +292,6 @@ async function callOpenAI(
       const cost =
         completionTokens * costPerCompletionToken +
         promptTokens * costPerPromptToken;
-      console.log(cost);
       return {
         response: jsonResponse.choices[0].message.content,
         cost,
