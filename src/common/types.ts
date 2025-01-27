@@ -85,13 +85,21 @@ export interface DocumentMetaData {
     title: string;
   };
   challengeArray: ChallengeInfo[][];
+  newChallengesArray: ChallengeInfo[][];
+  newChallengesReady: boolean;
   selectedChallengeNumber?: number;
+  currentText: string;
+  textBeforeEdits: string;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
   level: 1,
   pills: defaultTopics,
   challengeArray: [],
+  newChallengesArray: [],
+  newChallengesReady: false,
+  currentText: "",
+  textBeforeEdits: "",
 };
 
 export interface DocumentMetaDataMap {
@@ -204,8 +212,18 @@ export function verifyDocumentMetaDataMap(
       );
       return false;
     }
-  }
 
+    if (
+      typeof (metaData as DocumentMetaData).currentText !== "string" ||
+      typeof (metaData as DocumentMetaData).textBeforeEdits !== "string"
+    ) {
+      console.error(
+        `Invalid 'currentText' or 'textBeforeEdits' at key: ${key}`,
+        metaData
+      );
+      return false;
+    }
+  }
   return true;
 }
 
@@ -225,9 +243,10 @@ export function validateChallengeInfo(challenge: any): boolean {
     typeof challenge.aiSuggestion.aiReasoning === "string" &&
     (challenge.aiDirections === undefined ||
       typeof challenge.aiDirections === "string") &&
+    (challenge.sentenceInDoc === undefined ||
+      typeof challenge.sentenceInDoc === "string") &&
     (challenge.aiFeeling === undefined ||
       typeof challenge.aiFeeling === "string") &&
-    (challenge.ready === undefined || typeof challenge.ready === "boolean") &&
     (challenge.sentenceStartIndex === undefined ||
       typeof challenge.sentenceStartIndex === "number") &&
     (challenge.sentenceEndIndex === undefined ||
@@ -246,8 +265,8 @@ export type ChallengeInfo = {
   };
   aiDirections?: string;
   aiFeeling?: string;
-  ready?: boolean;
   sentenceStartIndex?: number;
   sentenceEndIndex?: number;
+  sentenceInDoc?: string;
   taskArray?: TasksArray;
 };
