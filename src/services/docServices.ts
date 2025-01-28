@@ -145,7 +145,7 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
   }
 
   const newModifiedText = newSentences
-    .slice(startIndex, endIndex)
+    .slice(startIndex, endIndex + 1)
     .join("")
     .trim();
 

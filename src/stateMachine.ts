@@ -24,6 +24,8 @@ import {
   addChallengesToChallengeArrays,
   addChallengeDetailsToChallengeArray,
   checkChallengeResponse,
+  getCelebration,
+  getFailedFeedback,
 } from "./services/aiService.js";
 import { chatGPTKey } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
@@ -598,7 +600,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 onDone: [
                   {
                     cond: (context, event) => event.data === true,
-                    target: "getCelebration",
+                    target: "levelUpPill",
                   },
                   {
                     target: "getFeedback",
@@ -606,8 +608,92 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
               },
             },
+            levelUpPill: {
+              always: [
+                {
+                  target: "getCelebration",
+                  actions: [
+                    assign({
+                      documentMetaData: (context) => {
+                        const { selectedChallengeNumber, pills, level } =
+                          context.documentMetaData;
 
-            getCelebration: {},
+                        if (
+                          typeof selectedChallengeNumber === "number" &&
+                          pills[selectedChallengeNumber]
+                        ) {
+                          // Create a new pills array with the updated pill
+                          const updatedPills = pills.map((pill, index) =>
+                            index === selectedChallengeNumber
+                              ? { ...pill, current: pill.current + 1 }
+                              : pill
+                          );
+
+                          // Return the updated documentMetaData
+                          return {
+                            ...context.documentMetaData,
+                            pills: updatedPills,
+                            level: level + 1, // Increment the level
+                          };
+                        } else {
+                          throw new Error(
+                            "Invalid selectedChallengeNumber or pill not found"
+                          );
+                        }
+                      },
+                    }),
+                    savePersistentDocData,
+                  ],
+                },
+              ],
+            },
+            getCelebration: {
+              invoke: {
+                src: getCelebration,
+                onDone: {
+                  target: "idleHome",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedbackMessage: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "REVIEWED",
+                      payload: {
+                        challengeResponse: "correct",
+                      },
+                    }),
+                  ],
+                },
+              },
+            },
+            getFeedback: {
+              invoke: {
+                src: getFailedFeedback,
+                onDone: {
+                  target: "idleOnChallenge",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedbackMessage: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "REVIEWED",
+                      payload: {
+                        challengeResponse: "incorrect",
+                      },
+                    }),
+                    (context, event) => {
+                      console.log("Incorrect: ", event.data);
+                    },
+                  ],
+                },
+              },
+            },
             error: {
               entry: [
                 (context, event) => {
@@ -648,11 +734,20 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         visibleButtons: [],
                       }),
                     }),
+                    //Animate up to current level
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        formerLevel: 1,
+                        animateLevelUp: true,
+                      }),
+                    }),
                     sendUIUpdate,
                   ],
                 },
                 BUTTON_CLICKED: {
-                  target: "waitForChallenge", // Transition to a loading state
+                  target: "celebrateScreen", //debug
+                  //target: "waitForChallenge", // Transition to a loading state
                   cond: (context, event) =>
                     event.payload.buttonId === "pill-button", // Only handle pill-button
                   actions: [
@@ -801,7 +896,50 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       },
                     ],
                   },
+                  {
+                    cond: (context, event) =>
+                      event.payload.challengeResponse === "incorrect",
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: false,
+                          taskFeedback: "incorrect",
+                        }),
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    target: "celebrateScreen",
+                    cond: (context, event) =>
+                      event.payload.challengeResponse === "correct",
+                  },
                 ],
+              },
+            },
+            celebrateScreen: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "celebrateScreen",
+                    visibleButtons: ["next-button"],
+                    cardMainText: context.uiState.taskFeedbackMessage,
+                    waitingAnimationOn: false,
+                    animateLevelUp: true,
+                    formerLevel: context.uiState.level - 1,
+                  }),
+                }),
+                "assignDocMetaDataToUIState",
+                sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: {
+                  target: "home",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "next-button",
+                },
               },
             },
             uiError: {
