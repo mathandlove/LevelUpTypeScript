@@ -23,6 +23,7 @@ import { LevelUpWebSocket } from "./websocket.js";
 import {
   addChallengesToChallengeArrays,
   addChallengeDetailsToChallengeArray,
+  checkChallengeResponse,
 } from "./services/aiService.js";
 import { chatGPTKey } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
@@ -560,9 +561,21 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         challengeResponse: "noChanges",
                       },
                     }),
-                    () => {
-                      console.log("REVIEWED_NO_CHANGES");
-                    },
+                  ],
+                },
+                {
+                  cond: (context) =>
+                    context.documentMetaData.challengeArray[
+                      context.documentMetaData.selectedChallengeNumber
+                    ][0].challengeResponse === "tooFar",
+                  target: "idleOnChallenge",
+                  actions: [
+                    send({
+                      type: "REVIEWED",
+                      payload: {
+                        challengeResponse: "tooFar",
+                      },
+                    }),
                   ],
                 },
                 {
@@ -579,7 +592,22 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               ],
             },
-            getAIJudgement: {},
+            getAIJudgement: {
+              invoke: {
+                src: checkChallengeResponse,
+                onDone: [
+                  {
+                    cond: (context, event) => event.data === true,
+                    target: "getCelebration",
+                  },
+                  {
+                    target: "getFeedback",
+                  },
+                ],
+              },
+            },
+
+            getCelebration: {},
             error: {
               entry: [
                 (context, event) => {
@@ -740,23 +768,40 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     ],
                   },
                 ],
-                REVIEWED: {
-                  cond: (context, event) =>
-                    event.payload.challengeResponse === "noChanges",
-                  actions: [
-                    assign({
-                      uiState: (context, event) => ({
-                        ...context.uiState,
-                        waitingAnimationOn: false,
-                        taskFeedback: "no-changes",
+                REVIEWED: [
+                  {
+                    cond: (context, event) =>
+                      event.payload.challengeResponse === "noChanges",
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: false,
+                          taskFeedback: "no-changes",
+                        }),
                       }),
-                    }),
-                    sendUIUpdate,
-                    () => {
-                      console.log("REVIEWED");
-                    },
-                  ],
-                },
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    cond: (context, event) =>
+                      event.payload.challengeResponse === "tooFar",
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: false,
+                          taskFeedback: "wrong-location",
+                          disabledButtons: ["check-work-button"],
+                        }),
+                      }),
+                      sendUIUpdate,
+                      (context, event) => {
+                        console.log("REVIEWED_TOO_FAR");
+                      },
+                    ],
+                  },
+                ],
               },
             },
             uiError: {

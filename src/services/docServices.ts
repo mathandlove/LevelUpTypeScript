@@ -118,8 +118,8 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
   const newSentences = splitIntoSentences(currentText);
 
   // Find differences
-  const startIndex = findFirstModifiedIndex(originalSentences, newSentences);
-  const endIndex = findLastModifiedIndex(originalSentences, newSentences);
+  let startIndex = findFirstModifiedIndex(originalSentences, newSentences);
+  let endIndex = findLastModifiedIndex(originalSentences, newSentences);
 
   if (startIndex === -1 || endIndex === -1) {
     return {
@@ -129,10 +129,24 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
       modifiedEndIndex: 0,
     };
   }
+  const originalSentence = modifiedSentences[modifiedSentences.length - 1];
+  //Find original sentence in new sentences.
+  const trimmedNewSentences = newSentences.map((sentence) => sentence.trim());
+  const originalSentenceStartIndex =
+    trimmedNewSentences.indexOf(originalSentence);
+  // Expand threshold to include any overlapping original sentences
+  if (originalSentenceStartIndex >= 0) {
+    console.log(
+      "Original sentence found at index:",
+      originalSentenceStartIndex
+    );
+    startIndex = Math.min(startIndex, originalSentenceStartIndex);
+    endIndex = Math.max(endIndex, originalSentenceStartIndex);
+  }
 
   const newModifiedText = newSentences
-    .slice(startIndex, endIndex + 1)
-    .join(" ")
+    .slice(startIndex, endIndex)
+    .join("")
     .trim();
 
   const isFarEdit = newModifiedText.split(/[.!?]+/).length - 1 >= 8;
@@ -161,7 +175,7 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
   // Utility Functions
 
   function splitIntoSentences(text: string): string[] {
-    return text.match(/[^.!?]+[.!?]+(\s|$)/g)?.map((s) => s.trim()) || [];
+    return text.match(/[^.!?]+[.!?]+(\s|$)/g)?.map((s) => s) || [];
   }
 
   function calculateCharIndex(

@@ -50,3 +50,9 @@ export function getInstructForGetChallengeTitle() {
   const instructions = `Based on the student task, describe in 10 words or less what the students overall goal is for improving the sentence. Do not give answers or quote text in the goal. Start your sentence with "Big Goal:"`;
   return instructions;
 }
+
+export function getInstructForCheckChallengeResponse() {
+  const instructions = `Determine whether sentence 1 or 2 followed the directions more.
+output: 1 or 2`;
+  return instructions;
+}
