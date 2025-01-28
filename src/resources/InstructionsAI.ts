@@ -56,3 +56,13 @@ export function getInstructForCheckChallengeResponse() {
 output: 1 or 2`;
   return instructions;
 }
+
+export function getInstructForGetCelebration() {
+  const instructions = `A student followed instructions, improving a sentence. In one short sentence, at a 6th grade reading level, compliment the student on how they improved teh sentence. Driectly reference the text they added to the sentence.`;
+  return instructions;
+}
+
+export function getInstructForGetFailedFeedback() {
+  const instructions = `A student failed to follow instructions improving a sentence. In one short sentence, at a 6th grade reading level, explain to the student why they failed and one small, specific thing they should do. Drirectly reference the text they added to the sentence.`;
+  return instructions;
+}

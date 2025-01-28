@@ -1002,7 +1002,11 @@
               <div class="card-main-text"></div>
             </div>
           </div>
-
+          <div class="card" id="celebrateScreen" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-main-text">Default Text Here</div>
+            </div>
+          </div>
           <div class="card" id="server-error" style="display: none; flex: 1">
             <div class="scroll-container">
               <div class="card-title">Server Error</div>
@@ -1389,8 +1393,8 @@ function handleStateChange(state) {
   });
 
   // Handle level display
-  if (state.level) {
-    document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.level}`;
+  if (state.formerLevel) {
+    document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.formerLevel}`;
   }
 
 
@@ -1451,7 +1455,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
         I can't find the original sentence now, and we'll need to choose a new challenge.`;
       }
       break;
-      case 'invalid-edit':
+      case 'incorrect':
       if (alertDiv) {
         alertDiv.className = "alert-message error";
         alertDiv.style.display = 'block';
@@ -1507,6 +1511,10 @@ if (!state.waitingAnimationOn) {
     enableAllButtons();
   }
 
+  if (state.animateLevelUp) {
+    console.log(state)
+increaseLevel(state.formerLevel,state.level);
+}
   setTimeout(() => {
             checkScrollOverflow();
           }, 0);
@@ -1542,9 +1550,7 @@ function checkScrollOverflow() {
           }
   }
 
-
-
-
+}    
 function updatePillProgress(pills) {
   pills.forEach((pill, index) => {
     const button = document.querySelector(`[data-pill-index="${index}"]`);
@@ -1560,10 +1566,7 @@ function updatePillProgress(pills) {
   });
 }
 
-  // After all content is updated, check for scrollbars
-
-}
-
+  // Handle level-up animation if requested
 
 function disableAllButtons() {
   document.querySelectorAll('button').forEach(button => {
@@ -1576,7 +1579,8 @@ function enableAllButtons() {
     button.classList.remove('no-clicks');
   });
 }
-    </script>
+
+</script>
 
     <script>
           //Utilty functions
@@ -1669,11 +1673,6 @@ function setupEventHandlers() {
     };
   }
 }
-
-
-    
-
-
 // Call this after the DOM is loaded
 document.addEventListener('DOMContentLoaded', setupEventHandlers);
 
@@ -1734,3 +1733,194 @@ function testMessageQueue() {
 }
 </script>
 
+<script>
+        const backgroundSystem = {
+        imageUrls: [
+          "https://wondersa.blob.core.windows.net/levelup/1.png",
+          "https://wondersa.blob.core.windows.net/levelup/2.png",
+          "https://wondersa.blob.core.windows.net/levelup/3.png",
+        ],
+        pxPerLevel: 100,
+        levelsPerImage: 10,
+        totalPxPerImage: 1000,
+
+        getRequiredImages(currentLevel) {
+          const totalPxNeeded = currentLevel * this.pxPerLevel;
+          return Math.ceil(totalPxNeeded / this.totalPxPerImage);
+        },
+
+        getNextImageUrl(imageIndex) {
+          return this.imageUrls[imageIndex % this.imageUrls.length];
+        },
+      };
+  //Level Up Box Animations
+  function adjustColors(baseColor) {
+    document.documentElement.style.setProperty("--base-blue", baseColor);
+    const textContainer = document.querySelector(".text-container");
+    textContainer.style.backgroundColor = baseColor;
+    const icons = document.querySelectorAll(".home-icon, .settings-icon");
+    icons.forEach((icon) => {
+      icon.style.fill = baseColor;
+    });
+  }
+
+  function increaseLevel(startLevel,targetLevel) {
+    console.log("increaseLevel", targetLevel);
+    setTimeout(() => {
+      const levelText = document.querySelector(".pixelated-gradient-text");
+
+  
+      let currentLevel = startLevel;
+
+      // Calculate total distance to move
+      const totalDistance = (targetLevel - startLevel) * 100;
+      const levelsToAnimate = targetLevel - startLevel;
+
+      // Animate balloon and background
+
+      const hotAirBalloon = document.querySelector(".hot-air-balloon");
+
+      // Start balloon animation
+      hotAirBalloon.style.transform = "translateY(-40px)";
+      hotAirBalloon.src =
+        "https://wondersa.blob.core.windows.net/levelup/hotAirBaloonFire.png";
+
+      updateBackgroundImages(targetLevel);
+
+      // Animate level counting up
+      const adventureImage = document.querySelector(
+        ".adventure-image-container"
+      );
+      adventureImage.style.height = `${targetLevel * 100}px`;
+      // Start the level animation
+      const delay = 1500 / levelsToAnimate;
+
+      setTimeout(animateLevels(currentLevel, targetLevel, delay), delay);
+    }, 100);
+
+    function updateBackgroundImages(targetLevel) {
+      const container = document.querySelector(
+        ".adventure-image-container"
+      );
+      const imagesNeeded = backgroundSystem.getRequiredImages(targetLevel);
+
+      // Create/update images as needed
+      for (let i = 0; i < imagesNeeded; i++) {
+        const imageUrl = backgroundSystem.getNextImageUrl(i);
+
+        // Only create new image if it doesn't exist
+        if (!container.querySelector(`[data-image-index="${i}"]`)) {
+          console.log(
+            `Adding new image for level ${targetLevel}, image index ${i}`
+          );
+          const img = document.createElement("img");
+          img.src = imageUrl;
+          img.className = "adventure-image";
+          img.dataset.imageIndex = i;
+          img.style.position = "absolute";
+          img.style.bottom = `${i * backgroundSystem.totalPxPerImage}px`;
+          img.style.width = "100%";
+          container.appendChild(img);
+        }
+      }
+    }
+
+    function animateLevels(currentLevel, targetLevel, delay) {
+      const levelText = document.querySelector(".pixelated-gradient-text");
+      if (currentLevel < targetLevel) {
+        currentLevel++;
+        levelText.textContent = `Level ${currentLevel}`;
+        setTimeout(animateLevels, delay, currentLevel, targetLevel, delay);
+      } else {
+        // Final animations after reaching target level
+        finishLevelAnimation();
+      }
+    }
+
+    function finishLevelAnimation() {
+      const levelTextContainer = document.querySelector(
+        ".level-text-container"
+      );
+      const levelText = document.querySelector(".pixelated-gradient-text");
+      // Your existing final animation code
+      const textContainer = document.querySelector(".text-container");
+      const hotAirBalloon = document.querySelector(".hot-air-balloon");
+      const currentWidth = parseFloat(
+        getComputedStyle(levelTextContainer).width
+      );
+      const currentHeight = parseFloat(
+        getComputedStyle(levelTextContainer).height
+      );
+
+      setTimeout(() => {
+        const currentWidth = parseFloat(
+          getComputedStyle(levelTextContainer).width
+        );
+        const currentHeight = parseFloat(
+          getComputedStyle(levelTextContainer).height
+        );
+
+        levelTextContainer.style.width = `${currentWidth * 1.05}px`;
+        levelTextContainer.style.height = `${currentHeight * 1.05}px`;
+
+        setTimeout(() => {
+          levelTextContainer.style.width = `${currentWidth}px`;
+          levelTextContainer.style.height = `${currentHeight}px`;
+
+          setTimeout(() => {
+            textContainer.style.animation = "";
+            const originalColors = {
+              dark: getComputedStyle(document.documentElement)
+                .getPropertyValue("--gradient-dark")
+                .trim(),
+              medium: getComputedStyle(document.documentElement)
+                .getPropertyValue("--gradient-medium")
+                .trim(),
+              light: getComputedStyle(document.documentElement)
+                .getPropertyValue("--gradient-light")
+                .trim(),
+            };
+
+            document.documentElement.style.setProperty(
+              "--gradient-dark",
+              "#ffffff"
+            );
+
+            setTimeout(() => {
+              document.documentElement.style.setProperty(
+                "--gradient-dark",
+                originalColors.dark
+              );
+              document.documentElement.style.setProperty(
+                "--gradient-medium",
+                "#ffffff"
+              );
+
+              setTimeout(() => {
+                document.documentElement.style.setProperty(
+                  "--gradient-medium",
+                  originalColors.medium
+                );
+                document.documentElement.style.setProperty(
+                  "--gradient-light",
+                  "#ffffff"
+                );
+
+                setTimeout(() => {
+                  document.documentElement.style.setProperty(
+                    "--gradient-light",
+                    originalColors.light
+                  );
+
+                  hotAirBalloon.style.transform = "translateY(0px)"; // Move back to original position
+                  hotAirBalloon.src =
+                    "https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"; // Change back to original image
+                }, 100);
+              }, 100);
+            }, 200);
+          }, 400);
+        }, 200);
+      }, 1600);
+    }
+  }
+</script>

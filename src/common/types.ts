@@ -24,6 +24,7 @@ export interface UIState {
   currentPage:
     | "home-page"
     | "AI-Feeling"
+    | "celebrateScreen"
     | "server-error"
     | "challenge-card"
     | "feel-response-card"
@@ -36,6 +37,8 @@ export interface UIState {
   visibleButtons: ButtonId[]; // Now enforces specific button IDs
   buttonsDisabled: ButtonId[];
   level: number;
+  formerLevel: number;
+  animateLevelUp: boolean;
   pills: Array<Topic>;
   copypasted: number;
   timeSpentHours: number;
@@ -48,7 +51,7 @@ export interface UIState {
     question?: string;
     placeholder?: string;
   };
-  taskFeedback?: "no-changes" | "wrong-location" | "invalid-edit" | undefined;
+  taskFeedback?: "no-changes" | "wrong-location" | "incorrect" | undefined;
   taskFeedbackMessage?: string;
 
   // Challenge card content
@@ -65,7 +68,9 @@ export const defaultUIState: UIState = {
   waitingAnimationOn: false,
   visibleButtons: ["next-button"],
   buttonsDisabled: [],
-  level: 0,
+  level: 1,
+  formerLevel: 1,
+  animateLevelUp: false,
   pills: [],
   copypasted: 0,
   timeSpentHours: 0,

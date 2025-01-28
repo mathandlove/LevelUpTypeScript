@@ -15,9 +15,81 @@ import {
   getInstructForGetFeelingAI,
   getInstructForGetChallengeTitle,
   getInstructForCheckChallengeResponse,
+  getInstructForGetCelebration,
+  getInstructForGetFailedFeedback,
 } from "../resources/InstructionsAI.js";
 import { chatGPTKey } from "../resources/keys";
 import { getSentenceStartAndEndToChallenge } from "./docServices";
+
+export async function getFailedFeedback(context: AppContext): Promise<string> {
+  const instructions = getInstructForGetFailedFeedback();
+  const messages = [];
+  const directions =
+    context.documentMetaData.challengeArray[
+      context.documentMetaData.selectedChallengeNumber
+    ][0].taskArray;
+  const challenge =
+    context.documentMetaData.challengeArray[
+      context.documentMetaData.selectedChallengeNumber
+    ][0];
+  const studentOriginalResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
+  const studentNewResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 1];
+
+  messages.push({ role: "system", content: instructions });
+  messages.push({
+    role: "user",
+    content: "Original response: " + studentOriginalResponse,
+  });
+  messages.push({
+    role: "assistant",
+    content: JSON.stringify(directions),
+  });
+  messages.push({
+    role: "user",
+    content: "New response: " + studentNewResponse,
+  });
+  const model = "gpt-4o";
+  const returnDataSchema = null;
+  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+  return openAIobj.response;
+}
+
+export async function getCelebration(context: AppContext): Promise<string> {
+  const instructions = getInstructForGetCelebration();
+  const messages = [];
+  const directions =
+    context.documentMetaData.challengeArray[
+      context.documentMetaData.selectedChallengeNumber
+    ][0].taskArray;
+  const challenge =
+    context.documentMetaData.challengeArray[
+      context.documentMetaData.selectedChallengeNumber
+    ][0];
+  const studentOriginalResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
+  const studentImprovedResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 1];
+
+  messages.push({ role: "system", content: instructions });
+  messages.push({
+    role: "user",
+    content: "Original response: " + studentOriginalResponse,
+  });
+  messages.push({
+    role: "assistant",
+    content: JSON.stringify(directions),
+  });
+  messages.push({
+    role: "user",
+    content: "Improved response: " + studentImprovedResponse,
+  });
+  const model = "gpt-4o";
+  const returnDataSchema = null;
+  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+  return openAIobj.response;
+}
 
 export async function checkChallengeResponse(
   context: AppContext
@@ -35,7 +107,7 @@ export async function checkChallengeResponse(
   const messages = [];
   messages.push({ role: "system", content: instructions });
   messages.push({ role: "user", content: "1: " + studentOriginalResponse });
-  messages.push({ role: "assistant", content: aiTask });
+  messages.push({ role: "assistant", content: JSON.stringify(aiTask) });
   messages.push({ role: "user", content: "2: " + studentImprovedResponse });
 
   const model = "gpt-4o-mini";
@@ -49,7 +121,7 @@ export async function checkChallengeResponse(
   } else {
     passed = false;
   }
-
+  console.log("passed: ", passed);
   return passed;
 }
 
