@@ -11,7 +11,8 @@ export type ButtonId =
   | "check-work-button"
   | "home-button"
   | "skip-button"
-  | "pill-button";
+  | "pill-button"
+  | "submit-button";
 
 export interface Topic {
   title: string;
@@ -19,6 +20,60 @@ export interface Topic {
   current: number;
   description: string;
 }
+
+export interface SavedActivity {
+  savedReflections: Array<Reflection>;
+  savedChallenges: Array<ChallengeInfo>;
+}
+
+export type ChallengeInfo = {
+  challengeTitle?: string;
+  aiSuggestion: {
+    originalSentence: string;
+    aiImprovedSentence: string;
+    aiReasoning: string;
+  };
+  modifiedSentences: string[];
+  aiDirections?: string;
+  aiFeeling?: string;
+  sentenceStartIndex?: number;
+  sentenceEndIndex?: number;
+  taskArray?: TasksArray;
+  challengeResponse?:
+    | "valid"
+    | "tooFar"
+    | "noChanges"
+    | "correct"
+    | "incorrect";
+};
+
+export interface Reflection {
+  enabled: boolean;
+  copyPercentIncluded: boolean;
+  question: Array<string>;
+  submittedAnswers: Array<string>;
+  placeholder: string;
+  outOf: number;
+  currentScore: number;
+  selectedQuestion: number;
+  noInputOnSubmit: boolean;
+}
+
+export const defaultReflection: Reflection = {
+  enabled: true,
+  copyPercentIncluded: false,
+  noInputOnSubmit: false,
+  question: [
+    "What went well?",
+    "What was hard?",
+    "How can the teacher help you?",
+  ],
+  submittedAnswers: [],
+  selectedQuestion: 0,
+  placeholder: "Enter your reflection here...",
+  outOf: 1,
+  currentScore: 0,
+};
 
 export interface UIState {
   currentPage:
@@ -40,17 +95,13 @@ export interface UIState {
   formerLevel: number;
   animateLevelUp: boolean;
   pills: Array<Topic>;
+  reflection: Reflection;
   copypasted: number;
   timeSpentHours: number;
   timeSpentMinutes: number;
   cardSubtitle?: string;
   cardMainText?: string;
   errorMessage?: string;
-  // Reflection card content
-  reflection?: {
-    question?: string;
-    placeholder?: string;
-  };
   taskFeedback?: "no-changes" | "wrong-location" | "incorrect" | undefined;
   taskFeedbackMessage?: string;
 
@@ -72,9 +123,10 @@ export const defaultUIState: UIState = {
   formerLevel: 1,
   animateLevelUp: false,
   pills: [],
-  copypasted: 0,
+  reflection: defaultReflection,
   timeSpentHours: 0,
   timeSpentMinutes: 0,
+  copypasted: 0,
 };
 
 //----------------------------------------------------------
@@ -82,19 +134,14 @@ export const defaultUIState: UIState = {
 export interface DocumentMetaData {
   level: number;
   pills: Array<Topic>;
-  reflection?: {
-    question?: string;
-    placeholder?: string;
-  };
-  rubric?: {
-    title: string;
-  };
   challengeArray: ChallengeInfo[][];
   newChallengesArray: ChallengeInfo[][];
   newChallengesReady: boolean;
   selectedChallengeNumber?: number;
   currentText: string;
   textBeforeEdits: string;
+  savedActivity: SavedActivity;
+  reflectionTemplate: Reflection;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -105,6 +152,11 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   newChallengesReady: false,
   currentText: "",
   textBeforeEdits: "",
+  savedActivity: {
+    savedReflections: [],
+    savedChallenges: [],
+  },
+  reflectionTemplate: defaultReflection,
 };
 
 export interface DocumentMetaDataMap {
@@ -146,30 +198,6 @@ export function verifyDocumentMetaDataMap(
     ) {
       console.error(`Invalid 'pills' data at key: ${key}`, metaData);
       return false;
-    }
-
-    // Validate optional reflection field
-    if ((metaData as DocumentMetaData).reflection !== undefined) {
-      const reflection = (metaData as DocumentMetaData).reflection;
-      if (
-        typeof reflection !== "object" ||
-        (reflection.question !== undefined &&
-          typeof reflection.question !== "string") ||
-        (reflection.placeholder !== undefined &&
-          typeof reflection.placeholder !== "string")
-      ) {
-        console.error(`Invalid 'reflection' data at key: ${key}`, metaData);
-        return false;
-      }
-    }
-
-    // Validate optional rubric field
-    if ((metaData as DocumentMetaData).rubric !== undefined) {
-      const rubric = (metaData as DocumentMetaData).rubric;
-      if (typeof rubric !== "object" || typeof rubric.title !== "string") {
-        console.error(`Invalid 'rubric' data at key: ${key}`, metaData);
-        return false;
-      }
     }
 
     // Validate challengeArray
@@ -258,24 +286,3 @@ export function validateChallengeInfo(challenge: any): boolean {
       validateTasksArray(challenge.taskArray))
   );
 }
-
-export type ChallengeInfo = {
-  challengeTitle?: string;
-  aiSuggestion: {
-    originalSentence: string;
-    aiImprovedSentence: string;
-    aiReasoning: string;
-  };
-  modifiedSentences: string[];
-  aiDirections?: string;
-  aiFeeling?: string;
-  sentenceStartIndex?: number;
-  sentenceEndIndex?: number;
-  taskArray?: TasksArray;
-  challengeResponse?:
-    | "valid"
-    | "tooFar"
-    | "noChanges"
-    | "correct"
-    | "incorrect";
-};
