@@ -14,9 +14,44 @@ import {
   getInstructForTopicSentencesToImprove,
   getInstructForGetFeelingAI,
   getInstructForGetChallengeTitle,
+  getInstructForCheckChallengeResponse,
 } from "../resources/InstructionsAI.js";
 import { chatGPTKey } from "../resources/keys";
 import { getSentenceStartAndEndToChallenge } from "./docServices";
+
+export async function checkChallengeResponse(
+  context: AppContext
+): Promise<boolean> {
+  const challenge =
+    context.documentMetaData.challengeArray[
+      context.documentMetaData.selectedChallengeNumber
+    ][0];
+  const aiTask: TasksArray = challenge.taskArray;
+  const studentOriginalResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
+  const studentImprovedResponse =
+    challenge.modifiedSentences[challenge.modifiedSentences.length - 1];
+  const instructions = getInstructForCheckChallengeResponse();
+  const messages = [];
+  messages.push({ role: "system", content: instructions });
+  messages.push({ role: "user", content: "1: " + studentOriginalResponse });
+  messages.push({ role: "assistant", content: aiTask });
+  messages.push({ role: "user", content: "2: " + studentImprovedResponse });
+
+  const model = "gpt-4o-mini";
+  const returnDataSchema = null;
+  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+  let passed: boolean;
+  if (openAIobj.response.includes("1")) {
+    passed = false;
+  } else if (openAIobj.response.includes("2")) {
+    passed = true;
+  } else {
+    passed = false;
+  }
+
+  return passed;
+}
 
 export async function addChallengeDetailsToChallengeArray(
   context: AppContext
