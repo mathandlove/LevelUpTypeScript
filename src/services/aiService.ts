@@ -47,7 +47,7 @@ export async function addChallengeDetailsToChallengeArray(
           Promise.resolve(
             getSentenceStartAndEndToChallenge(aiOriginalSentence, fullText)
           ).then(({ currentSentence, startIndex, endIndex }) => {
-            localChallengeArray[i][j].sentenceInDoc = currentSentence;
+            localChallengeArray[i][j].modifiedSentences = [currentSentence];
             localChallengeArray[i][j].sentenceStartIndex = startIndex;
             localChallengeArray[i][j].sentenceEndIndex = endIndex;
           })
@@ -82,6 +82,7 @@ export async function addChallengeDetailsToChallengeArray(
       return true;
     })
   );
+
   return filteredChallengeArray;
 
   async function addAIFeelToChallenge(
@@ -171,6 +172,7 @@ export async function addChallengesToChallengeArrays(
     }
   }
   await Promise.all(promises);
+
   return localChallengeArray;
 
   async function addChallengesToTopic(
@@ -211,6 +213,7 @@ export async function addChallengesToChallengeArrays(
           aiImprovedSentence: sentence.improvedSentence,
           aiReasoning: sentence.reasoning,
         },
+        modifiedSentences: [],
       }));
     }
     // Add to your challengeArray
