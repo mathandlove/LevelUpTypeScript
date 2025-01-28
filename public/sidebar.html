@@ -860,7 +860,7 @@
         resize: vertical;
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
         margin-top: 12px;
-        margin-bottom: 20px;
+        margin-bottom: 8px;
         box-sizing: border-box;
         resize: none;
       }
@@ -1048,7 +1048,7 @@
             </div>
           </div>
 
-          <div class="card" id="reflection-card" style="display: none; flex: 1">
+          <div class="card" id="reflection-card" style="display: none; flex: 1;">
             <div class="scroll-container">
               <div class="reflection-container">
                 <div class="reflection-question"></div>
@@ -1056,6 +1056,13 @@
                   class="reflection-textarea"
                   placeholder="Share your thoughts..."
                 ></textarea>
+                <!-- Gentle warning element -->
+                <div
+                  class="reflection-warning"
+                  style="display: none; color: #374363; font-size: 12px; margin-top: -5px;"
+                >
+                  Please share your thoughts before pushing "Next".
+                </div>
               </div>
             </div>
           </div>
@@ -1125,6 +1132,7 @@
 
             <div class="button-right-group">
               <button id="next-button" class="nav-button">Next</button>
+              <button id="submit-button" class="nav-button">Submit</button>
               <button id="check-work-button" class="nav-button">
                 Check Work
               </button>
@@ -1346,7 +1354,9 @@ function handleWebSocketMessage(event) {
 }
     </script>
     <script>
-function handleStateChange(state) {
+      let state={};
+function handleStateChange(statePayload) {
+  state = statePayload;
   console.log('🚌 Changing State', state);
 
   // Hide all cards first
@@ -1383,7 +1393,7 @@ function handleStateChange(state) {
 
   // Handle navigation buttons
   const buttonVisibility = state.buttons;
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
@@ -1393,7 +1403,7 @@ function handleStateChange(state) {
   });
 
   // Handle level display
-  if (state.formerLevel) {
+  if (state.formerLevel) { //On level ups the former level needs to start, then former level becomes level
     document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.formerLevel}`;
   }
 
@@ -1475,20 +1485,36 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
     const questionElement = document.querySelector('#reflection-card .reflection-question');
     const textArea = document.querySelector('#reflection-card textarea');
     if (questionElement && state.reflection.question) {
-      questionElement.innerHTML = state.reflection.question;
+      questionElement.innerHTML = state.reflection.question[state.reflection.selectedQuestion];
     }
     if (textArea && state.reflection.placeholder) {
       textArea.placeholder = state.reflection.placeholder;
     }
-  }
+    if(state.reflection.selectedQuestion < state.reflection.submittedAnswers.length){
+      textArea.value = state.reflection.submittedAnswers[state.reflection.selectedQuestion];
+    }
+    else{
+      textArea.value = "";
+    }
+    console.log("No input on submit", state.reflection.noInputOnSubmit);
+    console.log("questionNumber", state.reflection.selectedQuestion);
 
+      const reflectionWarning = document.querySelector('.reflection-warning');
+      if (state.reflection.noInputOnSubmit) {
+        reflectionWarning.style.display = 'block';
+      }
+      else{
+        reflectionWarning.style.display = 'none';
+      }
+    
+  
+    }
 
   function createPillStructure(pills) {
   const pillHolder = document.getElementById('pillHolder');
   if (!pillHolder) return;
 
   pillHolder.innerHTML = ''; 
-
   pills.forEach((pill, index) => {
     const button = document.createElement('button');
     button.className = 'topic-button';
@@ -1504,6 +1530,52 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
     button.onclick = () => handlePillClick(index);
     pillHolder.appendChild(button);
   });
+
+  
+  if (state.reflection.enabled) {
+    const reflectionButton = document.createElement('button');
+    reflectionButton.className = 'topic-button';
+    reflectionButton.setAttribute('data-pill-index', "-1");
+    reflectionButton.innerHTML = `
+      <div class="progress-bar">
+        <div class="inner-pill"></div>
+        <div class="inner-empty-pill"></div>
+        <span class="progress-text"></span>
+      </div>
+      <span class="label">Reflection</span>
+    `;
+    reflectionButton.onclick = () => handlePillClick(-1);
+    pillHolder.appendChild(reflectionButton);
+  }
+
+}
+
+
+function updatePillProgress(pills) {
+  pills.forEach((pill, index) => {
+    const button = document.querySelector(`[data-pill-index="${index}"]`);
+    if (button) {
+      const emptyPill = button.querySelector('.inner-empty-pill');
+      const progressText = button.querySelector('.progress-text');
+      
+      if (emptyPill && progressText) {
+        emptyPill.style.width = `${100 - (pill.current/pill.outOf * 100)}%`;
+        progressText.textContent = `${pill.current}/${pill.outOf}`;
+      }
+    }
+  });
+  //reflection pill
+  if(state.reflection.enabled){
+  const reflectionButton = document.querySelector('[data-pill-index="-1"]');
+  if(reflectionButton){
+    const emptyPill = reflectionButton.querySelector('.inner-empty-pill');
+    const progressText = reflectionButton.querySelector('.progress-text');
+    if (emptyPill && progressText) {
+      emptyPill.style.width = `${100 - (state.reflection.currentScore/state.reflection.outOf * 100)}%`;
+      progressText.textContent = `${state.reflection.currentScore}/${state.reflection.outOf}`;
+    }
+  }
+}
 }
 
 
@@ -1512,7 +1584,6 @@ if (!state.waitingAnimationOn) {
   }
 
   if (state.animateLevelUp) {
-    console.log(state)
 increaseLevel(state.formerLevel,state.level);
 }
   setTimeout(() => {
@@ -1520,10 +1591,8 @@ increaseLevel(state.formerLevel,state.level);
           }, 0);
           
 function checkScrollOverflow() {
-  console.log("Checking scroll overflow");
   const currentCardType = state.currentPage;
           const currentCard = document.getElementById(currentCardType);
-          console.log("Current card:", currentCard);
           const buttonBox = document.querySelector(".button-box");
           const buttonContainer = document.querySelector(".button-container");
 
@@ -1551,20 +1620,7 @@ function checkScrollOverflow() {
   }
 
 }    
-function updatePillProgress(pills) {
-  pills.forEach((pill, index) => {
-    const button = document.querySelector(`[data-pill-index="${index}"]`);
-    if (button) {
-      const emptyPill = button.querySelector('.inner-empty-pill');
-      const progressText = button.querySelector('.progress-text');
-      
-      if (emptyPill && progressText) {
-        emptyPill.style.width = `${100 - (pill.current/pill.outOf * 100)}%`;
-        progressText.textContent = `${pill.current}/${pill.outOf}`;
-      }
-    }
-  });
-}
+
 
   // Handle level-up animation if requested
 
@@ -1635,21 +1691,34 @@ function isGoogleApp() {
     <script>
 function setupEventHandlers() {
   // Button clicks
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.onclick = () => {
         disableAllButtons();
         messageQueue = [];  // Clear any queued messages
-        
+        console.log(document.querySelector('.reflection-card textarea')?.value);
+      if((buttonId === "next-button" || buttonId === "submit-button") && state.currentPage === "reflection-card"){
         sendWebSocketMessage({
-          type: 'BUTTON_CLICKED',undefined,
+          type: 'BUTTON_CLICKED',
+          payload: {
+            buttonId: buttonId,
+            clientId: clientId,
+            documentId: documentId,
+            textResponse: document.querySelector('.reflection-textarea')?.value || ''
+          }
+        });
+      }
+      else{
+        sendWebSocketMessage({
+          type: 'BUTTON_CLICKED',
           payload: {
             buttonId: buttonId,
             clientId: clientId,
             documentId: documentId
           }
         });
+      }
       };
     }
   });
@@ -1829,7 +1898,9 @@ function testMessageQueue() {
       const levelText = document.querySelector(".pixelated-gradient-text");
       if (currentLevel < targetLevel) {
         currentLevel++;
-        levelText.textContent = `Level ${currentLevel}`;
+        setTimeout(() => {
+          levelText.textContent = `Level ${currentLevel}`;
+        }, delay);
         setTimeout(animateLevels, delay, currentLevel, targetLevel, delay);
       } else {
         // Final animations after reaching target level
@@ -1916,11 +1987,11 @@ function testMessageQueue() {
                   hotAirBalloon.src =
                     "https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"; // Change back to original image
                 }, 100);
-              }, 100);
-            }, 200);
+              }, 200);
+            }, 400);
           }, 400);
         }, 200);
-      }, 1600);
+      }, 200);
     }
   }
 </script>

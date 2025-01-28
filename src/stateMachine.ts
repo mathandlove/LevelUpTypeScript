@@ -78,7 +78,10 @@ type InternalEvent =
       payload: {
         challengeResponse: "noChanges" | "tooFar" | "incorrect" | "correct";
       };
-    };
+    }
+  | { type: "REFLECTION_SELECTED" }
+  | { type: "REFLECTION_SUBMITTED" }
+  | { type: "BACK_TO_HOME" };
 
 const defaultDocState: DocState = "waiting for documentID";
 
@@ -161,6 +164,8 @@ function sendUIUpdate(context: AppContext) {
       payload: context.uiState,
     });
   }
+
+  //cleanup after sending ui update
 }
 
 // Define a function to create the machine with initial context
@@ -360,6 +365,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                           context.documentMetaData.selectedChallengeNumber
                       ),
                   ],
+                },
+                REFLECTION_SELECTED: {
+                  target: "idleReflection",
+                },
+                BACK_TO_HOME: {
+                  target: "idleHome",
                 },
                 NEW_CHALLENGES_AVAILABLE: {
                   actions: [
@@ -694,6 +705,72 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+
+            idleReflection: {
+              on: {
+                REFLECTION_SUBMITTED: {
+                  target: ["idleHome", "#app.UI.celebrateScreen"],
+                  actions: [
+                    // 1. Add reflection to documentMetaData.savedReflections
+                    assign({
+                      documentMetaData: (context) => ({
+                        ...context.documentMetaData,
+                        savedActivity: {
+                          ...context.documentMetaData.savedActivity,
+                          savedReflections: [
+                            ...context.documentMetaData.savedActivity
+                              .savedReflections,
+                            {
+                              ...context.uiState.reflection, // Add the current reflection
+                            },
+                          ],
+                        },
+                      }),
+                    }),
+
+                    // 2. Increase the level in the ReflectionTemplate
+                    assign({
+                      documentMetaData: (context) => ({
+                        ...context.documentMetaData,
+                        reflectionTemplate: {
+                          ...context.documentMetaData.reflectionTemplate,
+                          currentScore:
+                            context.documentMetaData.reflectionTemplate
+                              .currentScore + 1,
+                        },
+                      }),
+                    }),
+
+                    // 3. Turn reflectionTemplate into uiState.reflection
+                    assign({
+                      uiState: (context) => ({
+                        ...context.uiState,
+                        reflection: context.documentMetaData.reflectionTemplate,
+                      }),
+                    }),
+
+                    // 4. Increase the level in documentMetaData
+                    assign({
+                      documentMetaData: (context) => ({
+                        ...context.documentMetaData,
+                        level: context.documentMetaData.level + 1,
+                      }),
+                    }),
+
+                    //5. Set taskfeebackMessage.
+                    assign({
+                      uiState: (context) => ({
+                        ...context.uiState,
+                        taskFeedbackMessage:
+                          "Thanks for reflecting on your work! Reflection saved.",
+                      }),
+                    }),
+                    savePersistentDocData,
+                    //todo - put reflection on document somewhere.
+                  ],
+                },
+              },
+            },
             error: {
               entry: [
                 (context, event) => {
@@ -743,28 +820,60 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       }),
                     }),
                     sendUIUpdate,
-                  ],
-                },
-                BUTTON_CLICKED: {
-                  target: "celebrateScreen", //debug
-                  //target: "waitForChallenge", // Transition to a loading state
-                  cond: (context, event) =>
-                    event.payload.buttonId === "pill-button", // Only handle pill-button
-                  actions: [
+                    //After animation set new default levels.
                     assign({
-                      documentMetaData: (context, event) => ({
-                        ...context.documentMetaData,
-                        selectedChallengeNumber: event.payload.buttonTitle, // Assign buttonTitle to selectedChallengeNumber
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        formerLevel: context.uiState.level,
+                        animateLevelUp: false,
                       }),
                     }),
-                    send((context, event) => ({
-                      type: "CHALLENGE_SELECTED",
-                      payload: {
-                        topicNumber: event.payload.buttonTitle, // Use buttonTitle as topicNumber
-                      },
-                    })), // Ensure the action is returned properly
                   ],
                 },
+                BUTTON_CLICKED: [
+                  {
+                    target: "waitForChallenge", // Transition to a loading state
+                    cond: (context, event) =>
+                      event.payload.buttonId === "pill-button" &&
+                      event.payload.buttonTitle !== -1, // -1 ==reflec t
+                    actions: [
+                      assign({
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          selectedChallengeNumber: event.payload.buttonTitle, // Assign buttonTitle to selectedChallengeNumber
+                        }),
+                      }),
+                      send((context, event) => ({
+                        type: "CHALLENGE_SELECTED",
+                        payload: {
+                          topicNumber: event.payload.buttonTitle, // Use buttonTitle as topicNumber
+                        },
+                      })), // Ensure the action is returned properly
+                    ],
+                  },
+                  {
+                    target: "reflectionQuestions", // Transition to a loading state
+                    cond: (context, event) =>
+                      event.payload.buttonId === "pill-button" &&
+                      event.payload.buttonTitle == -1, // -1 ==reflec t
+                    actions: [
+                      assign({
+                        //We will load the uiState from defaultReflectio
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          reflection: {
+                            ...context.uiState.reflection,
+                            selectedQuestion: 0, //Start uiQuestions on page1
+                          },
+                        }),
+                      }),
+                      sendUIUpdate,
+                      send((context, event) => ({
+                        type: "REFLECTION_SELECTED",
+                      })), // Ensure the action is returned properly
+                    ],
+                  },
+                ],
               },
             },
             waitForChallenge: {
@@ -920,6 +1029,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             celebrateScreen: {
               entry: [
+                "assignDocMetaDataToUIState",
                 assign({
                   uiState: (context, event) => ({
                     ...context.uiState,
@@ -931,8 +1041,15 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     formerLevel: context.uiState.level - 1,
                   }),
                 }),
-                "assignDocMetaDataToUIState",
                 sendUIUpdate,
+                //After animation set new default levels.
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    formerLevel: context.uiState.level,
+                    animateLevelUp: false,
+                  }),
+                }),
               ],
               on: {
                 BUTTON_CLICKED: {
@@ -942,6 +1059,159 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+            reflectionQuestions: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "reflection-card",
+                    visibleButtons:
+                      context.uiState.reflection.selectedQuestion ===
+                      context.uiState.reflection.question.length - 1
+                        ? ["back-button", "submit-button"]
+                        : ["back-button", "next-button"],
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: "home",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button" &&
+                      context.uiState.reflection.selectedQuestion === 0,
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          reflection: {
+                            ...context.uiState.reflection,
+                            noInputOnSubmit: false,
+                          },
+                        }),
+                      }),
+                      send((context, event) => ({
+                        type: "BACK_TO_HOME",
+                      })), // Ensure the action is returned properly
+                    ],
+                  },
+                  {
+                    target: "reflectionQuestions",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button" &&
+                      context.uiState.reflection.selectedQuestion != 0,
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          reflection: {
+                            ...context.uiState.reflection,
+                            noInputOnSubmit: false,
+                            selectedQuestion:
+                              context.uiState.reflection.selectedQuestion - 1,
+                            visibleButtons: ["back-button", "next-button"],
+                          },
+                        }),
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    target: "reflectionQuestions",
+                    cond: (context, event) =>
+                      (event.payload.buttonId === "next-button" ||
+                        event.payload.buttonId === "submit-button") &&
+                      event.payload.textResponse.length === 0,
+                    actions: [
+                      assign({
+                        uiState: (context, event) => {
+                          return {
+                            ...context.uiState,
+                            reflection: {
+                              ...context.uiState.reflection,
+                              noInputOnSubmit: true,
+                            },
+                          };
+                        },
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    target: "reflectionQuestions",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "next-button" &&
+                      event.payload.textResponse.length > 0,
+                    actions: [
+                      assign({
+                        uiState: (context, event) => {
+                          const selectedQuestionIndex =
+                            context.uiState.reflection.selectedQuestion;
+
+                          // Copy existing submittedAnswers array
+                          const updatedAnswers = [
+                            ...context.uiState.reflection.submittedAnswers,
+                          ];
+
+                          // Add or update the response at the selected index
+                          updatedAnswers[selectedQuestionIndex] =
+                            event.payload.textResponse;
+
+                          return {
+                            ...context.uiState,
+                            reflection: {
+                              ...context.uiState.reflection,
+                              noInputOnSubmit: false,
+                              submittedAnswers: updatedAnswers, // Updated array
+                              selectedQuestion: selectedQuestionIndex + 1, // Move to the next question
+                            },
+                          };
+                        },
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    //target will be sent via MainFlow
+                    cond: (context, event) =>
+                      event.payload.buttonId === "submit-button" &&
+                      event.payload.textResponse.length > 0,
+                    actions: [
+                      assign({
+                        uiState: (context, event) => {
+                          const selectedQuestionIndex =
+                            context.uiState.reflection.selectedQuestion;
+
+                          // Copy existing submittedAnswers array
+                          const updatedAnswers = [
+                            ...context.uiState.reflection.submittedAnswers,
+                          ];
+
+                          // Add or update the response at the selected index
+                          updatedAnswers[selectedQuestionIndex] =
+                            event.payload.textResponse;
+
+                          return {
+                            ...context.uiState,
+                            reflection: {
+                              ...context.uiState.reflection,
+                              noInputOnSubmit: false,
+                              submittedAnswers: updatedAnswers, // Updated array
+                            },
+                          };
+                        },
+                      }),
+                      send((context, event) => ({
+                        type: "REFLECTION_SUBMITTED",
+                      })),
+                      sendUIUpdate, //Todo should probably be move to mainflow
+                    ],
+                  },
+                ],
+              },
+            },
+            testState: {},
             uiError: {
               entry: [
                 assign({

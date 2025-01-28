@@ -61,6 +61,7 @@ export type IncomingWebSocketMessage =
       payload: {
         buttonId: string;
         buttonTitle?: number;
+        textResponse?: string;
         clientId: string;
         documentId: string;
       };
