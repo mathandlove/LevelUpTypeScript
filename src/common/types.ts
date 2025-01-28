@@ -48,7 +48,7 @@ export interface UIState {
     question?: string;
     placeholder?: string;
   };
-  taskFeedback?: "no-changes" | "wrong-location" | "invalid-edit";
+  taskFeedback?: "no-changes" | "wrong-location" | "invalid-edit" | undefined;
   taskFeedbackMessage?: string;
 
   // Challenge card content
@@ -73,7 +73,7 @@ export const defaultUIState: UIState = {
 };
 
 //----------------------------------------------------------
-
+//Todo confirm validation functionof this as it keeps changing.
 export interface DocumentMetaData {
   level: number;
   pills: Array<Topic>;
@@ -227,7 +227,7 @@ export function verifyDocumentMetaDataMap(
   return true;
 }
 
-// Helper function to validate ChallengeInfo
+// Helper function to validate ChallengeInfo TODO - update
 export function validateChallengeInfo(challenge: any): boolean {
   if (typeof challenge !== "object") {
     return false;
@@ -243,8 +243,6 @@ export function validateChallengeInfo(challenge: any): boolean {
     typeof challenge.aiSuggestion.aiReasoning === "string" &&
     (challenge.aiDirections === undefined ||
       typeof challenge.aiDirections === "string") &&
-    (challenge.sentenceInDoc === undefined ||
-      typeof challenge.sentenceInDoc === "string") &&
     (challenge.aiFeeling === undefined ||
       typeof challenge.aiFeeling === "string") &&
     (challenge.sentenceStartIndex === undefined ||
@@ -263,10 +261,16 @@ export type ChallengeInfo = {
     aiImprovedSentence: string;
     aiReasoning: string;
   };
+  modifiedSentences: string[];
   aiDirections?: string;
   aiFeeling?: string;
   sentenceStartIndex?: number;
   sentenceEndIndex?: number;
-  sentenceInDoc?: string;
   taskArray?: TasksArray;
+  challengeResponse?:
+    | "valid"
+    | "tooFar"
+    | "noChanges"
+    | "correct"
+    | "incorrect";
 };

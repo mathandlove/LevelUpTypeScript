@@ -81,12 +81,6 @@ export async function getOrLoadDocumentMetaData(
         { length: persistentDocData.pills.length },
         () => []
       ); //Now we are guranteed to have the right challengeArray size!
-      savePersistentDocData(
-        oauth2Client,
-        documentId,
-        persistentDataFileId,
-        persistentDocData
-      );
     }
     return persistentDocData;
   } catch (error) {
@@ -270,18 +264,17 @@ async function getPersistentDocDataMap(
   }
 }
 
-export async function savePersistentDocData(
-  oauth2Client: any,
-  documentId: string,
-  persistentDataId: string,
-  persistentDocData: DocumentMetaData
-) {
+export async function savePersistentDocData(context: AppContext) {
   //We do not neeed to save the document text as it is already saved in the google doc.
+  const oauth2Client = context.appState.GoogleServices.oauth2Client;
+  const documentId = context.appState.documentId;
+  const persistentDataId = context.appState.persistentDataFileId;
+  const persistentDocData = { ...context.documentMetaData };
+  const drive = context.appState.GoogleServices.drive;
   persistentDocData.currentText = "";
   persistentDocData.textBeforeEdits = "";
   persistentDocData.selectedChallengeNumber = -1;
 
-  const drive = google.drive({ version: "v3", auth: oauth2Client });
   const metaDocRecords = await getPersistentDocDataMap(
     oauth2Client,
     persistentDataId

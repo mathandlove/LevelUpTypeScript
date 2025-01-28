@@ -452,18 +452,13 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
         justify-content: center;
         align-items: center;
         z-index: 1000;
-        border-radius: 8px;
+        border-radius: 8px; /* match button-box border radius */
         flex-direction: column;
-        gap: 20px;
-        display: none;
-      }
-
-      .spinner-overlay[style*="display: block"] {
-        display: flex !important;
+        gap: 20px; /* space between spinner and text */
       }
 
       .spinner {
@@ -721,7 +716,6 @@
         color: var(--primary-color);
         font-size: 14px;
         line-height: 1.4;
-        padding-bottom: 15px;
       }
 
       .alert-message {
@@ -731,7 +725,7 @@
         border-radius: 4px;
         margin: 10px 0;
         font-size: 14px;
-        text-align: left;
+        text-align: center;
         border: 1px solid #f97583;
       }
 
@@ -789,10 +783,6 @@
       .customize-link:hover {
         color: var(--secondary-color); /* Change color on hover */
       }
-
-      .no-clicks {
-    pointer-events: none;
-}
 
       /* Fade out effect at the top */
     </style>
@@ -1367,7 +1357,8 @@ function handleStateChange(state) {
   // Show the appropriate card based on current page
   const currentCard = document.getElementById(state.currentPage);
   if (currentCard) {
-    currentCard.style.display = 'block';
+    currentCard.style.display = 'flex';
+    currentCard.style.flex = '1';
 
     const subtitleElement = currentCard.querySelector('.card-title-subtitle');
     if (subtitleElement && state.cardSubtitle) {
@@ -1515,6 +1506,49 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
   });
 }
 
+
+if (!state.waitingAnimationOn) {
+    enableAllButtons();
+  }
+
+  setTimeout(() => {
+            checkScrollOverflow();
+          }, 0);
+          
+function checkScrollOverflow() {
+  console.log("Checking scroll overflow");
+  const currentCardType = state.currentPage;
+          const currentCard = document.getElementById(currentCardType);
+          console.log("Current card:", currentCard);
+          const buttonBox = document.querySelector(".button-box");
+          const buttonContainer = document.querySelector(".button-container");
+
+          if (currentCard) {
+            // Find the scroll container within the current card
+            const container = currentCard.querySelector(".scroll-container");
+
+            if (container) {
+              // Check if content is taller than container
+              const hasOverflow = 
+                container.scrollHeight > container.clientHeight;
+
+              // Add or remove is-scrollable class from both elements
+              if (hasOverflow) {
+                buttonBox.classList.add("is-scrollable");
+                container.classList.add("is-scrollable");
+                buttonContainer.classList.add("is-scrollable");
+              } else {
+                buttonBox.classList.remove("is-scrollable");
+                container.classList.remove("is-scrollable");
+                buttonContainer.classList.remove("is-scrollable");
+              }
+            }
+          }
+  }
+
+
+
+
 function updatePillProgress(pills) {
   pills.forEach((pill, index) => {
     const button = document.querySelector(`[data-pill-index="${index}"]`);
@@ -1530,11 +1564,10 @@ function updatePillProgress(pills) {
   });
 }
 
-  // Re-enable buttons unless we're in a waiting state
-  if (!state.waitingAnimationOn) {
-    enableAllButtons();
-  }
+  // After all content is updated, check for scrollbars
+
 }
+
 
 function disableAllButtons() {
   document.querySelectorAll('button').forEach(button => {
