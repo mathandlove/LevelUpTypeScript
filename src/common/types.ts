@@ -1,6 +1,7 @@
 import { WebSocket } from "ws";
 import { defaultTopics } from "../resources/defaulttopics.js";
 import { TasksArray, validateTasksArray } from "../resources/schemas.js";
+import { StarterLevelUpRubricID } from "../resources/keys.js";
 // First, define the interface
 
 //websocket Types
@@ -20,6 +21,18 @@ export interface Topic {
   current: number;
   description: string;
 }
+
+export interface Rubric {
+  title: string;
+  linkId: string;
+  hasBeenUploaded: boolean;
+}
+
+export const defaultRubric: Rubric = {
+  title: "Starter Level Up Rubric",
+  linkId: StarterLevelUpRubricID,
+  hasBeenUploaded: false,
+};
 
 export interface SavedActivity {
   savedReflections: Array<Reflection>;
@@ -109,9 +122,7 @@ export interface UIState {
   tasks?: TasksArray;
 
   // Customize card content
-  rubric?: {
-    title: string;
-  };
+  currentRubric: Rubric;
 }
 // Then define any constants
 export const defaultUIState: UIState = {
@@ -127,6 +138,7 @@ export const defaultUIState: UIState = {
   timeSpentHours: 0,
   timeSpentMinutes: 0,
   copypasted: 0,
+  currentRubric: defaultRubric,
 };
 
 //----------------------------------------------------------
@@ -142,6 +154,8 @@ export interface DocumentMetaData {
   textBeforeEdits: string;
   savedActivity: SavedActivity;
   reflectionTemplate: Reflection;
+  savedRubrics: Rubric[];
+  currentRubric: Rubric;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -157,6 +171,8 @@ export const defaultDocumentMetaData: DocumentMetaData = {
     savedChallenges: [],
   },
   reflectionTemplate: defaultReflection,
+  savedRubrics: [],
+  currentRubric: defaultRubric,
 };
 
 export interface DocumentMetaDataMap {

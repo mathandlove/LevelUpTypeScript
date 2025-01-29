@@ -923,27 +923,48 @@
     .share-url {
       flex: 1; /* Allow input to take up remaining space */
     }
+    .rubric-label {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 5px;
+    }
     .rubric-section {
-    margin-bottom: 20px; /* Add space below the section */
-    padding: 10px; /* Add padding around the section */
-    border: 1px solid #ccc; /* Add a subtle border */
-    border-radius: 8px; /* Round the corners */
-    background-color: #f9f9f9; /* Light background color */
-  }
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center; /* Centers text */
+  display: flex; 
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Centers child elements horizontally */
+  justify-content: center; /* Centers content inside */
+}
 
-  .rubric-label {
-    font-size: 12px; /* Smaller font size for the label */
-    color: #666; /* Subtle color for the label */
-    margin-bottom: 5px; /* Space between label and title */
-  }
+/* Ensure the buttons are centered properly */
+.rubric-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align buttons */
+  gap: 12px;
+  margin-top: 20px;
+}
 
-  .rubric-title {
-    font-size: 18px; /* Larger font size for the title */
-    font-weight: bold; /* Make the title bold */
-    color: var(--primary-color);
-    text-align: center; /* Center the title */
-    padding: 5px 0; /* Add vertical padding */
-  }
+.full-width {
+  width: 80%;
+  max-width: 300px; /* Ensures buttons don’t stretch too much */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center; /* Centers text inside button */
+  align-items: center; /* Centers content */
+  gap: 10px;
+}
+
 
   </style>
     </style>
@@ -1107,8 +1128,9 @@
           <div class="card" id="customize-card" style="display: none; flex: 1">
             <div class="scroll-container">
               <!-- Current Rubric Section -->
+              <div class="rubric-label">Current Rubric:</div>
               <div class="rubric-section">
-                <div class="rubric-label">Current Rubric:</div>
+
                 <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
               </div>
           
@@ -1691,37 +1713,54 @@ function isGoogleApp() {
     <script>
 function setupEventHandlers() {
   // Button clicks
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.onclick = () => {
         disableAllButtons();
-        messageQueue = [];  // Clear any queued messages
+        messageQueue = []; // Clear any queued messages
         console.log(document.querySelector('.reflection-card textarea')?.value);
-      if((buttonId === "next-button" || buttonId === "submit-button") && state.currentPage === "reflection-card"){
-        sendWebSocketMessage({
-          type: 'BUTTON_CLICKED',
-          payload: {
-            buttonId: buttonId,
-            clientId: clientId,
-            documentId: documentId,
-            textResponse: document.querySelector('.reflection-textarea')?.value || ''
-          }
-        });
-      }
-      else{
-        sendWebSocketMessage({
-          type: 'BUTTON_CLICKED',
-          payload: {
-            buttonId: buttonId,
-            clientId: clientId,
-            documentId: documentId
-          }
-        });
-      }
+        if ((buttonId === "next-button" || buttonId === "submit-button") && state.currentPage === "reflection-card") {
+          sendWebSocketMessage({
+            type: 'BUTTON_CLICKED',
+            payload: {
+              buttonId: buttonId,
+              clientId: clientId,
+              documentId: documentId,
+              textResponse: document.querySelector('.reflection-textarea')?.value || ''
+            }
+          });
+        } else {
+          sendWebSocketMessage({
+            type: 'BUTTON_CLICKED',
+            payload: {
+              buttonId: buttonId,
+              clientId: clientId,
+              documentId: documentId
+            }
+          });
+        }
       };
     }
   });
+
+  // Add event handler for the "Customize" link
+  const customizeLink = document.querySelector('.customize-link');
+  if (customizeLink) {
+    customizeLink.onclick = (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      disableAllButtons();
+      sendWebSocketMessage({
+        type: 'CUSTOMIZE_CLICKED',
+        payload: {
+          clientId: clientId,
+          documentId: documentId
+        }
+      });
+    };
+  }
+
+
 
 
   // Reflection submit
