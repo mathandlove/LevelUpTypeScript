@@ -164,7 +164,6 @@ function sendUIUpdate(context: AppContext) {
       payload: context.uiState,
     });
   }
-
   //cleanup after sending ui update
 }
 
@@ -830,6 +829,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     }),
                   ],
                 },
+                CUSTOMIZE_CLICKED: {
+                  target: "customizeBase",
+                },
                 BUTTON_CLICKED: [
                   {
                     target: "waitForChallenge", // Transition to a loading state
@@ -1211,7 +1213,18 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
               },
             },
-            testState: {},
+            customizeBase: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "customize-card",
+                    visibleButtons: ["back-button"],
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+            },
             uiError: {
               entry: [
                 assign({

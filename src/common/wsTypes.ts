@@ -65,12 +65,20 @@ export type IncomingWebSocketMessage =
         clientId: string;
         documentId: string;
       };
+    }
+  | {
+      type: "CUSTOMIZE_CLICKED";
+      payload: {
+        clientId: string;
+        documentId: string;
+      };
     };
 
 export function isValidIncomingWebSocketMessage(
   message: any
 ): message is IncomingWebSocketMessage {
   if (!message || typeof message !== "object") return false;
+
   switch (message.type) {
     case "GIVE_TOKEN":
       return (
@@ -87,8 +95,20 @@ export function isValidIncomingWebSocketMessage(
         typeof message.payload.clientId === "string" &&
         typeof message.payload.documentId === "string" &&
         (message.payload.buttonTitle === undefined ||
-          typeof message.payload.buttonTitle === "number")
+          typeof message.payload.buttonTitle === "number") &&
+        (message.payload.textResponse === undefined ||
+          typeof message.payload.textResponse === "string")
       );
+
+    case "CUSTOMIZE_CLICKED":
+      return (
+        message.payload &&
+        typeof message.payload.clientId === "string" &&
+        typeof message.payload.documentId === "string"
+      );
+
+    default:
+      return false;
   }
 }
 
