@@ -32,6 +32,7 @@ import { OAuth2Client } from "google-auth-library";
 import {
   getFullText,
   highlightChallengeSentence,
+  createGoogleSheet,
 } from "./services/googleServices.js";
 import {
   compareNewSentenceToOldSentence,
@@ -194,6 +195,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           initial: "idle",
           states: {
             idle: {
+              invoke: {
+                src: createGoogleSheet,
+              },
               on: {
                 CREATE_CHALLENGES: {
                   target: "createChallenges",
@@ -351,10 +355,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       documentMetaData: (context, event) =>
                         event.data.persistentDocData,
                     }),
-                    (context, event) =>
-                      console.log(
-                        "persistentDataFileId: " + event.data.persistentDocData
-                      ),
                   ],
                 },
                 onError: {
@@ -432,11 +432,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         selectedChallengeNumber: event.payload.topicNumber,
                       }),
                     }),
-                    (context, event) =>
-                      console.log(
-                        "challenge number selected: " +
-                          context.documentMetaData.selectedChallengeNumber
-                      ),
                   ],
                 },
                 REFLECTION_SELECTED: {
@@ -592,8 +587,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       modifiedEndIndex,
                     } = compareNewSentenceToOldSentence(context);
 
-                    console.log("modifiedSentences:", modifiedSentences);
-
                     // Find the selected challenge
                     const updatedChallengeArray = [
                       ...context.documentMetaData.challengeArray,
@@ -666,15 +659,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
                 {
                   target: "error", //put tooFar in here eventually
-                  actions: [
-                    (context) => {
-                      console.log(
-                        context.documentMetaData.challengeArray[
-                          context.documentMetaData.selectedChallengeNumber
-                        ][0].challengeResponse
-                      );
-                    },
-                  ],
+                  actions: [],
                 },
               ],
             },
@@ -771,9 +756,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         challengeResponse: "incorrect",
                       },
                     }),
-                    (context, event) => {
-                      console.log("Incorrect: ", event.data);
-                    },
                   ],
                 },
               },
@@ -1071,9 +1053,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         }),
                       }),
                       sendUIUpdate,
-                      (context, event) => {
-                        console.log("REVIEWED_TOO_FAR");
-                      },
                     ],
                   },
                   {
