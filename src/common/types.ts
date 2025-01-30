@@ -13,7 +13,10 @@ export type ButtonId =
   | "home-button"
   | "skip-button"
   | "pill-button"
-  | "submit-button";
+  | "submit-button"
+  | "edit-rubric-button"
+  | "edit-newWindow-rubric-button"
+  | "save-rubric-button";
 
 export interface Topic {
   title: string;
@@ -150,13 +153,15 @@ export interface UIState {
     | "reflection-card"
     | "example-card"
     | "challenge-feedback-card"
-    | "customize-card";
+    | "customize-card"
+    | "customize-card-edit-newWindow";
   waitingAnimationOn: boolean;
   visibleButtons: ButtonId[]; // Now enforces specific button IDs
   buttonsDisabled: ButtonId[];
   level: number;
   formerLevel: number;
   animateLevelUp: boolean;
+
   pills: Array<Topic>;
   reflection: Reflection;
   copypasted: number;

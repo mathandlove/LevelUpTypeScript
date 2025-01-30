@@ -1,4 +1,4 @@
-import { ChallengeInfo } from "../common/types";
+import { ChallengeInfo, Rubric } from "../common/types";
 import { AppContext } from "../stateMachine";
 
 export async function getFullText(context: AppContext): Promise<string> {
@@ -105,40 +105,41 @@ export async function highlightChallengeSentence(context: AppContext) {
     console.warn("Error highlighting text:", error);
   }
 }
-export async function createGoogleSheet(context: AppContext) {
+export async function createGoogleSheet(
+  context: AppContext,
+  rubric: Rubric
+): Promise<Rubric> {
+  //function will save created rubric as googleSheetId and pass back the rubric.
   const { GoogleServices } = context.appState;
   const { sheets, drive } = GoogleServices;
+  if (rubric.googleSheetId != "") {
+    return rubric;
+  }
 
+  //todo: Save all these rubrics in the LEvel Up Folder
   // Step 1: Create a new Google Sheet
-  /*
+
   const response = await sheets.spreadsheets.create({
     requestBody: {
       properties: {
-        title: "Level Up Template",
+        title: rubric.title,
       },
     },
   });
-    const spreadsheetId = response.data.spreadsheetId;
-  */
-  const spreadsheetId = "1wywByFIX6LYYB0MK958a3iXKpIXObSWa4l3R8npyPeE";
-  const spreadsheetUrl = `https://docs.google.com/spreadsheets/d/${spreadsheetId}`;
-
-  console.log(`Spreadsheet created: ${spreadsheetUrl}`);
-
-  // Step 2: Set permissions to allow access
-  await drive.permissions.create({
+  const spreadsheetId = response.data.spreadsheetId;
+  rubric.googleSheetId = spreadsheetId;
+  await drive.files.update({
     fileId: spreadsheetId,
-    requestBody: {
-      role: "writer", // Change to 'reader' for view-only access
-      type: "anyone", // Change to 'user' and provide an email for specific access
-    },
+    addParents: context.appState.levelUpFolderId,
+    removeParents: "root",
+    fields: "id, parents",
   });
-  console.log("Permissions updated: Anyone with the link can edit.");
+  //const spreadsheetId = "1wywByFIX6LYYB0MK958a3iXKpIXObSWa4l3R8npyPeE";
 
   // Step 3: Populate the sheet with data
   const values = [
-    ["Rubric Title: ", "Add Rubric Name Here"],
-    ["Grade Level: ", "6"],
+    ["Rubric Title: ", rubric.title],
+    ["Grade Level: ", rubric.gradeLevel],
     [
       "Goal Name",
       "Description",
@@ -157,16 +158,13 @@ export async function createGoogleSheet(context: AppContext) {
       "1",
       "Yes",
       "Yes",
-      "What went well?",
-      "What was difficult?",
-      "How can your teacher help you?",
-      "",
-      "",
+      ...rubric.reflection.question,
     ],
-    [
-      "Organization",
-      "There is a clear introduction, body, and conclusion. Paragraphs start by introducing the main idea.",
-      "5",
+    // Dynamically add topics
+    ...rubric.topics.map((topic) => [
+      topic.title,
+      topic.description,
+      topic.outOf,
       "",
       "",
       "",
@@ -175,46 +173,7 @@ export async function createGoogleSheet(context: AppContext) {
       "",
       "",
       "",
-    ],
-    [
-      "Evidence",
-      "Strong evidence is provided to support paragraph main ideas. Analysis is provided for evidence.",
-      "5",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-    ],
-    [
-      "Word Choice",
-      "Paragraphs start with main ideas and other sentences support the main idea",
-      "5",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-    ],
-    [
-      "Grammar",
-      "Sentences are free of grammatical and punctuation errors.",
-      "5",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-    ],
+    ]),
   ];
 
   await sheets.spreadsheets.values.update({
@@ -406,7 +365,7 @@ export async function createGoogleSheet(context: AppContext) {
               values: [
                 {
                   userEnteredValue: {
-                    boolValue: false, // Default unchecked, set to true for checked
+                    boolValue: rubric.reflection.copyPercentIncluded, // Default unchecked, set to true for checked
                   },
                   dataValidation: {
                     condition: {
@@ -421,6 +380,7 @@ export async function createGoogleSheet(context: AppContext) {
         },
       },
       {
+        //adding checkbox for Includ Reflection
         updateCells: {
           range: {
             sheetId: 0, // Assuming the first sheet
@@ -434,7 +394,7 @@ export async function createGoogleSheet(context: AppContext) {
               values: [
                 {
                   userEnteredValue: {
-                    boolValue: false, // Default unchecked, set to true for checked
+                    boolValue: rubric.reflection.enabled, // Default unchecked, set to true for checked
                   },
                   dataValidation: {
                     condition: {
@@ -571,5 +531,5 @@ export async function createGoogleSheet(context: AppContext) {
   console.log(
     "Sheet formatted successfully with exact column sizes, row heights, and text styling!"
   );
-  return spreadsheetUrl;
+  return rubric;
 }

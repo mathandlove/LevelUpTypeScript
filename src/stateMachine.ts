@@ -195,9 +195,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           initial: "idle",
           states: {
             idle: {
-              invoke: {
-                src: createGoogleSheet,
-              },
               on: {
                 CREATE_CHALLENGES: {
                   target: "createChallenges",
@@ -395,6 +392,22 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     savePersistentDocData,
                   ],
                 },
+              },
+            },
+            testOnRubricLoaded: {
+              entry: [
+                (context) =>
+                  console.log(
+                    "context.documentMetaData.rubricInfo.savedRubrics[0]",
+                    context.documentMetaData.rubricInfo.savedRubrics
+                  ),
+              ],
+              invoke: {
+                src: (context, event) =>
+                  createGoogleSheet(
+                    context,
+                    context.documentMetaData.rubricInfo.savedRubrics[0]
+                  ),
               },
             },
             updateTextInitial: {
@@ -760,6 +773,8 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+
+            //TODO: TAKE INTO ACCOUNT "Ask About Copy Paste"
 
             idleReflection: {
               on: {
@@ -1271,6 +1286,31 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   }),
                 }),
                 sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: "customizeBase",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button",
+                  },
+                  {
+                    target: "customizeEditNewWindow",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "edit-newWindow-rubric-button",
+                  },
+                ],
+              },
+            },
+            customizeEditNewWindow: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "customize-card-edit-newWindow",
+                    visibleButtons: ["save-rubric-button"],
+                  }),
+                }),
               ],
             },
             uiError: {

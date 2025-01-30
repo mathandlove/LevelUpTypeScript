@@ -969,200 +969,221 @@
   </style>
     </style>
   </head>
-  <body>
-    <div id="side-panel">
-      <div class="adventure-image-container">
-        <img
-          src="https://wondersa.blob.core.windows.net/levelup/1.png"
-          alt="Sky Background"
-          class="adventure-image"
-        />
+<body>
+  <div id="side-panel">
+    <div class="adventure-image-container">
+      <img
+        src="https://wondersa.blob.core.windows.net/levelup/1.png"
+        alt="Sky Background"
+        class="adventure-image"
+      />
+    </div>
+
+    <div class="content-wrapper">
+      <div class="level-text-container">
+        <div class="text-container">
+          <div class="pixelated-gradient-text">Level 1</div>
+        </div>
       </div>
 
-      <div class="content-wrapper">
-        <div class="level-text-container">
-          <div class="text-container">
-            <div class="pixelated-gradient-text">Level 1</div>
+      <div class="button-box">
+        <img
+          src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
+          alt="Hot Air Balloon"
+          class="hot-air-balloon"
+        />
+        <div class="spinner-overlay" id="spinner-overlay" style="display: none">
+          <div class="spinner"></div>
+          <div class="spinner-text">Reading Your Paper</div>
+        </div>
+
+        <!-- HOME PAGE CARD -->
+        <div class="card" id="home-page" style="display: flex; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title-home">Select Challenge:</div>
+            <div id="pillHolder" style="display: flex; flex-direction: column"></div>
+            <a href="#" class="customize-link">Customize</a>
+
+            <div class="stats-box">
+              <div class="stat-row">
+                <span class="stat-label">Copy/Pasted</span>
+                <span class="stat-value" id="copyPasted">60%</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Time Spent</span>
+                <span class="stat-value" id="timeSpent">10 Hours 33 Minutes</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="button-box">
-          <img
-            src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
-            alt="Hot Air Balloon"
-            class="hot-air-balloon"
-          />
-          <div class="spinner-overlay" id="spinner-overlay"  style="display: none">
-            <div class="spinner"></div>
-            <div class="spinner-text">Reading Your Paper</div>
-          </div>
-          <div class="card" id="home-page" style="display: flex; flex: 1">
-            <div class="scroll-container">
-              <div class="card-title-home">Select Challenge:</div>
 
+        <!-- AI-FEELING CARD -->
+        <div class="card" id="AI-Feeling" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title">First Take</div>
+            <div class="card-main-text"></div>
+          </div>
+        </div>
+
+        <!-- CELEBRATE CARD -->
+        <div class="card" id="celebrateScreen" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-main-text">Default Text Here</div>
+          </div>
+        </div>
+
+        <!-- SERVER ERROR CARD -->
+        <div class="card" id="server-error" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title">Server Error</div>
+            <div class="error-message">
+              We cannot get ahold of the Level Up Servers right now. 
+              Please try again later. If this problem persists, please contact support.
+            </div>
+          </div>
+        </div>
+
+        <!-- CHALLENGE CARD -->
+        <div class="card" id="challenge-card" style="display: none">
+          <div class="scroll-container">
+            <div class="card-title">Challenge</div>
+            <div class="card-title-subtitle">Subtitle</div>
+            <div class="alert-message" style="display: none"></div>
+            <div class="alert-message fail-reason-message" style="display: none"></div>
+            <div class="tasks-list">
+              <!-- Tasks will be inserted here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- FEEL RESPONSE CARD -->
+        <div class="card" id="feel-response-card" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title-subtitle">
+              Let's work on the highlighted text in your document.
+            </div>
+            <div class="card-main-text"></div>
+          </div>
+        </div>
+
+        <!-- FOCUS SENTENCE CARD -->
+        <div class="card" id="focus-sentence" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title">Let's Focus On The Highlighted Sentence:</div>
+            <div class="card-main-text"></div>
+          </div>
+        </div>
+
+        <!-- REFLECTION CARD -->
+        <div class="card" id="reflection-card" style="display: none; flex: 1;">
+          <div class="scroll-container">
+            <div class="reflection-container">
+              <div class="reflection-question"></div>
+              <textarea
+                class="reflection-textarea"
+                placeholder="Share your thoughts..."
+              ></textarea>
               <div
-                id="pillHolder"
-                style="display: flex; flex-direction: column"
-              ></div>
-              <a href="#" class="customize-link">Customize</a>
-              <div class="stats-box">
-                <div class="stat-row">
-                  <span class="stat-label">Copy/Pasted</span>
-                  <span class="stat-value"  id="copyPasted">60%</span>
-                </div>
-                <div class="stat-row">
-                  <span class="stat-label">Time Spent</span>
-                  <span class="stat-value"  id="timeSpent">10 Hours 33 Minutes</span>
-                </div>
+                class="reflection-warning"
+                style="display: none; color: #374363; font-size: 12px; margin-top: -5px;"
+              >
+                Please share your thoughts before pushing "Next".
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="card" id="AI-Feeling" style="display: none; flex: 1">
-            <div class="scroll-container">
-              <div class="card-title">First Take</div>
-              <div class="card-main-text"></div>
+        <!-- EXAMPLE CARD -->
+        <div class="card" id="example-card" style="display: none; flex: 1">
+          <div class="card feedback-panel">
+            <h3 class="card-title">Example</h3>
+            <div class="example-block">
+              <div class="example-title">Poor Sentence</div>
+              <div class="original">The leaves fell everywhere. Round 6</div>
+            </div>
+            <div class="example-block">
+              <div class="example-title">Great Sentence</div>
+              <div class="fixed">
+                The leaves fell on the ground, making a crunchy carpet for walking.
+              </div>
             </div>
           </div>
-          <div class="card" id="celebrateScreen" style="display: none; flex: 1">
-            <div class="scroll-container">
-              <div class="card-main-text">Default Text Here</div>
-            </div>
-          </div>
-          <div class="card" id="server-error" style="display: none; flex: 1">
-            <div class="scroll-container">
-              <div class="card-title">Server Error</div>
-              <div class="error-message">We cannot get ahold of the Level Up Servers right now. Please try again later. If this problem persists, please contact support.</div>
-            </div>
-          </div>
+        </div>
 
-          <div class="card" id="challenge-card" style="display: none">
-            <div class="scroll-container">
-              <div class="card-title">Challenge</div>
-              <div class="card-title-subtitle">Subtitle</div>
-              <div class="alert-message" style="display: none"></div>
-              <div class="alert-message fail-reason-message" style="display: none"></div>
-              <div class="tasks-list">
-                <!-- Tasks will be inserted here -->
-              </div>
+        <!-- CHALLENGE FEEDBACK CARD -->
+        <div class="card" id="challenge-feedback-card" style="display: none; flex: 1">
+          <div class="scroll-container">
+            <div class="card-title">Challenge Completed!</div>
+            <div class="card-main-text">
+              Well done. Here's some more text two
             </div>
+            <hr />
+            <div class="card-title-subtitle-feedback">Now I want to:</div>
+            <button class="level-up-button" id="improve-more-button">
+              Improve this Sentence More
+            </button>
+            <button class="level-up-button" id="start-new-button">
+              Start a New Sentence
+            </button>
           </div>
+        </div>
 
-          <div
-            class="card"
-            id="feel-response-card"
-            style="display: none; flex: 1"
-          >
-            <div class="scroll-container">
-              <div class="card-title-subtitle">
-                Let's work on the highlighted text in your document.
-              </div>
-              <div class="card-main-text"></div>
+        <!-- CUSTOMIZE CARD -->
+        <div class="card" id="customize-card" style="display: none; flex: 1;">
+          <div class="scroll-container">
+            <div class="rubric-label">Current Rubric:</div>
+            <div class="rubric-section">
+              <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
             </div>
-          </div>
 
-          <div class="card" id="focus-sentence" style="display: none; flex: 1">
-            <div class="scroll-container">
-              <div class="card-title">
-                Let's Focus On The Highlighted Sentence:
-              </div>
-              <div class="card-main-text"></div>
-            </div>
-          </div>
-
-          <div class="card" id="reflection-card" style="display: none; flex: 1;">
-            <div class="scroll-container">
-              <div class="reflection-container">
-                <div class="reflection-question"></div>
-                <textarea
-                  class="reflection-textarea"
-                  placeholder="Share your thoughts..."
-                ></textarea>
-                <!-- Gentle warning element -->
-                <div
-                  class="reflection-warning"
-                  style="display: none; color: #374363; font-size: 12px; margin-top: -5px;"
-                >
-                  Please share your thoughts before pushing "Next".
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" id="example-card" style="display: none; flex: 1">
-            <div class="card feedback-panel">
-              <h3 class="card-title">Example</h3>
-              <div class="example-block">
-                <div class="example-title">Poor Sentence</div>
-                <div class="original">The leaves fell everywhere. Round 6</div>
-              </div>
-              <div class="example-block">
-                <div class="example-title">Great Sentence</div>
-                <div class="fixed">
-                  The leaves fell on the ground, making a crunchy carpet for
-                  walking.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="card"
-            id="challenge-feedback-card"
-            style="display: none; flex: 1"
-          >
-            <div class="scroll-container">
-              <div class="card-title">Challenge Completed!</div>
-              <div class="card-main-text">
-                Well done. Here's some more text two
-              </div>
-              <hr />
-              <div class="card-title-subtitle-feedback">Now I want to:</div>
-              <button class="level-up-button" id="improve-more-button">
-                Improve this Sentence More
-              </button>
-
-              <button class="level-up-button" id="start-new-button">
-                Start a New Sentence
-              </button>
-            </div>
-          </div>
-          <div class="card" id="customize-card" style="display: none; flex: 1">
-            <div class="scroll-container">
-              <!-- Current Rubric Section -->
-              <div class="rubric-label">Current Rubric:</div>
-              <div class="rubric-section">
-
-                <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
-              </div>
-          
-              <!-- Action Buttons -->
-              <div class="rubric-actions">
-                <button class="level-up-button full-width" id="share-rubric-button">Share</button>
-                <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+            <!-- Action Buttons -->
+            <div class="rubric-actions">
+              <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+              <button class="level-up-button full-width" id="share-rubric-button">Share</button>
               <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
               <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
             </div>
           </div>
-
-
         </div>
-          <div class="button-container">
-            <div class="button-left-group">
-              <button id="back-button" class="nav-button">Back</button>
-              <button id="home-button" class="nav-button">Back</button>
-              <button id="skip-button" class="nav-button">Skip</button>
+
+        <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
+        <div class="card" id="customize-card-edit-newWindow" style="display: none; flex: 1;">
+          <div class="scroll-container">
+            <div class="rubric-label">Current Rubric:</div>
+            <div class="rubric-section">
+              <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
             </div>
 
-            <div class="button-right-group">
-              <button id="next-button" class="nav-button">Next</button>
-              <button id="submit-button" class="nav-button">Submit</button>
-              <button id="check-work-button" class="nav-button">
-                Check Work
-              </button>
+            <div class="card-main-text">
+              Use Google Sheets to edit and update your rubric. Once you’ve made changes, return here.
             </div>
+            <button class="level-up-button full-width" id="edit-newWindow-rubric-button">
+              Edit Rubric<br>(New Window)
+            </button>
           </div>
         </div>
 
-    </div>
+
+      <div class="button-container">
+        <div class="button-left-group">
+          <button id="back-button" class="nav-button">Back</button>
+          <button id="home-button" class="nav-button">Back</button>
+          <button id="skip-button" class="nav-button">Skip</button>
+        </div>
+
+        <div class="button-right-group">
+          <button id="next-button" class="nav-button">Next</button>
+          <button id="submit-button" class="nav-button">Submit</button>
+          <button id="check-work-button" class="nav-button">Check Work</button>
+          <button id="save-rubric-button" class="nav-button">Save Rubric</button>
+        </div>
+      </div> <!-- End .button-box -->
+      </div> <!-- End .button-container -->
+    </div> <!-- End .content-wrapper -->
+  </div> <!-- End #side-panel -->
+</body>
+</html>
+
     <script>
 
 
@@ -1178,46 +1199,8 @@ let isReconnecting = false;
 //ngrok http 3000
 
 
-function testChangeState() {
-  const state ={
-  currentPage: "challenge-card",
-  waitingAnimationOn: false,
-  visibleButtons: [
-    "next-button",
-    "back-button"
-  ],
-  disabledButtons: ["next-button"],
-  level: 0,
-  pills: [
-    { title: "Pirate Slang", outOf: 5, current: 2 },
-    { title: "Robot Slang", outOf: 5, current: 5 },
-  ],
-  copypasted:32,
-  timeSpentHours:7,
-  timeSpentMinutes:45,
-  cardMainText: "Some say this text is a bit too long. What do you think?",
-  cardSubtitle: "Why not?",
-  tasks: [
-    { text: "✍️ Review the highlighted text in your document", checked: false },
-    { text: "🤔 Consider how you could make it more engaging", checked: false },
-    { text: "📝 Make your revisions in the document", checked: false },
-    { text: "✨ Click 'Check My Work' when you're ready", checked: false }
-  ],
-  reflection: {
-    question: "Here's a long string!",
-    placeholder:"placeholder"
-  },
-  taskFeedback: "no-changes",
-  taskFeedbackMessage: "What a birthday treat!",
-  disabledButtons: ["check-work-button"]
-};
-
-
-handleStateChange(state);
-}
 
 async function init() {
-//testChangeState();
 connectWebSocket();
 getStoredTokenData()
 
@@ -1415,7 +1398,7 @@ function handleStateChange(statePayload) {
 
   // Handle navigation buttons
   const buttonVisibility = state.buttons;
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button', 'save-rubric-button'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
@@ -1713,7 +1696,7 @@ function isGoogleApp() {
     <script>
 function setupEventHandlers() {
   // Button clicks
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button', 'edit-rubric-button', 'edit-newWindow-rubric-button'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.onclick = () => {
