@@ -1,4 +1,5 @@
-import { ChallengeInfo } from "../common/types";
+import { drive } from "googleapis/build/src/apis/drive";
+import { ChallengeInfo, defaultRubric, Rubric } from "../common/types";
 import { AppContext } from "../stateMachine";
 
 export function getSentenceStartAndEndToChallenge(
@@ -205,4 +206,22 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
     }
     return -1;
   }
+}
+
+//RUBRICS ARE FUN!
+
+export async function loadRubric(context: AppContext): Promise<Rubric> {
+  //StepA: Make a copy of the StarterLevelUpRubricId
+
+  //Step 3: Open the Google Sheet and extract the topic
+  //Step 4: Extract the reflectionTemplate,
+  //Step 5: Extract the gradeLevel
+  //Step 6: Extract the title
+  //Step 7: Return as a Rubric
+
+  //To be done in state Machine
+  //Step 7: Install all of this asa RubricinSavedRubric in DocumentMetaData.
+  //Step 8: Install the Rubric as currentRubric in DocumentMetaData.
+  //Step 9: Subfunction: Calculate how many topics there are in the rubric, and expand both challengeArray and newChallengesArray to match the right size.
+  return defaultRubric;
 }

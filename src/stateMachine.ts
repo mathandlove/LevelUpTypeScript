@@ -27,7 +27,7 @@ import {
   getCelebration,
   getFailedFeedback,
 } from "./services/aiService.js";
-import { chatGPTKey } from "./resources/keys.js";
+import { chatGPTKey, StarterLevelUpRubricId } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
 import {
   getFullText,
@@ -37,6 +37,10 @@ import {
   compareNewSentenceToOldSentence,
   updateTextCoordinates,
 } from "./services/docServices.js";
+import {
+  createDefaultRubric,
+  getDefaultRubric,
+} from "./services/dataBaseService.js";
 
 // Initialize the inspector (add this before creating the machine)
 
@@ -46,6 +50,7 @@ interface AppState {
   documentId: string;
   ws: LevelUpWebSocket;
   persistentDataFileId: string;
+  levelUpFolderId: string;
   chatGPTKey: string;
   GoogleServices: {
     oauth2Client: OAuth2Client; // Authenticated OAuth2 client
@@ -81,7 +86,9 @@ type InternalEvent =
     }
   | { type: "REFLECTION_SELECTED" }
   | { type: "REFLECTION_SUBMITTED" }
-  | { type: "BACK_TO_HOME" };
+  | { type: "BACK_TO_HOME" }
+  | { type: "LOAD_RUBRIC" }
+  | { type: "RUBRIC_LOADED" };
 
 const defaultDocState: DocState = "waiting for documentID";
 
@@ -96,6 +103,7 @@ const defaultAppState: AppState = {
   persistentDataFileId: null,
   chatGPTKey,
   GoogleServices: null,
+  levelUpFolderId: "",
 };
 
 export interface AppContext {
@@ -190,6 +198,37 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 CREATE_CHALLENGES: {
                   target: "createChallenges",
                 },
+                LOAD_RUBRIC: {
+                  target: "loadRubric",
+                },
+              },
+            },
+            //todo this is the wrong state but using it to test loading.
+            loadRubric: {
+              invoke: {
+                src: getDefaultRubric,
+                onDone: {
+                  target: "idle",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        rubricInfo: {
+                          ...context.documentMetaData.rubricInfo,
+                          currentRubric: 0,
+                          savedRubrics: [
+                            ...(context.documentMetaData.rubricInfo
+                              .savedRubrics || []), // Keep existing rubrics
+                            event.data, // Add new rubric
+                          ],
+                        },
+                      }),
+                    }),
+                    send({
+                      type: "RUBRIC_LOADED",
+                    }),
+                  ],
+                },
               },
             },
             createChallenges: {
@@ -204,8 +243,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         newChallengesArray: event.data,
                       }),
                     }),
-
-                    // TODO: There's an inefficiency here when we are saving without editing.
                   ],
                 },
                 onError: {
@@ -289,6 +326,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         ...context.appState,
                         persistentDataFileId: event.data.persistentDataFileId,
                         GoogleServices: event.data.GoogleServices,
+                        levelUpFolderId: event.data.levelUpFolderId,
                       }),
                     }),
                   ],
@@ -305,14 +343,18 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             loadingDocumentMetaData: {
               invoke: {
                 src: getOrLoadDocumentMetaData,
+
                 onDone: {
-                  target: "updateTextInitial",
+                  target: "checkForRubric",
                   actions: [
                     assign({
-                      documentMetaData: (context, event) => event.data,
+                      documentMetaData: (context, event) =>
+                        event.data.persistentDocData,
                     }),
-
-                    "assignDocMetaDataToUIState",
+                    (context, event) =>
+                      console.log(
+                        "persistentDataFileId: " + event.data.persistentDocData
+                      ),
                   ],
                 },
                 onError: {
@@ -320,6 +362,37 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     "#app.UI.uiError",
                     "error",
                     "#app.ChallengeCreator.error",
+                  ],
+                },
+              },
+            },
+            checkForRubric: {
+              always: [
+                {
+                  cond: (context) =>
+                    context.documentMetaData.rubricInfo.savedRubrics.length ===
+                    0,
+                  target: "waitingForRubric",
+                  actions: [
+                    send({
+                      type: "LOAD_RUBRIC",
+                    }),
+                  ],
+                },
+                {
+                  target: "updateTextInitial",
+                  actions: "assignDocMetaDataToUIState",
+                },
+              ],
+            },
+            waitingForRubric: {
+              on: {
+                RUBRIC_LOADED: {
+                  target: "updateTextInitial",
+                  actions: [
+                    "assignNewRubricToDocMetaData",
+                    "assignDocMetaDataToUIState",
+                    savePersistentDocData,
                   ],
                 },
               },
@@ -337,6 +410,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         currentText: event.data,
                       }),
                     }),
+
                     send({
                       type: "TOPICS_UPDATED",
                     }),
@@ -741,12 +815,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     }),
 
                     // 3. Turn reflectionTemplate into uiState.reflection
-                    assign({
-                      uiState: (context) => ({
-                        ...context.uiState,
-                        reflection: context.documentMetaData.reflectionTemplate,
-                      }),
-                    }),
 
                     // 4. Increase the level in documentMetaData
                     assign({
@@ -764,6 +832,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                           "Thanks for reflecting on your work! Reflection saved.",
                       }),
                     }),
+                    "assignDocMetaDataToUIState",
                     savePersistentDocData,
                     //todo - put reflection on document somewhere.
                   ],
@@ -1244,13 +1313,40 @@ export function createAppMachine(ws: LevelUpWebSocket) {
     },
     {
       actions: {
+        assignNewRubricToDocMetaData: assign({
+          documentMetaData: (context: AppContext, event: any) => {
+            const currentRubric =
+              context.documentMetaData.rubricInfo.savedRubrics[
+                context.documentMetaData.rubricInfo.currentRubric
+              ];
+            const topicsLength = currentRubric.topics
+              ? currentRubric.topics.length
+              : 0;
+            return {
+              ...context.documentMetaData,
+              challengeArray: Array(topicsLength).fill([]),
+              newChallengesArray: Array(topicsLength).fill([]),
+              newChallengesReady: false,
+              pills: currentRubric.topics,
+              reflectionTemplate: currentRubric.reflection,
+            };
+          },
+        }),
         assignDocMetaDataToUIState: assign({
-          uiState: (context: AppContext, event: any) => ({
-            ...context.uiState,
-            lastUpdated: new Date().toISOString(),
-            level: context.documentMetaData.level,
-            pills: context.documentMetaData.pills,
-          }),
+          uiState: (context: AppContext, event: any) => {
+            // 🔹 Debugging: Log before and after assignment
+            const updatedUIState = {
+              ...context.uiState,
+              lastUpdated: new Date().toISOString(),
+              level: context.documentMetaData.level,
+              pills: context.documentMetaData.pills,
+              reflection: {
+                ...context.uiState.reflection,
+                ...context.documentMetaData.reflectionTemplate,
+              },
+            };
+            return updatedUIState;
+          },
         }),
         shiftTopicChallenge: assign({
           documentMetaData: (context) => {
@@ -1323,8 +1419,6 @@ export function getOrCreateActor(
   if (actorStore.has(key)) {
     return actorStore.get(key)!;
   }
-
-  let previousUIState: UIState | null = null;
 
   const baseActor = interpret(createAppMachine(ws))
     .onTransition((state) => {
