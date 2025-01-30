@@ -15990,3 +15990,991 @@
 
 %%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:13:55.458Z"}}
 
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:17:24.481Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:17:48.879Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:22:47.725Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:24:49.409Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:25:01.271Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:25:24.518Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:33:45.938Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:34:43.499Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T18:54:13.373Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:25:31.245Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:25:48.762Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:26:29.726Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:29:29.382Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:37:47.742Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:37:47.742Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:44:12.209Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:26.120Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:26.120Z"}}
+
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:45.504Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:45.504Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:52.368Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:45:52.368Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:48:01.727Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:48:38.550Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:48:38.550Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:49:50.645Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:49:55.702Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:07.863Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:14.680Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:25.333Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:34.765Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:47.828Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:50:47.828Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:53:38.718Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:53:47.929Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:53:56.102Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:53:56.102Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:56:09.351Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:56:09.351Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:56:36.913Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:56:36.913Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:57:04.191Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:57:04.191Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:57:46.484Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:57:46.484Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T19:58:43.111Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:01:04.017Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:01:15.635Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:01:15.635Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:13:04.900Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:13:04.900Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:13:28.531Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:13:34.069Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:13:34.069Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:14:08.873Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:14:08.873Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:15:08.549Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:15:08.549Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:20:52.902Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:21:39.179Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:22:15.652Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:24:43.638Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:24:43.725Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:24:43.725Z"}}
+
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:25:17.179Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:25:17.179Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:26:43.281Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:26:43.281Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:27:11.152Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:27:11.152Z"}}
+
+📨 Received message:
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:30:26.008Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:30:27.446Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:30:26.008Z"}}
+
+📨 Received message:
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:01.979Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:01.979Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:03.414Z"}}
+
+📨 Received message:
+📨 Received message:
+📨 Received message:
+📨 Received message:
+📨 Received message:
+📨 Received message:
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:37.288Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:37.288Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"reflection-card","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:31:37.288Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:32:42.768Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:32:42.768Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:00.087Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:00.087Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"reflection-card","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:00.087Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:09.278Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:09.278Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"reflection-card","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:09.278Z"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:32.972Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:32.972Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:33:32.972Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:28.134Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:28.134Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:28.134Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:38.790Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:38.790Z"}}
+
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:47.261Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:47.261Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:38:47.261Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:44:25.166Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:44:25.166Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:44:25.166Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:44:25.166Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"customize-card","waitingAnimationOn":false,"visibleButtons":["back-button"],"buttonsDisabled":[],"level":9,"formerLevel":9,"animateLevelUp":false,"pills":[{"current":2,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Strong Thesis"},{"current":0,"outOf":5,"description":"Has Logical flow with effective transitions.","title":"Organization"},{"current":0,"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary."},{"current":0,"outOf":5,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":6},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"lastUpdated":"2025-01-30T20:44:25.166Z","cardMainText":"Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."}}
+
+📨 Received message:
+📨 Received message:
+📨 Received message:
+📨 Received message:
