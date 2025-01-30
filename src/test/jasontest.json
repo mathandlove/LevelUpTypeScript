@@ -1,269 +1,535 @@
 {
   "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE": {
-    "level": 3,
+    "level": 4,
     "pills": [
       {
-        "title": "Thesis Statement",
+        "current": 1,
+        "outOf": 5,
         "description": "Has Clear, specific, and well-developed thesis.",
-        "outOf": 5,
-        "current": 2
+        "title": "Strong Thesis"
       },
       {
-        "title": "Organization",
+        "current": 0,
+        "outOf": 5,
         "description": "Has Logical flow with effective transitions.",
-        "outOf": 5,
-        "current": 0
+        "title": "Organization"
       },
       {
+        "current": 0,
         "title": "Word Choice",
-        "description": "Uses precise, varied, and appropriate vocabulary.",
         "outOf": 5,
-        "current": 0
+        "description": "Uses precise, varied, and appropriate vocabulary."
       },
       {
-        "title": "Grammar",
-        "description": "Is Free of major grammatical errors .",
+        "current": 0,
         "outOf": 5,
-        "current": 0
+        "description": "Is Free of major grammatical errors .",
+        "title": "Grammar"
       }
     ],
     "challengeArray": [
       [
         {
           "aiSuggestion": {
-            "originalSentence": "Will you see this? Or two? And three.1234? Or four! Or six? Or five! Or seven? What happens if I write a line here at the end? One more! You’ve got this!",
-            "aiImprovedSentence": "This paper demonstrates the thrill of suspense; it captures readers' attention and keeps them intrigued with each turn of events.",
-            "aiReasoning": "This sentence was added to reinforce the thesis by linking suspense to reader engagement without the unrelated content."
+            "originalSentence": "First of all, the plot of the story is interesting because of the blood.",
+            "aiImprovedSentence": "The plot of the story is intriguing and captivating due to its elements of horror and suspense.",
+            "aiReasoning": "This revision provides a clearer and more specific thesis by explaining why the plot is interesting rather than just mentioning 'blood'."
           },
           "modifiedSentences": [
-            "Will you see this? Or two? And three.1234? Or four! Or six? Or five! Or seven? What happens if I write a line here at the end? One more! You’ve got this!",
-            "I can relate to that because every time I watch a TV show I enjoy it."
+            "First of all, the plot of the story is interesting because of the blood.",
+            "First of all, the plot of the story is interesting because."
           ],
-          "sentenceStartIndex": 945,
-          "sentenceEndIndex": 1016,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence.",
-          "aiFeeling": "Reading this made me feel confused and overwhelmed because the random numbers and questions like \"Or six?\" didn't seem to connect to any clear idea or story.",
+          "sentenceStartIndex": 0,
+          "sentenceEndIndex": 61,
+          "challengeTitle": "Big Goal: Enhance clarity and engagement of the original sentence.",
+          "aiFeeling": "Reading this made me feel confused and a little uneasy because it only mentioned 'blood' without really explaining why the story is interesting.",
           "taskArray": [
-            "Identify the main idea you want to convey in the sentence.",
-            "Remove any unrelated or repetitive phrases that do not support this main idea.",
-            "Combine related ideas to form a cohesive sentence."
+            "Think about what specific aspect of the plot makes it interesting.",
+            "Write down a few key elements of the story that contribute to its overall interest.",
+            "Choose one of these elements that you think is most important and add it to the sentence."
           ],
           "challengeResponse": "valid"
         },
         {
           "aiSuggestion": {
-            "originalSentence": "First of all, the plot of the story is pretty interesting.",
-            "aiImprovedSentence": "The plot of the story is intriguing and captivates readers with its suspenseful elements.",
-            "aiReasoning": "This revision provides a clearer and more specific thesis by stating the plot's qualities and its effect on the readers."
+            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
+            "aiImprovedSentence": "The story's tension builds through the rising and falling action, particularly when the frightening event of an old man's murder occurs.",
+            "aiReasoning": "This sentence is rephrased for clarity and specificity about the events contributing to the story's tension."
           },
           "modifiedSentences": [
-            "First of all, the plot of the story is pretty interesting."
+            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
           ],
-          "sentenceStartIndex": 0,
-          "sentenceEndIndex": 58,
-          "aiFeeling": "Reading this made me feel like the sentence was too plain and didn't really show how exciting the story is.",
-          "challengeTitle": "Big Goal: Enhance clarity and engagement of the sentence.",
+          "sentenceStartIndex": 73,
+          "sentenceEndIndex": 207,
+          "challengeTitle": "Big Goal: Enhance clarity and specificity of the sentence.",
           "taskArray": [
-            "Identify a stronger adjective to replace 'pretty interesting'.",
-            "Consider what makes the plot interesting and think of an adjective that best describes that.",
-            "Look at your choice and see if it captures the feeling you want the reader to have."
+            "Identify one word or phrase that could be made more specific to improve clarity.",
+            "Think of a way to rephrase the word or phrase to make it more specific.",
+            "Replace the original word or phrase with your new specific version."
+          ],
+          "aiFeeling": "Reading this made me feel confused because \"things start to transform to intense\" is unclear and doesn't explain what happens in the story."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "Lastly, some people might like suspense in their life; that is why a  they like scary stories.",
+            "aiImprovedSentence": "Many readers enjoy suspenseful stories because they crave excitement and the unknown, making scary stories particularly appealing.",
+            "aiReasoning": "This revision better clarifies the thesis by explicitly connecting readers' enjoyment of suspense to the appeal of scary stories."
+          },
+          "modifiedSentences": [
+            "Lastly, some people might like suspense in their life; that is why a  they like scary stories."
+          ],
+          "sentenceStartIndex": 628,
+          "sentenceEndIndex": 722,
+          "challengeTitle": "Big Goal: Enhance clarity and effectiveness of the sentence.",
+          "aiFeeling": "Reading this made me feel confused because it's not clear how liking suspense directly relates to liking scary stories, making the connection seem weak.",
+          "taskArray": [
+            "Identify the main idea you want to express in your sentence by focusing on why someone might like suspense or scary stories.",
+            "Combine related thoughts into one cohesive sentence to clarify the connection between liking suspense and enjoying scary stories.",
+            "Choose specific words to clearly express the relationship between suspense and interest in scary stories."
           ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "What gets interesting in the plot is the rising action when things start to transform to intense, like killing an old man.",
-            "aiImprovedSentence": "The story's rising action becomes particularly engaging when it escalates to intense moments, such as the protagonist's act of killing the old man.",
-            "aiReasoning": "The improved sentence specifies the rising action and enhances clarity while maintaining a focus on the plot development."
-          },
-          "modifiedSentences": [
-            "What gets interesting in the plot is the rising action when things start to transform to intense, like killing an old man."
-          ],
-          "sentenceStartIndex": 59,
-          "sentenceEndIndex": 181,
-          "challengeTitle": "Big Goal: Enhance clarity and engagement of the sentence.",
-          "taskArray": [
-            "Identify the main action or event in the sentence.",
-            "Clarify the specific moment when the action becomes intense.",
-            "Use precise language to describe the event or action."
-          ],
-          "aiFeeling": "Reading this made me feel confused because the sentence suddenly mentioned something intense like \"killing an old man\" without clearly explaining what's happening in the story."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared.",
-            "aiImprovedSentence": "Many people enjoy the thrill of fear because it creates a unique emotional experience that can leave them feeling paralyzed in suspense.",
-            "aiReasoning": "This revision clarifies the thesis by explaining why people enjoy fear, connecting it directly to the appeal of scary stories."
-          },
-          "modifiedSentences": [
-            "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared."
-          ],
-          "sentenceStartIndex": 300,
-          "sentenceEndIndex": 412,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in expressing ideas.",
-          "taskArray": [
-            "Identify the main reason people like getting scared mentioned in the sentence.",
-            "Remove repetitive phrases to make the sentence clearer.",
-            "Use specific words to better describe the feeling of being scared."
-          ],
-          "aiFeeling": "Reading this made me feel a bit confused because the sentence seemed jumbled and repeated itself, especially with phrases like \\\"because it of how it feels\\\" and \\\"how you can't move when you are scared.\\\""
         },
         {
           "aiSuggestion": {
             "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
-            "aiImprovedSentence": "This suggests that after the repetition, something significant will occur next, heightening the reader's anticipation.",
-            "aiReasoning": "The improved sentence is more specific about the purpose of repetition in storytelling and its effect on the reader's expectations."
+            "aiImprovedSentence": "This suggests that after such intensifying repetition, a significant event is about to unfold, heightening the suspense.",
+            "aiReasoning": "The revision emphasizes the connection between repetition and suspense while correcting grammatical errors."
           },
           "modifiedSentences": [
             "That means that after the repetition something really strong is going to happens a a next."
           ],
-          "sentenceStartIndex": 962,
-          "sentenceEndIndex": 1052,
-          "aiFeeling": "Reading this made me feel confused and anxious because \"going to happens a a next\" seemed like a jumble of words that didn't make sense.",
-          "challengeTitle": "Big Goal: Clarify and enhance the sentence's meaning and impact.",
+          "sentenceStartIndex": 950,
+          "sentenceEndIndex": 1040,
+          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence.",
+          "aiFeeling": "Reading this made me feel confused because the sentence seemed jumbled with phrases like \"going to happens a a next,\" making it hard to understand what strong event was supposed to occur.",
           "taskArray": [
-            "Identify the repeated words or phrases in the sentence.",
-            "Remove any repeated words that do not contribute to the meaning of the sentence.",
-            "Reread the sentence to ensure it makes sense without the repetition."
+            "Identify the word 'happens' in the sentence.",
+            "Check if 'happens' agrees with the subject 'something'.",
+            "Decide if you need to change the form of the word 'happens' to match the subject."
           ]
         }
       ],
       [
         {
           "aiSuggestion": {
-            "originalSentence": "For example, it was briefly mentioned in the story how he cuts the old man's body and hides the corpse in the ground.",
-            "aiImprovedSentence": "For instance, the story briefly describes how he cuts up the old man's body and hides the pieces in the ground.",
-            "aiReasoning": "Changed 'it was mentioned' to 'the story briefly describes' to enhance the flow and connection between sentences."
+            "originalSentence": "First of all, the plot of the story is interesting because of the blood.",
+            "aiImprovedSentence": "First of all, the plot of the story is interesting because of the blood, which creates a sense of dread right from the beginning.",
+            "aiReasoning": "Added a reason to connect the interest in blood to the overall atmosphere of the story, enhancing logical flow."
           },
           "modifiedSentences": [
-            "For example, it was briefly mentioned in the story how he cuts the old man's body and hides the corpse in the ground."
+            "First of all, the plot of the story is interesting because of the blood."
           ],
-          "sentenceStartIndex": 182,
-          "sentenceEndIndex": 299,
-          "challengeTitle": "Big Goal: Enhance clarity and flow in the sentence.",
+          "sentenceStartIndex": 0,
+          "sentenceEndIndex": 72,
+          "challengeTitle": "Big Goal: Enhance clarity and depth of the original sentence.",
+          "aiFeeling": "Reading this made me feel confused and a little uneasy because it mentions the plot being interesting due to blood without explaining why that makes it interesting.",
           "taskArray": [
-            "Identify the verb phrase in your sentence that seems passive or less direct.",
-            "Think of a more active or direct way to express the same action.",
-            "Replace the identified verb phrase with your new, more active option."
-          ],
-          "aiFeeling": "Reading this made me feel confused because the phrase \"it was briefly mentioned\" doesn't clearly explain how the story talks about cutting up the old man's body and hiding it."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared.",
-            "aiImprovedSentence": "People enjoy the feeling of being scared because of the adrenaline rush and the way it leaves them frozen in place.",
-            "aiReasoning": "Clarified the sentence by replacing 'it of how it feels' with 'because of the adrenaline rush' for improved flow."
-          },
-          "modifiedSentences": [
-            "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared."
-          ],
-          "sentenceStartIndex": 300,
-          "sentenceEndIndex": 412,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence structure.",
-          "aiFeeling": "Reading this made me feel confused because the phrase \"it of how it feels\" doesn't make sense and disrupts the flow of the sentence.",
-          "taskArray": [
-            "Identify the word 'it' that is not necessary in the sentence.",
-            "Recognize the word that feels redundant and mark it for removal.",
-            "Re-read the revised sentence to check if it makes sense without the unnecessary word."
+            "Identify a word in the sentence that describes why the plot is interesting.",
+            "Think of how blood can affect the feeling or mood of a story.",
+            "Add a word or phrase to explain how blood influences the plot."
           ]
         },
         {
           "aiSuggestion": {
-            "originalSentence": "He really jumped up and he asked, \"Who is there?\"",
-            "aiImprovedSentence": "He jumped up in alarm and asked, \"Who is there?\"",
-            "aiReasoning": "Using 'in alarm' provides a smoother transition and adds more emotion to the action."
+            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
+            "aiImprovedSentence": "The plot becomes even more interesting during the rising and falling action, especially when it intensifies with the killing of an old man.",
+            "aiReasoning": "Rephrased for clarity and smooth transition between ideas, emphasizing the intensity of the plot."
           },
           "modifiedSentences": [
-            "He really jumped up and he asked, \"Who is there?\" I can relate to this because once I heard a noise and I jumped and woke up my sister."
+            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
           ],
-          "sentenceStartIndex": 503,
-          "sentenceEndIndex": 638,
-          "challengeTitle": "Big Goal: Enhance clarity and emotional impact of the sentence.",
+          "sentenceStartIndex": 73,
+          "sentenceEndIndex": 207,
+          "challengeTitle": "Big Goal: Enhance clarity and coherence of the sentence.",
+          "aiFeeling": "Reading this made me feel confused and a bit startled because the twist from things just getting interesting to suddenly mentioning killing an old man seemed abrupt and jarring.",
           "taskArray": [
-            "Identify a place where you can describe how the character feels.",
-            "Think of a phrase or word that describes this emotion.",
-            "Rewrite the sentence using your chosen description."
-          ],
-          "aiFeeling": "Reading this made me feel confused because it just says he jumped up and asked a question without explaining why or how he felt."
-        }
-      ],
-      [
-        {
-          "aiSuggestion": {
-            "originalSentence": "For example, it was briefly mentioned in the story how he cuts the old man's body and hides the corpse in the ground.",
-            "aiImprovedSentence": "For example, it was briefly mentioned in the story how he dismembers the old man's body and conceals the corpse underground.",
-            "aiReasoning": "Replaced 'cuts' with 'dismembers' and 'hides' with 'conceals' for more precise vocabulary."
-          },
-          "modifiedSentences": [
-            "For example, it was briefly mentioned in the story how he cuts the old man's body and hides the corpse in the ground."
-          ],
-          "sentenceStartIndex": 182,
-          "sentenceEndIndex": 299,
-          "challengeTitle": "Big Goal: Enhance clarity and precision in the sentence.",
-          "aiFeeling": "Reading this made me feel confused because words like \"cuts\" and \"hides\" seem too simple for describing something as intense as what the character did to the old man.",
-          "taskArray": [
-            "Identify a word in the sentence that can be replaced with a more precise term.",
-            "Choose a term that more specifically describes the action or idea in the sentence.",
-            "Replace the original word with your chosen precise term."
+            "Identify the main idea of the sentence.",
+            "Think about how you can express the main idea in a clear way.",
+            "Rearrange the words to create a clear and logical flow of ideas."
           ]
         },
         {
           "aiSuggestion": {
-            "originalSentence": "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared.",
-            "aiImprovedSentence": "People enjoy the thrill of being frightened because of the adrenaline rush and the feeling of helplessness that comes with fear.",
-            "aiReasoning": "Changed 'like the feeling of getting scared' to 'enjoy the thrill of being frightened' for a more appropriate vocabulary and enhanced clarity."
+            "originalSentence": "The author told how he cuts the old man's body and hides the corpse in the ground.",
+            "aiImprovedSentence": "The author vividly describes how he cuts the old man's body and hides the corpse in the ground, which adds to the horror of the story.",
+            "aiReasoning": "Added details to enhance the transition and connection to the horror theme."
           },
           "modifiedSentences": [
-            "People like the feeling of getting scared because it of how it feels and how you can't move when you are scared."
+            "The author told how he cuts the old man's body and hides the corpse in the ground."
           ],
-          "sentenceStartIndex": 300,
-          "sentenceEndIndex": 412,
-          "challengeTitle": "Big Goal: Enhance clarity and vocabulary in the sentence.",
-          "aiFeeling": "Reading this made me feel confused because repeating phrases like \"of how it feels\" made it hard to understand why people like getting scared.",
+          "sentenceStartIndex": 208,
+          "sentenceEndIndex": 290,
+          "challengeTitle": "Big Goal: Enhance clarity and vividness of the description.",
+          "aiFeeling": "Reading this made me feel confused and detached, as the lack of details made it hard to grasp the full scary impact of cutting and hiding the old man's body.",
           "taskArray": [
-            "Identify a more specific verb to replace 'like' to better convey the idea of enjoying something.",
-            "Think about what happens when you get scared and create a word or phrase to better describe this feeling.",
-            "Reword the sentence to eliminate the redundancy with 'it of how it feels' and 'how you can't move.'"
+            "Identify a more vivid verb to replace 'told'.",
+            "Think about the mood or atmosphere being conveyed in the original sentence.",
+            "Choose a word that matches the intended effect and enhances the sentence."
           ]
-        }
-      ],
-      [
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "People like the feeling of getting scared because of how it feels and how you can't move when you are scared.",
+            "aiImprovedSentence": "Many people enjoy the feeling of getting scared, as it creates a rush of adrenaline that is both thrilling and paralyzing.",
+            "aiReasoning": "Reworded to provide a smoother connection between the idea of fear and its effects."
+          },
+          "modifiedSentences": [
+            "People like the feeling of getting scared because of how it feels and how you can't move when you are scared."
+          ],
+          "sentenceStartIndex": 291,
+          "sentenceEndIndex": 400,
+          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
+          "taskArray": [
+            "Identify the main idea in the sentence first.",
+            "Look for repeated wording or phrases in the sentence.",
+            "Rephrase a part of the sentence to make it less repetitive."
+          ],
+          "aiFeeling": "Reading this made me feel confused because it repeated that people like getting scared because of how it feels without explaining what that feeling is."
+        },
         {
           "aiSuggestion": {
             "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
-            "aiImprovedSentence": "For example, in the story, it mentions how the old man got scared when he heard a noise.",
-            "aiReasoning": "Removed 'a' before 'scared' to correct the grammatical error."
+            "aiImprovedSentence": "For example, the story mentions how the old man became frightened when he heard an unexpected noise.",
+            "aiReasoning": "Corrected the verb tense and expression for better clarity and logical flow."
           },
           "modifiedSentences": [
             "For example, in the story it mentions how the old man got a scared when he heard a noise."
           ],
-          "sentenceStartIndex": 413,
-          "sentenceEndIndex": 502,
+          "sentenceStartIndex": 401,
+          "sentenceEndIndex": 490,
+          "aiFeeling": "Reading this made me feel confused because the phrase \"got a scared\" doesn't make sense and interrupts the flow of the story.",
           "challengeTitle": "Big Goal: Enhance clarity and grammatical accuracy of the sentence.",
-          "aiFeeling": "Reading this made me feel a bit confused because the extra word \"a\" before \"scared\" made the sentence sound awkward.",
           "taskArray": [
-            "Identify any unnecessary words in the sentence.",
-            "Determine if the words around it make sense without these words.",
-            "Remove the unnecessary words and rewrite the sentence."
+            "Identify the verb that describes the old man's reaction to the noise in the sentence.",
+            "Decide on a stronger and more accurate verb to express the old man’s reaction.",
+            "Replace the original verb with the chosen stronger verb in the sentence."
           ]
         },
         {
           "aiSuggestion": {
-            "originalSentence": "Will you see this? Or two? And three.1234? Or four! Or six? Or five! Or seven? What happens if I write a line here at the end? One more!",
-            "aiImprovedSentence": "Will you see this? Or two? And three? Or four? Or six? Or five? Or seven? What happens if I write a line here at the end? One more!",
-            "aiReasoning": "Changed 'three.1234?' to 'three?' to correct the punctuation."
+            "originalSentence": "I can relate to this because once I heard a noise and I jumped and woke up my sister.",
+            "aiImprovedSentence": "I can relate to this because I once heard a sudden noise that made me jump and accidentally wake up my sister.",
+            "aiReasoning": "Improved clarity and logical connection by clarifying the experience shared."
           },
           "modifiedSentences": [
-            "Will you see this? Or two? And three.1234? Or four! Or six? Or five! Or seven? What happens if I write a line here at the end? One more!"
+            "I can relate to this because once I heard a noise and I jumped and woke up my sister."
           ],
-          "sentenceStartIndex": 1193,
-          "sentenceEndIndex": 1329,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence.",
+          "sentenceStartIndex": 541,
+          "sentenceEndIndex": 626,
+          "aiFeeling": "Reading this made me feel a bit confused because the sentence jumps quickly from hearing a noise to waking up your sister without explaining how it all happened.",
+          "challengeTitle": "Big Goal: Enhance clarity and coherence of the sentence.",
           "taskArray": [
-            "Identify where punctuation seems incorrect or unnecessary in the sentence.",
-            "Focus on simplifying the punctuation in that specific part of the sentence.",
-            "Revise that part to make it consistent with the surrounding text."
+            "Identify the specific action that caused your reaction in the sentence.",
+            "Think of a descriptive word to enhance the description of the noise.",
+            "Reorganize the sentence to maintain a logical flow of events."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "Lastly, some people might like suspense in their life; that is why a  they like scary stories.",
+            "aiImprovedSentence": "Finally, some people might enjoy suspense in their lives, which is why they are drawn to scary stories.",
+            "aiReasoning": "Changed 'lastly' to 'finally' for a smoother transition and rephrased for better clarity."
+          },
+          "modifiedSentences": [
+            "Lastly, some people might like suspense in their life; that is why a  they like scary stories."
           ],
-          "aiFeeling": "Reading this made me feel confused because the sentence had a random number \"1234\" after \"three\" that didn't make sense and interrupted the flow."
+          "sentenceStartIndex": 628,
+          "sentenceEndIndex": 722,
+          "aiFeeling": "Reading this made me feel a bit confused because the words like 'lastly' and the repeated 'a' didn't make the sentence flow well.",
+          "taskArray": [
+            "Identify the conjunction used in the sentence.",
+            "Replace the semicolon with the identified conjunction.",
+            "Reread the sentence to ensure it flows naturally."
+          ],
+          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
+            "aiImprovedSentence": "They enjoy suspense because it creates excitement about what will happen next.",
+            "aiReasoning": "Rephrased for clarity and to enhance logical flow."
+          },
+          "modifiedSentences": [
+            "They like suspense because they are excited to see what is going to happen."
+          ],
+          "sentenceStartIndex": 723,
+          "sentenceEndIndex": 798,
+          "aiFeeling": "Reading this made me feel a bit confused because the words \"excited to see what is going to happen\" didn't clearly explain how they enjoy suspense.",
+          "challengeTitle": "Big Goal: Enhance clarity and improve logical flow in writing.",
+          "taskArray": [
+            "Identify the main verb in the sentence.",
+            "Think about how you can use a synonym to replace the main verb.",
+            "Write down the sentence with the new verb in place."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "Two more! For example, in the story it said, \"The beating grew louder and louder.\"",
+            "aiImprovedSentence": "Furthermore, the story states, \"The beating grew louder and louder,\" which builds tension.",
+            "aiReasoning": "Changed 'two more' to 'furthermore' to provide a better transition and link to the previous example."
+          },
+          "modifiedSentences": [
+            "Two more! For example, in the story it said, \"The beating grew louder and louder.\" The old man did not know what was going to happen during the night."
+          ],
+          "sentenceStartIndex": 799,
+          "sentenceEndIndex": 949,
+          "aiFeeling": "Reading this made me feel confused because starting with \\\"Two more!\\\" doesn't clearly connect to what's being discussed.",
+          "taskArray": [
+            "Replace informal or unclear phrases with more formal linking words.",
+            "Identify a better linking word to introduce the example.",
+            "Verify that your changes make the relationship between ideas clearer."
+          ],
+          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence structure."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "The old man did not know what was going to happen during the night.",
+            "aiImprovedSentence": "The old man was completely unaware of what fate awaited him during the night.",
+            "aiReasoning": "Enhanced the sentence's emotional impact while improving the transition within the narrative."
+          },
+          "modifiedSentences": [
+            "The old man did not know what was going to happen during the night."
+          ],
+          "sentenceStartIndex": 882,
+          "sentenceEndIndex": 949,
+          "challengeTitle": "Big Goal: Enhance clarity and emotional impact of the sentence.",
+          "aiFeeling": "Reading this made me feel like I was missing some excitement because it just seemed like the old man was simply clueless, without any sense of mystery or suspense about what would happen during the night.",
+          "taskArray": [
+            "Identify the words that can describe the old man’s emotional state more vividly.",
+            "Choose one of these words to replace 'did not know' in the sentence.",
+            "Rewrite the sentence using the new word for 'did not know' to better convey the old man's emotional uncertainty."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
+            "aiImprovedSentence": "This repetition suggests that something dramatic is about to happen next.",
+            "aiReasoning": "Clarified the sentence for better understanding and logical flow."
+          },
+          "modifiedSentences": [
+            "That means that after the repetition something really strong is going to happens a a next."
+          ],
+          "sentenceStartIndex": 950,
+          "sentenceEndIndex": 1040,
+          "challengeTitle": "Big Goal: Enhance clarity and coherence of the original sentence.",
+          "taskArray": [
+            "Identify the unnecessary repetition in the original sentence.",
+            "Choose the word or phrase to remove to avoid redundancy.",
+            "Rewrite the sentence without the redundancy."
+          ],
+          "aiFeeling": "Reading this made me feel confused because the words \"going to happens a a next\" don't make sense and make it hard to understand what's being said."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "I can relate to that because every time I watch a TV show I enjoy it.",
+            "aiImprovedSentence": "I can relate to this feeling because I enjoy watching TV shows that keep me on the edge of my seat.",
+            "aiReasoning": "Connected the final thought more effectively to the notion of suspense, providing a better transition."
+          },
+          "modifiedSentences": [
+            "I can relate to that because every time I watch a TV show I enjoy it."
+          ],
+          "sentenceStartIndex": 1041,
+          "sentenceEndIndex": 1110,
+          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence.",
+          "aiFeeling": "Reading this made me feel a bit confused because it seemed like the sentence didn't explain exactly why the TV shows were so enjoyable.",
+          "taskArray": [
+            "Identify the main idea you want to express in the sentence.",
+            "Think about how to add detail to the original sentence to make your thoughts clearer.",
+            "Rewrite the sentence with these additional details to better express your idea."
+          ]
+        }
+      ],
+      [
+        {
+          "aiSuggestion": {
+            "originalSentence": "First of all, the plot of the story is interesting because of the blood.",
+            "aiImprovedSentence": "First of all, the plot of the story is captivating due to its gore.",
+            "aiReasoning": "Changed 'interesting' to 'captivating' and 'because of the blood' to 'due to its gore' to use more precise vocabulary and create a stronger impact."
+          },
+          "modifiedSentences": [
+            "First of all, the plot of the story is interesting because of the blood."
+          ],
+          "sentenceStartIndex": 0,
+          "sentenceEndIndex": 72,
+          "aiFeeling": "Reading this made me feel like the sentence was too plain and didn't capture my attention because it mentioned \"interesting\" and \"blood\" in a boring way.",
+          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
+          "taskArray": [
+            "Identify a word or phrase in the sentence that could be replaced with a stronger or more specific vocabulary word.",
+            "Choose a specific word that would make the sentence more precise or impactful.",
+            "Replace the chosen word with your new vocabulary word to enhance the sentence."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
+            "aiImprovedSentence": "What becomes gripping in the plot is the rising and falling action when things start to become intense, such as the murder of an old man.",
+            "aiReasoning": "Changed 'gets interesting' to 'becomes gripping' for stronger vocabulary and replaced 'transform to intense' with 'become intense' for clarity."
+          },
+          "modifiedSentences": [
+            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
+          ],
+          "sentenceStartIndex": 73,
+          "sentenceEndIndex": 207,
+          "aiFeeling": "Reading this made me feel confused and uneasy because the phrase \"transform to intense, like killing an old man\" didn't clearly describe the action and was unsettling.",
+          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
+          "taskArray": [
+            "Identify the vague word or phrase in the sentence.",
+            "Think of a more descriptive or stronger word to replace it.",
+            "Rewrite the sentence using this new word."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "People like the feeling of getting scared because of how it feels and how you can't move when you are scared.",
+            "aiImprovedSentence": "People enjoy the thrill of fear because of the adrenaline rush and the feeling of paralysis during scary moments.",
+            "aiReasoning": "Replaced 'like the feeling of getting scared' with 'enjoy the thrill of fear' and added 'adrenaline rush' to introduce more precise vocabulary."
+          },
+          "modifiedSentences": [
+            "People like the feeling of getting scared because of how it feels and how you can't move when you are scared."
+          ],
+          "sentenceStartIndex": 291,
+          "sentenceEndIndex": 400,
+          "aiFeeling": "Reading this made me feel confused because it repeated 'feeling' twice and didn't clearly explain why people like getting scared.",
+          "challengeTitle": "Big Goal: Enhance sentence clarity and vocabulary usage for impact.",
+          "taskArray": [
+            "Identify a part of the sentence where you can replace a vague word with a more specific word.",
+            "Think about what specific word could make the meaning clearer.",
+            "Choose that specific word and use it to improve the sentence."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
+            "aiImprovedSentence": "For example, in the story it mentions how the old man became frightened when he heard a noise.",
+            "aiReasoning": "Changed 'got a scared' to 'became frightened' for clearer expression."
+          },
+          "modifiedSentences": [
+            "For example, in the story it mentions how the old man got a scared when he heard a noise."
+          ],
+          "sentenceStartIndex": 401,
+          "sentenceEndIndex": 490,
+          "aiFeeling": "Reading this made me feel confused because \"got a scared\" doesn't sound right and makes it hard to understand how the old man felt.",
+          "taskArray": [
+            "Identify the part of the sentence that does not make sense or seems awkward.",
+            "Think of a more precise word to convey the old man's reaction to the noise.",
+            "Replace the awkward phrase with the new word you thought of."
+          ],
+          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
+            "aiImprovedSentence": "They relish suspense because it builds excitement about what will happen next.",
+            "aiReasoning": "Changed 'like' to 'relish' and revised 'are excited to see what is going to happen' to 'builds excitement about what will happen next' for variety and precision."
+          },
+          "modifiedSentences": [
+            "They like suspense because they are excited to see what is going to happen."
+          ],
+          "sentenceStartIndex": 723,
+          "sentenceEndIndex": 798,
+          "aiFeeling": "Reading this made me feel bored because using the words 'like' and 'excited to see what is going to happen' seemed too plain and didn't paint a vivid picture in my mind.",
+          "challengeTitle": "Big Goal: Enhance sentence precision and variety.",
+          "taskArray": [
+            "Find a more precise word to replace 'like' in the sentence.",
+            "Think about what feeling builds up when someone is anticipating something, and use a word that captures that feeling better.",
+            "Consider how to make the sentence feel more dynamic by choosing words that show action."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
+            "aiImprovedSentence": "This suggests that after the repetition, something powerful is about to occur next.",
+            "aiReasoning": "Revised 'that means that' to 'this suggests that' and made 'something really strong is going to happens a a next' more precise by changing it to 'something powerful is about to occur next'."
+          },
+          "modifiedSentences": [
+            "That means that after the repetition something really strong is going to happens a a next."
+          ],
+          "sentenceStartIndex": 950,
+          "sentenceEndIndex": 1040,
+          "aiFeeling": "Reading this made me feel confused because the phrase \"something really strong is going to happens a a next\" is jumbled and hard to understand.",
+          "challengeTitle": "Big Goal: Enhance clarity and correctness of the original sentence.",
+          "taskArray": [
+            "Identify any unnecessary words in the sentence that might make it confusing.",
+            "Focus on finding a single place where a change can improve clarity.",
+            "Re-write just that part of the sentence to make it clearer."
+          ]
+        }
+      ],
+      [
+        {
+          "aiSuggestion": {
+            "originalSentence": "First of all, the plot of the story is interesting because of the blood.",
+            "aiImprovedSentence": "First of all, the plot of the story is interesting because of the bloodshed.",
+            "aiReasoning": "The word 'bloodshed' is more appropriate and precise than 'blood' in this context."
+          },
+          "modifiedSentences": [
+            "First of all, the plot of the story is interesting because of the blood."
+          ],
+          "sentenceStartIndex": 0,
+          "sentenceEndIndex": 72,
+          "challengeTitle": "Big Goal: Enhance clarity and precision in sentence structure.",
+          "aiFeeling": "Reading this made me feel confused about why simply mentioning 'blood' makes the plot interesting, as it lacks the clarity and specificity of 'bloodshed.'",
+          "taskArray": [
+            "Identify the main focus of the sentence.",
+            "Determine if there is a more precise word to replace 'blood.'",
+            "Choose a more specific word that accurately conveys the intended meaning."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
+            "aiImprovedSentence": "What gets interesting in the plot is the rising and falling action when things start to become intense, like killing an old man.",
+            "aiReasoning": "Changed 'transform to intense' to 'become intense' for correct grammatical structure."
+          },
+          "modifiedSentences": [
+            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
+          ],
+          "sentenceStartIndex": 73,
+          "sentenceEndIndex": 207,
+          "challengeTitle": "Big Goal: Enhance clarity and grammatical correctness of the sentence.",
+          "taskArray": [
+            "Identify the phrase 'transform to' in the sentence.",
+            "Consider what the intended meaning of the phrase might be in relation to intensifying action.",
+            "Replace the phrase with a more grammatically correct word or phrase that conveys the intended meaning."
+          ],
+          "aiFeeling": "Reading this made me feel confused because \"transform to intense\" doesn't sound right and made it hard to understand what was happening."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
+            "aiImprovedSentence": "For example, in the story it mentions how the old man got scared when he heard a noise.",
+            "aiReasoning": "Changed 'got a scared' to 'got scared' to correct the grammatical error."
+          },
+          "modifiedSentences": [
+            "For example, in the story it mentions how the old man got a scared when he heard a noise."
+          ],
+          "sentenceStartIndex": 401,
+          "sentenceEndIndex": 490,
+          "challengeTitle": "Big Goal: Enhance sentence clarity and grammatical accuracy.",
+          "taskArray": [
+            "Identify any extra words in the sentence that make it grammatically incorrect.",
+            "Decide what the main subject of the sentence is.",
+            "Rephrase the sentence so it reads smoothly without unnecessary words."
+          ],
+          "aiFeeling": "Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
+            "aiImprovedSentence": "That means that after the repetition something really strong is going to happen next.",
+            "aiReasoning": "Changed 'going to happens a a next' to 'going to happen next' for correct grammar."
+          },
+          "modifiedSentences": [
+            "That means that after the repetition something really strong is going to happens a a next."
+          ],
+          "sentenceStartIndex": 950,
+          "sentenceEndIndex": 1040,
+          "aiFeeling": "Reading this made me feel confused and distracted because of the awkward phrasing with 'happens a a next'.",
+          "taskArray": [
+            "Identify the incorrect word in the sentence that does not fit with the rest of the structure.",
+            "Rewrite the incorrect word so that it fits grammatically with the rest of the sentence.",
+            "Review the sentence after making the change to ensure it flows smoothly."
+          ],
+          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence."
         }
       ]
     ],
@@ -271,6 +537,109 @@
     "newChallengesReady": false,
     "currentText": "",
     "textBeforeEdits": "",
+    "savedActivity": {
+      "savedReflections": [
+        {
+          "enabled": true,
+          "copyPercentIncluded": false,
+          "noInputOnSubmit": false,
+          "question": [
+            "What went well?",
+            "What was hard?",
+            "How can the teacher help you?"
+          ],
+          "submittedAnswers": ["a", "b", "c"],
+          "selectedQuestion": 2,
+          "placeholder": "Enter your reflection here...",
+          "outOf": 1,
+          "currentScore": 0,
+          "visibleButtons": ["back-button", "next-button"]
+        },
+        {
+          "enabled": true,
+          "copyPercentIncluded": false,
+          "noInputOnSubmit": false,
+          "question": [
+            "What went well?",
+            "What was hard?",
+            "How can the teacher help you?"
+          ],
+          "submittedAnswers": ["a", "b", "c"],
+          "selectedQuestion": 2,
+          "placeholder": "Enter your reflection here...",
+          "outOf": 1,
+          "currentScore": 0
+        }
+      ],
+      "savedChallenges": []
+    },
+    "reflectionTemplate": {
+      "currentScore": 2,
+      "noInputOnSubmit": false,
+      "placeholder": "Enter your reflection here...",
+      "outOf": 1,
+      "question": [
+        "What went well?",
+        "What was hard?",
+        "How can the teacher help you?"
+      ],
+      "selectedQuestion": 0,
+      "copyPercentIncluded": false,
+      "enabled": true,
+      "submittedAnswers": []
+    },
+    "rubricInfo": {
+      "savedRubrics": [
+        {
+          "reflection": {
+            "currentScore": 0,
+            "noInputOnSubmit": false,
+            "placeholder": "Enter your reflection here...",
+            "outOf": 1,
+            "question": [
+              "What went well?",
+              "What was hard?",
+              "How can the teacher help you?"
+            ],
+            "selectedQuestion": 0,
+            "copyPercentIncluded": false,
+            "enabled": true,
+            "submittedAnswers": []
+          },
+          "title": "Starter Level Up Rubric",
+          "googleSheetId": "",
+          "topics": [
+            {
+              "current": 0,
+              "outOf": 5,
+              "description": "Has Clear, specific, and well-developed thesis.",
+              "title": "Strong Thesis"
+            },
+            {
+              "current": 0,
+              "outOf": 5,
+              "description": "Has Logical flow with effective transitions.",
+              "title": "Organization"
+            },
+            {
+              "current": 0,
+              "title": "Word Choice",
+              "outOf": 5,
+              "description": "Uses precise, varied, and appropriate vocabulary."
+            },
+            {
+              "current": 0,
+              "outOf": 5,
+              "description": "Is Free of major grammatical errors .",
+              "title": "Grammar"
+            }
+          ],
+          "databaseID": "starterRubric",
+          "gradeLevel": 1
+        }
+      ],
+      "currentRubric": 0
+    },
     "selectedChallengeNumber": -1
   }
 }

@@ -32,6 +32,7 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       url,
       options
     );
+    console.log(response);
     return true;
   } catch {
     throw new Error(
@@ -39,29 +40,34 @@ export async function validateToken(context: AppContext): Promise<boolean> {
     );
   }
 }
-export async function getPersistentDataFileId(
-  context: AppContext
-): Promise<{ persistentDataFileId: string; GoogleServices: object }> {
-  let persistentDataFileId = context.appState.persistentDataFileId;
+
+export async function getPersistentDataFileId(context: AppContext): Promise<{
+  persistentDataFileId: string;
+  levelUpFolderId: string;
+  GoogleServices: object;
+}> {
   const token = context.appState.token;
   const documentId = context.appState.documentId;
   const oauth2Client = new google.auth.OAuth2();
   oauth2Client.setCredentials({ access_token: token });
-  if (!persistentDataFileId) {
-    persistentDataFileId = await createOrGetPersistentDataFileId(oauth2Client);
-  }
+
+  const { persistentDataFileId, levelUpFolderId } =
+    await createOrGetPersistentDataFileId(oauth2Client);
+
   const GoogleServices = {
     oauth2Client,
     drive: google.drive({ version: "v3", auth: oauth2Client }),
     docs: google.docs({ version: "v1", auth: oauth2Client }),
     sheets: google.sheets({ version: "v4", auth: oauth2Client }),
   };
-  return { persistentDataFileId, GoogleServices };
+  return { persistentDataFileId, levelUpFolderId, GoogleServices };
 }
 
-export async function getOrLoadDocumentMetaData(
-  context: AppContext
-): Promise<DocumentMetaData> {
+export async function getOrLoadDocumentMetaData(context: AppContext): Promise<{
+  persistentDocData: DocumentMetaData;
+  createdPersistentDataFile: boolean;
+}> {
+  let createdPersistentDataFile = false;
   try {
     const oauth2Client = context.appState.GoogleServices.oauth2Client;
     const documentId = context.appState.documentId;
@@ -76,13 +82,10 @@ export async function getOrLoadDocumentMetaData(
       persistentDataFileId
     );
     if (persistentDocData == null) {
-      persistentDocData = defaultDocumentMetaData;
-      persistentDocData.challengeArray = Array.from(
-        { length: persistentDocData.pills.length },
-        () => []
-      ); //Now we are guranteed to have the right challengeArray size!
+      persistentDocData = defaultDocumentMetaData; //Now we are guranteed to have the right challengeArray size!
+      createdPersistentDataFile = true;
     }
-    return persistentDocData;
+    return { persistentDocData, createdPersistentDataFile };
   } catch (error) {
     throw "We do not have permission to access your Google Documents. <br><br>Make sure you have editting rights to the document you are working on.";
   }
@@ -139,10 +142,14 @@ async function fetchWithRetriesAndTimeout<T = unknown>(
   // This line is unreachable, but TypeScript requires it.
   throw new Error("Fetch operation failed unexpectedly.");
 }
-async function createOrGetPersistentDataFileId(oauth2Client: any) {
+async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
+  persistentDataFileId: string;
+  levelUpFolderId: string;
+}> {
   const drive = google.drive({ version: "v3", auth: oauth2Client });
   const fileName = "persistent.json"; // The file's name in Google Drive
   try {
+    const folderId = await createOrGetFolder(oauth2Client, "LevelUp");
     // Check if the file already exists
     const listResponse = await drive.files.list({
       q: `name='${fileName}' and trashed=false`, // Search for the file by name and exclude trashed files
@@ -154,10 +161,12 @@ async function createOrGetPersistentDataFileId(oauth2Client: any) {
 
     if (files && files.length > 0) {
       console.log(`File already exists. File ID: ${files[0].id}`);
-      return files[0].id; // Return the existing file's ID
+      return {
+        persistentDataFileId: files[0].id,
+        levelUpFolderId: folderId,
+      }; // Return the existing file's ID
     }
 
-    const folderId = await createOrGetFolder(oauth2Client, "LevelUp");
     // If the file doesn't exist, create a new one
     const fileMetadata = {
       name: fileName, // File name
@@ -179,7 +188,10 @@ async function createOrGetPersistentDataFileId(oauth2Client: any) {
     console.log(
       `File created successfully. File ID: ${createResponse.data.id}`
     );
-    return createResponse.data.id; // Return the file ID for further use
+    return {
+      persistentDataFileId: createResponse.data.id,
+      levelUpFolderId: folderId,
+    }; // Return the file ID for further use
   } catch (error) {
     console.error("Error handling persistentDataFile:", error.message);
     throw error; // Re-throw error for handling elsewhere
@@ -269,6 +281,7 @@ export async function savePersistentDocData(context: AppContext) {
   const oauth2Client = context.appState.GoogleServices.oauth2Client;
   const documentId = context.appState.documentId;
   const persistentDataId = context.appState.persistentDataFileId;
+  const levelUpFolderId = context.appState.levelUpFolderId;
   const persistentDocData = { ...context.documentMetaData };
   const drive = context.appState.GoogleServices.drive;
   persistentDocData.currentText = "";

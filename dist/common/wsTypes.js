@@ -30,7 +30,15 @@ export function isValidIncomingWebSocketMessage(message) {
                 typeof message.payload.clientId === "string" &&
                 typeof message.payload.documentId === "string" &&
                 (message.payload.buttonTitle === undefined ||
-                    typeof message.payload.buttonTitle === "number"));
+                    typeof message.payload.buttonTitle === "number") &&
+                (message.payload.textResponse === undefined ||
+                    typeof message.payload.textResponse === "string"));
+        case "CUSTOMIZE_CLICKED":
+            return (message.payload &&
+                typeof message.payload.clientId === "string" &&
+                typeof message.payload.documentId === "string");
+        default:
+            return false;
     }
 }
 //# sourceMappingURL=wsTypes.js.map

@@ -1,7 +1,7 @@
 import { WebSocket } from "ws";
 import { defaultTopics } from "../resources/defaulttopics.js";
 import { TasksArray, validateTasksArray } from "../resources/schemas.js";
-import { StarterLevelUpRubricID } from "../resources/keys.js";
+import { StarterLevelUpRubricId } from "../resources/keys.js";
 // First, define the interface
 
 //websocket Types
@@ -21,44 +21,6 @@ export interface Topic {
   current: number;
   description: string;
 }
-
-export interface Rubric {
-  title: string;
-  linkId: string;
-  hasBeenUploaded: boolean;
-}
-
-export const defaultRubric: Rubric = {
-  title: "Starter Level Up Rubric",
-  linkId: StarterLevelUpRubricID,
-  hasBeenUploaded: false,
-};
-
-export interface SavedActivity {
-  savedReflections: Array<Reflection>;
-  savedChallenges: Array<ChallengeInfo>;
-}
-
-export type ChallengeInfo = {
-  challengeTitle?: string;
-  aiSuggestion: {
-    originalSentence: string;
-    aiImprovedSentence: string;
-    aiReasoning: string;
-  };
-  modifiedSentences: string[];
-  aiDirections?: string;
-  aiFeeling?: string;
-  sentenceStartIndex?: number;
-  sentenceEndIndex?: number;
-  taskArray?: TasksArray;
-  challengeResponse?:
-    | "valid"
-    | "tooFar"
-    | "noChanges"
-    | "correct"
-    | "incorrect";
-};
 
 export interface Reflection {
   enabled: boolean;
@@ -86,6 +48,94 @@ export const defaultReflection: Reflection = {
   placeholder: "Enter your reflection here...",
   outOf: 1,
   currentScore: 0,
+};
+
+export interface Rubric {
+  title: string;
+  topics: Topic[];
+  reflection: Reflection;
+  gradeLevel: number;
+  databaseID: string;
+  googleSheetId: string;
+}
+
+//My rubric validation is much more complicated.
+export function verifyRubric(rubric: unknown): rubric is Rubric {
+  return typeof rubric === "object" && rubric !== null && "title" in rubric;
+}
+
+export const defaultRubric: Rubric = {
+  title: "Starter Level Up Rubric",
+  topics: [
+    {
+      title: "Thesis Statement",
+      description: "Has Clear, specific, and well-developed thesis.",
+      outOf: 5,
+      current: 0,
+    },
+    {
+      title: "Organization",
+      description: "Has Logical flow with effective transitions.",
+      outOf: 5,
+      current: 0,
+    },
+    {
+      title: "Word Choice",
+      description: "Uses precise, varied, and appropriate vocabulary.",
+      outOf: 5,
+      current: 0,
+    },
+    {
+      title: "Grammar",
+      description: "Is Free of major grammatical errors .",
+      outOf: 5,
+      current: 0,
+    },
+  ],
+  reflection: {
+    enabled: true,
+    copyPercentIncluded: false,
+    noInputOnSubmit: false,
+    question: [
+      "What went well?",
+      "What was hard?",
+      "How can the teacher help you?",
+    ],
+    submittedAnswers: [],
+    selectedQuestion: 0,
+    placeholder: "Enter your reflection here...",
+    outOf: 1,
+    currentScore: 0,
+  },
+  gradeLevel: 1,
+  databaseID: "starterRubric",
+  googleSheetId: "",
+};
+
+export interface SavedActivity {
+  savedReflections: Array<Reflection>;
+  savedChallenges: Array<ChallengeInfo>;
+}
+
+export type ChallengeInfo = {
+  challengeTitle?: string;
+  aiSuggestion: {
+    originalSentence: string;
+    aiImprovedSentence: string;
+    aiReasoning: string;
+  };
+  modifiedSentences: string[];
+  aiDirections?: string;
+  aiFeeling?: string;
+  sentenceStartIndex?: number;
+  sentenceEndIndex?: number;
+  taskArray?: TasksArray;
+  challengeResponse?:
+    | "valid"
+    | "tooFar"
+    | "noChanges"
+    | "correct"
+    | "incorrect";
 };
 
 export interface UIState {
@@ -120,9 +170,6 @@ export interface UIState {
 
   // Challenge card content
   tasks?: TasksArray;
-
-  // Customize card content
-  currentRubric: Rubric;
 }
 // Then define any constants
 export const defaultUIState: UIState = {
@@ -138,7 +185,6 @@ export const defaultUIState: UIState = {
   timeSpentHours: 0,
   timeSpentMinutes: 0,
   copypasted: 0,
-  currentRubric: defaultRubric,
 };
 
 //----------------------------------------------------------
@@ -154,8 +200,10 @@ export interface DocumentMetaData {
   textBeforeEdits: string;
   savedActivity: SavedActivity;
   reflectionTemplate: Reflection;
-  savedRubrics: Rubric[];
-  currentRubric: Rubric;
+  rubricInfo: {
+    savedRubrics: Rubric[];
+    currentRubric: number;
+  };
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -171,8 +219,10 @@ export const defaultDocumentMetaData: DocumentMetaData = {
     savedChallenges: [],
   },
   reflectionTemplate: defaultReflection,
-  savedRubrics: [],
-  currentRubric: defaultRubric,
+  rubricInfo: {
+    savedRubrics: [],
+    currentRubric: null,
+  },
 };
 
 export interface DocumentMetaDataMap {

@@ -44,42 +44,35 @@ export function validateToken(context) {
 }
 export function getPersistentDataFileId(context) {
     return __awaiter(this, void 0, void 0, function* () {
-        let persistentDataFileId = context.appState.persistentDataFileId;
         const token = context.appState.token;
         const documentId = context.appState.documentId;
         const oauth2Client = new google.auth.OAuth2();
         oauth2Client.setCredentials({ access_token: token });
-        if (!persistentDataFileId) {
-            persistentDataFileId = yield createOrGetPersistentDataFileId(oauth2Client);
-        }
+        const { persistentDataFileId, levelUpFolderId } = yield createOrGetPersistentDataFileId(oauth2Client);
         const GoogleServices = {
             oauth2Client,
             drive: google.drive({ version: "v3", auth: oauth2Client }),
             docs: google.docs({ version: "v1", auth: oauth2Client }),
             sheets: google.sheets({ version: "v4", auth: oauth2Client }),
         };
-        return { persistentDataFileId, GoogleServices };
+        return { persistentDataFileId, levelUpFolderId, GoogleServices };
     });
 }
 export function getOrLoadDocumentMetaData(context) {
     return __awaiter(this, void 0, void 0, function* () {
-        if (context.documentMetaData != null) {
-            return context.documentMetaData;
-        }
+        let createdPersistentDataFile = false;
         try {
-            const token = context.appState.token;
+            const oauth2Client = context.appState.GoogleServices.oauth2Client;
             const documentId = context.appState.documentId;
-            const oauth2Client = new google.auth.OAuth2();
-            oauth2Client.setCredentials({ access_token: token });
             const persistentDataFileId = context.appState.persistentDataFileId;
             //Find Storage Location
             //load persistent Doc data
             let persistentDocData = yield getPersistentDocData(oauth2Client, documentId, persistentDataFileId);
             if (persistentDocData == null) {
-                persistentDocData = defaultDocumentMetaData;
-                savePersistentDocData(oauth2Client, documentId, persistentDataFileId, persistentDocData);
+                persistentDocData = defaultDocumentMetaData; //Now we are guranteed to have the right challengeArray size!
+                createdPersistentDataFile = true;
             }
-            return persistentDocData;
+            return { persistentDocData, createdPersistentDataFile };
         }
         catch (error) {
             throw "We do not have permission to access your Google Documents. <br><br>Make sure you have editting rights to the document you are working on.";
@@ -123,6 +116,7 @@ function createOrGetPersistentDataFileId(oauth2Client) {
         const drive = google.drive({ version: "v3", auth: oauth2Client });
         const fileName = "persistent.json"; // The file's name in Google Drive
         try {
+            const folderId = yield createOrGetFolder(oauth2Client, "LevelUp");
             // Check if the file already exists
             const listResponse = yield drive.files.list({
                 q: `name='${fileName}' and trashed=false`, // Search for the file by name and exclude trashed files
@@ -132,9 +126,11 @@ function createOrGetPersistentDataFileId(oauth2Client) {
             const files = listResponse.data.files;
             if (files && files.length > 0) {
                 console.log(`File already exists. File ID: ${files[0].id}`);
-                return files[0].id; // Return the existing file's ID
+                return {
+                    persistentDataFileId: files[0].id,
+                    levelUpFolderId: folderId,
+                }; // Return the existing file's ID
             }
-            const folderId = yield createOrGetFolder(oauth2Client, "LevelUp");
             // If the file doesn't exist, create a new one
             const fileMetadata = {
                 name: fileName, // File name
@@ -151,7 +147,10 @@ function createOrGetPersistentDataFileId(oauth2Client) {
                 fields: "id", // Return only the file ID
             });
             console.log(`File created successfully. File ID: ${createResponse.data.id}`);
-            return createResponse.data.id; // Return the file ID for further use
+            return {
+                persistentDataFileId: createResponse.data.id,
+                levelUpFolderId: folderId,
+            }; // Return the file ID for further use
         }
         catch (error) {
             console.error("Error handling persistentDataFile:", error.message);
@@ -224,9 +223,18 @@ function getPersistentDocDataMap(oauth2Client, persistentDataId) {
         }
     });
 }
-export function savePersistentDocData(oauth2Client, documentId, persistentDataId, persistentDocData) {
+export function savePersistentDocData(context) {
     return __awaiter(this, void 0, void 0, function* () {
-        const drive = google.drive({ version: "v3", auth: oauth2Client });
+        //We do not neeed to save the document text as it is already saved in the google doc.
+        const oauth2Client = context.appState.GoogleServices.oauth2Client;
+        const documentId = context.appState.documentId;
+        const persistentDataId = context.appState.persistentDataFileId;
+        const levelUpFolderId = context.appState.levelUpFolderId;
+        const persistentDocData = Object.assign({}, context.documentMetaData);
+        const drive = context.appState.GoogleServices.drive;
+        persistentDocData.currentText = "";
+        persistentDocData.textBeforeEdits = "";
+        persistentDocData.selectedChallengeNumber = -1;
         const metaDocRecords = yield getPersistentDocDataMap(oauth2Client, persistentDataId);
         metaDocRecords[documentId] = persistentDocData;
         yield drive.files.update({
