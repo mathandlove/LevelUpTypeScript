@@ -32,7 +32,7 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       url,
       options
     );
-    console.log(response);
+
     return true;
   } catch {
     throw new Error(
@@ -160,7 +160,6 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
     const files = listResponse.data.files;
 
     if (files && files.length > 0) {
-      console.log(`File already exists. File ID: ${files[0].id}`);
       return {
         persistentDataFileId: files[0].id,
         levelUpFolderId: folderId,
@@ -185,9 +184,6 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
       fields: "id", // Return only the file ID
     });
 
-    console.log(
-      `File created successfully. File ID: ${createResponse.data.id}`
-    );
     return {
       persistentDataFileId: createResponse.data.id,
       levelUpFolderId: folderId,
@@ -211,7 +207,6 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
       const files = listResponse.data.files;
 
       if (files && files.length > 0) {
-        console.log(`Folder already exists. Folder ID: ${files[0].id}`);
         return files[0].id; // Return the existing folder's ID
       }
 
@@ -301,6 +296,4 @@ export async function savePersistentDocData(context: AppContext) {
       body: JSON.stringify(metaDocRecords),
     },
   });
-
-  console.log(`Document ID '${documentId}' saved successfully.`);
 }

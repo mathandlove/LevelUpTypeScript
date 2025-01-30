@@ -137,10 +137,6 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
     trimmedNewSentences.indexOf(originalSentence);
   // Expand threshold to include any overlapping original sentences
   if (originalSentenceStartIndex >= 0) {
-    console.log(
-      "Original sentence found at index:",
-      originalSentenceStartIndex
-    );
     startIndex = Math.min(startIndex, originalSentenceStartIndex);
     endIndex = Math.max(endIndex, originalSentenceStartIndex);
   }
@@ -210,7 +206,7 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
 
 //RUBRICS ARE FUN!
 
-export async function loadRubric(context: AppContext): Promise<Rubric> {
+export async function DeadloadRubric(context: AppContext): Promise<Rubric> {
   //StepA: Make a copy of the StarterLevelUpRubricId
 
   //Step 3: Open the Google Sheet and extract the topic
