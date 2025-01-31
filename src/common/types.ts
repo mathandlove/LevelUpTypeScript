@@ -15,8 +15,10 @@ export type ButtonId =
   | "pill-button"
   | "submit-button"
   | "edit-rubric-button"
-  | "edit-newWindow-rubric-button"
-  | "save-rubric-button";
+  | "save-rubric-button"
+  | "start-edits-button"
+  | "new-rubric-button"
+  | "save";
 
 export interface Topic {
   title: string;
@@ -172,6 +174,7 @@ export interface UIState {
   errorMessage?: string;
   taskFeedback?: "no-changes" | "wrong-location" | "incorrect" | undefined;
   taskFeedbackMessage?: string;
+  rubricName: string;
 
   // Challenge card content
   tasks?: TasksArray;
@@ -190,6 +193,7 @@ export const defaultUIState: UIState = {
   timeSpentHours: 0,
   timeSpentMinutes: 0,
   copypasted: 0,
+  rubricName: "",
 };
 
 //----------------------------------------------------------
@@ -206,7 +210,7 @@ export interface DocumentMetaData {
   savedActivity: SavedActivity;
   reflectionTemplate: Reflection;
   rubricInfo: {
-    savedRubrics: Rubric[];
+    savedRubrics: Array<Rubric>;
     currentRubric: number;
   };
 }
@@ -226,12 +230,13 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   reflectionTemplate: defaultReflection,
   rubricInfo: {
     savedRubrics: [],
-    currentRubric: null,
+    currentRubric: 0,
   },
 };
 
 export interface DocumentMetaDataMap {
-  [key: string]: DocumentMetaData;
+  rubricArray: Array<Rubric>;
+  [key: string]: DocumentMetaData | Array<Rubric>;
 }
 
 export function verifyDocumentMetaDataMap(
@@ -239,8 +244,12 @@ export function verifyDocumentMetaDataMap(
 ): data is DocumentMetaDataMap {
   if (typeof data !== "object" || data === null) {
     return false;
+  } else {
+    return true;
   }
 
+  //TODO: Create validation for rubricArray and documentMetaData.
+  /*
   for (const key in data) {
     const metaData = (data as Record<string, unknown>)[key];
 
@@ -356,4 +365,6 @@ export function validateChallengeInfo(challenge: any): boolean {
     (challenge.taskArray === undefined ||
       validateTasksArray(challenge.taskArray))
   );
+
+*/
 }

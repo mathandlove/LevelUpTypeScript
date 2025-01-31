@@ -72,6 +72,13 @@ export type IncomingWebSocketMessage =
         clientId: string;
         documentId: string;
       };
+    }
+  | {
+      type: "USER_BACK_ON_TAB";
+      payload: {
+        clientId: string;
+        documentId: string;
+      };
     };
 
 export function isValidIncomingWebSocketMessage(
@@ -107,6 +114,13 @@ export function isValidIncomingWebSocketMessage(
         typeof message.payload.documentId === "string"
       );
 
+    case "USER_BACK_ON_TAB":
+      return (
+        message.payload &&
+        typeof message.payload.clientId === "string" &&
+        typeof message.payload.documentId === "string"
+      );
+
     default:
       return false;
   }
@@ -115,10 +129,11 @@ export function isValidIncomingWebSocketMessage(
 export interface OutgoingWebSocketMessage {
   type: WebSocketOutputMessageType;
   message?: string;
-  payload?: UIState;
+  payload?: UIState | { url: string };
 }
 
 type WebSocketOutputMessageType =
   | "STATE" // UI state updates
   | "WELCOME" // Server welcome message
-  | "UPDATE_SCOPE_REQUEST"; // Scope updates
+  | "UPDATE_SCOPE_REQUEST" // Scope updates
+  | "EXTERNAL_PAGE_TO_OPEN"; // External page to open

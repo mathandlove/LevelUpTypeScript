@@ -4,10 +4,12 @@ import {
   defaultDocumentMetaData,
   DocumentMetaDataMap,
   verifyDocumentMetaDataMap,
+  Rubric,
 } from "../common/types.js";
 import { AppContext } from "../stateMachine.js";
 import { google } from "googleapis";
 import { jwtDecode } from "jwt-decode";
+import { getDefaultRubric } from "./dataBaseService.js";
 
 //Error Messages
 // Define custom error classes
@@ -83,6 +85,10 @@ export async function getOrLoadDocumentMetaData(context: AppContext): Promise<{
     );
     if (persistentDocData == null) {
       persistentDocData = defaultDocumentMetaData; //Now we are guranteed to have the right challengeArray size!
+      persistentDocData.rubricInfo.savedRubrics = await getAllRubrics(
+        oauth2Client,
+        persistentDataFileId
+      );
       createdPersistentDataFile = true;
     }
     return { persistentDocData, createdPersistentDataFile };
@@ -173,9 +179,12 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
       parents: [folderId],
     };
 
+    //We will always be uploading the entire array system so we need to upload the default rubric.
+    const defaultRubric = await getDefaultRubric();
+    defaultRubric.title = "Starter Rubric";
     const media = {
       mimeType: "application/json",
-      body: JSON.stringify({}),
+      body: JSON.stringify({ rubricArray: [defaultRubric] }),
     };
 
     const createResponse = await drive.files.create({
@@ -229,8 +238,27 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
   }
 }
 
+async function getAllRubrics(
+  oauth2Client: any,
+  persistentDataId: string
+): Promise<Array<Rubric>> {
+  try {
+    const metaDocRecords = await getPersistentDocDataMap(
+      oauth2Client,
+      persistentDataId
+    );
+    return metaDocRecords["rubricArray"] as Array<Rubric>;
+  } catch (error) {
+    console.error(
+      "Error trying to access persistent data file with ID: " + persistentDataId
+    );
+    throw error;
+  }
+}
+
 async function getPersistentDocData(
   oauth2Client: any,
+
   documentId: string,
   persistentDataId: string
 ): Promise<DocumentMetaData> {
@@ -240,13 +268,17 @@ async function getPersistentDocData(
       persistentDataId
     );
     if (metaDocRecords[documentId] != null) {
-      return metaDocRecords[documentId];
+      const persistentDocData = metaDocRecords[documentId] as DocumentMetaData;
+      persistentDocData.rubricInfo.savedRubrics = metaDocRecords[
+        "rubricArray"
+      ] as Array<Rubric>;
+      return persistentDocData;
     } else {
       return null;
     }
   } catch (error) {
     console.error(
-      "We do not have a persistent reference file in the Level Up Folder. Please restart."
+      "Error trying to access persistent data file with ID: " + persistentDataId
     );
     throw error;
   }
@@ -255,10 +287,11 @@ async function getPersistentDocData(
 async function getPersistentDocDataMap(
   oauth2Client: any,
   persistentDataId: string
-): Promise<DocumentMetaDataMap> {
+): Promise<DocumentMetaDataMap | null> {
   const drive = google.drive({ version: "v3", auth: oauth2Client });
   const metaDocRecords = await drive.files.get({
     fileId: persistentDataId,
+
     alt: "media",
   });
   if (verifyDocumentMetaDataMap(metaDocRecords.data)) {
@@ -267,33 +300,48 @@ async function getPersistentDocDataMap(
     console.log(
       "Persistent data is corrupted or not found. Resetting to default."
     );
-    return {};
+    return null;
   }
 }
 
 export async function savePersistentDocData(context: AppContext) {
   //We do not neeed to save the document text as it is already saved in the google doc.
-  const oauth2Client = context.appState.GoogleServices.oauth2Client;
-  const documentId = context.appState.documentId;
-  const persistentDataId = context.appState.persistentDataFileId;
-  const levelUpFolderId = context.appState.levelUpFolderId;
-  const persistentDocData = { ...context.documentMetaData };
-  const drive = context.appState.GoogleServices.drive;
-  persistentDocData.currentText = "";
-  persistentDocData.textBeforeEdits = "";
-  persistentDocData.selectedChallengeNumber = -1;
+  try {
+    const oauth2Client = context.appState.GoogleServices.oauth2Client;
+    const documentId = context.appState.documentId;
+    const persistentDataId = context.appState.persistentDataFileId;
 
-  const metaDocRecords = await getPersistentDocDataMap(
-    oauth2Client,
-    persistentDataId
-  );
-  metaDocRecords[documentId] = persistentDocData;
+    const metaDocRecords = await getPersistentDocDataMap(
+      oauth2Client,
+      persistentDataId
+    );
 
-  await drive.files.update({
-    fileId: persistentDataId,
-    media: {
-      mimeType: "application/json",
-      body: JSON.stringify(metaDocRecords),
-    },
-  });
+    //Saving Arrays globally.
+    metaDocRecords["rubricArray"] =
+      context.documentMetaData.rubricInfo.savedRubrics;
+
+    const persistentDocData = { ...context.documentMetaData };
+    const drive = context.appState.GoogleServices.drive;
+    persistentDocData.currentText = "";
+    persistentDocData.textBeforeEdits = "";
+    persistentDocData.rubricInfo.savedRubrics = []; //Arrays are now being saved for global
+    persistentDocData.selectedChallengeNumber = -1;
+
+    if (metaDocRecords == null) {
+      console.error("Attempted to save file, but it was not found.");
+    }
+
+    metaDocRecords[documentId] = persistentDocData;
+
+    await drive.files.update({
+      fileId: persistentDataId,
+      media: {
+        mimeType: "application/json",
+        body: JSON.stringify(metaDocRecords),
+      },
+    });
+  } catch (error) {
+    console.error("Error saving persistent data:", error);
+    throw error;
+  }
 }

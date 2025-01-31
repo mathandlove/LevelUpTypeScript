@@ -1,4 +1,4 @@
-import { ChallengeInfo, Rubric } from "../common/types";
+import { ChallengeInfo, Reflection, Rubric } from "../common/types";
 import { AppContext } from "../stateMachine";
 
 export async function getFullText(context: AppContext): Promise<string> {
@@ -307,7 +307,7 @@ export async function createGoogleSheet(
             startIndex: 1,
             endIndex: 2,
           },
-          properties: { pixelSize: 480 },
+          properties: { pixelSize: 287 },
           fields: "pixelSize",
         },
       },
@@ -331,7 +331,7 @@ export async function createGoogleSheet(
             startIndex: 3,
             endIndex: 10,
           },
-          properties: { pixelSize: 150 },
+          properties: { pixelSize: 120 },
           fields: "pixelSize",
         },
       },
@@ -340,7 +340,7 @@ export async function createGoogleSheet(
       {
         updateDimensionProperties: {
           range: { sheetId: 0, dimension: "ROWS", startIndex: 0, endIndex: 3 },
-          properties: { pixelSize: 78 },
+          properties: { pixelSize: 50 },
           fields: "pixelSize",
         },
       },
@@ -532,4 +532,68 @@ export async function createGoogleSheet(
     "Sheet formatted successfully with exact column sizes, row heights, and text styling!"
   );
   return rubric;
+}
+
+export async function loadRubricFromCurrentGoogleSheet(
+  context: AppContext
+): Promise<Rubric> {
+  const { GoogleServices } = context.appState;
+  const { sheets } = GoogleServices;
+  const spreadsheetId =
+    context.documentMetaData.rubricInfo[
+      context.documentMetaData.rubricInfo.currentRubric
+    ].googleSheetId;
+
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range: "Sheet1", // Adjust if sheet name differs
+  });
+
+  const rows = response.data.values;
+  if (!rows || rows.length === 0) {
+    throw new Error("No data found in the rubric sheet.");
+  }
+
+  // Extract title and grade level
+  const title = rows[0][1] || "";
+  const gradeLevel = parseInt(rows[1][1], 10) || 0;
+
+  // Extract reflection data
+  const includeReflection = rows[2][3]?.toUpperCase() === "TRUE";
+  const askToExplainCopyPaste = rows[2][4]?.toUpperCase() === "TRUE";
+  const reflectionQuestions = rows[2].slice(5).filter((q) => q);
+
+  const reflection: Reflection = {
+    enabled: includeReflection,
+    copyPercentIncluded: askToExplainCopyPaste,
+    question: reflectionQuestions,
+    submittedAnswers: [],
+    selectedQuestion: 0,
+    placeholder: "",
+    outOf: 1,
+    currentScore: 0,
+    noInputOnSubmit: false,
+  };
+
+  // Extract topics
+  const topics = [];
+  for (let i = 3; i < rows.length; i++) {
+    if (rows[i][0]) {
+      // Ensure it's a valid topic row
+      topics.push({
+        name: rows[i][0],
+        description: rows[i][1] || "",
+        requiredLevels: rows[i][2] ? parseInt(rows[i][2], 10) : null,
+      });
+    }
+  }
+
+  return {
+    title,
+    gradeLevel,
+    topics,
+    reflection,
+    databaseID: "", // Placeholder
+    googleSheetId: spreadsheetId,
+  };
 }
