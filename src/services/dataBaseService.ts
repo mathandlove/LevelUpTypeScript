@@ -72,6 +72,7 @@ export async function getRubric(rubricID: string): Promise<Rubric> {
 }
 
 export async function updateRubric(rubricID: string, rubric: Rubric) {
+  //Assuming all Rubrics are created with newRubric().
   await setDoc(doc(db, "rubrics", rubricID), rubric);
 
   console.log("✅ Rubric updated successfully!");
@@ -83,7 +84,7 @@ export async function getDefaultRubric(): Promise<Rubric> {
 }
 
 //only used as programmer
-export async function createDefaultRubric(defaultRubric: Rubric) {
+async function createDefaultRubric(defaultRubric: Rubric) {
   try {
     await setDoc(doc(db, "rubrics", defaultRubric.databaseID), defaultRubric);
     console.log("✅ Default rubric created!");

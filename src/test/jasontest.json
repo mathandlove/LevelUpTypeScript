@@ -1,607 +1,101 @@
 {
   "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE": {
-    "level": 9,
+    "level": 1,
     "pills": [
       {
-        "current": 2,
-        "outOf": 5,
-        "description": "Has Clear, specific, and well-developed thesis.",
-        "title": "Strong Thesis"
-      },
-      {
         "current": 0,
         "outOf": 5,
+        "title": "Strong Thesis",
+        "description": "Has Clear, specific, and well-developed thesis."
+      },
+      {
         "description": "Has Logical flow with effective transitions.",
-        "title": "Organization"
+        "title": "Organization",
+        "outOf": 5,
+        "current": 0
       },
       {
-        "current": 0,
+        "description": "Uses precise, varied, and appropriate vocabulary.",
         "title": "Word Choice",
-        "outOf": 5,
-        "description": "Uses precise, varied, and appropriate vocabulary."
+        "current": 0,
+        "outOf": 5
       },
       {
         "current": 0,
         "outOf": 5,
-        "description": "Is Free of major grammatical errors .",
-        "title": "Grammar"
+        "title": "Grammar",
+        "description": "Is Free of major grammatical errors ."
       }
     ],
-    "challengeArray": [
-      [
-        {
-          "aiSuggestion": {
-            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
-            "aiImprovedSentence": "The story's tension builds through the rising and falling action, particularly when the frightening event of an old man's murder occurs.",
-            "aiReasoning": "This sentence is rephrased for clarity and specificity about the events contributing to the story's tension."
-          },
-          "modifiedSentences": [
-            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
-            "What gets interesting in the plot is the rising and falling action when things get intense, like killing an old man.",
-            "What gets interesting in the plot is the rising and falling action when tensions increase, like killing an old man."
-          ],
-          "sentenceStartIndex": 61,
-          "sentenceEndIndex": 178,
-          "challengeTitle": "Big Goal: Enhance clarity and specificity of the sentence.",
-          "taskArray": [
-            "Identify one word or phrase that could be made more specific to improve clarity.",
-            "Think of a way to rephrase the word or phrase to make it more specific.",
-            "Replace the original word or phrase with your new specific version."
-          ],
-          "aiFeeling": "Reading this made me feel confused because \"things start to transform to intense\" is unclear and doesn't explain what happens in the story.",
-          "challengeResponse": "valid"
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "Lastly, some people might like suspense in their life; that is why a  they like scary stories.",
-            "aiImprovedSentence": "Many readers enjoy suspenseful stories because they crave excitement and the unknown, making scary stories particularly appealing.",
-            "aiReasoning": "This revision better clarifies the thesis by explicitly connecting readers' enjoyment of suspense to the appeal of scary stories."
-          },
-          "modifiedSentences": [
-            "Lastly, some people might like suspense in their life; that is why a  they like scary stories."
-          ],
-          "sentenceStartIndex": 596,
-          "sentenceEndIndex": 690,
-          "challengeTitle": "Big Goal: Enhance clarity and effectiveness of the sentence.",
-          "aiFeeling": "Reading this made me feel confused because it's not clear how liking suspense directly relates to liking scary stories, making the connection seem weak.",
-          "taskArray": [
-            "Identify the main idea you want to express in your sentence by focusing on why someone might like suspense or scary stories.",
-            "Combine related thoughts into one cohesive sentence to clarify the connection between liking suspense and enjoying scary stories.",
-            "Choose specific words to clearly express the relationship between suspense and interest in scary stories."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
-            "aiImprovedSentence": "This suggests that after such intensifying repetition, a significant event is about to unfold, heightening the suspense.",
-            "aiReasoning": "The revision emphasizes the connection between repetition and suspense while correcting grammatical errors."
-          },
-          "modifiedSentences": [
-            "That means that after the repetition something really strong is going to happens a a next."
-          ],
-          "sentenceStartIndex": 918,
-          "sentenceEndIndex": 1008,
-          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence.",
-          "aiFeeling": "Reading this made me feel confused because the sentence seemed jumbled with phrases like \"going to happens a a next,\" making it hard to understand what strong event was supposed to occur.",
-          "taskArray": [
-            "Identify the word 'happens' in the sentence.",
-            "Check if 'happens' agrees with the subject 'something'.",
-            "Decide if you need to change the form of the word 'happens' to match the subject."
-          ]
-        }
-      ],
-      [
-        {
-          "aiSuggestion": {
-            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
-            "aiImprovedSentence": "The plot becomes even more interesting during the rising and falling action, especially when it intensifies with the killing of an old man.",
-            "aiReasoning": "Rephrased for clarity and smooth transition between ideas, emphasizing the intensity of the plot."
-          },
-          "modifiedSentences": [
-            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
-          ],
-          "sentenceStartIndex": 60,
-          "sentenceEndIndex": 194,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence of the sentence.",
-          "aiFeeling": "Reading this made me feel confused and a bit startled because the twist from things just getting interesting to suddenly mentioning killing an old man seemed abrupt and jarring.",
-          "taskArray": [
-            "Identify the main idea of the sentence.",
-            "Think about how you can express the main idea in a clear way.",
-            "Rearrange the words to create a clear and logical flow of ideas."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "The author told how he cuts the old man's body and hides the corpse in the ground.",
-            "aiImprovedSentence": "The author vividly describes how he cuts the old man's body and hides the corpse in the ground, which adds to the horror of the story.",
-            "aiReasoning": "Added details to enhance the transition and connection to the horror theme."
-          },
-          "modifiedSentences": [
-            "The author told how he cuts the old man's body and hides the corpse in the ground."
-          ],
-          "sentenceStartIndex": 176,
-          "sentenceEndIndex": 258,
-          "challengeTitle": "Big Goal: Enhance clarity and vividness of the description.",
-          "aiFeeling": "Reading this made me feel confused and detached, as the lack of details made it hard to grasp the full scary impact of cutting and hiding the old man's body.",
-          "taskArray": [
-            "Identify a more vivid verb to replace 'told'.",
-            "Think about the mood or atmosphere being conveyed in the original sentence.",
-            "Choose a word that matches the intended effect and enhances the sentence."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "People like the feeling of getting scared because of how it feels and how you can't move when you are scared.",
-            "aiImprovedSentence": "Many people enjoy the feeling of getting scared, as it creates a rush of adrenaline that is both thrilling and paralyzing.",
-            "aiReasoning": "Reworded to provide a smoother connection between the idea of fear and its effects."
-          },
-          "modifiedSentences": [
-            "People like the feeling of getting scared because of how it feels and how you can't move when you are scared."
-          ],
-          "sentenceStartIndex": 259,
-          "sentenceEndIndex": 368,
-          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
-          "taskArray": [
-            "Identify the main idea in the sentence first.",
-            "Look for repeated wording or phrases in the sentence.",
-            "Rephrase a part of the sentence to make it less repetitive."
-          ],
-          "aiFeeling": "Reading this made me feel confused because it repeated that people like getting scared because of how it feels without explaining what that feeling is."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
-            "aiImprovedSentence": "For example, the story mentions how the old man became frightened when he heard an unexpected noise.",
-            "aiReasoning": "Corrected the verb tense and expression for better clarity and logical flow."
-          },
-          "modifiedSentences": [
-            "For example, in the story it mentions how the old man got a scared when he heard a noise."
-          ],
-          "sentenceStartIndex": 369,
-          "sentenceEndIndex": 458,
-          "aiFeeling": "Reading this made me feel confused because the phrase \"got a scared\" doesn't make sense and interrupts the flow of the story.",
-          "challengeTitle": "Big Goal: Enhance clarity and grammatical accuracy of the sentence.",
-          "taskArray": [
-            "Identify the verb that describes the old man's reaction to the noise in the sentence.",
-            "Decide on a stronger and more accurate verb to express the old man’s reaction.",
-            "Replace the original verb with the chosen stronger verb in the sentence."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "I can relate to this because once I heard a noise and I jumped and woke up my sister.",
-            "aiImprovedSentence": "I can relate to this because I once heard a sudden noise that made me jump and accidentally wake up my sister.",
-            "aiReasoning": "Improved clarity and logical connection by clarifying the experience shared."
-          },
-          "modifiedSentences": [
-            "I can relate to this because once I heard a noise and I jumped and woke up my sister."
-          ],
-          "sentenceStartIndex": 509,
-          "sentenceEndIndex": 594,
-          "aiFeeling": "Reading this made me feel a bit confused because the sentence jumps quickly from hearing a noise to waking up your sister without explaining how it all happened.",
-          "challengeTitle": "Big Goal: Enhance clarity and coherence of the sentence.",
-          "taskArray": [
-            "Identify the specific action that caused your reaction in the sentence.",
-            "Think of a descriptive word to enhance the description of the noise.",
-            "Reorganize the sentence to maintain a logical flow of events."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "Lastly, some people might like suspense in their life; that is why a  they like scary stories.",
-            "aiImprovedSentence": "Finally, some people might enjoy suspense in their lives, which is why they are drawn to scary stories.",
-            "aiReasoning": "Changed 'lastly' to 'finally' for a smoother transition and rephrased for better clarity."
-          },
-          "modifiedSentences": [
-            "Lastly, some people might like suspense in their life; that is why a  they like scary stories."
-          ],
-          "sentenceStartIndex": 596,
-          "sentenceEndIndex": 690,
-          "aiFeeling": "Reading this made me feel a bit confused because the words like 'lastly' and the repeated 'a' didn't make the sentence flow well.",
-          "taskArray": [
-            "Identify the conjunction used in the sentence.",
-            "Replace the semicolon with the identified conjunction.",
-            "Reread the sentence to ensure it flows naturally."
-          ],
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
-            "aiImprovedSentence": "They enjoy suspense because it creates excitement about what will happen next.",
-            "aiReasoning": "Rephrased for clarity and to enhance logical flow."
-          },
-          "modifiedSentences": [
-            "They like suspense because they are excited to see what is going to happen."
-          ],
-          "sentenceStartIndex": 691,
-          "sentenceEndIndex": 766,
-          "aiFeeling": "Reading this made me feel a bit confused because the words \"excited to see what is going to happen\" didn't clearly explain how they enjoy suspense.",
-          "challengeTitle": "Big Goal: Enhance clarity and improve logical flow in writing.",
-          "taskArray": [
-            "Identify the main verb in the sentence.",
-            "Think about how you can use a synonym to replace the main verb.",
-            "Write down the sentence with the new verb in place."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "Two more! For example, in the story it said, \"The beating grew louder and louder.\"",
-            "aiImprovedSentence": "Furthermore, the story states, \"The beating grew louder and louder,\" which builds tension.",
-            "aiReasoning": "Changed 'two more' to 'furthermore' to provide a better transition and link to the previous example."
-          },
-          "modifiedSentences": [
-            "Two more! For example, in the story it said, \"The beating grew louder and louder.\" The old man did not know what was going to happen during the night."
-          ],
-          "sentenceStartIndex": 767,
-          "sentenceEndIndex": 917,
-          "aiFeeling": "Reading this made me feel confused because starting with \\\"Two more!\\\" doesn't clearly connect to what's being discussed.",
-          "taskArray": [
-            "Replace informal or unclear phrases with more formal linking words.",
-            "Identify a better linking word to introduce the example.",
-            "Verify that your changes make the relationship between ideas clearer."
-          ],
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence structure."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "The old man did not know what was going to happen during the night.",
-            "aiImprovedSentence": "The old man was completely unaware of what fate awaited him during the night.",
-            "aiReasoning": "Enhanced the sentence's emotional impact while improving the transition within the narrative."
-          },
-          "modifiedSentences": [
-            "The old man did not know what was going to happen during the night."
-          ],
-          "sentenceStartIndex": 850,
-          "sentenceEndIndex": 917,
-          "challengeTitle": "Big Goal: Enhance clarity and emotional impact of the sentence.",
-          "aiFeeling": "Reading this made me feel like I was missing some excitement because it just seemed like the old man was simply clueless, without any sense of mystery or suspense about what would happen during the night.",
-          "taskArray": [
-            "Identify the words that can describe the old man’s emotional state more vividly.",
-            "Choose one of these words to replace 'did not know' in the sentence.",
-            "Rewrite the sentence using the new word for 'did not know' to better convey the old man's emotional uncertainty."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
-            "aiImprovedSentence": "This repetition suggests that something dramatic is about to happen next.",
-            "aiReasoning": "Clarified the sentence for better understanding and logical flow."
-          },
-          "modifiedSentences": [
-            "That means that after the repetition something really strong is going to happens a a next."
-          ],
-          "sentenceStartIndex": 918,
-          "sentenceEndIndex": 1008,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence of the original sentence.",
-          "taskArray": [
-            "Identify the unnecessary repetition in the original sentence.",
-            "Choose the word or phrase to remove to avoid redundancy.",
-            "Rewrite the sentence without the redundancy."
-          ],
-          "aiFeeling": "Reading this made me feel confused because the words \"going to happens a a next\" don't make sense and make it hard to understand what's being said."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "I can relate to that because every time I watch a TV show I enjoy it.",
-            "aiImprovedSentence": "I can relate to this feeling because I enjoy watching TV shows that keep me on the edge of my seat.",
-            "aiReasoning": "Connected the final thought more effectively to the notion of suspense, providing a better transition."
-          },
-          "modifiedSentences": [
-            "I can relate to that because every time I watch a TV show I enjoy it."
-          ],
-          "sentenceStartIndex": 1009,
-          "sentenceEndIndex": 1078,
-          "challengeTitle": "Big Goal: Enhance clarity and coherence in the sentence.",
-          "aiFeeling": "Reading this made me feel a bit confused because it seemed like the sentence didn't explain exactly why the TV shows were so enjoyable.",
-          "taskArray": [
-            "Identify the main idea you want to express in the sentence.",
-            "Think about how to add detail to the original sentence to make your thoughts clearer.",
-            "Rewrite the sentence with these additional details to better express your idea."
-          ]
-        }
-      ],
-      [
-        {
-          "aiSuggestion": {
-            "originalSentence": "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man.",
-            "aiImprovedSentence": "What becomes gripping in the plot is the rising and falling action when things start to become intense, such as the murder of an old man.",
-            "aiReasoning": "Changed 'gets interesting' to 'becomes gripping' for stronger vocabulary and replaced 'transform to intense' with 'become intense' for clarity."
-          },
-          "modifiedSentences": [
-            "What gets interesting in the plot is the rising and falling action when things start to transform to intense, like killing an old man."
-          ],
-          "sentenceStartIndex": 60,
-          "sentenceEndIndex": 194,
-          "aiFeeling": "Reading this made me feel confused and uneasy because the phrase \"transform to intense, like killing an old man\" didn't clearly describe the action and was unsettling.",
-          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
-          "taskArray": [
-            "Identify the vague word or phrase in the sentence.",
-            "Think of a more descriptive or stronger word to replace it.",
-            "Rewrite the sentence using this new word."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "People like the feeling of getting scared because of how it feels and how you can't move when you are scared.",
-            "aiImprovedSentence": "People enjoy the thrill of fear because of the adrenaline rush and the feeling of paralysis during scary moments.",
-            "aiReasoning": "Replaced 'like the feeling of getting scared' with 'enjoy the thrill of fear' and added 'adrenaline rush' to introduce more precise vocabulary."
-          },
-          "modifiedSentences": [
-            "People like the feeling of getting scared because of how it feels and how you can't move when you are scared."
-          ],
-          "sentenceStartIndex": 259,
-          "sentenceEndIndex": 368,
-          "aiFeeling": "Reading this made me feel confused because it repeated 'feeling' twice and didn't clearly explain why people like getting scared.",
-          "challengeTitle": "Big Goal: Enhance sentence clarity and vocabulary usage for impact.",
-          "taskArray": [
-            "Identify a part of the sentence where you can replace a vague word with a more specific word.",
-            "Think about what specific word could make the meaning clearer.",
-            "Choose that specific word and use it to improve the sentence."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
-            "aiImprovedSentence": "For example, in the story it mentions how the old man became frightened when he heard a noise.",
-            "aiReasoning": "Changed 'got a scared' to 'became frightened' for clearer expression."
-          },
-          "modifiedSentences": [
-            "For example, in the story it mentions how the old man got a scared when he heard a noise."
-          ],
-          "sentenceStartIndex": 369,
-          "sentenceEndIndex": 458,
-          "aiFeeling": "Reading this made me feel confused because \"got a scared\" doesn't sound right and makes it hard to understand how the old man felt.",
-          "taskArray": [
-            "Identify the part of the sentence that does not make sense or seems awkward.",
-            "Think of a more precise word to convey the old man's reaction to the noise.",
-            "Replace the awkward phrase with the new word you thought of."
-          ],
-          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
-            "aiImprovedSentence": "They relish suspense because it builds excitement about what will happen next.",
-            "aiReasoning": "Changed 'like' to 'relish' and revised 'are excited to see what is going to happen' to 'builds excitement about what will happen next' for variety and precision."
-          },
-          "modifiedSentences": [
-            "They like suspense because they are excited to see what is going to happen."
-          ],
-          "sentenceStartIndex": 691,
-          "sentenceEndIndex": 766,
-          "aiFeeling": "Reading this made me feel bored because using the words 'like' and 'excited to see what is going to happen' seemed too plain and didn't paint a vivid picture in my mind.",
-          "challengeTitle": "Big Goal: Enhance sentence precision and variety.",
-          "taskArray": [
-            "Find a more precise word to replace 'like' in the sentence.",
-            "Think about what feeling builds up when someone is anticipating something, and use a word that captures that feeling better.",
-            "Consider how to make the sentence feel more dynamic by choosing words that show action."
-          ]
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
-            "aiImprovedSentence": "This suggests that after the repetition, something powerful is about to occur next.",
-            "aiReasoning": "Revised 'that means that' to 'this suggests that' and made 'something really strong is going to happens a a next' more precise by changing it to 'something powerful is about to occur next'."
-          },
-          "modifiedSentences": [
-            "That means that after the repetition something really strong is going to happens a a next."
-          ],
-          "sentenceStartIndex": 918,
-          "sentenceEndIndex": 1008,
-          "aiFeeling": "Reading this made me feel confused because the phrase \"something really strong is going to happens a a next\" is jumbled and hard to understand.",
-          "challengeTitle": "Big Goal: Enhance clarity and correctness of the original sentence.",
-          "taskArray": [
-            "Identify any unnecessary words in the sentence that might make it confusing.",
-            "Focus on finding a single place where a change can improve clarity.",
-            "Re-write just that part of the sentence to make it clearer."
-          ]
-        }
-      ],
-      [
-        {
-          "aiSuggestion": {
-            "originalSentence": "For example, in the story it mentions how the old man got a scared when he heard a noise.",
-            "aiImprovedSentence": "For example, in the story it mentions how the old man got scared when he heard a noise.",
-            "aiReasoning": "Changed 'got a scared' to 'got scared' to correct the grammatical error."
-          },
-          "modifiedSentences": [
-            "For example, in the story it mentions how the old man got a scared when he heard a noise."
-          ],
-          "sentenceStartIndex": 369,
-          "sentenceEndIndex": 458,
-          "challengeTitle": "Big Goal: Enhance sentence clarity and grammatical accuracy.",
-          "taskArray": [
-            "Identify any extra words in the sentence that make it grammatically incorrect.",
-            "Decide what the main subject of the sentence is.",
-            "Rephrase the sentence so it reads smoothly without unnecessary words."
-          ],
-          "aiFeeling": "Reading this made me feel confused because \"got a scared\" doesn't sound right and made it hard to understand the part about the old man's reaction to the noise."
-        },
-        {
-          "aiSuggestion": {
-            "originalSentence": "That means that after the repetition something really strong is going to happens a a next.",
-            "aiImprovedSentence": "That means that after the repetition something really strong is going to happen next.",
-            "aiReasoning": "Changed 'going to happens a a next' to 'going to happen next' for correct grammar."
-          },
-          "modifiedSentences": [
-            "That means that after the repetition something really strong is going to happens a a next."
-          ],
-          "sentenceStartIndex": 918,
-          "sentenceEndIndex": 1008,
-          "aiFeeling": "Reading this made me feel confused and distracted because of the awkward phrasing with 'happens a a next'.",
-          "taskArray": [
-            "Identify the incorrect word in the sentence that does not fit with the rest of the structure.",
-            "Rewrite the incorrect word so that it fits grammatically with the rest of the sentence.",
-            "Review the sentence after making the change to ensure it flows smoothly."
-          ],
-          "challengeTitle": "Big Goal: Enhance clarity and correctness of the sentence."
-        }
-      ]
-    ],
-    "newChallengesArray": [],
+    "challengeArray": [[], [], [], []],
+    "newChallengesArray": [[], [], [], []],
     "newChallengesReady": false,
     "currentText": "",
     "textBeforeEdits": "",
-    "savedActivity": {
-      "savedReflections": [
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 0,
-          "visibleButtons": ["back-button", "next-button"]
-        },
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 0
-        },
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 0
-        },
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 0
-        },
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 4
-        },
-        {
-          "enabled": true,
-          "copyPercentIncluded": false,
-          "noInputOnSubmit": false,
-          "question": [
-            "What went well?",
-            "What was hard?",
-            "How can the teacher help you?"
-          ],
-          "submittedAnswers": ["a", "b", "c"],
-          "selectedQuestion": 2,
-          "placeholder": "Enter your reflection here...",
-          "outOf": 1,
-          "currentScore": 5
-        }
-      ],
-      "savedChallenges": []
-    },
+    "savedActivity": { "savedReflections": [], "savedChallenges": [] },
     "reflectionTemplate": {
-      "currentScore": 6,
+      "currentScore": 0,
+      "selectedQuestion": 0,
+      "outOf": 1,
       "noInputOnSubmit": false,
       "placeholder": "Enter your reflection here...",
-      "outOf": 1,
+      "enabled": true,
+      "copyPercentIncluded": false,
       "question": [
         "What went well?",
         "What was hard?",
         "How can the teacher help you?"
       ],
-      "selectedQuestion": 0,
-      "copyPercentIncluded": false,
-      "enabled": true,
       "submittedAnswers": []
     },
     "rubricInfo": {
       "savedRubrics": [
         {
+          "databaseID": "starterRubric",
+          "topics": [
+            {
+              "current": 0,
+              "outOf": 5,
+              "title": "Strong Thesis",
+              "description": "Has Clear, specific, and well-developed thesis."
+            },
+            {
+              "description": "Has Logical flow with effective transitions.",
+              "title": "Organization",
+              "outOf": 5,
+              "current": 0
+            },
+            {
+              "description": "Uses precise, varied, and appropriate vocabulary.",
+              "title": "Word Choice",
+              "current": 0,
+              "outOf": 5
+            },
+            {
+              "current": 0,
+              "outOf": 5,
+              "title": "Grammar",
+              "description": "Is Free of major grammatical errors ."
+            }
+          ],
           "reflection": {
             "currentScore": 0,
+            "selectedQuestion": 0,
+            "outOf": 1,
             "noInputOnSubmit": false,
             "placeholder": "Enter your reflection here...",
-            "outOf": 1,
+            "enabled": true,
+            "copyPercentIncluded": false,
             "question": [
               "What went well?",
               "What was hard?",
               "How can the teacher help you?"
             ],
-            "selectedQuestion": 0,
-            "copyPercentIncluded": false,
-            "enabled": true,
             "submittedAnswers": []
           },
           "title": "Starter Level Up Rubric",
           "googleSheetId": "",
-          "topics": [
-            {
-              "current": 0,
-              "outOf": 5,
-              "description": "Has Clear, specific, and well-developed thesis.",
-              "title": "Strong Thesis"
-            },
-            {
-              "current": 0,
-              "outOf": 5,
-              "description": "Has Logical flow with effective transitions.",
-              "title": "Organization"
-            },
-            {
-              "current": 0,
-              "title": "Word Choice",
-              "outOf": 5,
-              "description": "Uses precise, varied, and appropriate vocabulary."
-            },
-            {
-              "current": 0,
-              "outOf": 5,
-              "description": "Is Free of major grammatical errors .",
-              "title": "Grammar"
-            }
-          ],
-          "databaseID": "starterRubric",
-          "gradeLevel": 1
+          "gradeLevel": 10
         }
       ],
       "currentRubric": 0

@@ -333,15 +333,19 @@
           --secondary-color
         ); /* Use secondary color for background */
         border: none;
-        padding: 8px 16px;
+        padding: 8px 10px;
         border-radius: 25px;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 10px;
         color: white; /* Ensure text is readable on secondary color */
         transition: background-color 0.3s ease;
         width: 90%;
         margin: 10px 5px;
+        text-align: center;
+        display: flex; justify-content: center;
+        height: 35px;
       }
+
 
       .level-up-button:hover {
         background: #00c2e3; /* Slightly lighter shade for hover effect */
@@ -383,14 +387,14 @@
         transform: scale(1.05);
       }
 
-      #next-button {
+      #next-button, #start-edits-button, #save {
         background-color: var(--secondary-color);
         color: white;
         border: 2px solid var(--secondary-color);
         box-shadow: 0 2px 4px rgba(0, 175, 204, 0.3);
       }
 
-      #next-button:hover {
+      #next-button, #start-edits-button, #save:hover {
         background-color: #00c2e3;
         border-color: #00c2e3;
         transform: scale(1.05);
@@ -725,7 +729,7 @@
         border: 1px solid #f97583;
       }
 
-      #check-work-button:disabled {
+      #check-work-button:disabled, #start-edits-button:disabled {
         background-color: #cccccc;
         border-color: #bbbbbb;
         cursor: not-allowed;
@@ -969,219 +973,227 @@
   </style>
     </style>
   </head>
-<body>
-  <div id="side-panel">
-    <div class="adventure-image-container">
-      <img
-        src="https://wondersa.blob.core.windows.net/levelup/1.png"
-        alt="Sky Background"
-        class="adventure-image"
-      />
-    </div>
-
-    <div class="content-wrapper">
-      <div class="level-text-container">
-        <div class="text-container">
-          <div class="pixelated-gradient-text">Level 1</div>
-        </div>
-      </div>
-
-      <div class="button-box">
+  <body>
+    <div id="side-panel">
+      <div class="adventure-image-container">
         <img
-          src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
-          alt="Hot Air Balloon"
-          class="hot-air-balloon"
+          src="https://wondersa.blob.core.windows.net/levelup/1.png"
+          alt="Sky Background"
+          class="adventure-image"
         />
-        <div class="spinner-overlay" id="spinner-overlay" style="display: none">
-          <div class="spinner"></div>
-          <div class="spinner-text">Reading Your Paper</div>
-        </div>
-
-        <!-- HOME PAGE CARD -->
-        <div class="card" id="home-page" style="display: flex; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title-home">Select Challenge:</div>
-            <div id="pillHolder" style="display: flex; flex-direction: column"></div>
-            <a href="#" class="customize-link">Customize</a>
-
-            <div class="stats-box">
-              <div class="stat-row">
-                <span class="stat-label">Copy/Pasted</span>
-                <span class="stat-value" id="copyPasted">60%</span>
-              </div>
-              <div class="stat-row">
-                <span class="stat-label">Time Spent</span>
-                <span class="stat-value" id="timeSpent">10 Hours 33 Minutes</span>
-              </div>
-            </div>
+      </div>
+  
+      <div class="content-wrapper">
+        <div class="level-text-container">
+          <div class="text-container">
+            <div class="pixelated-gradient-text">Level 1</div>
           </div>
         </div>
-
-        <!-- AI-FEELING CARD -->
-        <div class="card" id="AI-Feeling" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title">First Take</div>
-            <div class="card-main-text"></div>
+  
+        <!-- BEGIN .button-box (Hot air balloon + spinner + all cards) -->
+        <div class="button-box">
+          <img
+            src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
+            alt="Hot Air Balloon"
+            class="hot-air-balloon"
+          />
+          <div class="spinner-overlay" id="spinner-overlay" style="display: none">
+            <div class="spinner"></div>
+            <div class="spinner-text">Reading Your Paper</div>
           </div>
-        </div>
-
-        <!-- CELEBRATE CARD -->
-        <div class="card" id="celebrateScreen" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-main-text">Default Text Here</div>
-          </div>
-        </div>
-
-        <!-- SERVER ERROR CARD -->
-        <div class="card" id="server-error" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title">Server Error</div>
-            <div class="error-message">
-              We cannot get ahold of the Level Up Servers right now. 
-              Please try again later. If this problem persists, please contact support.
-            </div>
-          </div>
-        </div>
-
-        <!-- CHALLENGE CARD -->
-        <div class="card" id="challenge-card" style="display: none">
-          <div class="scroll-container">
-            <div class="card-title">Challenge</div>
-            <div class="card-title-subtitle">Subtitle</div>
-            <div class="alert-message" style="display: none"></div>
-            <div class="alert-message fail-reason-message" style="display: none"></div>
-            <div class="tasks-list">
-              <!-- Tasks will be inserted here -->
-            </div>
-          </div>
-        </div>
-
-        <!-- FEEL RESPONSE CARD -->
-        <div class="card" id="feel-response-card" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title-subtitle">
-              Let's work on the highlighted text in your document.
-            </div>
-            <div class="card-main-text"></div>
-          </div>
-        </div>
-
-        <!-- FOCUS SENTENCE CARD -->
-        <div class="card" id="focus-sentence" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title">Let's Focus On The Highlighted Sentence:</div>
-            <div class="card-main-text"></div>
-          </div>
-        </div>
-
-        <!-- REFLECTION CARD -->
-        <div class="card" id="reflection-card" style="display: none; flex: 1;">
-          <div class="scroll-container">
-            <div class="reflection-container">
-              <div class="reflection-question"></div>
-              <textarea
-                class="reflection-textarea"
-                placeholder="Share your thoughts..."
-              ></textarea>
-              <div
-                class="reflection-warning"
-                style="display: none; color: #374363; font-size: 12px; margin-top: -5px;"
-              >
-                Please share your thoughts before pushing "Next".
+  
+          <!-- HOME PAGE CARD -->
+          <div class="card" id="home-page" style="display: flex; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title-home">Select Challenge:</div>
+              <div id="pillHolder" style="display: flex; flex-direction: column"></div>
+              <a href="#" class="customize-link">Customize</a>
+  
+              <div class="stats-box">
+                <div class="stat-row">
+                  <span class="stat-label">Copy/Pasted</span>
+                  <span class="stat-value" id="copyPasted">60%</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Time Spent</span>
+                  <span class="stat-value" id="timeSpent">10 Hours 33 Minutes</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- EXAMPLE CARD -->
-        <div class="card" id="example-card" style="display: none; flex: 1">
-          <div class="card feedback-panel">
-            <h3 class="card-title">Example</h3>
-            <div class="example-block">
-              <div class="example-title">Poor Sentence</div>
-              <div class="original">The leaves fell everywhere. Round 6</div>
+  
+          <!-- AI-FEELING CARD -->
+          <div class="card" id="AI-Feeling" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">First Take</div>
+              <div class="card-main-text"></div>
             </div>
-            <div class="example-block">
-              <div class="example-title">Great Sentence</div>
-              <div class="fixed">
-                The leaves fell on the ground, making a crunchy carpet for walking.
+          </div>
+  
+          <!-- CELEBRATE CARD -->
+          <div class="card" id="celebrateScreen" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-main-text">Default Text Here</div>
+            </div>
+          </div>
+  
+          <!-- SERVER ERROR CARD -->
+          <div class="card" id="server-error" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">Server Error</div>
+              <div class="error-message">
+                We cannot get ahold of the Level Up Servers right now. 
+                Please try again later. If this problem persists, please contact support.
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- CHALLENGE FEEDBACK CARD -->
-        <div class="card" id="challenge-feedback-card" style="display: none; flex: 1">
-          <div class="scroll-container">
-            <div class="card-title">Challenge Completed!</div>
-            <div class="card-main-text">
-              Well done. Here's some more text two
-            </div>
-            <hr />
-            <div class="card-title-subtitle-feedback">Now I want to:</div>
-            <button class="level-up-button" id="improve-more-button">
-              Improve this Sentence More
-            </button>
-            <button class="level-up-button" id="start-new-button">
-              Start a New Sentence
-            </button>
-          </div>
-        </div>
-
-        <!-- CUSTOMIZE CARD -->
-        <div class="card" id="customize-card" style="display: none; flex: 1;">
-          <div class="scroll-container">
-            <div class="rubric-label">Current Rubric:</div>
-            <div class="rubric-section">
-              <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="rubric-actions">
-              <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
-              <button class="level-up-button full-width" id="share-rubric-button">Share</button>
-              <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
-              <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+  
+          <!-- CHALLENGE CARD -->
+          <div class="card" id="challenge-card" style="display: none">
+            <div class="scroll-container">
+              <div class="card-title">Challenge</div>
+              <div class="card-title-subtitle">Subtitle</div>
+              <div class="alert-message" style="display: none"></div>
+              <div class="alert-message fail-reason-message" style="display: none"></div>
+              <div class="tasks-list">
+                <!-- Tasks will be inserted here -->
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
-        <div class="card" id="customize-card-edit-newWindow" style="display: none; flex: 1;">
-          <div class="scroll-container">
-            <div class="rubric-label">Current Rubric:</div>
-            <div class="rubric-section">
-              <div class="rubric-title" id="current-rubric-title">My Custom Rubric</div>
+  
+          <!-- FEEL RESPONSE CARD -->
+          <div class="card" id="feel-response-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title-subtitle">
+                Let's work on the highlighted text in your document.
+              </div>
+              <div class="card-main-text"></div>
             </div>
-
-            <div class="card-main-text">
-              Use Google Sheets to edit and update your rubric. Once you’ve made changes, return here.
+          </div>
+  
+          <!-- FOCUS SENTENCE CARD -->
+          <div class="card" id="focus-sentence" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">Let's Focus On The Highlighted Sentence:</div>
+              <div class="card-main-text"></div>
             </div>
-            <button class="level-up-button full-width" id="edit-newWindow-rubric-button">
-              Edit Rubric<br>(New Window)
-            </button>
+          </div>
+  
+          <!-- REFLECTION CARD -->
+          <div class="card" id="reflection-card" style="display: none; flex: 1;">
+            <div class="scroll-container">
+              <div class="reflection-container">
+                <div class="reflection-question"></div>
+                <textarea
+                  class="reflection-textarea"
+                  placeholder="Share your thoughts..."
+                ></textarea>
+                <div
+                  class="reflection-warning"
+                  style="display: none; color: #374363; font-size: 12px; margin-top: -5px;"
+                >
+                  Please share your thoughts before pushing "Next".
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- EXAMPLE CARD -->
+          <div class="card" id="example-card" style="display: none; flex: 1">
+            <div class="card feedback-panel">
+              <h3 class="card-title">Example</h3>
+              <div class="example-block">
+                <div class="example-title">Poor Sentence</div>
+                <div class="original">The leaves fell everywhere. Round 6</div>
+              </div>
+              <div class="example-block">
+                <div class="example-title">Great Sentence</div>
+                <div class="fixed">
+                  The leaves fell on the ground, making a crunchy carpet for walking.
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- CHALLENGE FEEDBACK CARD -->
+          <div class="card" id="challenge-feedback-card" style="display: none; flex: 1">
+            <div class="scroll-container">
+              <div class="card-title">Challenge Completed!</div>
+              <div class="card-main-text">
+                Well done. Here's some more text two
+              </div>
+              <hr />
+              <div class="card-title-subtitle-feedback">Now I want to:</div>
+              <button class="level-up-button" id="improve-more-button">
+                Improve this Sentence More
+              </button>
+              <button class="level-up-button" id="start-new-button">
+                Start a New Sentence
+              </button>
+            </div>
+          </div>
+  
+          <!-- CUSTOMIZE CARD -->
+          <div class="card" id="customize-card" style="display: none; flex: 1;">
+            <div class="scroll-container">
+              <div class="rubric-label">Current Rubric:</div>
+              <div class="rubric-section">
+                <div class="rubric-title" id="current-rubric-title-1">...</div>
+              </div>
+  
+              <!-- Action Buttons -->
+              <div class="rubric-actions">
+                <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+                <button class="level-up-button full-width" id="share-rubric-button">Share</button>
+                <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
+                <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
+          <div class="card" id="customize-card-edit-newWindow" style="display: none; flex: 1;">
+            <div class="scroll-container">
+              <div class="rubric-label">Current Rubric:</div>
+              <div class="rubric-section">
+                <div class="rubric-title" id="current-rubric-title-2">My Custom Rubric</div>
+
+
+              </div>
+              <div class="card-main-text">You will be using Google Sheets to edit and update your rubric. Once you’ve made changes, return here.</div>
+            </div>
+          </div>
+
+  
+        <!-- BEGIN .button-container (navigation buttons) -->
+        <div class="button-container">
+          <div class="button-left-group">
+            <button id="back-button" class="nav-button">Back</button>
+            <button id="home-button" class="nav-button">Back</button>
+            <button id="skip-button" class="nav-button">Skip</button>
+
+          </div>
+          <div class="button-right-group">
+            <button id="save" class="nav-button">Save Changes</button>
+            <button id="next-button" class="nav-button">Next</button>
+            <button id="submit-button" class="nav-button">Submit</button>
+            <button id="start-edits-button" class="nav-button">Start Edits</button>
+            <button id="check-work-button" class="nav-button">Check Work</button>
+            <button id="save-rubric-button" class="nav-button">Save Rubric</button>
           </div>
         </div>
+        <!-- END .button-container -->
+  
 
+      </div>
+      <!-- END .button-box -->
 
-      <div class="button-container">
-        <div class="button-left-group">
-          <button id="back-button" class="nav-button">Back</button>
-          <button id="home-button" class="nav-button">Back</button>
-          <button id="skip-button" class="nav-button">Skip</button>
-        </div>
-
-        <div class="button-right-group">
-          <button id="next-button" class="nav-button">Next</button>
-          <button id="submit-button" class="nav-button">Submit</button>
-          <button id="check-work-button" class="nav-button">Check Work</button>
-          <button id="save-rubric-button" class="nav-button">Save Rubric</button>
-        </div>
-      </div> <!-- End .button-box -->
-      </div> <!-- End .button-container -->
-    </div> <!-- End .content-wrapper -->
-  </div> <!-- End #side-panel -->
-</body>
+      </div>
+      <!-- END .content-wrapper -->
+    </div>
+    <!-- END #side-panel -->
+  </body>
+  
 </html>
 
     <script>
@@ -1349,6 +1361,10 @@ function handleWebSocketMessage(event) {
         console.log('🚌 State Change Requested', data.payload);
         handleStateChange(data.payload);
         break;
+      case 'EXTERNAL_PAGE_TO_OPEN':
+        console.log('🔗 Opening external page:', data.payload.url);
+        window.open(data.payload.url, '_blank');
+        break;
       default:
         console.log('📝 Message received:', data);
         console.log('⚠️ Unhandled message type:', data.type);
@@ -1398,11 +1414,11 @@ function handleStateChange(statePayload) {
 
   // Handle navigation buttons
   const buttonVisibility = state.buttons;
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button', 'save-rubric-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button', 'save-rubric-button','start-edits-button','start-edits-button','save'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
-      button.disabled = state.disabledButtons?.includes(buttonId) || false;
+      button.disabled = state.buttonsDisabled?.includes(buttonId) || false;
 
     }
   });
@@ -1515,6 +1531,19 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
   
     }
 
+
+    //Handle Rubrics:
+      //Change Rubric Name
+  console.log("rubricName: ", state.rubricName);
+  if(state.rubricName != ""){
+    const rubricNameElement1 = document.querySelector('#current-rubric-title-1');
+      rubricNameElement1.textContent = state.rubricName;
+    const rubricNameElement2 = document.querySelector('#current-rubric-title-2');
+
+      rubricNameElement2.textContent = state.rubricName;
+    }
+  }
+
   function createPillStructure(pills) {
   const pillHolder = document.getElementById('pillHolder');
   if (!pillHolder) return;
@@ -1579,9 +1608,12 @@ function updatePillProgress(pills) {
       emptyPill.style.width = `${100 - (state.reflection.currentScore/state.reflection.outOf * 100)}%`;
       progressText.textContent = `${state.reflection.currentScore}/${state.reflection.outOf}`;
     }
+    }
   }
-}
-}
+
+
+
+  }
 
 
 if (!state.waitingAnimationOn) {
@@ -1624,7 +1656,7 @@ function checkScrollOverflow() {
           }
   }
 
-}    
+
 
 
   // Handle level-up animation if requested
@@ -1696,10 +1728,11 @@ function isGoogleApp() {
     <script>
 function setupEventHandlers() {
   // Button clicks
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button', 'edit-rubric-button', 'edit-newWindow-rubric-button'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button', 'edit-rubric-button','new-rubric-button','start-edits-button','save'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.onclick = () => {
+
         disableAllButtons();
         messageQueue = []; // Clear any queued messages
         console.log(document.querySelector('.reflection-card textarea')?.value);
@@ -2017,3 +2050,20 @@ function testMessageQueue() {
     }
   }
 </script>
+<script>
+  //Browswer code
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        sendWebSocketMessage({
+          type: "USER_BACK_ON_TAB",
+          payload: {
+            clientId: clientId,
+            documentId: documentId
+          }
+        });
+    } 
+  });
+
+
+</script>
+
