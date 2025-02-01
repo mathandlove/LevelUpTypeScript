@@ -10,12 +10,13 @@ import {
 } from "firebase/firestore";
 import { firebaseConfig } from "../resources/keys.js";
 import { defaultRubric, Rubric } from "../common/types.js";
+import { AppContext } from "../stateMachine.js";
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Function to create a rubric with collision detection
-export async function newRubric(): Promise<Rubric> {
+export async function newRubric(context: AppContext): Promise<Rubric> {
   let shortID: string;
   let attempts = 0;
   const maxAttempts = 10; // Prevent infinite loops in rare cases
@@ -29,7 +30,10 @@ export async function newRubric(): Promise<Rubric> {
       return;
     }
   } while (await shortIDExists(shortID));
-  const rubric: Rubric = await getRubric(defaultRubric.databaseID);
+  const rubric: Rubric = {
+    ...context.documentMetaData.rubricInfo.savedRubrics[0],
+  }; //THe first Rubric is our default rubric ALWAYS>
+  rubric.title = "Baby's FirstRubric";
   // Define the rubric data
   rubric.databaseID = shortID;
 
@@ -40,6 +44,7 @@ export async function newRubric(): Promise<Rubric> {
     console.error("❌ Error saving rubric:", error);
   }
 
+  return rubric;
   // Function to generate a 5-character short ID
   function generateShortID(length = 5): string {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

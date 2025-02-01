@@ -409,13 +409,13 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   target: "getNewRubric",
                 },
                 SAVE_RUBRIC: {
-                  target: "saveCurrentRubric",
+                  //target: "saveCurrentRubric",
                 },
               },
             },
 
             //TODO: If I'm saving make sure I find a way to get back home! (freeze user screen most likely)
-
+            /*
             saveCurrentRubric: {
               invoke: {
                 src: loadRubricFromCurrentGoogleSheet,
@@ -425,12 +425,14 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+            */
+
             getNewRubric: {
               invoke: {
                 src: newRubric, //We want a database id to reference so need to call this!
                 onDone: {
                   target: "createRubricSheet",
-                  actions: "saveNewRubricToMeta",
+                  actions: "assignNewRubricToMeta",
                 },
               },
             },
@@ -1386,6 +1388,16 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
                 USER_BACK_ON_TAB: {
                   target: "updatingRubric",
+                  cond: (context, event) => {
+                    console.log(
+                      "checking sheet update: ",
+                      context.documentMetaData.rubricInfo.savedRubrics
+                    );
+
+                    return context.documentMetaData?.rubricInfo?.[
+                      context.documentMetaData.rubricInfo.currentRubric
+                    ]?.googleSheetId;
+                  },
                 },
                 RUBRIC_SHEET_CREATED: {
                   actions: [
@@ -1424,25 +1436,22 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 src: loadRubricFromCurrentGoogleSheet,
                 onDone: {
                   target: "customizeEditNewWindow",
+
                   actions: [
                     "updateCurrentRubric",
                     "unpackRubricToDocMetaData",
                     "assignDocMetaDataToUIState",
                     savePersistentDocData,
-                    (context, event) => {
-                      updateRubric(
-                        context.documentMetaData.rubricInfo.savedRubrics[
-                          context.documentMetaData.rubricInfo.currentRubric
-                        ].databaseID,
-                        context.documentMetaData.rubricInfo.savedRubrics[
-                          context.documentMetaData.rubricInfo.currentRubric
-                        ]
-                      );
-                    },
                     assign({
                       uiState: (context, event) => ({
                         ...context.uiState,
 
+                        waitingAnimationOn: false,
+                      }),
+                    }),
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
                         waitingAnimationOn: false,
                       }),
                     }),
@@ -1515,6 +1524,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           documentMetaData: (context, event: any) => {
             //Takes Rubric from event.data and adds it to savedRubrics. Then sets currentRubric to point at the newRubric.
             const newRubric = event.data as Rubric;
+            console.log("Saving New Rubric to Meta: ", newRubric);
             return {
               ...context.documentMetaData,
               rubricInfo: {

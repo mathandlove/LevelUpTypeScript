@@ -112,11 +112,10 @@ export async function createGoogleSheet(
   //function will save created rubric as googleSheetId and pass back the rubric.
   const { GoogleServices } = context.appState;
   const { sheets, drive } = GoogleServices;
-  if (rubric.googleSheetId != "") {
+  if (rubric.googleSheetId && rubric.googleSheetId != "") {
     return rubric;
   }
 
-  //todo: Save all these rubrics in the LEvel Up Folder
   // Step 1: Create a new Google Sheet
 
   const response = await sheets.spreadsheets.create({
