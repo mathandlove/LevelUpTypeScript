@@ -62,6 +62,7 @@ export interface Rubric {
   gradeLevel: number;
   databaseID: string;
   googleSheetId: string;
+  isDefault: boolean;
 }
 
 //My rubric validation is much more complicated.
@@ -115,6 +116,7 @@ export const defaultRubric: Rubric = {
   gradeLevel: 1,
   databaseID: "starterRubric",
   googleSheetId: "",
+  isDefault: true,
 };
 
 export interface SavedActivity {
@@ -209,10 +211,9 @@ export interface DocumentMetaData {
   textBeforeEdits: string;
   savedActivity: SavedActivity;
   reflectionTemplate: Reflection;
-  rubricInfo: {
-    savedRubrics: Array<Rubric>;
-    currentRubric: number;
-  };
+  savedRubrics: Array<Rubric>;
+  currentRubricID: string;
+  defaultRubric?: Rubric;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -228,10 +229,8 @@ export const defaultDocumentMetaData: DocumentMetaData = {
     savedChallenges: [],
   },
   reflectionTemplate: defaultReflection,
-  rubricInfo: {
-    savedRubrics: [],
-    currentRubric: 0,
-  },
+  savedRubrics: [],
+  currentRubricID: "",
 };
 
 export interface DocumentMetaDataMap {

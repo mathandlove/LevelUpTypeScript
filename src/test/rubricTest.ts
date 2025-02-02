@@ -1,14 +1,7 @@
-import {
-  createDefaultRubric,
-  getRubric,
-  newRubric,
-} from "../services/dataBaseService.js";
+import { createDefaultRubric } from "../services/dataBaseService.js";
+import { defaultRubric } from "../common/types.js";
 
 async function test() {
-  console.log("go!");
-  const a = await getRubric("LVL-0PX2Y");
-  console.log(a);
-  const b = await getRubric("LVL-0PX2Y");
-  console.log(b);
+  await createDefaultRubric(defaultRubric);
 }
 test();

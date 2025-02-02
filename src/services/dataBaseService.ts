@@ -31,9 +31,9 @@ export async function newRubric(context: AppContext): Promise<Rubric> {
     }
   } while (await shortIDExists(shortID));
   const rubric: Rubric = {
-    ...context.documentMetaData.rubricInfo.savedRubrics[0],
+    ...context.documentMetaData.savedRubrics[0],
   }; //THe first Rubric is our default rubric ALWAYS>
-  rubric.title = "Baby's FirstRubric";
+  //Need to change the Title at some point which requires a google call.
   // Define the rubric data
   rubric.databaseID = shortID;
 
@@ -63,7 +63,7 @@ export async function newRubric(context: AppContext): Promise<Rubric> {
   }
 }
 
-export async function getRubric(rubricID: string): Promise<Rubric> {
+export async function installRubric(rubricID: string): Promise<Rubric> {
   const docRef = doc(db, "rubrics", rubricID);
   const docSnap = await getDoc(docRef);
   let rubric: Rubric;
@@ -76,20 +76,22 @@ export async function getRubric(rubricID: string): Promise<Rubric> {
   }
 }
 
-export async function updateRubric(rubricID: string, rubric: Rubric) {
+export async function saveRubricToDatabase(rubric: Rubric) {
   //Assuming all Rubrics are created with newRubric().
+  const rubricID = rubric.databaseID;
   await setDoc(doc(db, "rubrics", rubricID), rubric);
 
   console.log("✅ Rubric updated successfully!");
 }
 
 export async function getDefaultRubric(): Promise<Rubric> {
-  const rubric = await getRubric("starterRubric");
+  const rubric = await installRubric("starterRubric");
   return rubric;
 }
 
 //only used as programmer
-async function createDefaultRubric(defaultRubric: Rubric) {
+//npm run rubric
+export async function createDefaultRubric(defaultRubric: Rubric) {
   try {
     await setDoc(doc(db, "rubrics", defaultRubric.databaseID), defaultRubric);
     console.log("✅ Default rubric created!");
