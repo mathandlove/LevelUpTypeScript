@@ -112,7 +112,7 @@ export async function createGoogleSheet(
   //function will save created rubric as googleSheetId and pass back the rubric.
   const { GoogleServices } = context.appState;
   const { sheets, drive } = GoogleServices;
-  if (rubric.googleSheetId && rubric.googleSheetId != "") {
+  if (rubric.googleSheetID && rubric.googleSheetID != "") {
     return rubric;
   }
 
@@ -126,7 +126,7 @@ export async function createGoogleSheet(
     },
   });
   const spreadsheetId = response.data.spreadsheetId;
-  rubric.googleSheetId = spreadsheetId;
+  rubric.googleSheetID = spreadsheetId;
   await drive.files.update({
     fileId: spreadsheetId,
     addParents: context.appState.levelUpFolderId,
@@ -533,18 +533,16 @@ export async function createGoogleSheet(
   return rubric;
 }
 
-export async function loadRubricFromCurrentGoogleSheet(
-  context: AppContext
+export async function updateRubricFromGoogleSheet(
+  context: AppContext,
+  rubric: Rubric
 ): Promise<Rubric> {
   const { GoogleServices } = context.appState;
   const { sheets } = GoogleServices;
-  const spreadsheetId =
-    context.documentMetaData.rubricInfo[
-      context.documentMetaData.rubricInfo.currentRubric
-    ].googleSheetId;
+  const spreadsheetID = rubric.googleSheetID;
 
   const response = await sheets.spreadsheets.values.get({
-    spreadsheetId,
+    spreadsheetID,
     range: "Sheet1", // Adjust if sheet name differs
   });
 
@@ -587,12 +585,12 @@ export async function loadRubricFromCurrentGoogleSheet(
     }
   }
 
-  return {
-    title,
-    gradeLevel,
-    topics,
-    reflection,
-    databaseID: "", // Placeholder
-    googleSheetId: spreadsheetId,
-  };
+  rubric.title = title;
+  rubric.gradeLevel = gradeLevel;
+  rubric.topics = topics;
+  rubric.reflection = reflection;
+  rubric.googleSheetID = spreadsheetID;
+  rubric.topics = topics;
+
+  return rubric;
 }

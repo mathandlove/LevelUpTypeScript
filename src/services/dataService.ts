@@ -85,10 +85,8 @@ export async function getOrLoadDocumentMetaData(context: AppContext): Promise<{
     );
     if (persistentDocData == null) {
       persistentDocData = defaultDocumentMetaData; //Now we are guranteed to have the right challengeArray size!
-      persistentDocData.rubricInfo.savedRubrics = await getAllRubrics(
-        oauth2Client,
-        persistentDataFileId
-      );
+
+      //Used to getAll Rubrics - have delegated this to a separate function for clarity
       createdPersistentDataFile = true;
     }
     return { persistentDocData, createdPersistentDataFile };
@@ -269,9 +267,6 @@ async function getPersistentDocData(
     );
     if (metaDocRecords[documentId] != null) {
       const persistentDocData = metaDocRecords[documentId] as DocumentMetaData;
-      persistentDocData.rubricInfo.savedRubrics = metaDocRecords[
-        "rubricArray"
-      ] as Array<Rubric>;
       return persistentDocData;
     } else {
       return null;
@@ -316,15 +311,11 @@ export async function savePersistentDocData(context: AppContext) {
       persistentDataId
     );
 
-    //Saving Arrays globally.
-    metaDocRecords["rubricArray"] =
-      context.documentMetaData.rubricInfo.savedRubrics;
-
     const persistentDocData = { ...context.documentMetaData };
     const drive = context.appState.GoogleServices.drive;
     persistentDocData.currentText = "";
     persistentDocData.textBeforeEdits = "";
-    persistentDocData.rubricInfo.savedRubrics = []; //Arrays are now being saved for global
+    persistentDocData.savedRubrics = []; //Arrays are now being saved for global
     persistentDocData.selectedChallengeNumber = -1;
 
     if (metaDocRecords == null) {
@@ -345,3 +336,19 @@ export async function savePersistentDocData(context: AppContext) {
     throw error;
   }
 }
+
+export const getRubric = (context: AppContext, databaseID: string) => {
+  // Check if the defaultRubric matches the databaseId
+  if (context.documentMetaData.defaultRubric?.databaseID === databaseID) {
+    return context.documentMetaData.defaultRubric;
+  }
+
+  // Look through savedRubrics to find the rubric that matches the databaseId
+  const savedRubric = context.documentMetaData.savedRubrics?.find(
+    (rubric) => rubric.databaseID === databaseID
+  );
+
+  console.error("No rubric found with databaseID: " + databaseID); //I could load it from the database, but I hope to never have a reference to a non existent savedFile, so this should never get here.
+
+  return savedRubric || null; // Return the found savedRubric or null if none found
+};
