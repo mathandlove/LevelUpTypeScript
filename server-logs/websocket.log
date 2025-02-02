@@ -20705,3 +20705,625 @@
 
 %%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
 
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"","errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+📨 Received message:
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T14:57:20.845Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:05:40.121Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:11:21.421Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:11:40.448Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:11:49.682Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"title":"Thesis Statement","description":"Has Clear, specific, and well-developed thesis.","current":0,"outOf":5},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"title":"Word Choice","current":0,"description":"Uses precise, varied, and appropriate vocabulary.","outOf":5},{"title":"Grammar","description":"Is Free of major grammatical errors .","current":0,"outOf":5}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:11:58.359Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:12:11.046Z"}}
+
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:12:11.046Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:12:11.046Z","cardMainText":"Reading this made me feel confused because it just says the plot is interesting because it's scary without explaining why that makes it interesting."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:12:11.046Z","cardMainText":"Reading this made me feel confused because it just says the plot is interesting because it's scary without explaining why that makes it interesting.","tasks":["Identify the main reason why describing the plot as 'scary' might make it interesting to some readers.","Think about why a scary element in a plot can capture a reader's attention.","Consider what effect these reasons might have on a reader and try to express that in one additional phrase."],"cardSubtitle":"Big Goal: Enhance clarity and engagement in descriptive writing."}}
+
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":true,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:12:11.046Z","cardMainText":"Reading this made me feel confused because it just says the plot is interesting because it's scary without explaining why that makes it interesting.","tasks":["Identify the main reason why describing the plot as 'scary' might make it interesting to some readers.","Think about why a scary element in a plot can capture a reader's attention.","Consider what effect these reasons might have on a reader and try to express that in one additional phrase."],"cardSubtitle":"Big Goal: Enhance clarity and engagement in descriptive writing."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"celebrateScreen","waitingAnimationOn":false,"visibleButtons":["next-button"],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":1,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:15:45.769Z","cardMainText":"Great job adding \"and scary is interesting\" to explain why the story captures attention!","tasks":["Identify the main reason why describing the plot as 'scary' might make it interesting to some readers.","Think about why a scary element in a plot can capture a reader's attention.","Consider what effect these reasons might have on a reader and try to express that in one additional phrase."],"cardSubtitle":"Big Goal: Enhance clarity and engagement in descriptive writing.","taskFeedbackMessage":"Great job adding \"and scary is interesting\" to explain why the story captures attention!"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":1,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:15:45.769Z","cardMainText":"Great job adding \"and scary is interesting\" to explain why the story captures attention!","tasks":["Identify the main reason why describing the plot as 'scary' might make it interesting to some readers.","Think about why a scary element in a plot can capture a reader's attention.","Consider what effect these reasons might have on a reader and try to express that in one additional phrase."],"cardSubtitle":"Big Goal: Enhance clarity and engagement in descriptive writing.","taskFeedbackMessage":"Great job adding \"and scary is interesting\" to explain why the story captures attention!"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:15:57.783Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:19:48.601Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:20:19.290Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:21:10.936Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"outOf":5,"description":"Has Clear, specific, and well-developed thesis.","title":"Thesis Statement"},{"current":0,"description":"Has Logical flow with effective transitions.","outOf":5,"title":"Organization"},{"title":"Word Choice","outOf":5,"description":"Uses precise, varied, and appropriate vocabulary.","current":0},{"title":"Grammar","outOf":5,"description":"Is Free of major grammatical errors .","current":0}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:21:20.383Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"server-error","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"","errorMessage":"Google servers sent an invalid token. Please refresh the page and try again."}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:30:01.320Z"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:39:50.547Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:40:00.631Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:40:07.651Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:40:47.460Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:41:03.673Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:41:24.592Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:41:33.466Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:43:07.117Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:46:06.470Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:47:16.681Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:47:54.540Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:51:52.992Z"}}
+
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:51:52.992Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:51:52.992Z","cardMainText":"Reading this made me feel confused because saying \"scary is interesting\" didn't make sense and felt a bit awkward."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:51:52.992Z","cardMainText":"Reading this made me feel confused because saying \"scary is interesting\" didn't make sense and felt a bit awkward.","tasks":["Identify where a comma would improve the sentence clarity.","Ask yourself what makes each part of the sentence distinct and needing separation.","Determine the role of punctuation in enhancing readability."],"cardSubtitle":"Big Goal: Enhance clarity and grammatical structure in writing."}}
+
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":true,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:51:52.992Z","cardMainText":"Reading this made me feel confused because saying \"scary is interesting\" didn't make sense and felt a bit awkward.","tasks":["Identify where a comma would improve the sentence clarity.","Ask yourself what makes each part of the sentence distinct and needing separation.","Determine the role of punctuation in enhancing readability."],"cardSubtitle":"Big Goal: Enhance clarity and grammatical structure in writing."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"celebrateScreen","waitingAnimationOn":false,"visibleButtons":["next-button"],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:53:17.503Z","cardMainText":"Great job adding the comma to make the sentence clearer and easier to read!","tasks":["Identify where a comma would improve the sentence clarity.","Ask yourself what makes each part of the sentence distinct and needing separation.","Determine the role of punctuation in enhancing readability."],"cardSubtitle":"Big Goal: Enhance clarity and grammatical structure in writing.","taskFeedbackMessage":"Great job adding the comma to make the sentence clearer and easier to read!"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:53:17.503Z","cardMainText":"Great job adding the comma to make the sentence clearer and easier to read!","tasks":["Identify where a comma would improve the sentence clarity.","Ask yourself what makes each part of the sentence distinct and needing separation.","Determine the role of punctuation in enhancing readability."],"cardSubtitle":"Big Goal: Enhance clarity and grammatical structure in writing.","taskFeedbackMessage":"Great job adding the comma to make the sentence clearer and easier to read!"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:53:23.163Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:54:26.446Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T15:54:48.596Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:02:14.528Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:09:54.104Z"}}
+
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:09:54.104Z"}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"AI-Feeling","waitingAnimationOn":false,"visibleButtons":["back-button","next-button"],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:09:54.104Z","cardMainText":"Reading this made me feel a bit annoyed because the sentence used \\\"it’s\\\" when it should have used a more proper phrase like \\\"it is\\\" to sound clearer and more correct."}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":false,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:09:54.104Z","cardMainText":"Reading this made me feel a bit annoyed because the sentence used \\\"it’s\\\" when it should have used a more proper phrase like \\\"it is\\\" to sound clearer and more correct.","tasks":["Identify the contraction in the sentence.","Rewrite the contraction as two separate words.","Ensure your sentence maintains the same meaning."],"cardSubtitle":"Big Goal: Enhance clarity and formality in sentence structure."}}
+
+📨 Received message:
+📨 Received message:
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"challenge-card","waitingAnimationOn":true,"visibleButtons":["skip-button","check-work-button"],"buttonsDisabled":[],"level":2,"formerLevel":2,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":0,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:09:54.104Z","cardMainText":"Reading this made me feel a bit annoyed because the sentence used \\\"it’s\\\" when it should have used a more proper phrase like \\\"it is\\\" to sound clearer and more correct.","tasks":["Identify the contraction in the sentence.","Rewrite the contraction as two separate words.","Ensure your sentence maintains the same meaning."],"cardSubtitle":"Big Goal: Enhance clarity and formality in sentence structure."}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"celebrateScreen","waitingAnimationOn":false,"visibleButtons":["next-button"],"buttonsDisabled":[],"level":3,"formerLevel":2,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:11:13.471Z","cardMainText":"Great job using \"it is\" instead of \"it's\" to make the sentence clearer!","tasks":["Identify the contraction in the sentence.","Rewrite the contraction as two separate words.","Ensure your sentence maintains the same meaning."],"cardSubtitle":"Big Goal: Enhance clarity and formality in sentence structure.","taskFeedbackMessage":"Great job using \"it is\" instead of \"it's\" to make the sentence clearer!"}}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":3,"animateLevelUp":false,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:11:13.471Z","cardMainText":"Great job using \"it is\" instead of \"it's\" to make the sentence clearer!","tasks":["Identify the contraction in the sentence.","Rewrite the contraction as two separate words.","Ensure your sentence maintains the same meaning."],"cardSubtitle":"Big Goal: Enhance clarity and formality in sentence structure.","taskFeedbackMessage":"Great job using \"it is\" instead of \"it's\" to make the sentence clearer!"}}
+
+🔴 WebSocket connection closed
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:11:25.111Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:12:54.695Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:14:07.157Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:14:14.438Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:15:18.257Z"}}
+
+
+%%% Sending message: {"type":"WELCOME","message":"Connected to WebSocket server"}
+
+📨 Received message:
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":true,"visibleButtons":[],"buttonsDisabled":[],"level":1,"formerLevel":1,"animateLevelUp":false,"pills":[],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":""}}
+
+
+%%% Sending message: {"type":"STATE","payload":{"currentPage":"home-page","waitingAnimationOn":false,"visibleButtons":[],"buttonsDisabled":[],"level":3,"formerLevel":1,"animateLevelUp":true,"pills":[{"current":0,"description":"Has Clear, specific, and well-developed thesis.","outOf":5,"title":"Thesis Statement"},{"title":"Organization","current":0,"description":"Has Logical flow with effective transitions.","outOf":5},{"outOf":5,"current":0,"title":"Word Choice","description":"Uses precise, varied, and appropriate vocabulary."},{"outOf":5,"current":1,"description":"Is Free of major grammatical errors .","title":"Grammar"}],"reflection":{"enabled":true,"copyPercentIncluded":false,"noInputOnSubmit":false,"question":["What went well?","What was hard?","How can the teacher help you?"],"submittedAnswers":[],"selectedQuestion":0,"placeholder":"Enter your reflection here...","outOf":1,"currentScore":0},"timeSpentHours":0,"timeSpentMinutes":0,"copypasted":0,"rubricName":"Starter Level Up Rubric","lastUpdated":"2025-02-02T16:15:31.852Z"}}
+

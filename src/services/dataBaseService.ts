@@ -84,7 +84,7 @@ export async function saveRubricToDatabase(rubric: Rubric) {
   console.log("✅ Rubric updated successfully!");
 }
 
-export async function getDefaultRubric(): Promise<Rubric> {
+export async function installDefaultRubric(): Promise<Rubric> {
   const rubric = await installRubric("starterRubric");
   return rubric;
 }

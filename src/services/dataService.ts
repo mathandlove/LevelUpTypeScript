@@ -9,7 +9,8 @@ import {
 import { AppContext } from "../stateMachine.js";
 import { google } from "googleapis";
 import { jwtDecode } from "jwt-decode";
-import { getDefaultRubric } from "./dataBaseService.js";
+import { installDefaultRubric } from "./dataBaseService.js";
+import { drive } from "googleapis/build/src/apis/drive/index.js";
 
 //Error Messages
 // Define custom error classes
@@ -178,11 +179,10 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
     };
 
     //We will always be uploading the entire array system so we need to upload the default rubric.
-    const defaultRubric = await getDefaultRubric();
-    defaultRubric.title = "Starter Rubric";
+
     const media = {
       mimeType: "application/json",
-      body: JSON.stringify({ rubricArray: [defaultRubric] }),
+      body: JSON.stringify({ rubricArray: [], defaultRubric: null }),
     };
 
     const createResponse = await drive.files.create({
@@ -236,22 +236,63 @@ async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
   }
 }
 
-async function getAllRubrics(
-  oauth2Client: any,
-  persistentDataId: string
+export async function getRubricArray(
+  context: AppContext
 ): Promise<Array<Rubric>> {
   try {
     const metaDocRecords = await getPersistentDocDataMap(
-      oauth2Client,
-      persistentDataId
+      context.appState.GoogleServices.oauth2Client,
+      context.appState.persistentDataFileId
     );
     return metaDocRecords["rubricArray"] as Array<Rubric>;
   } catch (error) {
     console.error(
-      "Error trying to access persistent data file with ID: " + persistentDataId
+      "Error trying to access persistent data file with ID: " +
+        context.appState.persistentDataFileId
     );
     throw error;
   }
+}
+
+export async function getOrCreateDefaultRubric(
+  context: AppContext
+): Promise<Rubric> {
+  if (context.documentMetaData.defaultRubric != undefined) {
+    return context.documentMetaData.defaultRubric;
+  } else {
+    const metaDocRecords = await getPersistentDocDataMap(
+      context.appState.GoogleServices.oauth2Client,
+      context.appState.persistentDataFileId
+    );
+    const metaDefaultRubric = metaDocRecords["defaultRubric"];
+    if (metaDefaultRubric != null) {
+      return metaDefaultRubric;
+    } else {
+      const defaultRubric = await installDefaultRubric();
+      metaDocRecords["defaultRubric"] = defaultRubric;
+      saveRubricArrayToPersistentData(context); //I don't think we need a wait here?
+      return defaultRubric;
+    }
+  }
+}
+
+export async function saveRubricArrayToPersistentData(context: AppContext) {
+  const oauth2Client = context.appState.GoogleServices.oauth2Client;
+  const persistentDataId = context.appState.persistentDataFileId;
+  const metaDocRecords = await getPersistentDocDataMap(
+    oauth2Client,
+    persistentDataId
+  );
+  const drive = context.appState.GoogleServices.drive;
+  metaDocRecords["rubricArray"] = context.documentMetaData.savedRubrics;
+  metaDocRecords["defaultRubric"] = context.documentMetaData.defaultRubric;
+  await drive.files.update({
+    fileId: persistentDataId,
+    media: {
+      mimeType: "application/json",
+      body: JSON.stringify(metaDocRecords),
+    },
+  });
 }
 
 async function getPersistentDocData(

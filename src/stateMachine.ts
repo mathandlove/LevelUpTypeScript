@@ -12,6 +12,8 @@ import {
   getPersistentDataFileId,
   savePersistentDocData,
   getRubric,
+  getRubricArray,
+  getOrCreateDefaultRubric,
 } from "./services/dataService.js";
 import {
   UIState,
@@ -222,16 +224,16 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             loadingRubric: {
               invoke: {
-                src: "getOrCreateRubricArray", //Returns arrayObject
+                src: getRubricArray, //Returns arrayObject (can be empty now)
                 onDone: {
-                  target: "ready",
-
+                  target: "getOrCreateDefaultRubric",
                   actions: [
-                    "unpackCurrentRubrictoDocMetaData",
-                    "addRubricArrayToDocMetaData",
-                    //Needs to check if this is a new docMeta. If it is:
-                    "unpackCurrentRubrictoDocMetaData",
-                    "assignCurrentRubricToUIState",
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        rubricArray: event.data,
+                      }),
+                    }),
                   ],
                 },
                 onError: {
@@ -239,11 +241,55 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+            getOrCreateDefaultRubric: {
+              invoke: {
+                src: getOrCreateDefaultRubric,
+                onDone: {
+                  target: "unpackRubricState",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        defaultRubric: event.data,
+                      }),
+                    }),
+                    savePersistentDocData,
+                    send({
+                      type: "RUBRIC_ARRAY_LOADED",
+                    }),
+                  ],
+                },
+              },
+            },
+            unpackRubricState: {
+              always: [
+                {
+                  target: "ready",
+
+                  cond: (context) => {
+                    return (
+                      context.documentMetaData.rubricLastUpdated !==
+                      getRubric(
+                        context,
+                        context.documentMetaData.currentRubricID
+                      ).lastUpdated
+                    );
+                  },
+                  actions: ["unpackCurrentRubricToDocMeta"],
+                },
+
+                {
+                  target: "ready",
+                },
+              ],
+            },
+
             ready: {
               on: {
                 CREATE_NEW_RUBRIC: "createNewRubric",
               },
             },
+
             createNewRubric: {
               invoke: {
                 src: "CreateNewRubric-Sheet-CurrentRubric",
@@ -426,7 +472,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               invoke: {
                 src: getFullText,
                 onDone: {
-                  target: ["idleHome"],
+                  target: ["waitingForRubric"],
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -444,7 +490,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 cond: (context) => {
                   return context.documentMetaData.defaultRubric !== undefined;
                 },
-                target: "sendOutRubric",
+                target: "idleHome",
 
                 actions: [
                   send({
@@ -454,7 +500,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               },
               on: {
                 RUBRIC_ARRAY_LOADED: {
-                  target: "sendOut",
+                  target: "idleHome",
                   actions: [
                     send({
                       type: "CREATE_CHALLENGES",
@@ -787,34 +833,44 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   target: "getCelebration",
                   actions: [
                     assign({
+                      //Increase Topic Score and save.
                       documentMetaData: (context) => {
-                        const { selectedChallengeNumber, pills, level } =
-                          context.documentMetaData;
+                        const {
+                          selectedChallengeNumber,
+                          pills,
+                          level,
+                          paperScores,
+                        } = context.documentMetaData;
 
-                        if (
-                          typeof selectedChallengeNumber === "number" &&
-                          pills[selectedChallengeNumber]
-                        ) {
-                          // Create a new pills array with the updated pill
-                          const updatedPills = pills.map((pill, index) =>
-                            index === selectedChallengeNumber
-                              ? { ...pill, current: pill.current + 1 }
-                              : pill
-                          );
+                        //Change paperScores
+                        const pillToUpdate = pills[selectedChallengeNumber];
+                        const targetTitle = pillToUpdate.title;
+                        const updatedPaperScores = paperScores.map((score) =>
+                          score.title === targetTitle
+                            ? { ...score, current: (score.current || 0) + 1 } //
+                            : score
+                        );
 
-                          // Return the updated documentMetaData
-                          return {
-                            ...context.documentMetaData,
-                            pills: updatedPills,
-                            level: level + 1, // Increment the level
-                          };
-                        } else {
-                          throw new Error(
-                            "Invalid selectedChallengeNumber or pill not found"
+                        //Apply paperScores to pills
+                        pills.forEach((topic) => {
+                          //Change the topic.score to updatedPaperScores.score
+                          const existingTopic = updatedPaperScores.find(
+                            (score) => score.title === topic.title
                           );
-                        }
+                          if (existingTopic) {
+                            topic.current = existingTopic.current;
+                          }
+                        });
+
+                        return {
+                          ...context.documentMetaData,
+                          pills: pills,
+                          paperScores: updatedPaperScores,
+                          level: level + 1,
+                        };
                       },
                     }),
+
                     savePersistentDocData,
                   ],
                 },
@@ -959,6 +1015,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               on: {
                 RUBRIC_ARRAY_LOADED: {
                   actions: [
+                    "assignDocMetaDataToUIState",
                     assign({
                       uiState: (context: AppContext) => ({
                         ...context.uiState,
@@ -1526,8 +1583,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   target: "customizeEditNewWindow",
 
                   actions: [
-                    "updateCurrentRubric",
-                    "unpackRubricToDocMetaData",
+                    "unpackCurrentRubrictoDocMeta",
                     "assignDocMetaDataToUIState",
                     savePersistentDocData,
                     assign({
@@ -1569,26 +1625,74 @@ export function createAppMachine(ws: LevelUpWebSocket) {
     },
     {
       actions: {
-        unpackRubricToDocMetaData: assign({
+        unpackCurrentRubricToDocMeta: assign({
           documentMetaData: (context: AppContext, event: any) => {
+            console.log("Unpacking new Rubric.");
             const currentRubric = getRubric(
               context,
+
               context.documentMetaData.currentRubricID
-            );
+            ); //Assuming that pointer is always good.
+            if (currentRubric === null) {
+              console.error(
+                "Could not find requested rubric at " +
+                  context.documentMetaData.currentRubricID
+              );
+              return context.documentMetaData;
+            }
+
             const topicsLength = currentRubric.topics
               ? currentRubric.topics.length
               : 0;
+            // Initialize the new paperPills and paperScores arrays.
+            let paperPills = currentRubric.topics || [];
+            let updatedPaperScores = [...context.documentMetaData.paperScores];
+
+            // Loop through each topic in the rubric.
+            paperPills.forEach((topic) => {
+              const existingTopic = updatedPaperScores.find(
+                (score) => score.title === topic.title
+              );
+
+              if (!existingTopic) {
+                // If the topic doesn't exist, add it with a default score of 0.
+                updatedPaperScores.push({
+                  title: topic.title,
+                  current: 0, // Default score
+                  outOf: -1,
+                  description: "Paper Score - Do Not Reference",
+                });
+
+                //Update the challengeArray to have a new challenge for this topic.
+              }
+            });
+
+            let updatedPills = currentRubric.topics;
+            updatedPills.forEach((topic) => {
+              //Change the topic.score to updatedPaperScores.score
+              const existingTopic = updatedPaperScores.find(
+                (score) => score.title === topic.title
+              );
+              if (existingTopic) {
+                topic.current = existingTopic.current;
+              }
+            });
+
+            // Update the documentMetaData with the new paperScores.
 
             return {
               ...context.documentMetaData,
+              paperScores: updatedPaperScores,
               challengeArray: Array(topicsLength).fill([]),
               newChallengesArray: Array(topicsLength).fill([]),
               newChallengesReady: false,
               pills: currentRubric.topics,
               reflectionTemplate: currentRubric.reflection,
+              rubricLastUpdated: currentRubric.lastUpdated,
             };
           },
         }),
+
         assignDocMetaDataToUIState: assign({
           uiState: (context: AppContext, event: any) => {
             // 🔹 Debugging: Log before and after assignment
