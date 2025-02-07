@@ -1,17 +1,68 @@
 {
-  "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE": {
-    "level": 1,
-    "pills": [
+  "rubricArray": [
+    {
+      "isDefault": true,
+      "topics": [
+        {
+          "title": "Froggy Hop",
+          "description": "Speak Like a Frog",
+          "outOf": 5,
+          "current": 0
+        },
+        {
+          "title": "Organization",
+          "description": "Has Logical flow with effective transitions.",
+          "outOf": 5,
+          "current": 0
+        },
+        {
+          "title": "Word Choice",
+          "description": "Uses precise, varied, and appropriate vocabulary.",
+          "outOf": 5,
+          "current": 0
+        },
+        {
+          "title": "Grammar",
+          "description": "Is Free of major grammatical errors .",
+          "outOf": 5,
+          "current": 0
+        }
+      ],
+      "gradeLevel": 9,
+      "reflection": {
+        "enabled": true,
+        "copyPercentIncluded": false,
+        "question": [
+          "What went well?",
+          "What was hard?",
+          "How can the teacher help you?"
+        ],
+        "submittedAnswers": [],
+        "selectedQuestion": 0,
+        "placeholder": "",
+        "outOf": 1,
+        "currentScore": 0,
+        "noInputOnSubmit": false
+      },
+      "lastUpdated": "2025-02-07T22:23:45.278Z",
+      "databaseID": "LVL-Z7GU3",
+      "googleSheetID": "192rzFqqOfhY5MG1E3NaJqKq2adTWPctOkaRYYO19KYo",
+      "title": "Froggy Dance"
+    }
+  ],
+  "defaultRubric": {
+    "isDefault": true,
+    "topics": [
       {
+        "description": "Has Clear, specific, and well-developed thesis.",
         "current": 0,
-        "outOf": 5,
-        "title": "Strong Thesis",
-        "description": "Has Clear, specific, and well-developed thesis."
+        "title": "Thesis Statement",
+        "outOf": 5
       },
       {
+        "outOf": 5,
         "description": "Has Logical flow with effective transitions.",
         "title": "Organization",
-        "outOf": 5,
         "current": 0
       },
       {
@@ -21,10 +72,85 @@
         "outOf": 5
       },
       {
+        "title": "Grammar",
         "current": 0,
         "outOf": 5,
-        "title": "Grammar",
         "description": "Is Free of major grammatical errors ."
+      }
+    ],
+    "gradeLevel": 9,
+    "reflection": {
+      "placeholder": "Enter your reflection here...",
+      "submittedAnswers": [],
+      "selectedQuestion": 0,
+      "currentScore": 0,
+      "question": [
+        "What went well?",
+        "What was hard?",
+        "How can the teacher help you?"
+      ],
+      "enabled": true,
+      "noInputOnSubmit": false,
+      "outOf": 1,
+      "copyPercentIncluded": false
+    },
+    "lastUpdated": "2025-02-07T22:23:45.278Z",
+    "databaseID": "starterRubric",
+    "googleSheetID": "",
+    "title": "Starter Level Up Rubric"
+  },
+  "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE": {
+    "level": 1,
+    "pills": [
+      {
+        "description": "Has Clear, specific, and well-developed thesis.",
+        "current": 0,
+        "title": "Thesis Statement",
+        "outOf": 5
+      },
+      {
+        "outOf": 5,
+        "description": "Has Logical flow with effective transitions.",
+        "title": "Organization",
+        "current": 0
+      },
+      {
+        "description": "Uses precise, varied, and appropriate vocabulary.",
+        "title": "Word Choice",
+        "current": 0,
+        "outOf": 5
+      },
+      {
+        "title": "Grammar",
+        "current": 0,
+        "outOf": 5,
+        "description": "Is Free of major grammatical errors ."
+      }
+    ],
+    "paperScores": [
+      {
+        "title": "Thesis Statement",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
+      },
+      {
+        "title": "Organization",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
+      },
+      {
+        "title": "Word Choice",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
+      },
+      {
+        "title": "Grammar",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
       }
     ],
     "challengeArray": [[], [], [], []],
@@ -34,72 +160,23 @@
     "textBeforeEdits": "",
     "savedActivity": { "savedReflections": [], "savedChallenges": [] },
     "reflectionTemplate": {
-      "currentScore": 0,
-      "selectedQuestion": 0,
-      "outOf": 1,
-      "noInputOnSubmit": false,
       "placeholder": "Enter your reflection here...",
-      "enabled": true,
-      "copyPercentIncluded": false,
+      "submittedAnswers": [],
+      "selectedQuestion": 0,
+      "currentScore": 0,
       "question": [
         "What went well?",
         "What was hard?",
         "How can the teacher help you?"
       ],
-      "submittedAnswers": []
+      "enabled": true,
+      "noInputOnSubmit": false,
+      "outOf": 1,
+      "copyPercentIncluded": false
     },
-    "rubricInfo": {
-      "savedRubrics": [
-        {
-          "databaseID": "starterRubric",
-          "topics": [
-            {
-              "current": 0,
-              "outOf": 5,
-              "title": "Strong Thesis",
-              "description": "Has Clear, specific, and well-developed thesis."
-            },
-            {
-              "description": "Has Logical flow with effective transitions.",
-              "title": "Organization",
-              "outOf": 5,
-              "current": 0
-            },
-            {
-              "description": "Uses precise, varied, and appropriate vocabulary.",
-              "title": "Word Choice",
-              "current": 0,
-              "outOf": 5
-            },
-            {
-              "current": 0,
-              "outOf": 5,
-              "title": "Grammar",
-              "description": "Is Free of major grammatical errors ."
-            }
-          ],
-          "reflection": {
-            "currentScore": 0,
-            "selectedQuestion": 0,
-            "outOf": 1,
-            "noInputOnSubmit": false,
-            "placeholder": "Enter your reflection here...",
-            "enabled": true,
-            "copyPercentIncluded": false,
-            "question": [
-              "What went well?",
-              "What was hard?",
-              "How can the teacher help you?"
-            ],
-            "submittedAnswers": []
-          },
-          "title": "Starter Level Up Rubric",
-          "googleSheetId": "",
-          "gradeLevel": 10
-        }
-      ],
-      "currentRubric": 0
-    },
+    "savedRubrics": [],
+    "currentRubricID": "LVL-Z7GU3",
+    "rubricLastUpdated": "2025-02-07T22:23:45.278Z",
     "selectedChallengeNumber": -1
   }
 }

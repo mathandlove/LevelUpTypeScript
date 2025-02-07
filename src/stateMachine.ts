@@ -7,6 +7,7 @@ import {
   getRubric,
   getRubricArray,
   getOrCreateDefaultRubric,
+  savePersistentArrayData,
 } from "./services/dataService.js";
 import {
   UIState,
@@ -198,6 +199,59 @@ async function createNewRubricAndSheet(context: AppContext): Promise<Rubric> {
   }
 }
 
+function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
+  console.log("📌 Unpacking rubric:", rubric?.title);
+
+  if (!rubric || !rubric.topics) {
+    console.error("❌ Error: Could not find rubric or it has no topics.");
+    return {
+      ...context.documentMetaData,
+      pills: [],
+    };
+  }
+
+  const topicsLength = rubric.topics.length;
+  let updatedPaperScores = [...context.documentMetaData.paperScores];
+
+  // Ensure all topics have corresponding scores
+  rubric.topics.forEach((topic) => {
+    const existingTopic = updatedPaperScores.find(
+      (score) => score.title === topic.title
+    );
+
+    if (!existingTopic) {
+      updatedPaperScores.push({
+        title: topic.title,
+        current: 0, // Default score
+        outOf: -1,
+        description: "Paper Score - Do Not Reference",
+      });
+    }
+  });
+
+  // Sync paperScores to topics (pills)
+  let updatedPills = rubric.topics.map((topic) => {
+    const existingScore = updatedPaperScores.find(
+      (score) => score.title === topic.title
+    );
+    return {
+      ...topic,
+      current: existingScore ? existingScore.current : 0,
+    };
+  });
+
+  return {
+    ...context.documentMetaData,
+    paperScores: updatedPaperScores,
+    challengeArray: Array(topicsLength).fill([]),
+    newChallengesArray: Array(topicsLength).fill([]),
+    newChallengesReady: false,
+    pills: updatedPills,
+    reflectionTemplate: rubric.reflection,
+    rubricLastUpdated: rubric.lastUpdated,
+  };
+}
+
 // Define a function to create the machine with initial context
 
 export function createAppMachine(ws: LevelUpWebSocket) {
@@ -220,11 +274,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             idle: {
               on: {
                 LOAD_RUBRIC_ARRAY_FROM_PERSISTENT_DATA: {
-                  target: "loadingRubric",
+                  target: "loadingRubricArray",
                 },
               },
             },
-            loadingRubric: {
+            loadingRubricArray: {
               invoke: {
                 src: getRubricArray, //Returns arrayObject (can be empty now)
                 onDone: {
@@ -233,7 +287,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     assign({
                       documentMetaData: (context, event) => ({
                         ...context.documentMetaData,
-                        rubricArray: event.data,
+                        savedRubrics: event.data,
                       }),
                     }),
                   ],
@@ -279,16 +333,20 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 {
                   target: "ready",
 
-                  cond: (context) => {
-                    return (
-                      context.documentMetaData.rubricLastUpdated !==
-                      getRubric(
-                        context,
-                        context.documentMetaData.currentRubricID
-                      ).lastUpdated
-                    );
-                  },
-                  actions: ["unpackCurrentRubricToDocMeta"],
+                  actions: [
+                    assign({
+                      documentMetaData: (context: AppContext) =>
+                        unpackRubric(
+                          context,
+                          getRubric(
+                            context,
+                            context.documentMetaData.currentRubricID
+                          )
+                        ),
+                    }),
+                    "assignDocMetaDataToUIState",
+                    sendUIUpdate,
+                  ],
                 },
 
                 {
@@ -336,8 +394,36 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 USER_BACK_ON_TAB: {
                   target: "updateRubricFromGoogleSheet",
                 },
+                BUTTON_CLICKED: {
+                  target: "saveNewRubric",
+                  cond: (context, event) => event.payload.buttonId === "save",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        savedRubrics: [
+                          ...context.documentMetaData.savedRubrics,
+                          context.documentMetaData.tempNewRubric,
+                        ],
+                      }),
+                    }),
+                    assign({
+                      documentMetaData: (context: AppContext) =>
+                        unpackRubric(
+                          context,
+                          getRubric(
+                            context,
+                            context.documentMetaData.currentRubricID
+                          )
+                        ),
+                    }),
+                    "assignDocMetaDataToUIState",
+                    sendUIUpdate,
+                  ],
+                },
               },
             },
+
             updateRubricFromGoogleSheet: {
               invoke: {
                 src: (context) => {
@@ -369,16 +455,38 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
-            saving: {
+            saveNewRubric: {
               invoke: {
-                src: "saveRubric",
-
+                src: async (context) => {
+                  await saveRubricToDatabase(
+                    context.documentMetaData.tempNewRubric
+                  );
+                  await savePersistentArrayData(context);
+                },
                 onDone: {
-                  target: "ready",
-                  actions: ["notifyRubricSaved", "restartChallenges"],
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+
+                        rubricLastUpdated:
+                          context.documentMetaData.tempNewRubric.lastUpdated,
+
+                        currentRubricID:
+                          context.documentMetaData.tempNewRubric.databaseID, //If you create a rubric, you will be assigned to it automatically.
+                        tempNewRubric: undefined,
+                      }),
+                    }),
+
+                    savePersistentDocData,
+                  ],
                 },
                 onError: {
-                  target: "error",
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
+                  ],
                 },
               },
             },
@@ -1632,6 +1740,21 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     sendUIUpdate,
                   ],
                 },
+                USER_BACK_ON_TAB: {
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        waitingAnimationOn: true,
+                      }),
+                    }),
+                    sendUIUpdate,
+                  ],
+                },
+                BUTTON_CLICKED: {
+                  target: "customizeBase",
+                  cond: (context, event) => event.payload.buttonId === "save",
+                },
               },
             },
 
@@ -1654,77 +1777,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
     },
     {
       actions: {
-        unpackCurrentRubricToDocMeta: assign({
-          documentMetaData: (context: AppContext, event: any) => {
-            console.log("Unpacking new Rubric.");
-            const currentRubric = getRubric(
-              context,
-
-              context.documentMetaData.currentRubricID
-            ); //Assuming that pointer is always good.
-            if (currentRubric === null) {
-              console.error(
-                "Could not find requested rubric at " +
-                  context.documentMetaData.currentRubricID
-              );
-              return context.documentMetaData;
-            }
-
-            const topicsLength = currentRubric.topics
-              ? currentRubric.topics.length
-              : 0;
-            // Initialize the new paperPills and paperScores arrays.
-            let paperPills = currentRubric.topics || [];
-            let updatedPaperScores = [...context.documentMetaData.paperScores];
-
-            // Loop through each topic in the rubric.
-            paperPills.forEach((topic) => {
-              const existingTopic = updatedPaperScores.find(
-                (score) => score.title === topic.title
-              );
-
-              if (!existingTopic) {
-                // If the topic doesn't exist, add it with a default score of 0.
-                updatedPaperScores.push({
-                  title: topic.title,
-                  current: 0, // Default score
-                  outOf: -1,
-                  description: "Paper Score - Do Not Reference",
-                });
-
-                //Update the challengeArray to have a new challenge for this topic.
-              }
-            });
-
-            let updatedPills = currentRubric.topics;
-            updatedPills.forEach((topic) => {
-              //Change the topic.score to updatedPaperScores.score
-              const existingTopic = updatedPaperScores.find(
-                (score) => score.title === topic.title
-              );
-              if (existingTopic) {
-                topic.current = existingTopic.current;
-              }
-            });
-
-            // Update the documentMetaData with the new paperScores.
-
-            return {
-              ...context.documentMetaData,
-              paperScores: updatedPaperScores,
-              challengeArray: Array(topicsLength).fill([]),
-              newChallengesArray: Array(topicsLength).fill([]),
-              newChallengesReady: false,
-              pills: currentRubric.topics,
-              reflectionTemplate: currentRubric.reflection,
-              rubricLastUpdated: currentRubric.lastUpdated,
-            };
-          },
-        }),
-
         assignDocMetaDataToUIState: assign({
           uiState: (context: AppContext, event: any) => {
             // 🔹 Debugging: Log before and after assignment
+            console.log(
+              "🔹 Debugging: Assigning document metadata to UI state"
+            );
             const updatedUIState = {
               ...context.uiState,
               lastUpdated: new Date().toISOString(),

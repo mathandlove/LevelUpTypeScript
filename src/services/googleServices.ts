@@ -362,8 +362,8 @@ export async function createGoogleSheet(
               sheetId: 0, // Assuming the first sheet
               startRowIndex: 3, // Row 4 (0-based index)
               endRowIndex: 4,
-              startColumnIndex: 3, // Column D (0-based index)
-              endColumnIndex: 4,
+              startColumnIndex: 4, // Column D (0-based index)
+              endColumnIndex: 5,
             },
             rows: [
               {
@@ -391,8 +391,8 @@ export async function createGoogleSheet(
               sheetId: 0, // Assuming the first sheet
               startRowIndex: 3, // Row 4 (0-based index)
               endRowIndex: 4,
-              startColumnIndex: 4, // Column D (0-based index)
-              endColumnIndex: 5,
+              startColumnIndex: 3, // Column D (0-based index)
+              endColumnIndex: 4,
             },
             rows: [
               {
@@ -573,9 +573,9 @@ export async function updateRubricFromGoogleSheet(
   const gradeLevel = parseInt(rows[1][1], 10) || 0;
 
   // Extract reflection data
-  const includeReflection = rows[2][3]?.toUpperCase() === "TRUE";
-  const askToExplainCopyPaste = rows[2][4]?.toUpperCase() === "TRUE";
-  const reflectionQuestions = rows[2].slice(5).filter((q) => q);
+  const includeReflection = rows[3][3]?.toUpperCase() === "TRUE";
+  const askToExplainCopyPaste = rows[3][4]?.toUpperCase() === "TRUE";
+  const reflectionQuestions = rows[3].slice(5).filter((q) => q);
 
   const reflection: Reflection = {
     enabled: includeReflection,
@@ -591,13 +591,14 @@ export async function updateRubricFromGoogleSheet(
 
   // Extract topics
   const topics = [];
-  for (let i = 3; i < rows.length; i++) {
+  for (let i = 4; i < rows.length; i++) {
     if (rows[i][0]) {
       // Ensure it's a valid topic row
       topics.push({
-        name: rows[i][0],
+        title: rows[i][0],
         description: rows[i][1] || "",
-        requiredLevels: rows[i][2] ? parseInt(rows[i][2], 10) : null,
+        outOf: rows[i][2] ? parseInt(rows[i][2], 10) : null,
+        current: 0,
       });
     }
   }

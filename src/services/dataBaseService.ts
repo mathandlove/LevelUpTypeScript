@@ -68,7 +68,6 @@ export async function installRubric(rubricID: string): Promise<Rubric> {
   const docSnap = await getDoc(docRef);
   let rubric: Rubric;
   if (docSnap.exists()) {
-    console.log("📄 Rubric Data:", docSnap.data());
     rubric = docSnap.data() as Rubric;
     return rubric;
   } else {
@@ -78,7 +77,7 @@ export async function installRubric(rubricID: string): Promise<Rubric> {
 
 export async function saveRubricToDatabase(rubric: Rubric) {
   //Assuming all Rubrics are created with newRubric().
-  const rubricID = rubric.databaseID;
+  const rubricID = rubric.databaseID.substring(4);
   await setDoc(doc(db, "rubrics", rubricID), rubric);
 
   console.log("✅ Rubric updated successfully!");

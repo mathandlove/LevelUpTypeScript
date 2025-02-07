@@ -244,6 +244,9 @@ export async function getRubricArray(
       context.appState.GoogleServices.oauth2Client,
       context.appState.persistentDataFileId
     );
+    console.log(
+      "Retrieved Rubric Array of size: " + metaDocRecords["rubricArray"].length
+    );
     return metaDocRecords["rubricArray"] as Array<Rubric>;
   } catch (error) {
     console.error(
@@ -257,22 +260,33 @@ export async function getRubricArray(
 export async function getOrCreateDefaultRubric(
   context: AppContext
 ): Promise<Rubric> {
-  if (context.documentMetaData.defaultRubric != undefined) {
-    return context.documentMetaData.defaultRubric;
+  const metaDocRecords = await getPersistentDocDataMap(
+    context.appState.GoogleServices.oauth2Client,
+    context.appState.persistentDataFileId
+  );
+  const drive = context.appState.GoogleServices.drive;
+  const metaDefaultRubric = metaDocRecords["defaultRubric"];
+  if (metaDefaultRubric != undefined) {
+    return metaDefaultRubric;
   } else {
-    const metaDocRecords = await getPersistentDocDataMap(
-      context.appState.GoogleServices.oauth2Client,
-      context.appState.persistentDataFileId
-    );
-    const metaDefaultRubric = metaDocRecords["defaultRubric"];
-    if (metaDefaultRubric != null) {
-      return metaDefaultRubric;
-    } else {
-      const defaultRubric = await installDefaultRubric();
-      metaDocRecords["defaultRubric"] = defaultRubric;
-      saveRubricArrayToPersistentData(context); //I don't think we need a wait here?
-      return defaultRubric;
+    const defaultRubric = await installDefaultRubric();
+    metaDocRecords["defaultRubric"] = defaultRubric;
+
+    try {
+      await drive.files.update({
+        fileId: context.appState.persistentDataFileId,
+        media: {
+          mimeType: "application/json",
+
+          body: JSON.stringify(metaDocRecords),
+        },
+      });
+    } catch (error) {
+      console.error("Error saving persistent data:", error);
+      throw error;
     }
+
+    return defaultRubric;
   }
 }
 
@@ -343,6 +357,7 @@ async function getPersistentDocDataMap(
 export async function savePersistentArrayData(context: AppContext) {
   const oauth2Client = context.appState.GoogleServices.oauth2Client;
   const persistentDataId = context.appState.persistentDataFileId;
+  const drive = context.appState.GoogleServices.drive;
   const metaDocRecords = await getPersistentDocDataMap(
     oauth2Client,
     persistentDataId
@@ -350,7 +365,24 @@ export async function savePersistentArrayData(context: AppContext) {
 
   //Save Rubric Array
   metaDocRecords["rubricArray"] = context.documentMetaData.savedRubrics;
+
+  try {
+    await drive.files.update({
+      fileId: persistentDataId,
+      media: {
+        mimeType: "application/json",
+        body: JSON.stringify(metaDocRecords),
+      },
+    });
+  } catch (error) {
+    console.error("Error saving persistent data:", error);
+    throw error;
+  }
+  console.log(
+    `Rubric Array saved to persistent data: ${context.documentMetaData.savedRubrics.length} entries`
+  );
 }
+
 export async function savePersistentDocData(context: AppContext) {
   //We do not neeed to save the document text as it is already saved in the google doc.
   try {
@@ -367,7 +399,8 @@ export async function savePersistentDocData(context: AppContext) {
     const drive = context.appState.GoogleServices.drive;
     persistentDocData.currentText = "";
     persistentDocData.textBeforeEdits = "";
-    persistentDocData.savedRubrics = []; //Arrays are now being saved for global
+    persistentDocData.savedRubrics = []; //Arrays are now being saved for global use.
+    persistentDocData.defaultRubric = undefined;
     persistentDocData.selectedChallengeNumber = -1;
 
     if (metaDocRecords == null) {
@@ -400,7 +433,9 @@ export const getRubric = (context: AppContext, databaseID: string) => {
     (rubric) => rubric.databaseID === databaseID
   );
 
-  console.error("No rubric found with databaseID: " + databaseID); //I could load it from the database, but I hope to never have a reference to a non existent savedFile, so this should never get here.
+  if (savedRubric == null) {
+    throw new Error("No rubric found with databaseID: " + databaseID);
+  }
 
   return savedRubric || null; // Return the found savedRubric or null if none found
 };
