@@ -136,7 +136,7 @@ export async function addChallengeDetailsToChallengeArray(
   const fullText = context.documentMetaData.currentText;
 
   for (let i = 0; i < localChallengeArray.length; i++) {
-    for (let j = 0; j < localChallengeArray[i].length; j++) {
+    for (let j = 0; j < localChallengeArray[i]?.length; j++) {
       const aiOriginalSentence =
         localChallengeArray[i][j].aiSuggestion.originalSentence;
       if (!localChallengeArray[i][j].aiFeeling) {

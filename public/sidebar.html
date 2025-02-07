@@ -1433,6 +1433,7 @@ function handleStateChange(statePayload) {
   // Handle pill buttons
     // Only update pills if they've changed
 // Only rebuild pills if the count changed
+console.log("pills: ", state.pills);
 if (state.pills) {
 if (currentPillCount !== state.pills.length) {
       createPillStructure(state.pills);

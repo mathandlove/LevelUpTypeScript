@@ -114,7 +114,7 @@ export const defaultRubric: Rubric = {
     outOf: 1,
     currentScore: 0,
   },
-  gradeLevel: 1,
+  gradeLevel: 9,
   databaseID: "starterRubric",
   googleSheetID: "",
   isDefault: true,
