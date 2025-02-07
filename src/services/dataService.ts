@@ -340,6 +340,17 @@ async function getPersistentDocDataMap(
   }
 }
 
+export async function savePersistentArrayData(context: AppContext) {
+  const oauth2Client = context.appState.GoogleServices.oauth2Client;
+  const persistentDataId = context.appState.persistentDataFileId;
+  const metaDocRecords = await getPersistentDocDataMap(
+    oauth2Client,
+    persistentDataId
+  );
+
+  //Save Rubric Array
+  metaDocRecords["rubricArray"] = context.documentMetaData.savedRubrics;
+}
 export async function savePersistentDocData(context: AppContext) {
   //We do not neeed to save the document text as it is already saved in the google doc.
   try {

@@ -1,11 +1,4 @@
-import {
-  createMachine,
-  assign,
-  interpret,
-  Interpreter,
-  send,
-  actions,
-} from "xstate";
+import { createMachine, assign, interpret, Interpreter, send } from "xstate";
 import {
   validateToken,
   getOrLoadDocumentMetaData,
@@ -19,7 +12,6 @@ import {
   UIState,
   defaultUIState,
   DocumentMetaData,
-  defaultDocumentMetaData,
   Rubric,
 } from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
@@ -31,7 +23,7 @@ import {
   getCelebration,
   getFailedFeedback,
 } from "./services/aiService.js";
-import { chatGPTKey, StarterLevelUpRubricId } from "./resources/keys.js";
+import { chatGPTKey } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
 import {
   getFullText,
@@ -43,11 +35,7 @@ import {
   compareNewSentenceToOldSentence,
   updateTextCoordinates,
 } from "./services/docServices.js";
-import {
-  installRubric,
-  newRubric,
-  saveRubricToDatabase,
-} from "./services/dataBaseService.js";
+import { newRubric, saveRubricToDatabase } from "./services/dataBaseService.js";
 
 // Initialize the inspector (add this before creating the machine)
 
@@ -100,7 +88,9 @@ type InternalEvent =
   //RubricEvents
   | { type: "LOAD_RUBRIC_ARRAY_FROM_PERSISTENT_DATA" }
   | { type: "RUBRIC_ARRAY_LOADED" }
-  | { type: "NEW_RUBRIC_AND_SHEET_CREATED" };
+  | { type: "NEW_RUBRIC_AND_SHEET_CREATED" }
+  | { type: "UPDATE_RUBRIC" }
+  | { type: "NEW_RUBRIC_UPDATED_FROM_GOOGLE_SHEET" };
 
 // Add button click to AppEvent type
 type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent | InternalEvent;
@@ -197,7 +187,19 @@ function sendExternalPageToOpen(context: AppContext, url: string) {
   }
 }
 
+async function createNewRubricAndSheet(context: AppContext): Promise<Rubric> {
+  try {
+    let rubric = await newRubric(context);
+    rubric = await createGoogleSheet(context, rubric);
+    return rubric;
+  } catch (error) {
+    console.error("❌ Error creating new rubric and sheet:", error);
+    throw error;
+  }
+}
+
 // Define a function to create the machine with initial context
+
 export function createAppMachine(ws: LevelUpWebSocket) {
   return createMachine<AppContext, AppEvent>(
     {
@@ -237,7 +239,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   ],
                 },
                 onError: {
-                  target: "error",
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
+                  ],
                 },
               },
             },
@@ -257,6 +263,13 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     send({
                       type: "RUBRIC_ARRAY_LOADED",
                     }),
+                  ],
+                },
+                onError: {
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
                   ],
                 },
               },
@@ -292,22 +305,74 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
             createNewRubric: {
               invoke: {
-                src: "CreateNewRubric-Sheet-CurrentRubric",
+                src: createNewRubricAndSheet,
                 onDone: {
-                  target: "ready",
+                  target: "waitingForUpdateRubric",
                   actions: [
-                    "assignNewRubricToDocMetaData",
-                    "assignNewRubricToUIState",
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        tempNewRubric: event.data,
+                      }),
+                    }),
+
+                    send({
+                      type: "NEW_RUBRIC_AND_SHEET_CREATED",
+                    }),
+                  ],
+                },
+
+                onError: {
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
+                  ],
+                },
+              },
+            },
+            waitingForUpdateRubric: {
+              on: {
+                USER_BACK_ON_TAB: {
+                  target: "updateRubricFromGoogleSheet",
+                },
+              },
+            },
+            updateRubricFromGoogleSheet: {
+              invoke: {
+                src: (context) => {
+                  return updateRubricFromGoogleSheet(
+                    context,
+                    context.documentMetaData.tempNewRubric
+                  );
+                },
+                onDone: {
+                  target: "waitingForUpdateRubric",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        tempNewRubric: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "NEW_RUBRIC_UPDATED_FROM_GOOGLE_SHEET",
+                    }),
                   ],
                 },
                 onError: {
-                  target: "error",
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
+                  ],
                 },
               },
             },
             saving: {
               invoke: {
                 src: "saveRubric",
+
                 onDone: {
                   target: "ready",
                   actions: ["notifyRubricSaved", "restartChallenges"],
@@ -541,9 +606,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             idleCustomize: {
               on: {
-                CREATE_NEW_RUBRIC: {
-                  target: "getNewRubric",
-                },
                 SAVE_RUBRIC: {
                   //target: "saveCurrentRubric",
                 },
@@ -563,15 +625,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             */
 
-            getNewRubric: {
-              invoke: {
-                src: newRubric, //We want a database id to reference so need to call this!
-                onDone: {
-                  target: "createRubricSheet",
-                  actions: "assignNewRubricToMeta",
-                },
-              },
-            },
             createRubricSheet: {
               //TODO: If this is the only rubric, we need to actually create a new one - don't save over default!
               invoke: {
@@ -1548,12 +1601,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     (context) =>
                       sendExternalPageToOpen(
                         context,
-                        `https://docs.google.com/spreadsheets/d/${
-                          getRubric(
-                            context,
-                            context.documentMetaData.currentRubricID
-                          ).googleSheetID
-                        }/edit?usp=sharing`
+                        `https://docs.google.com/spreadsheets/d/${context.documentMetaData.tempNewRubric?.googleSheetID}/edit?usp=sharing`
                       ),
                     sendUIUpdate,
                   ],
@@ -1570,36 +1618,17 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 }),
                 sendUIUpdate,
               ],
-              invoke: {
-                src: (context) => {
-                  // This is where you pass the context and rubric to the service
-                  const currentRubric = getRubric(
-                    context,
-                    context.documentMetaData.currentRubricID
-                  );
-                  return updateRubricFromGoogleSheet(context, currentRubric);
-                },
-                onDone: {
-                  target: "customizeEditNewWindow",
-
+              on: {
+                NEW_RUBRIC_UPDATED_FROM_GOOGLE_SHEET: {
                   actions: [
-                    "unpackCurrentRubrictoDocMeta",
-                    "assignDocMetaDataToUIState",
-                    savePersistentDocData,
-                    assign({
-                      uiState: (context, event) => ({
-                        ...context.uiState,
-
-                        waitingAnimationOn: false,
-                      }),
-                    }),
                     assign({
                       uiState: (context, event) => ({
                         ...context.uiState,
                         waitingAnimationOn: false,
+                        rubricName:
+                          context.documentMetaData.tempNewRubric?.title,
                       }),
                     }),
-
                     sendUIUpdate,
                   ],
                 },
