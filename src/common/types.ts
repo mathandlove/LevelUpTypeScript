@@ -217,6 +217,8 @@ export interface DocumentMetaData {
   savedRubrics: Array<Rubric>;
   currentRubricID: string;
   defaultRubric?: Rubric;
+  rubricLastUpdated: string;
+  tempNewRubric?: Rubric;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -236,6 +238,7 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   reflectionTemplate: defaultReflection,
   savedRubrics: [],
   currentRubricID: "starterRubric",
+  rubricLastUpdated: new Date().toISOString(),
 };
 
 export interface DocumentMetaDataMap {

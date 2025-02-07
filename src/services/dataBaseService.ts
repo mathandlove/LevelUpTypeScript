@@ -31,7 +31,7 @@ export async function newRubric(context: AppContext): Promise<Rubric> {
     }
   } while (await shortIDExists(shortID));
   const rubric: Rubric = {
-    ...context.documentMetaData.savedRubrics[0],
+    ...context.documentMetaData.defaultRubric,
   }; //THe first Rubric is our default rubric ALWAYS>
   //Need to change the Title at some point which requires a google call.
   // Define the rubric data
