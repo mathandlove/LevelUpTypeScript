@@ -63,7 +63,6 @@ export interface Rubric {
   gradeLevel: number;
   databaseID: string;
   googleSheetID: string;
-  isDefault: boolean;
   lastUpdated: string;
 }
 
@@ -118,7 +117,6 @@ export const defaultRubric: Rubric = {
   gradeLevel: 9,
   databaseID: "starterRubric",
   googleSheetID: "",
-  isDefault: true,
   lastUpdated: new Date().toISOString(),
 };
 
@@ -183,6 +181,7 @@ export interface UIState {
   listOfAvailableRubrics: Array<String>;
   // Challenge card content
   tasks?: TasksArray;
+  importError?: string;
 }
 // Then define any constants
 export const defaultUIState: UIState = {
@@ -221,6 +220,7 @@ export interface DocumentMetaData {
   defaultRubric?: Rubric;
   rubricLastUpdated: string;
   tempNewRubric?: Rubric;
+  tempImportRubricId?: string;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {

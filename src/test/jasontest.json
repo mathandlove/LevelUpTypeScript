@@ -1,33 +1,24 @@
 {
   "rubricArray": [
     {
-      "isDefault": true,
       "topics": [
         {
-          "title": "Froggy Hop",
-          "description": "Speak Like a Frog",
+          "title": "Duck",
+          "description": "Make it sound like I am a duck while writing.",
           "outOf": 5,
           "current": 0
         },
         {
-          "title": "Organization",
-          "description": "Has Logical flow with effective transitions.",
-          "outOf": 5,
-          "current": 0
-        },
-        {
-          "title": "Word Choice",
-          "description": "Uses precise, varied, and appropriate vocabulary.",
-          "outOf": 5,
-          "current": 0
-        },
-        {
-          "title": "Grammar",
-          "description": "Is Free of major grammatical errors .",
+          "title": "Cow",
+          "description": "Make it sound like I am a cow while writing.",
           "outOf": 5,
           "current": 0
         }
       ],
+      "isDefault": true,
+      "databaseID": "LVL-A9EB5",
+      "googleSheetID": "1jLS13tICCx9Eni2VacHS7ozb72VCChLLA7ixHW4fR10",
+      "lastUpdated": "2025-02-08T17:37:11.695Z",
       "gradeLevel": 9,
       "reflection": {
         "enabled": true,
@@ -44,87 +35,72 @@
         "currentScore": 0,
         "noInputOnSubmit": false
       },
-      "lastUpdated": "2025-02-07T22:23:45.278Z",
-      "databaseID": "LVL-Z7GU3",
-      "googleSheetID": "192rzFqqOfhY5MG1E3NaJqKq2adTWPctOkaRYYO19KYo",
-      "title": "Froggy Dance"
+      "title": "Duck and Cow Test"
     }
   ],
   "defaultRubric": {
-    "isDefault": true,
     "topics": [
       {
-        "description": "Has Clear, specific, and well-developed thesis.",
-        "current": 0,
         "title": "Thesis Statement",
-        "outOf": 5
-      },
-      {
         "outOf": 5,
-        "description": "Has Logical flow with effective transitions.",
-        "title": "Organization",
+        "description": "Has Clear, specific, and well-developed thesis.",
         "current": 0
       },
       {
-        "description": "Uses precise, varied, and appropriate vocabulary.",
-        "title": "Word Choice",
+        "description": "Has Logical flow with effective transitions.",
+        "title": "Organization",
         "current": 0,
         "outOf": 5
       },
       {
-        "title": "Grammar",
-        "current": 0,
         "outOf": 5,
-        "description": "Is Free of major grammatical errors ."
+        "current": 0,
+        "description": "Uses precise, varied, and appropriate vocabulary.",
+        "title": "Word Choice"
+      },
+      {
+        "current": 0,
+        "description": "Is Free of major grammatical errors .",
+        "outOf": 5,
+        "title": "Grammar"
       }
     ],
+    "isDefault": true,
+    "databaseID": "starterRubric",
+    "googleSheetID": "",
+    "lastUpdated": "2025-02-08T17:37:11.695Z",
     "gradeLevel": 9,
     "reflection": {
-      "placeholder": "Enter your reflection here...",
       "submittedAnswers": [],
-      "selectedQuestion": 0,
-      "currentScore": 0,
+      "copyPercentIncluded": false,
       "question": [
         "What went well?",
         "What was hard?",
         "How can the teacher help you?"
       ],
-      "enabled": true,
+      "placeholder": "Enter your reflection here...",
+      "currentScore": 0,
       "noInputOnSubmit": false,
+      "enabled": true,
       "outOf": 1,
-      "copyPercentIncluded": false
+      "selectedQuestion": 0
     },
-    "lastUpdated": "2025-02-07T22:23:45.278Z",
-    "databaseID": "starterRubric",
-    "googleSheetID": "",
     "title": "Starter Level Up Rubric"
   },
   "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE": {
     "level": 1,
     "pills": [
       {
-        "description": "Has Clear, specific, and well-developed thesis.",
-        "current": 0,
-        "title": "Thesis Statement",
-        "outOf": 5
-      },
-      {
+        "title": "Duck",
+        "description": "Make it sound like I am a duck while writing.",
         "outOf": 5,
-        "description": "Has Logical flow with effective transitions.",
-        "title": "Organization",
         "current": 0
       },
       {
-        "description": "Uses precise, varied, and appropriate vocabulary.",
-        "title": "Word Choice",
-        "current": 0,
-        "outOf": 5
-      },
-      {
-        "title": "Grammar",
-        "current": 0,
+        "title": "Cow",
+        "description": "Make it sound like I am a cow while writing.",
         "outOf": 5,
-        "description": "Is Free of major grammatical errors ."
+        "current": 0
       }
     ],
     "paperScores": [
@@ -151,32 +127,359 @@
         "current": 0,
         "outOf": -1,
         "description": "Paper Score - Do Not Reference"
+      },
+      {
+        "title": "Reflection",
+        "current": 0,
+        "outOf": -1,
+        "description": "Reflection Score"
+      },
+      {
+        "title": "Duck",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
+      },
+      {
+        "title": "Cow",
+        "current": 0,
+        "outOf": -1,
+        "description": "Paper Score - Do Not Reference"
       }
     ],
-    "challengeArray": [[], [], [], []],
-    "newChallengesArray": [[], [], [], []],
+    "challengeArray": [
+      [
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, in the story it mentions how the old man got scared when he heard a noise.",
+            "aiImprovedSentence": "For example, in the story, it mentions how the old man felt a fright, just like when I hear a loud quack and look around to see if another duck is nearby!",
+            "aiReasoning": "Inserted a duck-related experience to enhance the sentence."
+          },
+          "modifiedSentences": [
+            "For example, in the story it mentions how the old man got scared when he heard a noise."
+          ],
+          "sentenceStartIndex": 400,
+          "sentenceEndIndex": 487,
+          "challengeTitle": "Big Goal: Enhance clarity and engagement in the sentence.",
+          "aiFeeling": "Reading this made me feel confused because the sentence suddenly starts talking about ducks without explaining the connection to the story where the old man was scared by a noise.",
+          "taskArray": [
+            "Identify where extra information about a personal experience is added.",
+            "Think about your own experience that relates to the sentence topic.",
+            "Rewrite the sentence to include a personal experience without changing its original meaning."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "Lastly, some people might like suspense in their life; that is why they like scary stories.",
+            "aiImprovedSentence": "Lastly, some ducks might like suspense in their lives too; that is why they quack excitedly when something unsettling happens in the water!",
+            "aiReasoning": "Incorporated a duck's perspective on suspense to align with the criteria."
+          },
+          "modifiedSentences": [
+            "Lastly, some people might like suspense in their life; that is why they like scary stories."
+          ],
+          "sentenceStartIndex": 618,
+          "sentenceEndIndex": 709,
+          "aiFeeling": "Reading this made me feel confused because I couldn't understand why ducks were suddenly mentioned in a sentence about people and scary stories.",
+          "taskArray": [
+            "Identify the main characters or subjects in the sentence.",
+            "Brainstorm different perspectives that could be interesting for a story related to suspense.",
+            "Reword parts of the sentence to fit the new characters or perspectives."
+          ],
+          "challengeTitle": "Big Goal: Enhance clarity and engagement while incorporating a new perspective."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
+            "aiImprovedSentence": "Ducks enjoy suspense because they get excited to see if a juicy bug will appear on the surface!",
+            "aiReasoning": "Created a relatable duck scenario that reflects excitement."
+          },
+          "modifiedSentences": [
+            "They like suspense because they are excited to see what is going to happen."
+          ],
+          "sentenceStartIndex": 710,
+          "sentenceEndIndex": 785,
+          "challengeTitle": "Big Goal: Enhance sentence clarity and engagement by making it relatable.",
+          "aiFeeling": "Reading this made me feel confused because the sentence seemed too plain and didn't explain what makes the suspense exciting, like the example with the duck looking for a bug.",
+          "taskArray": [
+            "Choose a specific subject instead of 'they' to make the sentence clearer.",
+            "Brainstorm different activities or scenarios to make the subject's interest in suspense more vivid.",
+            "Consider what specific event or outcome makes suspense exciting for the subject."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "That means that after the repetition something strong is going to happen next.",
+            "aiImprovedSentence": "That means that after the flapping sound, something strong might happen next, like a leap into the air to escape!",
+            "aiReasoning": "Related the idea of anticipation to a duck's experience."
+          },
+          "modifiedSentences": [
+            "That means that after the repetition something strong is going to happen next."
+          ],
+          "sentenceStartIndex": 919,
+          "sentenceEndIndex": 997,
+          "challengeTitle": "Big Goal: Enhance clarity and vividness in the sentence's imagery.",
+          "aiFeeling": "Reading this made me feel confused because I wasn't sure what 'the repetition' was referring to and it didn't paint a clear picture in my mind of what could happen next.",
+          "taskArray": [
+            "Identify a more specific word to describe 'something strong' instead of using 'something'.",
+            "Rethink what 'repetition' could specifically be referring to in the context.",
+            "Consider adding descriptive details that create a clearer image of what will happen next."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "I can relate to that because every time I watch a TV show I want to know what is going to happen next.",
+            "aiImprovedSentence": "I can quack to that because every time I float on the pond, I want to know if a yummy bug will appear next!",
+            "aiReasoning": "Replaced the TV reference with a duck-related experience to fit the writing style."
+          },
+          "modifiedSentences": [
+            "I can relate to that because every time I watch a TV show I want to know what is going to happen next."
+          ],
+          "sentenceStartIndex": 998,
+          "sentenceEndIndex": 1100,
+          "challengeTitle": "Big Goal: Enhance clarity and engagement of the sentence.",
+          "taskArray": [
+            "Identify the specific verb used in the sentence.",
+            "Think of a verb that better matches the sentence.",
+            "Replace the current verb with the new verb."
+          ],
+          "aiFeeling": "Reading this made me feel confused because it talks about floating on a pond and waiting for bugs, which doesn't make sense if I'm just trying to watch a TV show."
+        }
+      ],
+      [
+        {
+          "aiSuggestion": {
+            "originalSentence": "First of all, the plot of the story is pretty interesting.",
+            "aiImprovedSentence": "Moo first of all, the plot of the story is udderly interesting, moo.",
+            "aiReasoning": "Added 'Moo' to mimic a cow's sound and used 'udderly' as a playful twist on 'utterly'."
+          },
+          "modifiedSentences": [
+            "First of all, the plot of the story is pretty interesting."
+          ],
+          "sentenceStartIndex": 0,
+          "sentenceEndIndex": 58,
+          "challengeTitle": "Big Goal: Enhance sentence clarity and engagement.",
+          "taskArray": [
+            "Replace the word 'pretty' with a stronger adjective to make the sentence more interesting.",
+            "Think of an adjective that describes how interesting the plot is.",
+            "Make sure the sentence still sounds like it would be spoken by a 6th grader."
+          ],
+          "aiFeeling": "Reading this made me feel confused because the extra \"moo\" noises and the word \"udderly\" seemed silly and didn't explain much about why the plot is interesting."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "What gets interesting in the plot is the rising action when things start to pull the reader in, like killing an old man.",
+            "aiImprovedSentence": "What gets interesting in the plot, moo, is the rising action when things start to pull the reader in, like the big ol' trouble with killing an old man, moo.",
+            "aiReasoning": "Added 'moo' and 'big ol' trouble' to enhance cow-like language."
+          },
+          "modifiedSentences": [
+            "What gets interesting in the plot is the rising action when things start to pull the reader in, like killing an old man."
+          ],
+          "sentenceStartIndex": 59,
+          "sentenceEndIndex": 179,
+          "challengeTitle": "Big Goal: Enhance clarity and engage reader with vivid language.",
+          "aiFeeling": "Reading this made me feel confused and a bit surprised because I didn't expect the random 'moo' sounds and 'big ol' trouble' to be mixed into a serious part about killing an old man.",
+          "taskArray": [
+            "Identify and remove any unnecessary or off-topic words or phrases.",
+            "Re-read the sentence aloud to ensure it flows smoothly without the removed words.",
+            "Ask yourself if the sentence maintains its original meaning and intent after the changes."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, it was mentioned in the story how he cuts the old man's body and hides the corpse in the ground.",
+            "aiImprovedSentence": "For example, moo, it was mentioned in the story how he cuts the old man's body and hides the corpse in the ground, just like how cows dig in the dirt looking for grass, moo.",
+            "aiReasoning": "Added 'moo' and a cow-related comparison to improve the cow-like perspective."
+          },
+          "modifiedSentences": [
+            "For example, it was mentioned in the story how he cuts the old man's body and hides the corpse in the ground."
+          ],
+          "sentenceStartIndex": 180,
+          "sentenceEndIndex": 289,
+          "challengeTitle": "Big Goal: Enhance clarity and engagement of the original sentence.",
+          "aiFeeling": "Reading this made me feel confused because the random 'moo' and cow comparison didn't make sense with the serious topic of cutting and hiding a corpse.",
+          "taskArray": [
+            "Identify an unnecessary word in the sentence.",
+            "Consider the purpose or tone of the sentence to decide if the word fits.",
+            "Remove the word if it does not fit with the rest of the sentence."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "People like the feeling of getting scared because of how it feels and how you can't move when you are scared.",
+            "aiImprovedSentence": "Cows and people alike like the feeling of getting scared, moo, because it makes your hooves tremble and your heart race, just like a scared cow in the field!",
+            "aiReasoning": "Incorporated 'moo' and a reference to a cow's experience to reflect the cow perspective."
+          },
+          "modifiedSentences": [
+            "People like the feeling of getting scared because of how it feels and how you can't move when you are scared."
+          ],
+          "sentenceStartIndex": 290,
+          "sentenceEndIndex": 399,
+          "challengeTitle": "Big Goal: Enhance the clarity and vividness of the sentence.",
+          "taskArray": [
+            "Identify a clearer reason why people enjoy getting scared.",
+            "Think about using more descriptive language to convey the emotion of being scared.",
+            "Ensure the sentence maintains focus on the topic of fear without unrelated references."
+          ],
+          "aiFeeling": "Reading this made me feel confused because it seemed out of place when suddenly comparing people to cows, with \"moo\" thrown in, and I couldn't picture what trembling hooves had to do with people being scared."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, in the story it mentions how the old man got scared when he heard a noise.",
+            "aiImprovedSentence": "For example, moo, in the story it mentions how the old man got scared like a cow at a sudden noise, when he heard a noise, moo.",
+            "aiReasoning": "Added 'moo' and a comparison to a cow's reaction to sounds to enhance the cow-like voice."
+          },
+          "modifiedSentences": [
+            "For example, in the story it mentions how the old man got scared when he heard a noise."
+          ],
+          "sentenceStartIndex": 400,
+          "sentenceEndIndex": 487,
+          "challengeTitle": "Big Goal: Enhance clarity and creativity in sentence expression.",
+          "aiFeeling": "Reading this made me feel puzzled because the random \"moo\" and cow comparison distracted me from understanding the old man's reaction to the noise.",
+          "taskArray": [
+            "Identify the unnecessary repetition in the sentence.",
+            "Think of a way to remove the repetition while keeping the sentence clear.",
+            "Rewrite just the part with repetition to make it more concise."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "Lastly, some people might like suspense in their life; that is why they like scary stories.",
+            "aiImprovedSentence": "Lastly, moo, some cows and people might like suspense in their life; that is why they might munch on scary stories, moo.",
+            "aiReasoning": "Added 'moo' and a reference to cows munching to fit the cow theme."
+          },
+          "modifiedSentences": [
+            "Lastly, some people might like suspense in their life; that is why they like scary stories."
+          ],
+          "sentenceStartIndex": 618,
+          "sentenceEndIndex": 709,
+          "challengeTitle": "Big Goal: Enhance clarity and relevance of the original sentence.",
+          "aiFeeling": "Reading this made me feel confused and distracted because the sentence suddenly brought in cows and \"moo\" when talking about people liking scary stories, which seemed out of place and disrupted the idea being explained.",
+          "taskArray": [
+            "Identify which part of the sentence talks about people's preferences.",
+            "Think about how specific words contribute to the theme of the sentence.",
+            "Add a related, fun element to the sentence to emphasize the theme."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "They like suspense because they are excited to see what is going to happen.",
+            "aiImprovedSentence": "Cows and people like suspense because they are excited to see what is going to happen next, like a juicy patch of grass, moo.",
+            "aiReasoning": "Incorporated a cow-related analogy to enhance the cow perspective."
+          },
+          "modifiedSentences": [
+            "They like suspense because they are excited to see what is going to happen."
+          ],
+          "sentenceStartIndex": 710,
+          "sentenceEndIndex": 785,
+          "challengeTitle": "Big Goal: Make the sentence more engaging and descriptive.",
+          "aiFeeling": "Reading this made me feel confused because I didn't understand how cows and people liking suspense was connected to seeing a juicy patch of grass.",
+          "taskArray": [
+            "Identify the main idea of the sentence.",
+            "Think of one way to relate the idea to cows.",
+            "Rewrite the sentence including the cow-related idea."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "For example, in the story it said, \"The beating grew louder and louder.\"",
+            "aiImprovedSentence": "For example, moo, in the story it said, \"The beating grew louder and louder,\" just like the thumping of hooves when a herd runs, moo.",
+            "aiReasoning": "Added 'moo' and a cow-related image to maintain the cow-like perspective."
+          },
+          "modifiedSentences": [
+            "For example, in the story it said, \"The beating grew louder and louder.\" The old man did not know what was going to happen at night."
+          ],
+          "sentenceStartIndex": 786,
+          "sentenceEndIndex": 918,
+          "challengeTitle": "Big Goal: Enhance clarity and engagement in the sentence.",
+          "aiFeeling": "Reading this made me feel confused and interrupted because the random 'moo' sounds didn't seem to fit with the story about a beating sound.",
+          "taskArray": [
+            "Identify the place where a transition word can be added to the sentence starting with 'For example,'.",
+            "Consider the flow of the sentence and rearrange parts to make it smoother.",
+            "Look for places where the sentence can use punctuation for better clarity."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "The old man did not know what was going to happen at night.",
+            "aiImprovedSentence": "The old man, moo, did not know what was going to happen at night, just like a cow not knowing if there will be a thunderstorm, moo.",
+            "aiReasoning": "Incorporated 'moo' and a cow-related analogy to emphasize fear in the cow's voice."
+          },
+          "modifiedSentences": [
+            "The old man did not know what was going to happen at night."
+          ],
+          "sentenceStartIndex": 859,
+          "sentenceEndIndex": 918,
+          "challengeTitle": "Big Goal: Enhance clarity and expressiveness of the original sentence.",
+          "taskArray": [
+            "Identify the main idea of the sentence without the added analogy or sound effects.",
+            "Remove any added elements that don't contribute directly to the main idea of the sentence.",
+            "Ensure the sentence maintains a clear and concise expression of its original meaning."
+          ],
+          "aiFeeling": "Reading this made me feel confused and amused because the unexpected use of 'moo' twice made it sound like the old man was a cow, which seemed out of place and funny."
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "That means that after the repetition something strong is going to happen next.",
+            "aiImprovedSentence": "That means, moo, that after the repetition something strong, like a stampede, is going to happen next.",
+            "aiReasoning": "Added 'moo' and a cow-related example to further the cow-like voice."
+          },
+          "modifiedSentences": [
+            "That means that after the repetition something strong is going to happen next."
+          ],
+          "sentenceStartIndex": 919,
+          "sentenceEndIndex": 997,
+          "challengeTitle": "Big Goal: Enhance clarity and impact of the original sentence.",
+          "aiFeeling": "Reading this made me feel confused and disconnected because the sentence seemed plain and lacked a fun, vivid example like comparing the strong event to a 'stampede.'",
+          "taskArray": [
+            "Identify the main topic or imagery of the sentence.",
+            "Think of a list of related words or phrases that fit this topic.",
+            "Choose one word or phrase to add to the sentence to enhance the imagery."
+          ]
+        },
+        {
+          "aiSuggestion": {
+            "originalSentence": "I can relate to that because every time I watch a TV show I want to know what is going to happen next.",
+            "aiImprovedSentence": "I can relate to that, moo, because every time I watch a show with my fellow cows, we want to know what will happen next, moo.",
+            "aiReasoning": "Added 'moo' and mentioned fellow cows to keep the cow theme consistent."
+          },
+          "modifiedSentences": [
+            "I can relate to that because every time I watch a TV show I want to know what is going to happen next."
+          ],
+          "sentenceStartIndex": 998,
+          "sentenceEndIndex": 1100,
+          "challengeTitle": "Big Goal: Enhance clarity and conciseness while maintaining the theme.",
+          "aiFeeling": "Reading this made me feel confused and amused because suddenly there were random 'moo' sounds and mentions of \"fellow cows,\" which seemed silly and out of place.",
+          "taskArray": [
+            "Identify the subject of the sentence.",
+            "Determine if the subject is clear to the reader.",
+            "Add any necessary clarification or context to make the subject consistent."
+          ]
+        }
+      ]
+    ],
+    "newChallengesArray": [],
     "newChallengesReady": false,
     "currentText": "",
     "textBeforeEdits": "",
     "savedActivity": { "savedReflections": [], "savedChallenges": [] },
     "reflectionTemplate": {
-      "placeholder": "Enter your reflection here...",
-      "submittedAnswers": [],
-      "selectedQuestion": 0,
-      "currentScore": 0,
+      "enabled": true,
+      "copyPercentIncluded": false,
       "question": [
         "What went well?",
         "What was hard?",
         "How can the teacher help you?"
       ],
-      "enabled": true,
-      "noInputOnSubmit": false,
+      "submittedAnswers": [],
+      "selectedQuestion": 0,
+      "placeholder": "",
       "outOf": 1,
-      "copyPercentIncluded": false
+      "currentScore": 0,
+      "noInputOnSubmit": false
     },
     "savedRubrics": [],
-    "currentRubricID": "LVL-Z7GU3",
-    "rubricLastUpdated": "2025-02-07T22:23:45.278Z",
+    "currentRubricID": "LVL-A9EB5",
+    "rubricLastUpdated": "2025-02-08T17:37:11.695Z",
     "selectedChallengeNumber": -1
   }
 }

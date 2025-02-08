@@ -269,7 +269,10 @@ export async function addChallengesToChallengeArrays(
   //When loading doc, we verified the length of the challengeArray.
 
   for (let i = 0; i < localChallengeArray.length; i++) {
-    if (context.documentMetaData.challengeArray[i]?.length < 2) {
+    if (
+      context.documentMetaData.challengeArray.length <= i ||
+      context.documentMetaData.challengeArray[i]?.length < 2
+    ) {
       promises.push(
         addChallengesToTopic(context, i).then((challenges) => {
           // Safely merge results into the local copy

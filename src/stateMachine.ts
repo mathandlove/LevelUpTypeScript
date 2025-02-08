@@ -1,4 +1,11 @@
-import { createMachine, assign, interpret, Interpreter, send } from "xstate";
+import {
+  createMachine,
+  assign,
+  interpret,
+  Interpreter,
+  send,
+  actions,
+} from "xstate";
 import {
   validateToken,
   getOrLoadDocumentMetaData,
@@ -36,7 +43,11 @@ import {
   compareNewSentenceToOldSentence,
   updateTextCoordinates,
 } from "./services/docServices.js";
-import { newRubric, saveRubricToDatabase } from "./services/dataBaseService.js";
+import {
+  createRubricCopy,
+  newRubric,
+  saveRubricToDatabase,
+} from "./services/dataBaseService.js";
 
 // Initialize the inspector (add this before creating the machine)
 
@@ -86,6 +97,7 @@ type InternalEvent =
   | { type: "RUBRIC_SHEET_CREATED" }
   | { type: "CREATE_NEW_RUBRIC" }
   | { type: "SAVE_RUBRIC" }
+  | { type: "CREATE_TEMP_GOOGLE_SHEET" }
   //RubricEvents
   | { type: "LOAD_RUBRIC_ARRAY_FROM_PERSISTENT_DATA" }
   | { type: "RUBRIC_ARRAY_LOADED" }
@@ -93,7 +105,8 @@ type InternalEvent =
   | { type: "UPDATE_RUBRIC" }
   | { type: "NEW_RUBRIC_UPDATED_FROM_GOOGLE_SHEET" }
   | { type: "NEW_RUBRIC_UNPACKED" }
-  | { type: "NEW_RUBRIC_SAVED" };
+  | { type: "NEW_RUBRIC_SAVED" }
+  | { type: "CREATE_RUBRIC_COPY"; payload: { importDocumentId: string } };
 
 // Add button click to AppEvent type
 type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent | InternalEvent;
@@ -402,7 +415,102 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
             ready: {
               on: {
+                CREATE_RUBRIC_COPY: {
+                  target: "createRubricCopy",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        tempImportRubricId: event.payload.importDocumentId,
+                      }),
+                    }),
+                  ],
+                },
                 CREATE_NEW_RUBRIC: "createNewRubric",
+                CREATE_TEMP_GOOGLE_SHEET: "createTempGoogleSheet",
+              },
+            },
+
+            createRubricCopy: {
+              invoke: {
+                src: (context) =>
+                  createRubricCopy(
+                    context,
+                    context.documentMetaData.tempImportRubricId
+                  ),
+                onDone: {
+                  target: "saveNewRubric",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        tempNewRubric: event.data,
+                        tempImportRubricId: undefined,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "ready",
+                  actions: [
+                    (context, event) => {
+                      console.log("Error in createRubricCopy");
+                    },
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+
+                        tempNewRubric: undefined,
+                        tempImportRubricId: undefined,
+                      }),
+                    }),
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        importError: "Rubric does not exist.",
+                        waitingAnimationOn: false,
+                      }),
+                    }),
+                    sendUIUpdate,
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        importError: "",
+                      }),
+                    }),
+                  ],
+                },
+              },
+            },
+
+            createTempGoogleSheet: {
+              invoke: {
+                src: (context) =>
+                  createGoogleSheet(
+                    context,
+                    context.documentMetaData.tempNewRubric
+                  ),
+                onDone: {
+                  target: "waitingForUpdateRubric",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        tempNewRubric: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "NEW_RUBRIC_AND_SHEET_CREATED",
+                    }),
+                  ],
+                },
+                onError: {
+                  target: [
+                    "#app.UI.uiError",
+                    "#app.RubricState.error",
+                    "#app.MainFlow.error",
+                  ],
+                },
               },
             },
 
@@ -442,56 +550,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 BUTTON_CLICKED: {
                   target: "saveNewRubric",
                   cond: (context, event) => event.payload.buttonId === "save",
-
-                  actions: [
-                    assign({
-                      documentMetaData: (context, event) => {
-                        const updatedRubrics =
-                          context.documentMetaData.savedRubrics.some(
-                            (rubric) =>
-                              rubric.databaseID ===
-                              context.documentMetaData.tempNewRubric.databaseID
-                          )
-                            ? context.documentMetaData.savedRubrics.map(
-                                (rubric) =>
-                                  rubric.databaseID ===
-                                  context.documentMetaData.tempNewRubric
-                                    .databaseID
-                                    ? {
-                                        ...rubric,
-                                        ...context.documentMetaData
-                                          .tempNewRubric,
-                                      }
-                                    : rubric
-                              )
-                            : [
-                                ...context.documentMetaData.savedRubrics,
-                                context.documentMetaData.tempNewRubric,
-                              ];
-
-                        return {
-                          ...context.documentMetaData,
-                          savedRubrics: updatedRubrics,
-                        };
-                      },
-                    }),
-                    assign({
-                      documentMetaData: (context: AppContext) => {
-                        const newRubric = getRubric(
-                          context,
-                          context.documentMetaData.tempNewRubric.databaseID
-                        );
-                        return {
-                          ...context.documentMetaData,
-                          ...unpackRubric(context, newRubric),
-                        };
-                      },
-                    }),
-                    "assignDocMetaDataToUIState",
-                    send({
-                      type: "NEW_RUBRIC_UNPACKED",
-                    }),
-                  ],
                 },
               },
             },
@@ -528,13 +586,62 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               },
             },
             saveNewRubric: {
+              entry: [
+                assign({
+                  documentMetaData: (context, event) => {
+                    const updatedRubrics =
+                      context.documentMetaData.savedRubrics.some(
+                        (rubric) =>
+                          rubric.databaseID ===
+                          context.documentMetaData.tempNewRubric.databaseID
+                      )
+                        ? context.documentMetaData.savedRubrics.map((rubric) =>
+                            rubric.databaseID ===
+                            context.documentMetaData.tempNewRubric.databaseID
+                              ? {
+                                  ...rubric,
+                                  ...context.documentMetaData.tempNewRubric,
+                                }
+                              : rubric
+                          )
+                        : [
+                            ...context.documentMetaData.savedRubrics,
+                            context.documentMetaData.tempNewRubric,
+                          ];
+
+                    return {
+                      ...context.documentMetaData,
+                      savedRubrics: updatedRubrics,
+                    };
+                  },
+                }),
+                assign({
+                  documentMetaData: (context: AppContext) => {
+                    const newRubric = getRubric(
+                      context,
+                      context.documentMetaData.tempNewRubric.databaseID
+                    );
+                    return {
+                      ...context.documentMetaData,
+                      ...unpackRubric(context, newRubric),
+                    };
+                  },
+                }),
+                "assignDocMetaDataToUIState",
+                send({
+                  type: "NEW_RUBRIC_UNPACKED",
+                }),
+              ],
+
               invoke: {
                 src: async (context) => {
-                  await saveRubricToDatabase(
+                  const newRubric = await saveRubricToDatabase(
                     context.documentMetaData.tempNewRubric
                   );
                   await savePersistentArrayData(context);
+                  return newRubric;
                 },
+
                 onDone: {
                   target: "ready",
                   actions: [
@@ -581,6 +688,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     ...context.documentMetaData,
                     newChallengesArray: [],
                     newChallengesReady: false,
+                    challengeArray: [],
                   }),
                 }),
               ],
@@ -603,9 +711,13 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 onDone: {
                   target: "addChallengeDetails",
                   actions: [
+                    (context, event) => {
+                      console.log("🥤 addChallengesToChallengeArrays done");
+                    },
                     assign({
                       documentMetaData: (context, event) => ({
                         ...context.documentMetaData,
+
                         newChallengesArray: event.data,
                       }),
                     }),
@@ -833,9 +945,33 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       },
                     ],
                   },
+                  {
+                    cond: (context, event) =>
+                      event.payload.buttonId === "load-rubric-button",
+                    actions: [
+                      (context, event) => {
+                        console.log(
+                          "🥤 Sending CREATE_RUBRIC_COPY",
+                          event.payload.importDocumentId
+                        );
+                      },
+                      send((context, event) => ({
+                        type: "CREATE_RUBRIC_COPY",
+                        payload: {
+                          importDocumentId: event.payload.importDocumentId,
+                        },
+                      })),
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: true,
+                        }),
+                      }),
+                    ],
+                  },
 
                   {
-                    //target: "#app.ChallengeCreator.reset",
+                    target: "#app.ChallengeCreator.reset",
                     cond: (context, event) =>
                       event.payload.buttonId === "rubric-dropdown",
                     actions: [
@@ -897,32 +1033,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     ],
                   },
                 ],
-              },
-            },
-
-            createRubricSheet: {
-              //TODO: If this is the only rubric, we need to actually create a new one - don't save over default!
-              invoke: {
-                src: (context) =>
-                  createGoogleSheet(
-                    context,
-                    null //TODO THIS IS INCORRECT!!! Needs to pass Rubric from previous state.
-
-                    //Note we will always create a googlesheet with new rubrics so this won't be needed anyway
-                  ),
-
-                onDone: {
-                  target: "idleCustomize",
-                  actions: [
-                    (context) => {
-                      const rubric = getRubric(
-                        context,
-                        context.documentMetaData.currentRubricID
-                      );
-                      saveRubricToDatabase(rubric);
-                    },
-                  ],
-                },
               },
             },
 
@@ -1791,6 +1901,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   uiState: (context, event) => ({
                     ...context.uiState,
                     currentPage: "customize-card",
+                    waitingAnimationOn: false,
                     visibleButtons: [
                       "back-button",
                       "edit-rubric-button",
@@ -1807,9 +1918,13 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               ],
 
               on: {
+                NEW_RUBRIC_UNPACKED: {
+                  target: "customizeBase",
+                },
                 BUTTON_CLICKED: [
                   {
                     target: "home",
+
                     cond: (context, event) =>
                       event.payload.buttonId === "back-button",
                   },
@@ -1820,7 +1935,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       "#app.RubricState.waitingForUpdateRubric",
                     ],
                     cond: (context, event) =>
-                      event.payload.buttonId === "edit-rubric-button",
+                      event.payload.buttonId === "edit-rubric-button" &&
+                      getRubric(
+                        context,
+                        context.documentMetaData.currentRubricID
+                      ).googleSheetID != undefined,
                     actions: [
                       assign({
                         documentMetaData: (context, event) => ({
@@ -1831,6 +1950,31 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                           ),
                         }),
                       }),
+                      //if tempNewRubric.googleSheetID is undefined, we need to send CREATE_TEMP_GOOGLE_SHEET
+                      sendUIUpdate,
+                    ],
+                  },
+                  {
+                    target: ["customizeNew"],
+                    cond: (context, event) =>
+                      event.payload.buttonId === "edit-rubric-button" &&
+                      getRubric(
+                        context,
+                        context.documentMetaData.currentRubricID
+                      ).googleSheetID === undefined,
+                    actions: [
+                      assign({
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          tempNewRubric: getRubric(
+                            context,
+                            context.documentMetaData.currentRubricID
+                          ),
+                        }),
+                      }),
+                      send((context, event) => ({
+                        type: "CREATE_TEMP_GOOGLE_SHEET",
+                      })),
                       sendUIUpdate,
                     ],
                   },
@@ -1881,9 +2025,17 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               on: {
                 BUTTON_CLICKED: [
                   {
-                    target: "customizeBase",
+                    target: ["customizeBase", "#app.RubricState.ready"],
                     cond: (context, event) =>
                       event.payload.buttonId === "back-button",
+                    actions: [
+                      assign({
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          tempNewRubric: undefined,
+                        }),
+                      }),
+                    ],
                   },
 
                   {
@@ -1894,8 +2046,8 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         uiState: (context, event) => ({
                           ...context.uiState,
                           waitingAnimationOn:
-                            context.documentMetaData.tempNewRubric ===
-                            undefined, // Only wait if no sheet exists
+                            context.documentMetaData.tempNewRubric
+                              ?.googleSheetID === undefined, // Only wait if no sheet exists
                           visibleButtons: context.documentMetaData.tempNewRubric
                             ? ["save"]
                             : ["back-button", "start-edits-button"], // Show "save" if sheet exists
@@ -2069,12 +2221,22 @@ export function createAppMachine(ws: LevelUpWebSocket) {
         addNewChallengesToChallengeArray: assign({
           documentMetaData: (context) => {
             if (context.documentMetaData.newChallengesReady) {
-              const { challengeArray, newChallengesArray } =
+              let { challengeArray, newChallengesArray } =
                 context.documentMetaData;
 
               // Debugging: Log the initial state
 
               // Merge corresponding arrays at each index
+              if (
+                challengeArray.length < context.documentMetaData.pills.length
+              ) {
+                const localChallengeArray = Array.from(
+                  { length: context.documentMetaData.pills.length },
+                  () => [] // Initialize each element as an empty array
+                );
+                challengeArray = localChallengeArray;
+              }
+
               const updatedChallengeArray = challengeArray.map((arr, index) => {
                 const newArrayAtIndex = newChallengesArray[index] || []; // Handle missing indices // Debugging: Log merging process
                 return arr.concat(newArrayAtIndex); // Append the arrays

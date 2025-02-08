@@ -1034,7 +1034,7 @@ width: 210px; /* Keep it from stretching too much */
 }
 
 .rubric-input {
-    width: 98px;
+    width: 96px;
     height:21px;
     padding: 5px;
     padding-left:10px;
@@ -1100,6 +1100,13 @@ margin-right:10px;
 
 
 }
+
+.rubric-error {
+  color: darkred !important; /* ✅ Turns text dark red */
+  font-weight: bold; /* ✅ Optional: make it stand out */
+}
+
+
 
 
   </style>
@@ -1290,7 +1297,7 @@ margin-right:10px;
 
     <!-- Input & Add on the SAME line -->
      <div class="rubric-section" style="margin-bottom:0px">
-      <div class="rubric-label" >Import Rubric:</div>
+      <div class="rubric-label" id="rubric-import-label">Import Rubric:</div>
      </div>
     <div class="rubric-section" style="flex-direction: row; justify-content: flex-start;align-items: center;">
       <input 
@@ -1299,7 +1306,10 @@ margin-right:10px;
         id="rubric-input"
         class="rubric-input"
         placeholder="LVL-xxxxx"
-      />      <div class="rubric-inline-actions">
+      />      
+
+
+      <div class="rubric-inline-actions">
       <button class="level-up-button" id="load-rubric-button">Add</button>
     </div>
     </div>
@@ -1377,10 +1387,26 @@ let isReconnecting = false;
 //ngrok http 3000
 
 
+const defaultUIState= {
+  currentPage: "home-page",
+  waitingAnimationOn: true,
+  visibleButtons: [],
+  buttonsDisabled: [],
+  level: 1,
+  formerLevel: 1,
+  animateLevelUp: false,
+  timeSpentHours: 0,
+  timeSpentMinutes: 0,
+  copypasted: 0,
+  selectedRubric: 0,
+  listOfAvailableRubrics: [],
+};
 
 async function init() {
+handleStateChange(defaultUIState);
 connectWebSocket();
 getStoredTokenData()
+
 
 }
 async function getDocumentData() {
@@ -1715,10 +1741,23 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
   }
 }
 
+  const rubricLabel = document.getElementById('rubric-import-label');
+
+if (state.importError) {
+  rubricLabel.classList.add('rubric-error');
+  rubricLabel.textContent = `${state.importError}`;
+} else {
+  rubricLabel.classList.remove('rubric-error');
+  rubricLabel.textContent = "Import Rubric:";
+}
+
+
+
 
 if (!state.waitingAnimationOn) {
     enableAllButtons();
   }
+
 
   if (state.animateLevelUp) {
 increaseLevel(state.formerLevel,state.level);
@@ -1935,8 +1974,31 @@ function setupEventHandlers() {
               textResponse: document.querySelector('.reflection-textarea')?.value || ''
             }
           });
-        } else {
+        }else if(buttonId === "load-rubric-button"){
+          const inputValue = document.getElementById("rubric-input")?.value;
+          if(inputValue !== "" && inputValue !== undefined){
           sendWebSocketMessage({
+            type: 'BUTTON_CLICKED',
+            payload: {
+
+              buttonId: buttonId,
+              clientId: clientId,
+              documentId: documentId,
+              importDocumentId: inputValue
+            }  
+          });
+          }
+          else{
+            state.importError = "Missing Rubric ID.";
+            handleStateChange(state);
+          }
+
+
+
+        }
+        else {
+          sendWebSocketMessage({
+
             type: 'BUTTON_CLICKED',
             payload: {
               buttonId: buttonId,
@@ -1953,7 +2015,6 @@ function setupEventHandlers() {
   const customizeLink = document.querySelector('.customize-link');
   if (customizeLink) {
     customizeLink.onclick = (event) => {
-      navigator.clipboard.writeText("Text was pasted here!");
       event.preventDefault(); // Prevent default link behavior
       disableAllButtons();
       sendWebSocketMessage({
