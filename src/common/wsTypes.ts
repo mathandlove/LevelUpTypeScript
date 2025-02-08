@@ -130,11 +130,15 @@ export function isValidIncomingWebSocketMessage(
 export interface OutgoingWebSocketMessage {
   type: WebSocketOutputMessageType;
   message?: string;
-  payload?: UIState | { url: string };
+  payload?:
+    | UIState
+    | { url: string }
+    | { rubricID: string; rubricName: string; rubricLink: string };
 }
 
 type WebSocketOutputMessageType =
   | "STATE" // UI state updates
   | "WELCOME" // Server welcome message
   | "UPDATE_SCOPE_REQUEST" // Scope updates
-  | "EXTERNAL_PAGE_TO_OPEN"; // External page to open
+  | "EXTERNAL_PAGE_TO_OPEN" // External page to open
+  | "SHARE_RUBRIC_POPUP";
