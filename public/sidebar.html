@@ -74,23 +74,6 @@
         padding-bottom: 60px;
       }
 
-      .sidebar-image-container {
-        position: relative;
-        width: 100%;
-        height: 180px;
-        margin-bottom: 0;
-        overflow: hidden;
-      }
-
-      .sidebar-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
 
       .card {
         flex: 1;
@@ -997,13 +980,11 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
-    width: 100%;
+    margin: 0px 0;
 }
 
 .rubric-dropdown {
-    width: 95%; /* Adjust width */
-    max-width: 280px; /* Keep it from stretching too much */
+width: 210px; /* Keep it from stretching too much */
     padding: 12px;
     font-size: 12px;
     font-weight: 500;
@@ -1038,6 +1019,87 @@ button {
     margin-top: 15px;
     text-align: center;
   }
+
+  .rubric-load-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.rubric-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.rubric-input {
+    width: 80px;
+    height:21px;
+    padding: 5px;
+    padding-left:10px;
+    padding-right:10px;
+    font-size: 14px;
+    border: 2px solid #374363;
+    border-radius: 8px;
+    outline: none;
+    text-align: left;
+    margin-right:10px;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.rubric-divider {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.rubric-input::placeholder {
+  color: #b6b9c0;      /* Example color */
+  font-style: italic;    /* Example font style */
+  /* Any other desired placeholder styling */
+}
+
+.rubric-input:focus {
+    border-color: #2a6fc4;
+    box-shadow: 0 0 4px rgba(42, 111, 196, 0.4);
+}
+
+.rubric-section {
+  /* Let this container stack its children vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Align items to the left (optional) */
+  margin-bottom: 1rem;   
+  padding-left:5px;   /* Space after the rubric section (optional) */
+}
+
+.rubric-section select {
+  /* Ensure the dropdown is a full-width block so it doesn't sit on the same line */
+  display: block;
+  margin-bottom: 10px;      /* Spacing between the dropdown and the buttons */
+}
+
+.rubric-inline-actions {
+  /* Put the Edit and Share buttons side by side */
+  display: flex;
+  flex-direction: row;
+  gap: 0px;                /* Spacing between the buttons */
+}
+
+.rubric-inline-actions .level-up-button {
+  /* Let each button expand, but limit to 25% of the viewport width */
+  flex: 1;
+  width: 75px;
+  font-size: 13px;
+  margin: 0px 0px;
+margin-right:10px;
+  border-radius: 10px;
+
+
+}
 
 
   </style>
@@ -1207,25 +1269,58 @@ button {
   
           <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
 <!-- CUSTOMIZE CARD -->
+
 <div class="card" id="customize-card" style="display: none; flex: 1;">
   <div class="scroll-container">
-    <div class="rubric-label">Current Rubric:</div>
+
+    <!-- Rubric Dropdown and Edit/Share -->
     <div class="rubric-section">
+      <div class="rubric-label">Current Rubric:</div>
       <select id="rubric-dropdown" class="rubric-dropdown">
         <option value="" disabled selected>Loading Rubrics...</option>
       </select>
       
+      <div class="rubric-inline-actions">
+        <button class="level-up-button" id="edit-rubric-button">Edit</button>
+        <button class="level-up-button" id="share-rubric-button">Share</button>
+      </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="rubric-actions">
-      <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
-      <button class="level-up-button full-width" id="share-rubric-button">Share</button>
-      <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
-      <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+    <hr class="rubric-divider" />
+
+    <!-- Input & Add on the SAME line -->
+     <div class="rubric-section" style="margin-bottom:0px">
+      <div class="rubric-label" >Import Rubric:</div>
+     </div>
+    <div class="rubric-section" style="flex-direction: row; justify-content: flex-start;align-items: center;">
+      <input 
+
+        type="text"
+        id="rubric-input"
+        class="rubric-input"
+        placeholder="LVL-xxxxx"
+      />      <div class="rubric-inline-actions">
+      <button class="level-up-button" id="load-rubric-button">Add</button>
     </div>
-  </div>
-</div>
+    </div>
+
+    <hr class="rubric-divider" />
+
+    <!-- New Button -->
+    <div class="rubric-section">
+      <div class="rubric-label">Create Custom Rubric:</div>
+      <div class="rubric-inline-actions">
+
+      <button class="level-up-button" id="new-rubric-button">New</button>
+      </div>
+    </div>
+
+  </div> <!-- scroll-container -->
+</div> <!-- card -->
+
+
+
+
 
           <!-- NEW RUBRIC CARD -->
           <div class="card" id="customize-card-edit-newWindow" style="display: none; flex: 1;">
