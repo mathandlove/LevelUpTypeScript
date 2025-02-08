@@ -190,6 +190,25 @@ function sendExternalPageToOpen(context: AppContext, url: string) {
   }
 }
 
+function sendShareRubricPopup(
+  context: AppContext,
+  rubricID: string,
+  rubricName: string,
+  rubricLink: string
+) {
+  const ws = context.appState.ws;
+  if (ws?.sendMessage) {
+    ws.sendMessage({
+      type: "SHARE_RUBRIC_POPUP",
+      payload: {
+        rubricID: rubricID,
+        rubricName: rubricName,
+        rubricLink: rubricLink,
+      },
+    });
+  }
+}
+
 async function createNewRubricAndSheet(context: AppContext): Promise<Rubric> {
   try {
     let rubric = await newRubric(context);
@@ -442,13 +461,13 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                                         ...rubric,
                                         ...context.documentMetaData
                                           .tempNewRubric,
-                                      } // ✅ Update existing rubric
+                                      }
                                     : rubric
                               )
                             : [
                                 ...context.documentMetaData.savedRubrics,
                                 context.documentMetaData.tempNewRubric,
-                              ]; // ✅ Add new rubric if not found
+                              ];
 
                         return {
                           ...context.documentMetaData,
@@ -795,6 +814,24 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     target: "idleHome",
                     cond: (context, event) =>
                       event.payload.buttonId === "back-button",
+                  },
+                  {
+                    cond: (context, event) =>
+                      event.payload.buttonId === "share-rubric-button",
+                    actions: [
+                      (context) => {
+                        const currentRubric = getRubric(
+                          context,
+                          context.documentMetaData.currentRubricID
+                        );
+                        sendShareRubricPopup(
+                          context,
+                          currentRubric.databaseID,
+                          currentRubric.title,
+                          "https://www.wonder.io"
+                        );
+                      },
+                    ],
                   },
 
                   {
