@@ -56,7 +56,7 @@ export function initializeWebSocket(server: Server): void {
     ws.on("close", () => {
       logger.info("🔴 WebSocket connection closed");
       // Clean up the actor when the connection closes
-      ws.actor.stopAll(); // Stop the actor
+      ws.actor?.stopAll(); // Stop the actor
     });
 
     // Send welcome message

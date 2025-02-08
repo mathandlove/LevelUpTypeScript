@@ -63,6 +63,7 @@ export type IncomingWebSocketMessage =
         buttonTitle?: number;
         textResponse?: string;
         selectedIndex?: number;
+        importDocumentId?: string;
         clientId: string;
         documentId: string;
       };

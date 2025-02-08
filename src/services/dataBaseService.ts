@@ -15,25 +15,36 @@ import { AppContext } from "../stateMachine.js";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+export async function createRubricCopy(
+  context: AppContext,
+  rubricID: string
+): Promise<Rubric> {
+  const docRef = doc(db, "rubrics", rubricID);
+  const docSnap = await getDoc(docRef);
+  if (!docSnap.exists()) {
+    throw new Error("No such rubric found!");
+  }
+  const rubric = docSnap.data() as Rubric;
+
+  const newRubricID = await getFreshRubridID();
+
+  const newRubric = {
+    ...rubric,
+    databaseID: newRubricID, // If your schema has an "id" field, update it
+    lastUpdated: new Date().toISOString(), // Optionally update timestamp
+  };
+  const newDocRef = doc(db, "rubrics", newRubricID);
+  await setDoc(newDocRef, newRubric);
+  return newRubric;
+}
 // Function to create a rubric with collision detection
 export async function newRubric(context: AppContext): Promise<Rubric> {
-  let shortID: string;
-  let attempts = 0;
-  const maxAttempts = 10; // Prevent infinite loops in rare cases
+  const shortID = await getFreshRubridID();
 
-  // Keep generating new short IDs until we find an unused one
-  do {
-    shortID = generateShortID();
-    attempts++;
-    if (attempts >= maxAttempts) {
-      console.error("❌ Too many ID collisions, try increasing ID length.");
-      return;
-    }
-  } while (await shortIDExists(shortID));
   const rubric: Rubric = {
     ...context.documentMetaData.defaultRubric,
   }; //THe first Rubric is our default rubric ALWAYS>
-  //Need to change the Title at some point which requires a google call.
+  //TODO Need to change the Title at some point which requires a google call.
   // Define the rubric data
   rubric.databaseID = shortID;
 
@@ -46,6 +57,28 @@ export async function newRubric(context: AppContext): Promise<Rubric> {
 
   return rubric;
   // Function to generate a 5-character short ID
+}
+
+async function getFreshRubridID(): Promise<string> {
+  let shortID: string;
+  let attempts = 0;
+
+  const maxAttempts = 10; // Prevent infinite loops in rare cases
+
+  // Keep generating new short IDs until we find an unused one
+  do {
+    shortID = generateShortID();
+    attempts++;
+    if (attempts >= maxAttempts) {
+      console.error("❌ Too many ID collisions, try increasing ID length.");
+      return Promise.reject(
+        "Too many ID collisions, try increasing ID length."
+      );
+    }
+  } while (await shortIDExists(shortID));
+
+  return shortID;
+
   function generateShortID(length = 5): string {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let shortID = "";
@@ -75,12 +108,17 @@ export async function installRubric(rubricID: string): Promise<Rubric> {
   }
 }
 
-export async function saveRubricToDatabase(rubric: Rubric) {
+export async function saveRubricToDatabase(rubric: Rubric): Promise<Rubric> {
+  const rubricToSave = {
+    ...rubric,
+    googleSheetID: rubric.googleSheetID,
+  };
   //Assuming all Rubrics are created with newRubric().
-  const rubricID = rubric.databaseID.substring(4);
-  await setDoc(doc(db, "rubrics", rubricID), rubric);
+  const rubricID = rubric.databaseID;
+  await setDoc(doc(db, "rubrics", rubricID), rubricToSave);
 
   console.log("✅ Rubric updated successfully!");
+  return rubric;
 }
 
 export async function installDefaultRubric(): Promise<Rubric> {
