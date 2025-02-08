@@ -423,15 +423,38 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 BUTTON_CLICKED: {
                   target: "saveNewRubric",
                   cond: (context, event) => event.payload.buttonId === "save",
+
                   actions: [
                     assign({
-                      documentMetaData: (context, event) => ({
-                        ...context.documentMetaData,
-                        savedRubrics: [
-                          ...context.documentMetaData.savedRubrics,
-                          context.documentMetaData.tempNewRubric,
-                        ],
-                      }),
+                      documentMetaData: (context, event) => {
+                        const updatedRubrics =
+                          context.documentMetaData.savedRubrics.some(
+                            (rubric) =>
+                              rubric.databaseID ===
+                              context.documentMetaData.tempNewRubric.databaseID
+                          )
+                            ? context.documentMetaData.savedRubrics.map(
+                                (rubric) =>
+                                  rubric.databaseID ===
+                                  context.documentMetaData.tempNewRubric
+                                    .databaseID
+                                    ? {
+                                        ...rubric,
+                                        ...context.documentMetaData
+                                          .tempNewRubric,
+                                      } // ✅ Update existing rubric
+                                    : rubric
+                              )
+                            : [
+                                ...context.documentMetaData.savedRubrics,
+                                context.documentMetaData.tempNewRubric,
+                              ]; // ✅ Add new rubric if not found
+
+                        return {
+                          ...context.documentMetaData,
+                          savedRubrics: updatedRubrics,
+                        };
+                      },
                     }),
                     assign({
                       documentMetaData: (context: AppContext) => {
@@ -1755,25 +1778,35 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   },
 
                   {
-                    target: "customizeEditNewWindow",
+                    target: [
+                      "customizeNew",
+                      "#app.RubricState.waitingForUpdateRubric",
+                    ],
                     cond: (context, event) =>
                       event.payload.buttonId === "edit-rubric-button",
                     actions: [
-                      () => {
-                        console.log("NEW WINDOW EDIT BUTTON PRESSED");
-                      },
+                      assign({
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          tempNewRubric: getRubric(
+                            context,
+                            context.documentMetaData.currentRubricID
+                          ),
+                        }),
+                      }),
+                      sendUIUpdate,
                     ],
                   },
 
                   {
-                    target: "customizeEditNewWindow",
+                    target: "customizeNew",
                     cond: (context, event) =>
                       event.payload.buttonId === "new-rubric-button",
                     actions: [
                       assign({
-                        uiState: (context, event) => ({
-                          ...context.uiState,
-                          rubricName: "New Default Rubric",
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          tempNewRubric: undefined,
                         }),
                       }),
                       send((context, event) => ({
@@ -1794,7 +1827,8 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               },
             },
             customizeLoadRubric: {},
-            customizeEditNewWindow: {
+
+            customizeNew: {
               entry: [
                 assign({
                   uiState: (context, event) => ({
@@ -1805,12 +1839,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     visibleButtons: ["back-button", "start-edits-button"],
                   }),
                 }),
-                assign({
-                  documentMetaData: (context, event) => ({
-                    ...context.documentMetaData,
-                    tempNewRubric: undefined,
-                  }),
-                }),
                 sendUIUpdate,
               ],
               on: {
@@ -1819,11 +1847,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     target: "customizeBase",
                     cond: (context, event) =>
                       event.payload.buttonId === "back-button",
-                    actions: [
-                      send((context, event) => ({
-                        type: "SAVE_RUBRIC",
-                      })),
-                    ],
                   },
 
                   {
@@ -1857,7 +1880,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
 
                 USER_BACK_ON_TAB: {
-                  target: "updatingRubric",
+                  target: "updatingRubric", //This will also call our Rubric State (LOOK UP!)
                   //I had a weird contion here to make sure the Rubric was saved?
                 },
 
@@ -1899,8 +1922,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       uiState: (context, event) => ({
                         ...context.uiState,
                         waitingAnimationOn: false,
-                        rubricName:
-                          context.documentMetaData.tempNewRubric?.title,
                       }),
                     }),
                     sendUIUpdate,
