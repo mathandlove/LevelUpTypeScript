@@ -738,6 +738,42 @@
         box-shadow: none;
       }
 
+      button:disabled {
+  background-color: #d3d3d3 !important; /* Light gray */
+  color: #808080 !important; /* Dark gray text */
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  border: 1px solid #b0b0b0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent hover and focus effects on disabled buttons */
+button:disabled:hover,
+button:disabled:active,
+button:disabled:focus {
+  background-color: #d3d3d3 !important;
+  color: #808080 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Ensure button text remains centered */
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+}
+
+
+
       #check-work-button:disabled:hover {
         background-color: #cccccc;
         transform: none;
@@ -932,18 +968,7 @@
       color: #666;
       margin-bottom: 5px;
     }
-    .rubric-section {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  text-align: center; /* Centers text */
-  display: flex; 
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Centers child elements horizontally */
-  justify-content: center; /* Centers content inside */
-}
+
 
 /* Ensure the buttons are centered properly */
 .rubric-actions {
@@ -968,6 +993,51 @@
   align-items: center; /* Centers content */
   gap: 10px;
 }
+.rubric-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.rubric-dropdown {
+    width: 95%; /* Adjust width */
+    max-width: 280px; /* Keep it from stretching too much */
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border: 2px solid #374363;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    appearance: none; /* Removes default styles in some browsers */
+    position: relative;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Add a dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="%23374363" d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+}
+
+.rubric-dropdown:focus {
+    border-color: #2a6fc4;
+    box-shadow: 0 0 4px rgba(42, 111, 196, 0.4);
+}
+
+.rubric-dropdown:hover {
+    background-color: #f8f8f8;
+}
+
+
+  .rubric-actions {
+    margin-top: 15px;
+    text-align: center;
+  }
 
 
   </style>
@@ -1133,37 +1203,38 @@
             </div>
           </div>
   
-          <!-- CUSTOMIZE CARD -->
-          <div class="card" id="customize-card" style="display: none; flex: 1;">
-            <div class="scroll-container">
-              <div class="rubric-label">Current Rubric:</div>
-              <div class="rubric-section">
-                <div class="rubric-title" id="current-rubric-title-1">...</div>
-              </div>
-  
-              <!-- Action Buttons -->
-              <div class="rubric-actions">
-                <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
-                <button class="level-up-button full-width" id="share-rubric-button">Share</button>
-                <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
-                <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
-              </div>
-            </div>
-          </div>
+
   
           <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
+<!-- CUSTOMIZE CARD -->
+<div class="card" id="customize-card" style="display: none; flex: 1;">
+  <div class="scroll-container">
+    <div class="rubric-label">Current Rubric:</div>
+    <div class="rubric-section">
+      <select id="rubric-dropdown" class="rubric-dropdown">
+        <option value="" disabled selected>Loading Rubrics...</option>
+      </select>
+      
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="rubric-actions">
+      <button class="level-up-button full-width" id="edit-rubric-button">Edit</button>
+      <button class="level-up-button full-width" id="share-rubric-button">Share</button>
+      <button class="level-up-button full-width" id="load-rubric-button">Load Rubric</button>
+      <button class="level-up-button full-width" id="new-rubric-button">New Rubric</button>
+    </div>
+  </div>
+</div>
+
+          <!-- NEW RUBRIC CARD -->
           <div class="card" id="customize-card-edit-newWindow" style="display: none; flex: 1;">
             <div class="scroll-container">
-              <div class="rubric-label">Current Rubric:</div>
-              <div class="rubric-section">
-                <div class="rubric-title" id="current-rubric-title-2">My Custom Rubric</div>
-
-
-              </div>
+              <div class="card-title">Create New Rubric</div>
+          
               <div class="card-main-text">You will be using Google Sheets to edit and update your rubric. Once you’ve made changes, return here.</div>
             </div>
           </div>
-
   
         <!-- BEGIN .button-container (navigation buttons) -->
         <div class="button-container">
@@ -1414,10 +1485,10 @@ function handleStateChange(statePayload) {
 
   // Handle navigation buttons
   const buttonVisibility = state.buttons;
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button', 'save-rubric-button','start-edits-button','start-edits-button','save'].forEach(buttonId => {
+  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button','submit-button', 'save-rubric-button','start-edits-button','edit-rubric-button','share-rubric-button','save'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
-      button.style.display = state.visibleButtons?.includes(buttonId) ? 'block' : 'none';
+      button.style.display = state.visibleButtons?.includes(buttonId) ? 'flex' : 'none';
       button.disabled = state.buttonsDisabled?.includes(buttonId) || false;
 
     }
@@ -1433,13 +1504,8 @@ function handleStateChange(statePayload) {
   // Handle pill buttons
     // Only update pills if they've changed
 // Only rebuild pills if the count changed
-console.log("pills: ", state.pills);
 if (state.pills) {
-if (currentPillCount !== state.pills.length) {
-      createPillStructure(state.pills);
-      currentPillCount = state.pills.length;
-    }
-    // Always update progress
+    createPillStructure(state.pills);
     updatePillProgress(state.pills);
   }
 
@@ -1456,7 +1522,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
     if (tasksContainer) {
       tasksContainer.innerHTML = state.tasks.map(task => `
         <div class="task-text">
-          <input type="checkbox"}>
+          <input type="checkbox">
           <span>${task}</span>
         </div>
       `).join('');
@@ -1518,8 +1584,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
     else{
       textArea.value = "";
     }
-    console.log("No input on submit", state.reflection.noInputOnSubmit);
-    console.log("questionNumber", state.reflection.selectedQuestion);
+
 
       const reflectionWarning = document.querySelector('.reflection-warning');
       if (state.reflection.noInputOnSubmit) {
@@ -1531,19 +1596,40 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
     
   
     }
+  
+
 
 
     //Handle Rubrics:
-      //Change Rubric Name
-  console.log("rubricName: ", state.rubricName);
-  if(state.rubricName != ""){
-    const rubricNameElement1 = document.querySelector('#current-rubric-title-1');
-      rubricNameElement1.textContent = state.rubricName;
-    const rubricNameElement2 = document.querySelector('#current-rubric-title-2');
+    if (Array.isArray(state.listOfAvailableRubrics) && state.listOfAvailableRubrics.length > 0) {
+  const rubricDropdown = document.getElementById('rubric-dropdown');
 
-      rubricNameElement2.textContent = state.rubricName;
-    }
+  if (rubricDropdown) {
+    rubricDropdown.innerHTML = state.listOfAvailableRubrics
+      .map((rubric, index) => {
+        const isSelected = index === state.selectedRubric ? 'selected' : '';
+        return `<option value="${index}" ${isSelected}>${rubric}</option>`;
+      })
+      .join('');
   }
+}
+
+
+if (!state.waitingAnimationOn) {
+    enableAllButtons();
+  }
+
+  if (state.animateLevelUp) {
+increaseLevel(state.formerLevel,state.level);
+}
+  setTimeout(() => {
+            checkScrollOverflow();
+          }, 0);
+          
+
+}
+
+
 
   function createPillStructure(pills) {
   const pillHolder = document.getElementById('pillHolder');
@@ -1617,17 +1703,6 @@ function updatePillProgress(pills) {
   }
 
 
-if (!state.waitingAnimationOn) {
-    enableAllButtons();
-  }
-
-  if (state.animateLevelUp) {
-increaseLevel(state.formerLevel,state.level);
-}
-  setTimeout(() => {
-            checkScrollOverflow();
-          }, 0);
-          
 function checkScrollOverflow() {
   const currentCardType = state.currentPage;
           const currentCard = document.getElementById(currentCardType);
@@ -1658,7 +1733,7 @@ function checkScrollOverflow() {
   }
 
 
-
+    
 
   // Handle level-up animation if requested
 
@@ -1736,7 +1811,7 @@ function setupEventHandlers() {
 
         disableAllButtons();
         messageQueue = []; // Clear any queued messages
-        console.log(document.querySelector('.reflection-card textarea')?.value);
+
         if ((buttonId === "next-button" || buttonId === "submit-button") && state.currentPage === "reflection-card") {
           sendWebSocketMessage({
             type: 'BUTTON_CLICKED',
@@ -1797,6 +1872,30 @@ function setupEventHandlers() {
       }
     };
   }
+
+    //Rubric dropdown
+
+  const rubricDropdown = document.getElementById("rubric-dropdown");
+
+if (rubricDropdown) {
+  rubricDropdown.addEventListener("change", function () {
+    const selectedIndex = this.selectedIndex; // Get the index of the selected option
+    const selectedValue = this.value; // Get the rubric name
+    
+    console.log(`Dropdown clicked: Index ${selectedIndex}, Value: ${selectedValue}`);
+
+    sendWebSocketMessage({
+      type: "BUTTON_CLICKED",
+      payload: {
+        buttonId: "rubric-dropdown",
+        selectedIndex: selectedIndex,
+        clientId: clientId,
+        documentId: documentId
+      }
+    });
+  });
+}
+
 }
 // Call this after the DOM is loaded
 document.addEventListener('DOMContentLoaded', setupEventHandlers);
@@ -1854,7 +1953,7 @@ function testMessageQueue() {
         });
     }
     
-    console.log("Current queue length:", messageQueue.length);
+
 }
 </script>
 
@@ -1890,7 +1989,7 @@ function testMessageQueue() {
   }
 
   function increaseLevel(startLevel,targetLevel) {
-    console.log("increaseLevel", targetLevel);
+
     setTimeout(() => {
       const levelText = document.querySelector(".pixelated-gradient-text");
 

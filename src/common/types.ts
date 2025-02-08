@@ -15,6 +15,7 @@ export type ButtonId =
   | "pill-button"
   | "submit-button"
   | "edit-rubric-button"
+  | "share-rubric-button"
   | "save-rubric-button"
   | "start-edits-button"
   | "new-rubric-button"
@@ -178,8 +179,8 @@ export interface UIState {
   errorMessage?: string;
   taskFeedback?: "no-changes" | "wrong-location" | "incorrect" | undefined;
   taskFeedbackMessage?: string;
-  rubricName: string;
-
+  selectedRubric: number;
+  listOfAvailableRubrics: Array<String>;
   // Challenge card content
   tasks?: TasksArray;
 }
@@ -197,7 +198,8 @@ export const defaultUIState: UIState = {
   timeSpentHours: 0,
   timeSpentMinutes: 0,
   copypasted: 0,
-  rubricName: "",
+  selectedRubric: 0,
+  listOfAvailableRubrics: [],
 };
 
 //----------------------------------------------------------
