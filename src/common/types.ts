@@ -152,18 +152,16 @@ export interface SavedActivity {
 }
 
 export type ChallengeInfo = {
-  challengeTitle?: string;
-  aiSuggestion: {
-    originalSentence: string;
-    aiImprovedSentence: string;
-    aiReasoning: string;
+  studentGoal?: string;
+  currentSentenceCoordinates?: {
+    startIndex: number;
+    endIndex: number;
   };
-  modifiedSentences: string[];
-  aiDirections?: string;
+  aiRawFeedback?: string;
+  modifiedSentences: string[]; //Selected Sentence goes in here
+  formattedFeedback?: string;
   aiFeeling?: string;
-  sentenceStartIndex?: number;
-  sentenceEndIndex?: number;
-  taskArray?: TasksArray;
+  aiDirections?: string;
   challengeResponse?:
     | "valid"
     | "tooFar"
@@ -205,8 +203,9 @@ export interface UIState {
   taskFeedbackMessage?: string;
   selectedRubric: number;
   listOfAvailableRubrics: Array<String>;
+  motivationSelection: Array<string>;
   // Challenge card content
-  tasks?: TasksArray;
+
   importError?: string;
 }
 // Then define any constants
@@ -225,6 +224,7 @@ export const defaultUIState: UIState = {
   copypasted: 0,
   selectedRubric: 0,
   listOfAvailableRubrics: [],
+  motivationSelection: [],
 };
 
 //----------------------------------------------------------
@@ -233,10 +233,8 @@ export interface DocumentMetaData {
   level: number;
   pills: Array<Topic>;
   paperScores: Array<Topic>;
-  challengeArray: ChallengeInfo[][];
-  newChallengesArray: ChallengeInfo[][];
-  newChallengesReady: boolean;
   selectedChallengeNumber?: number;
+  currentChallenge?: ChallengeInfo;
   currentText: string;
   textBeforeEdits: string;
   savedActivity: SavedActivity;
@@ -247,15 +245,13 @@ export interface DocumentMetaData {
   rubricLastUpdated: string;
   tempNewRubric?: Rubric;
   tempImportRubricId?: string;
+  flags?: {};
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
   level: 1,
   pills: defaultTopics,
   paperScores: [],
-  challengeArray: [],
-  newChallengesArray: [],
-  newChallengesReady: false,
   currentText: "",
 
   textBeforeEdits: "",

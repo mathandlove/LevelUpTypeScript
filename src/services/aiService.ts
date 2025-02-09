@@ -12,15 +12,17 @@ import {
   TasksArraySchema,
 } from "../resources/schemas";
 import {
-  getInstructForTurnSentencesIntoTasks,
-  getInstructForTopicSentencesToImprove,
-  getInstructForGetFeelingAI,
-  getInstructForGetChallengeTitle,
   getInstructForCheckChallengeResponse,
+  getInstructForCriticalThinkingQuestion,
+  getInstructForGetAIFeelings,
   getInstructForGetCelebration,
   getInstructForGetFailedFeedback,
+  getInstructForGetNewChallenge,
+  getInstructForGetSelectedSentence,
+  getInstructForImproveFeedback,
+  getInstructAddEmojisToFeedback,
 } from "../resources/InstructionsAI.js";
-import { getSentenceStartAndEndToChallenge } from "./docServices";
+import { getSentenceStartAndEnd } from "./docServices";
 
 const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
@@ -34,14 +36,9 @@ const openai = new OpenAI({
 export async function getFailedFeedback(context: AppContext): Promise<string> {
   const instructions = getInstructForGetFailedFeedback();
   const messages = [];
+  const challenge = context.documentMetaData.currentChallenge;
   const directions =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0].taskArray;
-  const challenge =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0];
+    context.documentMetaData.currentChallenge?.formattedFeedback;
   const studentOriginalResponse =
     challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
   const studentNewResponse =
@@ -60,23 +57,19 @@ export async function getFailedFeedback(context: AppContext): Promise<string> {
     role: "user",
     content: "New response: " + studentNewResponse,
   });
-  const model = "gpt-4o";
+  const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
-  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-  return openAIobj.response;
+  const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+  return openAIStr;
 }
 
 export async function getCelebration(context: AppContext): Promise<string> {
   const instructions = getInstructForGetCelebration();
   const messages = [];
   const directions =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0].taskArray;
-  const challenge =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0];
+    context.documentMetaData.currentChallenge?.formattedFeedback;
+  const challenge = context.documentMetaData.currentChallenge;
+
   const studentOriginalResponse =
     challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
   const studentImprovedResponse =
@@ -95,20 +88,17 @@ export async function getCelebration(context: AppContext): Promise<string> {
     role: "user",
     content: "Improved response: " + studentImprovedResponse,
   });
-  const model = "gpt-4o";
+  const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
-  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-  return openAIobj.response;
+  const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+  return openAIStr;
 }
 
 export async function checkChallengeResponse(
   context: AppContext
 ): Promise<boolean> {
-  const challenge =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0];
-  const aiTask: TasksArray = challenge.taskArray;
+  const challenge = context.documentMetaData.currentChallenge;
+  const aiTask = challenge.formattedFeedback;
   const studentOriginalResponse =
     challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
   const studentImprovedResponse =
@@ -117,16 +107,16 @@ export async function checkChallengeResponse(
   const messages = [];
   messages.push({ role: "system", content: instructions });
   messages.push({ role: "user", content: "1: " + studentOriginalResponse });
-  messages.push({ role: "assistant", content: JSON.stringify(aiTask) });
+  messages.push({ role: "assistant", content: aiTask });
   messages.push({ role: "user", content: "2: " + studentImprovedResponse });
 
-  const model = "gpt-4o-mini";
+  const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
-  const openAIobj = await callOpenAI(messages, model, returnDataSchema);
+  const openAIStr = await callOpenAI(messages, model, returnDataSchema);
   let passed: boolean;
-  if (openAIobj.response.includes("1")) {
+  if (openAIStr.includes("1")) {
     passed = false;
-  } else if (openAIobj.response.includes("2")) {
+  } else if (openAIStr.includes("2")) {
     passed = true;
   } else {
     passed = false;
@@ -135,216 +125,163 @@ export async function checkChallengeResponse(
   return passed;
 }
 
-export async function addChallengeDetailsToChallengeArray(
+export async function getNewChallenge(
   context: AppContext
-): Promise<Array<Array<ChallengeInfo>>> {
-  const promises = [];
-  const localChallengeArray = Array.from(
-    { length: context.documentMetaData.pills.length },
-    (_, i) => context.documentMetaData.newChallengesArray[i]
+): Promise<ChallengeInfo> {
+  let challenge: ChallengeInfo = {
+    modifiedSentences: [],
+  };
+  const instructions = getInstructForGetNewChallenge(
+    context.documentMetaData.pills[
+      context.documentMetaData.selectedChallengeNumber
+    ].description
   );
-  const fullText = context.documentMetaData.currentText;
+  const messages = [];
+  messages.push({ role: "system", content: instructions });
+  messages.push({
+    role: "user",
+    content: "Text: " + context.documentMetaData.currentText,
+  });
+  const model = "google/gemini-2.0-flash-001";
+  const returnDataSchema = null;
+  const startTime = Date.now();
+  const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+  const endTime = Date.now();
+  const duration = endTime - startTime;
+  console.log("Duration: ", duration);
+  console.log("openAIStr: ", openAIStr);
+  challenge.aiRawFeedback = openAIStr;
+  return challenge;
+}
 
-  for (let i = 0; i < localChallengeArray.length; i++) {
-    for (let j = 0; j < localChallengeArray[i]?.length; j++) {
-      const aiOriginalSentence =
-        localChallengeArray[i][j].aiSuggestion.originalSentence;
-      if (!localChallengeArray[i][j].aiFeeling) {
-        promises.push(
-          addAIFeelToChallenge(localChallengeArray[i][j].aiSuggestion).then(
-            (AIFeelString) => {
-              // Safely merge results into the local copy
-              localChallengeArray[i][j].aiFeeling = AIFeelString;
-            }
-          )
-        );
-      }
-      if (true || !localChallengeArray[i][j].sentenceStartIndex)
-        promises.push(
-          Promise.resolve(
-            getSentenceStartAndEndToChallenge(aiOriginalSentence, fullText)
-          ).then(({ currentSentence, startIndex, endIndex }) => {
-            localChallengeArray[i][j].modifiedSentences = [currentSentence];
-            localChallengeArray[i][j].sentenceStartIndex = startIndex;
-            localChallengeArray[i][j].sentenceEndIndex = endIndex;
-          })
-        );
+export async function addChallengeDetails(
+  context: AppContext
+): Promise<ChallengeInfo> {
+  //Create 3 calls to openAI in parallel:
 
-      if (!localChallengeArray[i][j].taskArray)
-        promises.push(
-          getTasksForChallenge(localChallengeArray[i][j].aiSuggestion).then(
-            (tasks) => {
-              localChallengeArray[i][j].taskArray = tasks;
-            }
-          )
-        );
-      if (!localChallengeArray[i][j].challengeTitle)
-        promises.push(
-          getChallengeTitle(localChallengeArray[i][j].aiSuggestion).then(
-            (challengeTitle) => {
-              localChallengeArray[i][j].challengeTitle = challengeTitle;
-            }
-          )
-        );
-    }
-  }
-  await Promise.all(promises);
+  let challenge = context.documentMetaData.currentChallenge;
 
-  //Remove all challenges that have a startIndex of -1, mark all challenges as now ready to be used.
-  const filteredChallengeArray = localChallengeArray.map((row) =>
-    row.filter((challenge) => {
-      if (challenge.sentenceStartIndex === -1) {
-        return false;
-      }
-      return true;
-    })
+  const [selectedSentence, aiFeeling, criticalThinkingQuestion] =
+    await Promise.all([
+      getSelectedSentence(context),
+      getAIFeelings(context),
+      getCriticalThinkingQuestion(context),
+    ]);
+
+  console.log(selectedSentence, aiFeeling, criticalThinkingQuestion);
+
+  // Assign the results once all promises have resolved
+  challenge.modifiedSentences[0] = selectedSentence;
+  challenge.aiFeeling = aiFeeling;
+  challenge.aiRawFeedback =
+    criticalThinkingQuestion + (challenge.aiRawFeedback ?? "");
+
+  const sentenceCoords = getSentenceStartAndEnd(
+    challenge.modifiedSentences[0],
+    context.documentMetaData.currentText
   );
+  challenge.modifiedSentences[0] = sentenceCoords.currentSentence;
+  challenge.currentSentenceCoordinates = {
+    startIndex: sentenceCoords.startIndex,
+    endIndex: sentenceCoords.endIndex,
+  };
 
-  return filteredChallengeArray;
+  return challenge;
 
-  async function addAIFeelToChallenge(
-    aiFeedback: ChallengeInfo["aiSuggestion"]
-  ): Promise<string> {
-    const instructions = getInstructForGetFeelingAI();
+  async function getSelectedSentence(context: AppContext): Promise<string> {
+    const instructions = getInstructForGetSelectedSentence();
     const messages = [];
-    messages.push({
-      role: "system",
-      content: instructions,
-    });
+    messages.push({ role: "system", content: instructions });
     messages.push({
       role: "assistant",
-      content: JSON.stringify(aiFeedback),
+      content: context.documentMetaData.currentChallenge.aiRawFeedback,
     });
+    const model = "google/gemini-2.0-flash-001";
     const returnDataSchema = null;
-    const model = "deepseek/deepseek-chat";
-    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-    return openAIobj.response;
+    const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+    return openAIStr;
   }
 
-  async function getTasksForChallenge(
-    aiFeedback: ChallengeInfo["aiSuggestion"]
-  ): Promise<TasksArray> {
-    const instructions = getInstructForTurnSentencesIntoTasks();
+  async function getAIFeelings(context: AppContext): Promise<string> {
+    const instructions = getInstructForGetAIFeelings(
+      context.documentMetaData.currentChallenge.studentGoal
+    );
     const messages = [];
-    messages.push({
-      role: "system",
-      content: instructions,
-    });
+    messages.push({ role: "system", content: instructions });
     messages.push({
       role: "assistant",
-      content: JSON.stringify(aiFeedback),
+      content: context.documentMetaData.currentChallenge.aiRawFeedback,
     });
-    const returnDataSchema = TasksArraySchema;
-    const model = "deepseek/deepseek-chat";
-    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-    let response: TasksArray = JSON.parse(openAIobj.response).tasks;
-    if (!validateTasksArray(response)) {
-      console.warn("AI returned invalid areas of work");
-      response = await getTasksForChallenge(aiFeedback);
-    }
-    return response;
+    const model = "google/gemini-2.0-flash-001";
+    const returnDataSchema = null;
+    const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+    return openAIStr;
   }
 
-  async function getChallengeTitle(
-    aiFeedback: ChallengeInfo["aiSuggestion"]
+  async function getCriticalThinkingQuestion(
+    context: AppContext
   ): Promise<string> {
-    const instructions = getInstructForGetChallengeTitle();
+    const instructions = getInstructForCriticalThinkingQuestion(
+      context.documentMetaData.currentChallenge.studentGoal
+    );
     const messages = [];
-    messages.push({
-      role: "system",
-      content: instructions,
-    });
+    messages.push({ role: "system", content: instructions });
     messages.push({
       role: "assistant",
-      content: JSON.stringify(aiFeedback),
+      content: context.documentMetaData.currentChallenge.aiRawFeedback,
     });
+    const model = "google/gemini-2.0-flash-001";
     const returnDataSchema = null;
-    const model = "deepseek/deepseek-chat";
-    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-    return openAIobj.response;
+    const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+    return openAIStr;
   }
 }
-export async function addChallengesToChallengeArrays(
+
+export async function formatChallengeResponse(
   context: AppContext
-): Promise<Array<Array<ChallengeInfo>>> {
-  const promises = [];
+): Promise<ChallengeInfo> {
+  const challenge = context.documentMetaData.currentChallenge;
+  const improvedFeedback = await improveFeedback(context);
+  const emojifiedFeedback = await emojifyFeedback(context, improvedFeedback);
+  challenge.aiRawFeedback = emojifiedFeedback;
+  return challenge;
+  async function improveFeedback(context: AppContext): Promise<string> {
+    const challenge = context.documentMetaData.currentChallenge;
 
-  //Make sure ChallengeInfo is the right size to accept arrays.
-
-  const localChallengeArray = Array.from(
-    { length: context.documentMetaData.pills.length },
-    () => [] // Initialize each element as an empty array
-  );
-
-  //When loading doc, we verified the length of the challengeArray.
-
-  for (let i = 0; i < localChallengeArray.length; i++) {
-    if (
-      context.documentMetaData.challengeArray.length <= i ||
-      context.documentMetaData.challengeArray[i]?.length < 2
-    ) {
-      promises.push(
-        addChallengesToTopic(context, i).then((challenges) => {
-          // Safely merge results into the local copy
-          localChallengeArray[i] = challenges;
-        })
-      );
-    }
+    const instructions = getInstructForImproveFeedback(
+      context.documentMetaData.currentChallenge.studentGoal
+    );
+    const messages = [];
+    messages.push({ role: "system", content: instructions });
+    messages.push({
+      role: "assistant",
+      content: context.documentMetaData.currentChallenge.aiRawFeedback,
+    });
+    const model = "google/gemini-2.0-flash-001";
+    const returnDataSchema = null;
+    const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+    return openAIStr;
   }
-  await Promise.all(promises);
 
-  return localChallengeArray;
-
-  async function addChallengesToTopic(
+  async function emojifyFeedback(
     context: AppContext,
-    selectTopicNumber: number
-  ): Promise<Array<ChallengeInfo>> {
-    // Add the function logic here to return a Promise
-    const fullText = context.documentMetaData.currentText;
-    const selectTopic = context.documentMetaData.pills[selectTopicNumber];
-    const selectTopicDescription = selectTopic.description;
-    const instructions = getInstructForTopicSentencesToImprove();
+    feedback: string
+  ): Promise<string> {
+    const challenge = context.documentMetaData.currentChallenge;
+
+    const instructions = getInstructAddEmojisToFeedback();
 
     const messages = [];
+    messages.push({ role: "system", content: instructions });
     messages.push({
-      role: "system",
-      content: instructions,
+      role: "assistant",
+      content: feedback,
     });
-    messages.push({
-      role: "user",
-      content: `Criteria: Edit this paper so it ${selectTopicDescription}. Do not make other edits outside the criteria.\n
-      Paper: ${fullText}`,
-    });
-    const model = "deepseek/deepseek-chat";
-    const returnDataSchema = ImprovedSentenceArraySchema;
-    const openAIobj = await callOpenAI(messages, model, returnDataSchema);
-
-    let response: ImprovedSentenceArray = await JSON.parse(openAIobj.response);
-    let challenges: ChallengeInfo[];
-    if (!validateImprovedSentenceArray(response)) {
-      console.warn("AI returned invalid areas of work");
-      challenges = await addChallengesToTopic(context, selectTopicNumber);
-      //eventually call again.
-    } else {
-      // Convert improved sentences to ChallengeInfo array
-      challenges = response.sentencePair.map((sentence) => ({
-        aiSuggestion: {
-          originalSentence: sentence.originalSentence,
-          aiImprovedSentence: sentence.improvedSentence,
-          aiReasoning: sentence.reasoning,
-        },
-        modifiedSentences: [],
-      }));
-    }
-    // Add to your challengeArray
-    return challenges;
+    const model = "google/gemini-2.0-flash-001";
+    const returnDataSchema = null;
+    const openAIStr = await callOpenAI(messages, model, returnDataSchema);
+    return openAIStr;
   }
-}
-
-interface OpenAICallResponse {
-  response: string;
-  callDuration: number;
-  cost: number;
 }
 
 interface ChatMessage {
@@ -355,52 +292,30 @@ interface ChatMessage {
 async function callOpenAI(
   messages: ChatMessage[],
   model: string,
-  returnDataSchema: any = null
-): Promise<OpenAICallResponse | null> {
-  let body;
-
-  if (returnDataSchema) {
-    body = {
-      model: model,
-      messages: messages,
-      response_format: returnDataSchema,
-    };
-  } else {
-    body = {
-      model: model,
-      messages: messages,
-    };
-  }
-
+  dataSchema: any = null
+): Promise<string> {
   try {
-    const startTime = Date.now();
+    if (!Array.isArray(messages) || messages.length === 0) {
+      throw new Error("Messages array is required and cannot be empty.");
+    }
 
+    // Explicitly define the type
+    const body: OpenAI.ChatCompletionCreateParamsNonStreaming = {
+      model,
+      messages,
+    };
+
+    // Make the API request
     const completion = await openai.chat.completions.create(body);
-
-    const endTime = Date.now();
-
-    if (completion.choices && completion.choices.length > 0) {
-      const completionTokens = completion.usage?.completion_tokens || 0;
-      const promptTokens = completion.usage?.prompt_tokens || 0;
-
-      // Define cost per token for each type
-      const costPerCompletionToken = 0.15 / 1000000; // Example cost
-      const costPerPromptToken = 0.6 / 1000000; // Example cost
-      const cost =
-        completionTokens * costPerCompletionToken +
-        promptTokens * costPerPromptToken;
-
-      return {
-        response: completion.choices[0].message.content,
-        cost,
-        callDuration: (endTime - startTime) / 1000,
-      };
+    const content = completion.choices?.[0]?.message?.content;
+    if (typeof content === "string") {
+      return content;
     } else {
       console.error("Unexpected API response structure:", completion);
-      return null;
+      throw new Error("Unexpected API response structure");
     }
   } catch (error) {
-    console.error("Error calling OpenAI API:", error);
-    throw "We are unable to connect to our AI service. Please try again later.";
+    console.error("Error calling OpenRouter API:", error);
+    throw error;
   }
 }

@@ -1194,7 +1194,7 @@ margin-right:10px;
               <div class="card-title-subtitle">Subtitle</div>
               <div class="alert-message" style="display: none"></div>
               <div class="alert-message fail-reason-message" style="display: none"></div>
-              <div class="tasks-list">
+              <div class="card-main-text">
                 <!-- Tasks will be inserted here -->
               </div>
             </div>
@@ -1642,19 +1642,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
 
 
 
-  //Handle challenge card tasks
-  if (state.tasks) {
-    const tasksContainer = document.querySelector('#challenge-card .tasks-list');
-    console.log(tasksContainer);
-    if (tasksContainer) {
-      tasksContainer.innerHTML = state.tasks.map(task => `
-        <div class="task-text">
-          <input type="checkbox">
-          <span>${task}</span>
-        </div>
-      `).join('');
-    }
-  }
+
 
   //Handle task feedback
 

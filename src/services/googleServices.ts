@@ -37,13 +37,11 @@ export async function highlightChallengeSentence(context: AppContext) {
   });
 
   const startIndex =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0].sentenceStartIndex + 1; // +1 because the index is 0 based
+    context.documentMetaData.currentChallenge?.currentSentenceCoordinates
+      ?.startIndex + 1; // +1 because the index is 0 based
   const endIndex =
-    context.documentMetaData.challengeArray[
-      context.documentMetaData.selectedChallengeNumber
-    ][0].sentenceEndIndex + 1; // +1 because the index is 0 based
+    context.documentMetaData.currentChallenge?.currentSentenceCoordinates
+      ?.endIndex + 1; // +1 because the index is 0 based
 
   const docEndIndex = doc.data.body.content.reduce((acc, element) => {
     if (element.endIndex) {
@@ -53,10 +51,15 @@ export async function highlightChallengeSentence(context: AppContext) {
   }, 0);
 
   // BatchUpdate request to highlight text
+  if (!startIndex || !endIndex) {
+    console.error("No start or end index found for challenge sentence.");
+    throw new Error("We are having trouble accessing your Google Document.");
+  }
 
   const request = {
     requests: [
       // Clear all highlights in the document
+
       {
         updateTextStyle: {
           range: {
