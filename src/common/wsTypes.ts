@@ -81,6 +81,14 @@ export type IncomingWebSocketMessage =
         clientId: string;
         documentId: string;
       };
+    }
+  | {
+      type: "SELECT_GOAL";
+      payload: {
+        clientId: string;
+        documentId: string;
+        buttonTitle: string;
+      };
     };
 
 export function isValidIncomingWebSocketMessage(
@@ -121,6 +129,14 @@ export function isValidIncomingWebSocketMessage(
         message.payload &&
         typeof message.payload.clientId === "string" &&
         typeof message.payload.documentId === "string"
+      );
+
+    case "SELECT_GOAL":
+      return (
+        message.payload &&
+        typeof message.payload.clientId === "string" &&
+        typeof message.payload.documentId === "string" &&
+        typeof message.payload.buttonTitle === "string"
       );
 
     default:

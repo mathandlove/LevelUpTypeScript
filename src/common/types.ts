@@ -173,6 +173,7 @@ export type ChallengeInfo = {
 export interface UIState {
   currentPage:
     | "home-page"
+    | "selectGoal-card"
     | "AI-Feeling"
     | "celebrateScreen"
     | "server-error"
@@ -190,7 +191,7 @@ export interface UIState {
   level: number;
   formerLevel: number;
   animateLevelUp: boolean;
-
+  goalTitles?: Array<string>;
   pills: Array<Topic>;
   reflection: Reflection;
   copypasted: number;
@@ -203,7 +204,6 @@ export interface UIState {
   taskFeedbackMessage?: string;
   selectedRubric: number;
   listOfAvailableRubrics: Array<String>;
-  motivationSelection: Array<string>;
   // Challenge card content
 
   importError?: string;
@@ -224,7 +224,6 @@ export const defaultUIState: UIState = {
   copypasted: 0,
   selectedRubric: 0,
   listOfAvailableRubrics: [],
-  motivationSelection: [],
 };
 
 //----------------------------------------------------------
@@ -245,7 +244,9 @@ export interface DocumentMetaData {
   rubricLastUpdated: string;
   tempNewRubric?: Rubric;
   tempImportRubricId?: string;
-  flags?: {};
+  flags: {
+    studentGoal?: string;
+  };
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -253,12 +254,15 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   pills: defaultTopics,
   paperScores: [],
   currentText: "",
-
+  flags: {
+    studentGoal: undefined,
+  },
   textBeforeEdits: "",
   savedActivity: {
     savedReflections: [],
     savedChallenges: [],
   },
+
   reflectionTemplate: defaultReflection,
   savedRubrics: [],
   currentRubricID: "starterRubric",

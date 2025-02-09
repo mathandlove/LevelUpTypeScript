@@ -119,7 +119,6 @@
       .card p {
         margin: 0 0 10px 0;
         color: var(--primary-color);
-        font-weight: 600;
       }
 
       button {
@@ -281,13 +280,41 @@
       }
 
       .card-main-text {
-        white-space: pre-wrap;
 
         margin: 0;
         font-size: 12px;
         font-weight: normal;
         flex: 0 1 auto;
-      }
+  font-size: 14px;
+  line-height: 1.6; /* Adjust line spacing */
+  color: #333; /* Slightly darker text for readability */
+}
+
+/* Adjust unordered list (bullets) indentation */
+.card-main-text ul {
+  list-style-type: disc !important; /* Ensures normal bullet points (●) */
+  padding-left: 0px; /* Adjusts indentation */
+  margin: 0px 0; /* Adds spacing before/after lists */
+}
+
+/* Adjust list item spacing */
+.card-main-text li {
+  margin-bottom: 10px; /* Space between bullet points */
+  margin-left: 20px;
+}
+
+
+.card-main-text p {
+  margin: 20px 0;  
+}
+
+/* Nested lists (sub-bullets) */
+.card-main-text ul ul {
+  list-style-type: circle !important; /* Nested lists use hollow bullets (○) */
+  margin: 0px 0;
+  padding-left: 0px; /* Adjust indentation for nested lists */
+}
+
 
       .card-content,
       .card-main-text {
@@ -300,7 +327,6 @@
       .card-main-text,
       .card-content {
         font-size: 13px; /* Standard font size for body text */
-        font-weight: 400; /* Normal weight for readability */
         color: #555; /* Medium gray for a softer look */
         line-height: 1.6; /* Increased line height for readability */
         font-family: "Inter", sans-serif; /* Consistent font choice */
@@ -1104,9 +1130,64 @@ margin-right:10px;
 .rubric-error {
   color: darkred !important; /* ✅ Turns text dark red */
   font-weight: bold; /* ✅ Optional: make it stand out */
+
 }
 
 
+  /* Goal buttons */
+
+#goal-buttons-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  padding: 10px;
+}
+
+/* Individual Goal Buttons */
+.goal-button {
+  white-space: normal !important;
+  width: 100%;
+  max-width: 300px; /* Prevents buttons from getting too wide */
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid var(--primary-color); /* Use theme primary color */
+  border-radius: 8px;
+  background: #ffffff; /* White background for a clean look */
+  color: var(--primary-color); /* Use theme primary color */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover effect */
+.goal-button:hover {
+  background-color: var(--secondary-color); /* Theme secondary color */
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 175, 204, 0.3);
+}
+
+/* Active effect */
+.goal-button:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+/* Disabled button styling */
+.goal-button:disabled {
+  background-color: #d3d3d3;
+  color: #808080;
+  border-color: #b0b0b0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
 
 
   </style>
@@ -1168,6 +1249,18 @@ margin-right:10px;
               <div class="card-main-text"></div>
             </div>
           </div>
+
+
+                    <!-- Student Goal Cards -->
+                    <div class="card" id="selectGoal-card" style="display: none; flex: 1">
+                      <div class="scroll-container">
+                        <div class="card-title">How do you want to improve your paper?</div>
+                        <div class="card-main-text">
+                          <div id="goal-buttons-container"></div>
+                        </div>
+                      </div>
+                    </div>
+
   
           <!-- CELEBRATE CARD -->
           <div class="card" id="celebrateScreen" style="display: none; flex: 1">
@@ -1190,8 +1283,6 @@ margin-right:10px;
           <!-- CHALLENGE CARD -->
           <div class="card" id="challenge-card" style="display: none">
             <div class="scroll-container">
-              <div class="card-title">Challenge</div>
-              <div class="card-title-subtitle">Subtitle</div>
               <div class="alert-message" style="display: none"></div>
               <div class="alert-message fail-reason-message" style="display: none"></div>
               <div class="card-main-text">
@@ -1596,8 +1687,9 @@ function handleStateChange(statePayload) {
 
     const mainTextElement = currentCard.querySelector('.card-main-text');
     if (mainTextElement && state.cardMainText) {
-      mainTextElement.textContent = state.cardMainText;
+      mainTextElement.innerHTML = state.cardMainText;
     } 
+
 
     const errorMessageElement = currentCard.querySelector('.error-message');
     if (errorMessageElement && state.errorMessage) {
@@ -1625,6 +1717,12 @@ function handleStateChange(statePayload) {
   if (state.formerLevel) { //On level ups the former level needs to start, then former level becomes level
     document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.formerLevel}`;
   }
+
+
+//Handle goal buttons:
+if(state.goalTitles){
+updateGoalButtons(state.goalTitles);
+}
 
 
 
@@ -1756,6 +1854,35 @@ increaseLevel(state.formerLevel,state.level);
           
 
 }
+
+
+function updateGoalButtons(goalTitles) {
+    const container = document.getElementById("goal-buttons-container");
+    container.innerHTML = ""; // Clear existing buttons
+
+    goalTitles.forEach((title, index) => {
+      const button = document.createElement("button");
+      button.className = "goal-button";
+      button.textContent = title;
+      console.log(title)
+      button.onclick = () => handleGoalClick(index, title);
+      container.appendChild(button);
+    });
+  }
+
+  function handleGoalClick(index, title) {
+    console.log(`Goal ${index + 1} clicked: ${title}`);
+    sendWebSocketMessage({
+      type: "SELECT_GOAL",
+      payload: {
+        buttonTitle: title,
+        clientId: clientId,
+        documentId: documentId,
+      }
+    });
+  }
+
+
 
 
 
