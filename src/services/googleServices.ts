@@ -1,5 +1,5 @@
 import { ChallengeInfo, Reflection, Rubric } from "../common/types";
-import { AppContext } from "../stateMachine";
+import { AppContext } from "../stateMachineWorkingButOld";
 
 export async function getFullText(context: AppContext): Promise<string> {
   const { GoogleServices } = context.appState;
