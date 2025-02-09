@@ -1,56 +1,3 @@
-export function getInstructForTopicSentencesToImprove() {
-  const instructions = `Edit a student's submitted paper by focusing exclusively on the specified criteria they provide and recommend adding new sentences where necessary. Return the revised text adhering to the given guidelines.
-
-# Steps
-1. Read the student's specified criteria carefully to understand the focus of the editing task.
-2. Analyze the submitted paper with respect to the criteria, identifying areas in need of improvement.
-3. Edit the paper to improve sentences *only* on the specified criteria.
-4. Only make changes that a 6th grade student would know about.
-5. Ensure all changes, including new sentences, adhere strictly to the criteria without altering other aspects of the paper.
-
-# Output Format
-Give back the edited paper in full.
-
-# Notes
-- Ensure changes strictly adhere to the provided criteria.
-- Avoid making unauthorized changes unrelated to the specified criteria.
--Do not provide sentences that don't need changes.
--Only make changes that a 6th grade student would make.`;
-  return instructions;
-}
-
-export function getInstructForTurnSentencesIntoTasks() {
-  const instructions = `You take an expert writing tutor's feedback and narrow down the recommendations to just one task that a 6th grader could do to improve the original sentence based on the improvement and analysis of the sentence. Your task does not give the student the answer but tells them how to improve the sentence.
-Check to make sure you did not give examples.
-
-output:
-A task broken down into 3 steps.
-
-important: 
-Do not give examples or solutions. 
-Some solutions will have multiple changes. Only have the student do one. Ignore the rest of the changes.`;
-  return instructions;
-}
-
-export function getInstructForGetFeelingAI() {
-  const instructions = `1. Take the "Reasoning" as reference for what is wrong with the sentence.
-2. Determine how it would make the reader feel reading the original sentence instead of the improved sentence.
-3. Start the first sentence with "Reading this made me feel". 
-4. Then describe the emotional experience of reading.
-5. No Solutions: Do not tell students how to fix the problem at all.
-6. Write in language that a 6th grader would understand.
-7. The entire feedback should only be 1 sentence.
-8. Use specific examples from the originalSentence.
-
-`;
-  return instructions;
-}
-
-export function getInstructForGetChallengeTitle() {
-  const instructions = `Based on the student task, describe in 10 words or less what the students overall goal is for improving the sentence. Do not give answers or quote text in the goal. Start your sentence with "Big Goal:"`;
-  return instructions;
-}
-
 export function getInstructForCheckChallengeResponse() {
   const instructions = `Determine whether sentence 1 or 2 followed the directions more.
 output: 1 or 2`;
@@ -64,5 +11,35 @@ export function getInstructForGetCelebration() {
 
 export function getInstructForGetFailedFeedback() {
   const instructions = `A student failed to follow instructions improving a sentence. In one short sentence, at a 6th grade reading level, explain to the student why they failed and one small, specific thing they should do. Drirectly reference the text they added to the sentence.`;
+  return instructions;
+}
+
+export function getInstructForGetNewChallenge(rubricCriteria: string) {
+  const instructions = `Review my paper and find one small part (1-3 sentences) where ${rubricCriteria} can be improved. First give me the exact quote of the sentences needed to be improved. Start with "Quote: " and then the sentences. Start the next section with "Feedback: " Then, in simple language suitable for a 5th grade student, explain why that part needs to be fixed.  Do not show me a revised sentence or any examples. Only tell me what to change and how to change it`;
+  return instructions;
+}
+
+export function getInstructForGetSelectedSentence() {
+  const instructions = `Give me the sentence or sentences that you referenced in the feedback. Only give me those sentences, no introduction or concluding remarks. Only give the raw sentences.`;
+  return instructions;
+}
+
+export function getInstructForGetAIFeelings(studentGoal: string) {
+  const instructions = `Write a 2 sentence response describing how a reading these sentences feels. Write at a 5th grade level. Start with "Reading this part, I felt" Do not suggest ways to improve. Frame the emotion as a problem around the student's goal of: "${studentGoal}". Refer to the writer as "you"`;
+  return instructions;
+}
+
+export function getInstructForCriticalThinkingQuestion(studentGoal: string) {
+  const instructions = `Give a question to for the beginning of the feedback to encourage me to critically think. Make the question appropriate for a 5th grade student. Only give the question, no introduction or previous feedback.`;
+  return instructions;
+}
+
+export function getInstructForImproveFeedback(studentGoal: string) {
+  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Add emojis, new lines, and bullets in this feedback to make it easier to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
+  return instructions;
+}
+
+export function getInstructAddEmojisToFeedback() {
+  const instructions = `Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Do not add any new words to the feedback: it should be the same text as before.`;
   return instructions;
 }

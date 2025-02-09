@@ -21,15 +21,17 @@ import {
   defaultUIState,
   DocumentMetaData,
   Rubric,
+  ChallengeInfo,
 } from "./common/types.js";
 import { IncomingWebSocketMessage } from "./common/wsTypes.js";
 import { LevelUpWebSocket } from "./websocket.js";
 import {
-  addChallengesToChallengeArrays,
-  addChallengeDetailsToChallengeArray,
   checkChallengeResponse,
   getCelebration,
   getFailedFeedback,
+  getNewChallenge,
+  addChallengeDetails,
+  formatChallengeResponse,
 } from "./services/aiService.js";
 import { chatGPTKey } from "./resources/keys.js";
 import { OAuth2Client } from "google-auth-library";
@@ -39,10 +41,7 @@ import {
   createGoogleSheet,
   updateRubricFromGoogleSheet,
 } from "./services/googleServices.js";
-import {
-  compareNewSentenceToOldSentence,
-  updateTextCoordinates,
-} from "./services/docServices.js";
+import { compareNewSentenceToOldSentence } from "./services/docServices.js";
 import {
   createRubricCopy,
   newRubric,
@@ -82,7 +81,6 @@ type InternalEvent =
   | { type: "TOPICS_UPDATED" }
   | { type: "INITIAL_ARRAY_CHECK" }
   | { type: "CHALLENGE_SELECTED"; payload: { topicNumber: number } } // Add payload here
-  | { type: "NEW_CHALLENGES_AVAILABLE" }
   | { type: "CHALLENGE_READY" }
   | { type: "CREATE_CHALLENGES" }
   | {
@@ -300,9 +298,6 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
   return {
     ...context.documentMetaData,
     paperScores: updatedPaperScores, // 🔹 Updated paper scores, including reflection
-    challengeArray: Array(topicsLength).fill([]),
-    newChallengesArray: Array(topicsLength).fill([]),
-    newChallengesReady: false,
     pills: updatedPills,
     reflectionTemplate: rubric.reflection, // 🔹 Update with the new reflection template
     rubricLastUpdated: rubric.lastUpdated,
@@ -679,86 +674,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             error: {},
           },
         },
-        ChallengeCreator: {
-          initial: "idle",
 
-          states: {
-            reset: {
-              entry: [
-                assign({
-                  documentMetaData: (context) => ({
-                    ...context.documentMetaData,
-                    newChallengesArray: [],
-                    newChallengesReady: false,
-                    challengeArray: [],
-                  }),
-                }),
-              ],
-              always: {
-                target: "createChallenges",
-              },
-            },
-            idle: {
-              on: {
-                CREATE_CHALLENGES: {
-                  target: "createChallenges",
-                },
-              },
-            },
-            //todo this is the wrong state but using it to test loading.
-
-            createChallenges: {
-              invoke: {
-                src: addChallengesToChallengeArrays,
-                onDone: {
-                  target: "addChallengeDetails",
-                  actions: [
-                    (context, event) => {
-                      console.log("🥤 addChallengesToChallengeArrays done");
-                    },
-                    assign({
-                      documentMetaData: (context, event) => ({
-                        ...context.documentMetaData,
-
-                        newChallengesArray: event.data,
-                      }),
-                    }),
-                  ],
-                },
-                onError: {
-                  target: ["#app.UI.uiError", "error", "#app.MainFlow.error"],
-                },
-              },
-            },
-            addChallengeDetails: {
-              invoke: {
-                src: addChallengeDetailsToChallengeArray,
-                onDone: {
-                  target: "idle",
-                  actions: [
-                    assign({
-                      documentMetaData: (context, event) => ({
-                        ...context.documentMetaData,
-                        newChallengesArray: event.data,
-                        newChallengesReady: true,
-                      }),
-                    }),
-                    send({
-                      type: "NEW_CHALLENGES_AVAILABLE",
-                    }),
-                  ],
-                },
-              },
-            },
-            error: {
-              entry: [
-                (context, event) => {
-                  console.log("Entered error state in Challenge Creator");
-                },
-              ],
-            },
-          },
-        },
         MainFlow: {
           initial: "initial",
           states: {
@@ -787,11 +703,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   target: "loadingPersistentData",
                 },
                 onError: {
-                  target: [
-                    "#app.UI.uiError",
-                    "error",
-                    "#app.ChallengeCreator.error",
-                  ],
+                  target: ["#app.UI.uiError", "error"],
                 },
               },
             },
@@ -812,11 +724,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   ],
                 },
                 onError: {
-                  target: [
-                    "#app.UI.uiError",
-                    "error",
-                    "#app.ChallengeCreator.error",
-                  ],
+                  target: ["#app.UI.uiError", "error"],
                 },
               },
             },
@@ -825,7 +733,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 src: getOrLoadDocumentMetaData,
 
                 onDone: {
-                  target: "updateTextInitial",
+                  target: "waitingForRubric",
                   actions: [
                     assign({
                       documentMetaData: (context, event) =>
@@ -838,43 +746,17 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
 
                 onError: {
-                  target: [
-                    "#app.UI.uiError",
-                    "error",
-                    "#app.ChallengeCreator.error",
-                  ],
+                  target: ["#app.UI.uiError", "error"],
                 },
               },
             },
-            updateTextInitial: {
-              invoke: {
-                src: getFullText,
-                onDone: {
-                  target: ["waitingForRubric"],
-                  actions: [
-                    assign({
-                      documentMetaData: (context, event) => ({
-                        ...context.documentMetaData,
-                        textBeforeEdits: context.documentMetaData.currentText,
-                        currentText: event.data,
-                      }),
-                    }),
-                  ],
-                },
-              },
-            },
+
             waitingForRubric: {
               always: {
                 cond: (context) => {
                   return context.documentMetaData.defaultRubric !== undefined;
                 },
                 target: "idleHome",
-
-                actions: [
-                  send({
-                    type: "CREATE_CHALLENGES",
-                  }),
-                ],
               },
               on: {
                 RUBRIC_ARRAY_LOADED: {
@@ -900,7 +782,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               on: {
                 CHALLENGE_SELECTED: {
                   target: "updateTextOnChallengeSelected",
-
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -908,20 +789,15 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         selectedChallengeNumber: event.payload.topicNumber,
                       }),
                     }),
+                    send({
+                      type: "CHALLENGE_SELECTED",
+                    }), //Start loading text/challenge question + UI needs to go to Motivation screen.
                   ],
                 },
                 REFLECTION_SELECTED: {
                   target: "idleReflection",
                 },
-                BACK_TO_HOME: {
-                  target: "idleHome",
-                },
-                NEW_CHALLENGES_AVAILABLE: {
-                  actions: [
-                    "addNewChallengesToChallengeArray",
-                    savePersistentDocData,
-                  ],
-                },
+
                 CUSTOMIZE_CLICKED: {
                   target: "idleCustomize",
                 },
@@ -929,9 +805,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             idleCustomize: {
               on: {
-                NEW_RUBRIC_UNPACKED: {
-                  target: "#app.ChallengeCreator.reset",
-                },
+                NEW_RUBRIC_UNPACKED: {},
 
                 BUTTON_CLICKED: [
                   {
@@ -983,7 +857,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   },
 
                   {
-                    target: "#app.ChallengeCreator.reset",
                     cond: (context, event) =>
                       event.payload.buttonId === "rubric-dropdown",
                     actions: [
@@ -1052,7 +925,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               invoke: {
                 src: getFullText,
                 onDone: {
-                  target: "updateTextCoordinates",
+                  target: "getNewChallenge",
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -1065,69 +938,58 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
-            updateTextCoordinates: {
-              entry: [
-                "addNewChallengesToChallengeArray",
-                (context) => savePersistentDocData(context),
-              ],
+
+            getNewChallenge: {
               invoke: {
-                src: (context) =>
-                  Promise.resolve(updateTextCoordinates(context)),
+                src: getNewChallenge,
                 onDone: {
-                  target: "checkForChallenges",
+                  target: "getChallengeDetails",
                   actions: [
+                    (context, event) => {
+                      console.log("💫 getNewChallenge: ", event.data);
+                    },
                     assign({
                       documentMetaData: (context, event) => ({
                         ...context.documentMetaData,
-                        challengeArray: event.data,
+                        currentChallenge: event.data,
                       }),
                     }),
                   ],
                 },
               },
             },
-            checkForChallenges: {
-              always: [
-                {
-                  cond: (context) => {
-                    const { challengeArray, selectedChallengeNumber } =
-                      context.documentMetaData || {};
-
-                    // Ensure challengeArray and selectedChallengeNumber are valid
-                    if (
-                      !Array.isArray(challengeArray) || // Validate challengeArray is an array
-                      !Array.isArray(challengeArray[selectedChallengeNumber]) // Validate nested array
-                    ) {
-                      return false; // Safely return false if data is invalid
-                    }
-
-                    // Safely access sentenceStartIndex and compare
-                    const challenge =
-                      challengeArray[selectedChallengeNumber]?.[0];
-                    return challenge?.sentenceStartIndex >= 0;
-                  },
-                  actions: send({
-                    type: "CHALLENGE_READY", // Notify UI
-                  }),
-                  target: "idleOnChallenge", // Transition to idle after notifying UI
+            getChallengeDetails: {
+              invoke: {
+                src: addChallengeDetails,
+                onDone: {
+                  target: "formatChallengeResponse",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        currentChallenge: event.data,
+                      }),
+                    }),
+                    send({
+                      type: "AI_FEELING_READY",
+                    }),
+                  ],
                 },
-                {
-                  cond: (context, event, { state }) =>
-                    state.matches({ ChallengeCreator: "idle" }),
-                  target: [
-                    "waitForChallengesToComplete",
-                    "#app.ChallengeCreator.createChallenges",
-                  ], // Start ChallengeCreator if it's idle
-                },
-                {
-                  target: "waitForChallengesToComplete", // Wait if ChallengeCreator is already creating challenges
-                },
-              ],
+              },
             },
-            waitForChallengesToComplete: {
-              on: {
-                NEW_CHALLENGES_AVAILABLE: {
-                  target: "updateTextOnChallengeSelected", //Which will also load any texts for updating!
+            formatChallengeResponse: {
+              invoke: {
+                src: formatChallengeResponse,
+                onDone: {
+                  target: "idleOnChallenge",
+                  actions: [
+                    (context, event) => {
+                      console.log("💫 formatChallengeResponse: ", event.data);
+                    },
+                    send({
+                      type: "CHALLENGE_READY",
+                    }),
+                  ],
                 },
               },
             },
@@ -1144,7 +1006,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     cond: (context, event) =>
                       event.payload.buttonId === "skip-button",
                     actions: [
-                      "shiftTopicChallenge",
+                      assign({
+                        documentMetaData: (context, event) => ({
+                          ...context.documentMetaData,
+                          currentChallenge: undefined,
+                        }),
+                      }),
                       "savePersistentDocData",
                       send({
                         type: "CREATE_CHALLENGES",
@@ -1187,34 +1054,29 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       modifiedEndIndex,
                     } = compareNewSentenceToOldSentence(context);
 
-                    // Find the selected challenge
-                    const updatedChallengeArray = [
-                      ...context.documentMetaData.challengeArray,
-                    ];
-                    const selectedChallengeNumber =
-                      context.documentMetaData.selectedChallengeNumber;
+                    const { documentMetaData } = context;
+                    const currentChallenge = documentMetaData.currentChallenge;
 
-                    // Ensure the array and challenge exist before updating
-                    if (
-                      updatedChallengeArray[selectedChallengeNumber] &&
-                      updatedChallengeArray[selectedChallengeNumber][0]
-                    ) {
-                      updatedChallengeArray[selectedChallengeNumber][0] = {
-                        ...updatedChallengeArray[selectedChallengeNumber][0],
+                    if (currentChallenge) {
+                      // Create an updated challenge object with the modified data
+                      const updatedChallenge: ChallengeInfo = {
+                        ...currentChallenge,
                         challengeResponse,
                         modifiedSentences,
-                        sentenceStartIndex: modifiedStartIndex,
-                        sentenceEndIndex: modifiedEndIndex,
+                        currentSentenceCoordinates: {
+                          startIndex: modifiedStartIndex,
+                          endIndex: modifiedEndIndex,
+                        },
+                      };
+
+                      return {
+                        ...documentMetaData,
+                        currentChallenge: updatedChallenge,
                       };
                     } else {
-                      console.warn("Selected challenge does not exist.");
+                      console.warn("No current challenge found.");
+                      return documentMetaData; // Return unchanged metadata if no challenge exists
                     }
-
-                    // Return updated documentMetaData with the modified challengeArray
-                    return {
-                      ...context.documentMetaData,
-                      challengeArray: updatedChallengeArray,
-                    };
                   },
                 }),
               ],
@@ -1222,16 +1084,15 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               always: [
                 {
                   cond: (context) =>
-                    context.documentMetaData.challengeArray[
-                      context.documentMetaData.selectedChallengeNumber
-                    ][0].challengeResponse === "valid",
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "valid",
                   target: "getAIJudgement",
                 },
                 {
                   cond: (context) =>
-                    context.documentMetaData.challengeArray[
-                      context.documentMetaData.selectedChallengeNumber
-                    ][0].challengeResponse === "noChanges",
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "noChanges",
+
                   target: "idleOnChallenge",
                   actions: [
                     send({
@@ -1244,9 +1105,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
                 {
                   cond: (context) =>
-                    context.documentMetaData.challengeArray[
-                      context.documentMetaData.selectedChallengeNumber
-                    ][0].challengeResponse === "tooFar",
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "tooFar",
+
                   target: "idleOnChallenge",
                   actions: [
                     send({
@@ -1597,9 +1458,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     currentPage: "AI-Feeling",
                     visibleButtons: ["back-button", "next-button"],
                     cardMainText:
-                      context.documentMetaData.challengeArray[
-                        context.documentMetaData.selectedChallengeNumber
-                      ][0].aiFeeling,
+                      context.documentMetaData.currentChallenge?.aiFeeling,
                     waitingAnimationOn: false,
                   }),
                 }),
@@ -1629,14 +1488,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     currentPage: "challenge-card",
                     visibleButtons: ["skip-button", "check-work-button"],
                     waitingAnimationOn: false,
-                    tasks:
-                      context.documentMetaData.challengeArray[
-                        context.documentMetaData.selectedChallengeNumber
-                      ][0].taskArray,
-                    cardSubtitle:
-                      context.documentMetaData.challengeArray[
-                        context.documentMetaData.selectedChallengeNumber
-                      ][0].challengeTitle,
+                    cardMainText:
+                      context.documentMetaData.currentChallenge
+                        ?.formattedFeedback,
                     taskFeedback: undefined,
                   }),
                 }),
@@ -2217,71 +2071,8 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             return updatedUIState;
           },
         }),
-        shiftTopicChallenge: assign({
-          documentMetaData: (context) => {
-            const { challengeArray, selectedChallengeNumber } =
-              context.documentMetaData || {};
-            if (challengeArray && challengeArray[selectedChallengeNumber]) {
-              challengeArray[selectedChallengeNumber].shift();
-            }
-            return {
-              ...context.documentMetaData,
-              challengeArray, // Already modified in-place
-              selectedChallengeNumber: -1, // Ensure this is returned as part of the updated object
-            };
-          },
-        }),
-        addNewChallengesToChallengeArray: assign({
-          documentMetaData: (context) => {
-            if (context.documentMetaData.newChallengesReady) {
-              let { challengeArray, newChallengesArray } =
-                context.documentMetaData;
-
-              // Debugging: Log the initial state
-
-              // Merge corresponding arrays at each index
-              if (
-                challengeArray.length < context.documentMetaData.pills.length
-              ) {
-                const localChallengeArray = Array.from(
-                  { length: context.documentMetaData.pills.length },
-                  () => [] // Initialize each element as an empty array
-                );
-                challengeArray = localChallengeArray;
-              }
-
-              const updatedChallengeArray = challengeArray.map((arr, index) => {
-                const newArrayAtIndex = newChallengesArray[index] || []; // Handle missing indices // Debugging: Log merging process
-                return arr.concat(newArrayAtIndex); // Append the arrays
-              });
-
-              return {
-                ...context.documentMetaData,
-                challengeArray: updatedChallengeArray, // Replace with the updated array
-                newChallengesArray: [], // Clear newChallengesArray
-                newChallengesReady: false, // Reset the flag
-              };
-            } else {
-              return context.documentMetaData;
-            }
-          },
-        }),
       },
-      guards: {
-        isChallengeReady: (context) => {
-          const documentMetaData = context.documentMetaData || {
-            challengeArray: [],
-            selectedChallengeNumber: 0,
-          }; // Ensure it's not null
-          const { challengeArray, selectedChallengeNumber } = documentMetaData;
-
-          // Check if challengeArray is an array and the selected challenge is ready
-          return (
-            Array.isArray(challengeArray) &&
-            challengeArray[selectedChallengeNumber]?.[0]?.ready === true
-          );
-        },
-      },
+      guards: {},
     }
   );
 }

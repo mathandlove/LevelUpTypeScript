@@ -2,7 +2,7 @@ import { drive } from "googleapis/build/src/apis/drive";
 import { ChallengeInfo, defaultRubric, Rubric } from "../common/types";
 import { AppContext } from "../stateMachine";
 
-export function getSentenceStartAndEndToChallenge(
+export function getSentenceStartAndEnd(
   sentenceToFind: string,
   fullText
 ): {
@@ -11,9 +11,32 @@ export function getSentenceStartAndEndToChallenge(
   endIndex: number;
 } {
   const lowerFullText = fullText.toLowerCase();
-  const lowerSentenceToFind = sentenceToFind.toLowerCase();
-
+  let lowerSentenceToFind = sentenceToFind.toLowerCase().trim();
+  const cleanedSentence = lowerSentenceToFind.replace(
+    /^[\s"“”‘’'.,!?;:(){}\[\]]+|[\s"“”‘’'.,!?;:(){}\[\]]+$/g,
+    ""
+  );
+  lowerSentenceToFind = cleanedSentence;
   const matchStartIndex = lowerFullText.indexOf(lowerSentenceToFind);
+
+  //if matchStartIndex is -1, try again with only the 50 first characters of the sentenceToFind, and then try again with only the 25 first characters, and then with the 10 characters. If at any point more than one sentence is found return only the first one.
+  if (matchStartIndex === -1) {
+    const matchStartIndex = lowerFullText.indexOf(
+      lowerSentenceToFind.substring(0, 50)
+    );
+  }
+
+  if (matchStartIndex === -1) {
+    const matchStartIndex = lowerFullText.indexOf(
+      lowerSentenceToFind.substring(0, 25)
+    );
+  }
+
+  if (matchStartIndex === -1) {
+    const matchStartIndex = lowerFullText.indexOf(
+      lowerSentenceToFind.substring(0, 10)
+    );
+  }
 
   if (matchStartIndex === -1) {
     console.warn(`Sentence not found: "${sentenceToFind}"`);
@@ -61,59 +84,15 @@ export function getSentenceStartAndEndToChallenge(
   };
 }
 
-export function updateTextCoordinates(context: AppContext) {
-  // Validate that each sentence exists at their prescribed coordinates.
-  const { challengeArray, currentText } = context.documentMetaData;
-
-  // Updated list of challenges after validation
-  const updatedChallenges = challengeArray.map(
-    (challengeGroup: ChallengeInfo[]) =>
-      challengeGroup.filter((challengeInfo: ChallengeInfo) => {
-        const { modifiedSentences, sentenceStartIndex } = challengeInfo;
-
-        // Step 1: Find the sentence in the text.
-        const startIndex = currentText.indexOf(modifiedSentences[0]);
-
-        if (startIndex === -1) {
-          // Step 2a: If the sentence is not found, remove the challenge.
-          console.warn(
-            `Challenge sentence not found: "${modifiedSentences[0]}"`
-          );
-          return false; // Exclude this challenge
-        }
-
-        // Step 2b: If the sentence is found, check if the startPosition matches.
-        if (sentenceStartIndex !== startIndex) {
-          const { startIndex: newStartIndex, endIndex } =
-            getSentenceStartAndEndToChallenge(
-              modifiedSentences[0],
-              currentText
-            );
-
-          // Step 3a: Update startPosition and endPosition
-          challengeInfo.sentenceStartIndex = newStartIndex;
-          challengeInfo.sentenceEndIndex = endIndex;
-        }
-
-        // Retain the challenge in the updated list
-        return true;
-      })
-  );
-
-  return updatedChallenges;
-}
-
 export function compareNewSentenceToOldSentence(context: AppContext): {
   challengeResponse: "valid" | "tooFar" | "noChanges";
   modifiedSentences: string[];
   modifiedStartIndex: number;
   modifiedEndIndex: number;
 } {
-  const { currentText, textBeforeEdits, challengeArray } =
+  const { currentText, textBeforeEdits, currentChallenge } =
     context.documentMetaData;
-  const challengeInfo =
-    challengeArray[context.documentMetaData.selectedChallengeNumber][0];
-  const { modifiedSentences } = challengeInfo;
+  const { modifiedSentences } = currentChallenge;
 
   const originalSentences = splitIntoSentences(textBeforeEdits);
   const newSentences = splitIntoSentences(currentText);
