@@ -1,4 +1,7 @@
 import OpenAI from "openai";
+
+import { marked } from "marked";
+
 import { openRouterKey } from "../resources/keys.js";
 
 import { AppContext } from "../stateMachine";
@@ -243,8 +246,10 @@ export async function formatChallengeResponse(
   const challenge = context.documentMetaData.currentChallenge;
   const improvedFeedback = await improveFeedback(context);
   const emojifiedFeedback = await emojifyFeedback(context, improvedFeedback);
-  challenge.aiRawFeedback = emojifiedFeedback;
+  challenge.formattedFeedback = emojifiedFeedback;
+
   return challenge;
+
   async function improveFeedback(context: AppContext): Promise<string> {
     const challenge = context.documentMetaData.currentChallenge;
 
@@ -280,7 +285,19 @@ export async function formatChallengeResponse(
     const model = "google/gemini-2.0-flash-001";
     const returnDataSchema = null;
     const openAIStr = await callOpenAI(messages, model, returnDataSchema);
-    return openAIStr;
+    console.log("Non Marked Version: ", openAIStr);
+    const html = await convertMarkdownToHtml(openAIStr);
+    console.log("HTML Version: ", html);
+    return html;
+  }
+
+  function preprocessMarkdown(markdownText: string): string {
+    return markdownText.replace(/(\n)(\*|\d+\.)/g, "\n\n$2"); // Ensure extra line break before bullets
+  }
+
+  async function convertMarkdownToHtml(markdownText: string): Promise<string> {
+    const processedMarkdown = preprocessMarkdown(markdownText);
+    return marked.parse(processedMarkdown);
   }
 }
 

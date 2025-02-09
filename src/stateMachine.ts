@@ -81,7 +81,6 @@ type InternalEvent =
   | { type: "TOPICS_UPDATED" }
   | { type: "INITIAL_ARRAY_CHECK" }
   | { type: "CHALLENGE_SELECTED"; payload: { topicNumber: number } } // Add payload here
-  | { type: "CHALLENGE_READY" }
   | { type: "CREATE_CHALLENGES" }
   | {
       type: "REVIEWED";
@@ -104,8 +103,10 @@ type InternalEvent =
   | { type: "NEW_RUBRIC_UPDATED_FROM_GOOGLE_SHEET" }
   | { type: "NEW_RUBRIC_UNPACKED" }
   | { type: "NEW_RUBRIC_SAVED" }
-  | { type: "CREATE_RUBRIC_COPY"; payload: { importDocumentId: string } };
-
+  | { type: "CREATE_RUBRIC_COPY"; payload: { importDocumentId: string } }
+  | { type: "GOAL_FLAGGED"; payload: { goal: string } }
+  | { type: "AI_FEELING_READY" }
+  | { type: "CHALLENGE_READY" };
 // Add button click to AppEvent type
 type AppEvent = IncomingWebSocketMessage | ErrorMessageEvent | InternalEvent;
 
@@ -777,6 +778,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     waitingAnimationOn: false,
                   }),
                 }),
+                assign({
+                  documentMetaData: (context, event) => ({
+                    ...context.documentMetaData,
+                    currentChallenge: undefined, //We make the challenges on the go now!
+                  }),
+                }),
                 sendUIUpdate,
               ],
               on: {
@@ -788,9 +795,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         ...context.documentMetaData,
                         selectedChallengeNumber: event.payload.topicNumber,
                       }),
-                    }),
-                    send({
-                      type: "CHALLENGE_SELECTED",
                     }), //Start loading text/challenge question + UI needs to go to Motivation screen.
                   ],
                 },
@@ -943,7 +947,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               invoke: {
                 src: getNewChallenge,
                 onDone: {
-                  target: "getChallengeDetails",
+                  target: "waitForGoalFlag",
                   actions: [
                     (context, event) => {
                       console.log("💫 getNewChallenge: ", event.data);
@@ -958,9 +962,40 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+            waitForGoalFlag: {
+              always: {
+                cond: (context) =>
+                  !!context.documentMetaData?.flags?.studentGoal,
+
+                target: "getChallengeDetails",
+              },
+              on: {
+                GOAL_FLAGGED: {
+                  target: "getChallengeDetails",
+                },
+              },
+            },
+
             getChallengeDetails: {
+              entry: [
+                assign({
+                  documentMetaData: (context, event) => ({
+                    ...context.documentMetaData,
+                    currentChallenge: {
+                      ...context.documentMetaData.currentChallenge,
+                      studentGoal: context.documentMetaData.flags.studentGoal,
+                      flags: {
+                        ...context.documentMetaData.flags,
+                        studentGoal: undefined,
+                      },
+                    },
+                  }),
+                }),
+              ],
+
               invoke: {
                 src: addChallengeDetails,
+
                 onDone: {
                   target: "formatChallengeResponse",
                   actions: [
@@ -985,6 +1020,22 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   actions: [
                     (context, event) => {
                       console.log("💫 formatChallengeResponse: ", event.data);
+                    },
+                    assign({
+                      documentMetaData: (context, event) => {
+                        // Extract challenge data from the event
+                        const challenge = event.data; // Assuming event contains challenge data
+                        return {
+                          ...context.documentMetaData,
+                          currentChallenge: challenge, // Correctly assign challenge object
+                        };
+                      },
+                    }),
+                    (context, event) => {
+                      console.log(
+                        "💫 formatChallengeResponse: ",
+                        context.documentMetaData.currentChallenge
+                      );
                     },
                     send({
                       type: "CHALLENGE_READY",
@@ -1384,7 +1435,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
                 BUTTON_CLICKED: [
                   {
-                    target: "waitForChallenge", // Transition to a loading state
+                    target: "selectGoal",
                     cond: (context, event) =>
                       event.payload.buttonId === "pill-button" &&
                       event.payload.buttonTitle !== -1, // -1 ==reflec t
@@ -1428,28 +1479,68 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
               },
             },
-            waitForChallenge: {
+            selectGoal: {
               entry: [
                 assign({
                   uiState: (context) => ({
                     ...context.uiState,
-                    currentPage: "home-page",
-                    visibleButtons: [],
-                    waitingAnimationOn: true, // Show waiting animation if challenge is not ready
+                    currentPage: "selectGoal-card",
+                    visibleButtons: ["back-button", "next-button"],
+                    goalTitles:
+                      context.documentMetaData.pills[
+                        context.documentMetaData.selectedChallengeNumber
+                      ].studentGoalArray,
                   }),
                 }),
+
                 sendUIUpdate,
-                send({
-                  type: "INITIAL_ARRAY_CHECK", // This feels like cheating as we are initializing CHALLENGE_ARRAY not updating it.
-                }),
               ],
-              //TODO: when our we've updated challenges, this needs to be called as well.
               on: {
-                CHALLENGE_READY: {
-                  target: "aiFeel", // Go to the "ai-feel" state if the condition is met
+                BUTTON_CLICKED: {
+                  target: "home",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "back-button",
+                },
+                SELECT_GOAL: {
+                  target: "waitingForAIFeel",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        flags: {
+                          studentGoal: event.payload.buttonTitle,
+                        },
+                      }),
+                    }),
+                    send((context, event) => ({
+                      type: "GOAL_FLAGGED",
+                    })),
+                  ],
                 },
               },
             },
+            waitingForAIFeel: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    waitingAnimationOn: true,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              always: {
+                target: "aiFeel",
+                cond: (context, event) =>
+                  !!context.documentMetaData?.currentChallenge?.aiFeeling,
+              },
+              on: {
+                AI_FEELING_READY: {
+                  target: "aiFeel",
+                },
+              },
+            },
+
             aiFeel: {
               entry: [
                 assign({
@@ -1473,14 +1564,38 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       event.payload.buttonId === "back-button",
                   },
                   {
-                    target: "challengeTaskDisplay",
+                    target: "waitingForChallenge",
                     cond: (context, event) =>
                       event.payload.buttonId === "next-button",
                   },
                 ],
               },
             },
-            challengeTaskDisplay: {
+            waitingForChallenge: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    waitingAnimationOn: true,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              always: {
+                target: "challengeDisplay",
+                cond: (context, event) =>
+                  !!context.documentMetaData?.currentChallenge
+                    ?.formattedFeedback,
+              },
+
+              on: {
+                CHALLENGE_READY: {
+                  target: "challengeDisplay",
+                },
+              },
+            },
+
+            challengeDisplay: {
               entry: [
                 assign({
                   uiState: (context, event) => ({
@@ -1494,8 +1609,15 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     taskFeedback: undefined,
                   }),
                 }),
+                (context, event) => {
+                  console.log(
+                    "💫 challengeDisplay: ",
+                    context.documentMetaData.currentChallenge?.formattedFeedback
+                  );
+                },
                 sendUIUpdate,
               ],
+
               on: {
                 BUTTON_CLICKED: [
                   {

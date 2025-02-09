@@ -40,6 +40,6 @@ export function getInstructForImproveFeedback(studentGoal: string) {
 }
 
 export function getInstructAddEmojisToFeedback() {
-  const instructions = `Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Do not add any new words to the feedback: it should be the same text as before.`;
+  const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Do NOT add an introduction or conclusion to your reply.`;
   return instructions;
 }
