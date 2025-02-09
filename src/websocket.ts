@@ -1,7 +1,7 @@
 import { WebSocketServer, WebSocket, RawData } from "ws";
 import { Server } from "http";
 import logger from "./utils/logger.js";
-import { getOrCreateActor } from "./stateMachine.js";
+import { getOrCreateActor } from "./levelStateMachine.js";
 import {
   isValidIncomingWebSocketMessage,
   IncomingWebSocketMessage,

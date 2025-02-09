@@ -4,7 +4,7 @@ import { marked } from "marked";
 
 import { openRouterKey } from "../resources/keys.js";
 
-import { AppContext } from "../stateMachine";
+import { AppContext } from "../stateMachineWorkingButOld.js";
 import { ChallengeInfo } from "../common/types";
 import {
   ImprovedSentenceArraySchema,
@@ -124,7 +124,6 @@ export async function checkChallengeResponse(
   } else {
     passed = false;
   }
-  console.log("passed: ", passed);
   return passed;
 }
 
@@ -151,8 +150,6 @@ export async function getNewChallenge(
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
   const endTime = Date.now();
   const duration = endTime - startTime;
-  console.log("Duration: ", duration);
-  console.log("openAIStr: ", openAIStr);
   challenge.aiRawFeedback = openAIStr;
   return challenge;
 }
@@ -170,8 +167,6 @@ export async function addChallengeDetails(
       getAIFeelings(context),
       getCriticalThinkingQuestion(context),
     ]);
-
-  console.log(selectedSentence, aiFeeling, criticalThinkingQuestion);
 
   // Assign the results once all promises have resolved
   challenge.modifiedSentences[0] = selectedSentence;
@@ -285,9 +280,7 @@ export async function formatChallengeResponse(
     const model = "google/gemini-2.0-flash-001";
     const returnDataSchema = null;
     const openAIStr = await callOpenAI(messages, model, returnDataSchema);
-    console.log("Non Marked Version: ", openAIStr);
     const html = await convertMarkdownToHtml(openAIStr);
-    console.log("HTML Version: ", html);
     return html;
   }
 
