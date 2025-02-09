@@ -1,3 +1,6 @@
+import OpenAI from "openai";
+import { openRouterKey } from "../resources/keys.js";
+
 import { AppContext } from "../stateMachine";
 import { ChallengeInfo } from "../common/types";
 import {
@@ -8,7 +11,6 @@ import {
   TasksArray,
   TasksArraySchema,
 } from "../resources/schemas";
-import { getFullText } from "./googleServices";
 import {
   getInstructForTurnSentencesIntoTasks,
   getInstructForTopicSentencesToImprove,
@@ -18,8 +20,16 @@ import {
   getInstructForGetCelebration,
   getInstructForGetFailedFeedback,
 } from "../resources/InstructionsAI.js";
-import { chatGPTKey } from "../resources/keys";
 import { getSentenceStartAndEndToChallenge } from "./docServices";
+
+const openai = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: openRouterKey,
+  defaultHeaders: {
+    "HTTP-Referer": "www.buildempathy.com", // Optional. Site URL for rankings on openrouter.ai.
+    "X-Title": "Level Up", // Optional. Site title for rankings on openrouter.ai.
+  },
+});
 
 export async function getFailedFeedback(context: AppContext): Promise<string> {
   const instructions = getInstructForGetFailedFeedback();
@@ -206,7 +216,7 @@ export async function addChallengeDetailsToChallengeArray(
       content: JSON.stringify(aiFeedback),
     });
     const returnDataSchema = null;
-    const model = "gpt-4o";
+    const model = "deepseek/deepseek-chat";
     const openAIobj = await callOpenAI(messages, model, returnDataSchema);
     return openAIobj.response;
   }
@@ -225,7 +235,7 @@ export async function addChallengeDetailsToChallengeArray(
       content: JSON.stringify(aiFeedback),
     });
     const returnDataSchema = TasksArraySchema;
-    const model = "gpt-4o";
+    const model = "deepseek/deepseek-chat";
     const openAIobj = await callOpenAI(messages, model, returnDataSchema);
     let response: TasksArray = JSON.parse(openAIobj.response).tasks;
     if (!validateTasksArray(response)) {
@@ -249,7 +259,7 @@ export async function addChallengeDetailsToChallengeArray(
       content: JSON.stringify(aiFeedback),
     });
     const returnDataSchema = null;
-    const model = "gpt-4o-mini";
+    const model = "deepseek/deepseek-chat";
     const openAIobj = await callOpenAI(messages, model, returnDataSchema);
     return openAIobj.response;
   }
@@ -305,7 +315,7 @@ export async function addChallengesToChallengeArrays(
       content: `Criteria: Edit this paper so it ${selectTopicDescription}. Do not make other edits outside the criteria.\n
       Paper: ${fullText}`,
     });
-    const model = "gpt-4o-mini";
+    const model = "deepseek/deepseek-chat";
     const returnDataSchema = ImprovedSentenceArraySchema;
     const openAIobj = await callOpenAI(messages, model, returnDataSchema);
 
@@ -346,11 +356,9 @@ async function callOpenAI(
   messages: ChatMessage[],
   model: string,
   returnDataSchema: any = null
-): Promise<OpenAICallResponse> {
-  const apiKey = chatGPTKey;
+): Promise<OpenAICallResponse | null> {
+  let body;
 
-  const url = "https://api.openai.com/v1/chat/completions";
-  let body = {};
   if (returnDataSchema) {
     body = {
       model: model,
@@ -363,38 +371,17 @@ async function callOpenAI(
       messages: messages,
     };
   }
-  const options = {
-    method: "post",
-    contentType: "application/json",
-    payload: JSON.stringify(body),
-    headers: {
-      Authorization: "Bearer " + apiKey,
-    },
-    muteHttpExceptions: true,
-  };
-  const startTime = Date.now();
+
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-    if (!response.ok) {
-      const errorDetails = await response.json();
-      console.error("Error calling OpenAI API:", errorDetails);
-      console.error(messages);
-      //Need to put in error screen. TODO
-      return null;
-    }
-    const jsonResponse = await response.json();
+    const startTime = Date.now();
+
+    const completion = await openai.chat.completions.create(body);
 
     const endTime = Date.now();
-    if (jsonResponse.choices && jsonResponse.choices.length > 0) {
-      const completionTokens = jsonResponse.usage.completion_tokens;
-      const promptTokens = jsonResponse.usage.prompt_tokens;
+
+    if (completion.choices && completion.choices.length > 0) {
+      const completionTokens = completion.usage?.completion_tokens || 0;
+      const promptTokens = completion.usage?.prompt_tokens || 0;
 
       // Define cost per token for each type
       const costPerCompletionToken = 0.15 / 1000000; // Example cost
@@ -402,13 +389,15 @@ async function callOpenAI(
       const cost =
         completionTokens * costPerCompletionToken +
         promptTokens * costPerPromptToken;
+
       return {
-        response: jsonResponse.choices[0].message.content,
+        response: completion.choices[0].message.content,
         cost,
         callDuration: (endTime - startTime) / 1000,
       };
     } else {
-      console.error("Unexpected API response structure:", jsonResponse);
+      console.error("Unexpected API response structure:", completion);
+      return null;
     }
   } catch (error) {
     console.error("Error calling OpenAI API:", error);

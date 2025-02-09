@@ -257,8 +257,9 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
       updatedPaperScores.push({
         title: topic.title,
         current: 0, // Default score
-        outOf: -1,
-        description: "Paper Score - Do Not Reference",
+        outOf: undefined,
+        description: undefined,
+        studentGoalArray: undefined,
       });
     }
   });
@@ -277,6 +278,7 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
       current: context.documentMetaData.reflectionTemplate.currentScore || 0,
       outOf: -1,
       description: "Reflection Score",
+      studentGoalArray: undefined,
     });
   }
 
@@ -886,9 +888,19 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               },
             },
             idleHome: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    waitingAnimationOn: false,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
               on: {
                 CHALLENGE_SELECTED: {
                   target: "updateTextOnChallengeSelected",
+
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -1404,6 +1416,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                             current: 1,
                             outOf: -1,
                             description: "Reflection Score",
+                            studentGoalArray: undefined,
                           });
                         }
 
