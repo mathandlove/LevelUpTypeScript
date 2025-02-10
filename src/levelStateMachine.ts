@@ -374,11 +374,60 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     cond: (context, event) =>
                       event.payload.buttonId === "new-rubric-button",
                   },
+                  {
+                    target: ["initializeEditRubric"],
+                    cond: (context, event) =>
+                      event.payload.buttonId === "edit-rubric-button",
+                  },
+                  {
+                    target: "shareRubricPopup",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "share-rubric-button",
+                  },
                 ],
               },
             },
+            shareRubricPopup: {
+              entry: [
+                (context) => {
+                  const currentRubric = getRubric(
+                    context,
+                    context.documentMetaData.currentRubricID
+                  );
+                  sendShareRubricPopup(
+                    context,
+                    currentRubric.databaseID,
+                    currentRubric.title,
+                    "https://www.wonder.io" //TODO: Need to make a page that explains what to do!
+                  );
+                },
+              ],
+              always: {
+                target: "customizeHome",
+              },
+            },
+
+            initializeEditRubric: {
+              entry: [
+                assign({
+                  documentMetaData: (context, event) => ({
+                    ...context.documentMetaData,
+                    tempNewRubric: getRubric(
+                      context,
+                      context.documentMetaData.currentRubricID
+                    ),
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              always: {
+                target: "customizeNew",
+              },
+            },
+
             customizeNew: {
               exit: stop("createNewRubricTask"),
+
               entry: [
                 assign({
                   uiState: (context, event) => ({
@@ -404,7 +453,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
               invoke: {
                 id: "createNewRubricTask",
-                src: createNewRubricAndSheet,
+                src: grabOrCreateTempRubricAndSheet,
                 onDone: {
                   actions: [
                     () => {
@@ -416,7 +465,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         tempNewRubric: event.data,
                       }),
                     }),
-                    sendTo((context) => context.self, "NEW_RUBRIC_READY"),
+                    sendTo((context) => context.self, "NEW_RUBRIC_READY"), //Trigger state change with a CONDITIONAL
                   ],
                 },
                 onError: {
@@ -435,7 +484,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
                     cond: (context, event) =>
                       event.payload.buttonId === "back-button",
-                    actions: [stop("createNewRubricTask")],
                   },
                   {
                     target: "waitForRubricSave",
@@ -1026,10 +1074,21 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
   };
 }
 
-async function createNewRubricAndSheet(context: AppContext): Promise<Rubric> {
+async function grabOrCreateTempRubricAndSheet(
+  context: AppContext
+): Promise<Rubric> {
+  //Now checks if rubric in tempNewRubric exists and has a google sheet
   try {
-    let rubric = await newRubric(context);
-    rubric = await createGoogleSheet(context, rubric);
+    let rubric: Rubric;
+    if (context.documentMetaData.tempNewRubric == undefined) {
+      rubric = await newRubric(context);
+    } else {
+      rubric = context.documentMetaData.tempNewRubric;
+    }
+    if (rubric.googleSheetID == undefined || rubric.googleSheetID == "") {
+      rubric = await createGoogleSheet(context, rubric);
+    }
+
     return rubric;
   } catch (error) {
     console.error("❌ Error creating new rubric and sheet:", error);
@@ -1044,6 +1103,25 @@ function sendExternalPageToOpen(context: AppContext, url: string) {
       type: "EXTERNAL_PAGE_TO_OPEN",
       payload: {
         url: url,
+      },
+    });
+  }
+}
+
+function sendShareRubricPopup(
+  context: AppContext,
+  rubricID: string,
+  rubricName: string,
+  rubricLink: string
+) {
+  const ws = context.appState.ws;
+  if (ws?.sendMessage) {
+    ws.sendMessage({
+      type: "SHARE_RUBRIC_POPUP",
+      payload: {
+        rubricID: rubricID,
+        rubricName: rubricName,
+        rubricLink: rubricLink,
       },
     });
   }

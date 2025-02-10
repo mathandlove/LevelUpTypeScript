@@ -163,14 +163,24 @@ export async function createGoogleSheet(
         "Yes",
         ...rubric.reflection.question,
       ],
+      [],
+      [
+        "Goal Name",
+        "Description",
+        "Required Levels",
+        "Student Goal 1",
+        "Student Goal 2",
+        "Student Goal 3",
+      ],
       // Dynamically add topics
+
       ...rubric.topics.map((topic) => [
         topic.title,
         topic.description,
         topic.outOf,
-        "",
-        "",
-        "",
+        topic.studentGoalArray[0],
+        topic.studentGoalArray[1],
+        topic.studentGoalArray[2],
         "",
         "",
         "",
@@ -181,7 +191,7 @@ export async function createGoogleSheet(
 
     await sheets.spreadsheets.values.update({
       spreadsheetId,
-      range: "Sheet1!A1:K8",
+      range: "Sheet1!A1:K10",
       valueInputOption: "RAW",
       requestBody: { values },
     });
@@ -230,9 +240,10 @@ export async function createGoogleSheet(
           repeatCell: {
             range: {
               sheetId: 0, // Assuming the first sheet
-              startRowIndex: 4, // Row 5 (0-based index)
+              startRowIndex: 6, // Row 5 (0-based index)
+              endRowIndex: 16,
               startColumnIndex: 0, // Column C (0-based index)
-              endColumnIndex: 3,
+              endColumnIndex: 6,
             },
             cell: {
               userEnteredFormat: {
@@ -275,6 +286,27 @@ export async function createGoogleSheet(
               endRowIndex: 3,
               startColumnIndex: 0, // Column A (0-based index)
               endColumnIndex: 10, // Column J (0-based index)
+            },
+            cell: {
+              userEnteredFormat: {
+                backgroundColor: {
+                  red: 56 / 255,
+                  green: 118 / 255,
+                  blue: 29 / 255,
+                },
+              },
+            },
+            fields: "userEnteredFormat.backgroundColor",
+          },
+        },
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0, // Assuming the first sheet
+              startRowIndex: 5, // Row 3 (0-based index)
+              endRowIndex: 6,
+              startColumnIndex: 0, // Column A (0-based index)
+              endColumnIndex: 6, // Column J (0-based index)
             },
             cell: {
               userEnteredFormat: {
@@ -338,7 +370,13 @@ export async function createGoogleSheet(
             fields: "pixelSize",
           },
         },
-
+        {
+          updateDimensionProperties: {
+            range: { sheetId: 0, dimension: "ROWS", startIndex: 3 },
+            properties: { pixelSize: 85 },
+            fields: "pixelSize",
+          },
+        },
         // Row heights
         {
           updateDimensionProperties: {
@@ -354,11 +392,29 @@ export async function createGoogleSheet(
         },
         {
           updateDimensionProperties: {
-            range: { sheetId: 0, dimension: "ROWS", startIndex: 3 },
-            properties: { pixelSize: 85 },
+            range: {
+              sheetId: 0,
+              dimension: "ROWS",
+              startIndex: 4,
+              endIndex: 5,
+            },
+            properties: { pixelSize: 25 },
             fields: "pixelSize",
           },
         },
+        {
+          updateDimensionProperties: {
+            range: {
+              sheetId: 0,
+              dimension: "ROWS",
+              startIndex: 5,
+              endIndex: 6,
+            },
+            properties: { pixelSize: 50 },
+            fields: "pixelSize",
+          },
+        },
+
         {
           updateCells: {
             range: {
@@ -427,11 +483,6 @@ export async function createGoogleSheet(
             },
             cell: {
               userEnteredFormat: {
-                backgroundColor: {
-                  red: 44 / 255,
-                  green: 82 / 255,
-                  blue: 115 / 255,
-                },
                 textFormat: {
                   foregroundColor: {
                     red: 1.0,
@@ -443,7 +494,32 @@ export async function createGoogleSheet(
                 },
               },
             },
-            fields: "userEnteredFormat(backgroundColor, textFormat)",
+            fields: "userEnteredFormat(textFormat)",
+          },
+        },
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0, // Assuming the first sheet
+              startRowIndex: 5, // Row 3 (0-based index)
+              endRowIndex: 6,
+              startColumnIndex: 0,
+              endColumnIndex: 6,
+            },
+            cell: {
+              userEnteredFormat: {
+                textFormat: {
+                  foregroundColor: {
+                    red: 1.0,
+                    green: 1.0,
+                    blue: 1.0,
+                  },
+                  fontSize: 12,
+                  bold: true,
+                },
+              },
+            },
+            fields: "userEnteredFormat(textFormat)",
           },
         },
         {
@@ -473,6 +549,50 @@ export async function createGoogleSheet(
             range: {
               sheetId: 0,
               startRowIndex: 3, // Row 4 (0-based index)
+              endRowIndex: 4,
+              startColumnIndex: 1, // Column B
+              endColumnIndex: 2,
+            },
+            cell: {
+              userEnteredFormat: {
+                horizontalAlignment: "LEFT",
+                textFormat: {
+                  fontSize: 11,
+                },
+              },
+            },
+            fields:
+              "userEnteredFormat.horizontalAlignment, userEnteredFormat.textFormat.fontSize",
+          },
+        },
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0, // Assuming the first sheet
+              startRowIndex: 6, // Row 5 (0-based index)
+              endRowIndex: 16,
+              startColumnIndex: 3, // Column C (0-based index)
+              endColumnIndex: 6,
+            },
+            cell: {
+              userEnteredFormat: {
+                horizontalAlignment: "LEFT",
+                textFormat: {
+                  fontSize: 10,
+                },
+              },
+            },
+            fields:
+              "userEnteredFormat.horizontalAlignment, userEnteredFormat.textFormat.fontSize",
+          },
+        },
+
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0,
+              startRowIndex: 6, // Row 4 (0-based index)
+              endRowIndex: 20,
               startColumnIndex: 1, // Column B
               endColumnIndex: 2,
             },
@@ -520,12 +640,35 @@ export async function createGoogleSheet(
             },
             cell: {
               userEnteredFormat: {
+                horizontalAlignment: "LEFT",
                 textFormat: {
                   fontSize: 11,
                 },
               },
             },
-            fields: "userEnteredFormat.textFormat.fontSize",
+            fields:
+              "userEnteredFormat.horizontalAlignment, userEnteredFormat.textFormat.fontSize",
+          },
+        },
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0, // Assuming the first sheet
+              startRowIndex: 3, // Row 4 (0-based index)
+              endRowIndex: 4,
+              startColumnIndex: 6, // Column F (0-based index)
+              endColumnIndex: 20, // Column J (exclusive)
+            },
+            cell: {
+              userEnteredFormat: {
+                horizontalAlignment: "LEFT",
+                textFormat: {
+                  fontSize: 11,
+                },
+              },
+            },
+            fields:
+              "userEnteredFormat.horizontalAlignment, userEnteredFormat.textFormat.fontSize",
           },
         },
       ],
