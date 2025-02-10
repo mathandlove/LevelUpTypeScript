@@ -4,8 +4,9 @@ import { marked } from "marked";
 
 import { openRouterKey } from "../resources/keys.js";
 
-import { AppContext } from "../stateMachineWorkingButOld.js";
+import { AppContext } from "../common/appTypes.js";
 import { ChallengeInfo } from "../common/types";
+
 import {
   ImprovedSentenceArraySchema,
   validateImprovedSentenceArray,
