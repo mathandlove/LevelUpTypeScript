@@ -186,6 +186,7 @@ export interface UIState {
     | "customize-card"
     | "customize-card-edit-newWindow";
   waitingAnimationOn: boolean;
+  waitingAnimationText: string;
   visibleButtons: ButtonId[]; // Now enforces specific button IDs
   buttonsDisabled: ButtonId[];
   level: number;
@@ -212,12 +213,14 @@ export interface UIState {
 export const defaultUIState: UIState = {
   currentPage: "home-page",
   waitingAnimationOn: false,
+  waitingAnimationText: "I'm not really reading.",
   visibleButtons: ["next-button"],
   buttonsDisabled: [],
   level: 1,
   formerLevel: 1,
   animateLevelUp: false,
   pills: [],
+
   reflection: defaultReflection,
   timeSpentHours: 0,
   timeSpentMinutes: 0,

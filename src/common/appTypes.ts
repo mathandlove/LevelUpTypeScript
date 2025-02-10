@@ -1,3 +1,4 @@
+import { ActorRef } from "xstate";
 import { LevelUpWebSocket } from "../websocket";
 import {
   ChallengeInfo,
@@ -8,12 +9,6 @@ import {
 } from "./types";
 import { IncomingWebSocketMessage } from "./wsTypes";
 import { OAuth2Client } from "google-auth-library";
-import { StateMachine } from "xstate";
-
-type EventsFromChildren =
-  //From CreateChallenge
-  | { type: "CHALLENGE_CREATED"; payload: { challenge: ChallengeInfo } }
-  | { type: "RUBRIC_CREATED"; payload: { rubric: Rubric } };
 
 /*
   | { type: "TOPICS_UPDATED" }
@@ -48,18 +43,12 @@ type EventsFromChildren =
   | { type: "CHALLENGE_READY" };
   */
 // Add button click to AppEvent type
-export type AppEvent =
-  | IncomingWebSocketMessage
-  | ErrorMessageEvent
-  | EventsFromChildren;
 
-type ErrorMessageEvent = {
-  type: "error";
-  data: {
-    name: string;
-    message: string;
-  };
-};
+type InternalMessages = { type: "NEW_RUBRIC_READY" };
+export type AppEvent =
+  | InternalMessages
+  | IncomingWebSocketMessage
+  | ErrorMessageEvent;
 
 interface AppState {
   token: string;
@@ -74,9 +63,12 @@ interface AppState {
     docs: any; // Google Docs API client
     sheets: any; // Google Sheets API client
   };
+  flags: {
+    nextPushed: boolean;
+  };
 }
 
-const defaultAppState: AppState = {
+export const defaultAppState: AppState = {
   token: "Waiting for token...",
   clientId: "Waiting for clientID",
   documentId: "waiting for documentID",
@@ -84,34 +76,29 @@ const defaultAppState: AppState = {
   persistentDataFileId: null,
   GoogleServices: null,
   levelUpFolderId: "",
+  flags: {
+    nextPushed: false,
+  },
 };
-
-interface ChallengeContext {
-  challenge: ChallengeInfo;
-  selectedTopicDescription: string;
-  pendingGoal?: string;
-}
-
-type ChallengeEvent =
-  | { type: "CREATE_CHALLENGE" }
-  | { type: "GOAL_SELECTED"; payload: { goal: string } };
-
-interface RubricContext {
-  rubric: Rubric;
-}
-
-type RubricEvent = { type: "CREATE_RUBRIC" };
 
 export interface AppContext {
   appState: AppState;
   uiState: UIState;
   documentMetaData: DocumentMetaData;
-  challengeActor?: StateMachine<ChallengeContext, any, ChallengeEvent>;
-  rubricActor?: StateMachine<RubricContext, any, RubricEvent>;
+  self: ActorRef<any>;
 }
 
 export const defaultAppContext: AppContext = {
   appState: defaultAppState,
   uiState: defaultUIState,
   documentMetaData: undefined,
+  self: undefined,
+};
+
+export type ErrorMessageEvent = {
+  type: "error";
+  data: {
+    name: string;
+    message: string;
+  };
 };
