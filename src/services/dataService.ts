@@ -6,7 +6,7 @@ import {
   verifyDocumentMetaDataMap,
   Rubric,
 } from "../common/types.js";
-import { AppContext } from "../stateMachineWorkingButOld.js";
+import { AppContext } from "../common/appTypes.js";
 import { google } from "googleapis";
 import { jwtDecode } from "jwt-decode";
 import { installDefaultRubric } from "./dataBaseService.js";

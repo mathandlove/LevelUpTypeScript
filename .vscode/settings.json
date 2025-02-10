@@ -1,5 +1,6 @@
 {
   "liveServer.settings.ignoreFiles": [
+    "**/stateMachineWorkingButOld.ts", // Add the exact file to ignore
     ".vscode/**",
     "**/*.scss",
     "**/*.sass",
@@ -8,5 +9,9 @@
     "logs/**",
     "**/*.log"
   ],
-  "liveServer.settings.wait": 100
+  "liveServer.settings.wait": 100,
+  "liveServer.settings.ignorePattern": "**/stateMachineWorkingButOld.ts",
+  "files.watcherExclude": {
+    "**/stateMachineWorkingButOld.ts": true
+  }
 }

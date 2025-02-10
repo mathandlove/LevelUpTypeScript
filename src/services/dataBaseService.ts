@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { firebaseConfig } from "../resources/keys.js";
 import { defaultRubric, Rubric } from "../common/types.js";
-import { AppContext } from "../stateMachineWorkingButOld.js";
+import { AppContext } from "../common/appTypes.js";
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
