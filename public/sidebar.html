@@ -484,7 +484,10 @@
         font-size: 16px;
         font-weight: 500;
         font-family: "Inter", sans-serif;
+        width:60%;
+        text-align: center;
       }
+
 
       @keyframes spin {
         0% {
@@ -1219,7 +1222,7 @@ margin-right:10px;
           />
           <div class="spinner-overlay" id="spinner-overlay" style="display: none">
             <div class="spinner"></div>
-            <div class="spinner-text">Reading Your Paper</div>
+            <div class="spinner-text" id="spinner-text">Reading Your Paper</div>
           </div>
   
           <!-- HOME PAGE CARD -->
@@ -1481,6 +1484,7 @@ let isReconnecting = false;
 const defaultUIState= {
   currentPage: "home-page",
   waitingAnimationOn: true,
+  waitingAnimationText: "Downloading Hot Air Balloon Fuel",
   visibleButtons: [],
   buttonsDisabled: [],
   level: 1,
@@ -1701,6 +1705,7 @@ function handleStateChange(statePayload) {
   // Handle loading spinner
   document.getElementById('spinner-overlay').style.display = 
     state.waitingAnimationOn ? 'flex' : 'none';
+    document.getElementById("spinner-text").textContent = state.waitingAnimationText;
 
   // Handle navigation buttons
   const buttonVisibility = state.buttons;
@@ -2440,20 +2445,3 @@ function testMessageQueue() {
     }
   }
 </script>
-<script>
-  //Browswer code
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") {
-        sendWebSocketMessage({
-          type: "USER_BACK_ON_TAB",
-          payload: {
-            clientId: clientId,
-            documentId: documentId
-          }
-        });
-    } 
-  });
-
-
-</script>
-
