@@ -38,7 +38,7 @@ export function getSentenceStartAndEnd(
     );
   }
 
-  if (matchStartIndex !== -1) {
+  if (matchStartIndex === -1) {
     console.warn(`Sentence not found: "${sentenceToFind}"`);
     return {
       currentSentence: "Failed to find sentence.",
