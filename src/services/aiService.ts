@@ -100,7 +100,7 @@ export async function getCelebration(context: AppContext): Promise<string> {
 
 export async function checkChallengeResponse(
   context: AppContext
-): Promise<boolean> {
+): Promise<string> {
   const challenge = context.documentMetaData.currentChallenge;
   const aiTask = challenge.formattedFeedback;
   const studentOriginalResponse =
@@ -117,13 +117,13 @@ export async function checkChallengeResponse(
   const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
-  let passed: boolean;
+  let passed: string;
   if (openAIStr.includes("1")) {
-    passed = false;
+    passed = "incorrect";
   } else if (openAIStr.includes("2")) {
-    passed = true;
+    passed = "correct";
   } else {
-    passed = false;
+    passed = "incorrect";
   }
   return passed;
 }

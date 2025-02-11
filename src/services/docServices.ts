@@ -38,7 +38,7 @@ export function getSentenceStartAndEnd(
     );
   }
 
-  if (matchStartIndex === -1) {
+  if (matchStartIndex !== -1) {
     console.warn(`Sentence not found: "${sentenceToFind}"`);
     return {
       currentSentence: "Failed to find sentence.",
@@ -125,7 +125,10 @@ export function compareNewSentenceToOldSentence(context: AppContext): {
     .join("")
     .trim();
 
-  const isFarEdit = newModifiedText.split(/[.!?]+/).length - 1 >= 8;
+  const isFarEdit =
+    newModifiedText.split(/[.!?]+/).length -
+      originalSentence.split(/[.!?]+/).length >=
+    8;
 
   let challengeResponse: "valid" | "tooFar" | "noChanges" = "valid";
   if (isFarEdit) {
