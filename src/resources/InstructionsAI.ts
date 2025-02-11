@@ -15,7 +15,7 @@ export function getInstructForGetFailedFeedback() {
 }
 
 export function getInstructForGetNewChallenge(rubricCriteria: string) {
-  const instructions = `Review my paper and find one small part (1-3 sentences) where ${rubricCriteria} can be improved. First give me the exact quote of the sentences needed to be improved. Start with "Quote: " and then the sentences. Start the next section with "Feedback: " Then, in simple language suitable for a 5th grade student, explain why that part needs to be fixed.  Do not show me a revised sentence or any examples. Only tell me what to change and how to change it`;
+  const instructions = `Review my paper and find one small part (1-3 sentences) where ${rubricCriteria} can be improved. First give me the exact quote of the sentences needed to be improved. Start with "Quote: " and then the sentences. Start the next section with "Feedback: " Then, in simple language suitable for a 5th grade student, explain why that part needs to be fixed. Only give one task for the student to complete.  Do not show me a revised sentence or any examples. Only tell me what to change and how to change it`;
   return instructions;
 }
 
@@ -35,11 +35,11 @@ export function getInstructForCriticalThinkingQuestion(studentGoal: string) {
 }
 
 export function getInstructForImproveFeedback(studentGoal: string) {
-  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Add emojis, new lines, and bullets in this feedback to make it easier to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
+  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add emojis, new lines, and bullets in this feedback to make it easier to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
   return instructions;
 }
 
 export function getInstructAddEmojisToFeedback() {
-  const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Do NOT add an introduction or conclusion to your reply.`;
+  const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Return ONLY the revised text. No intros, no explanations, no formatting descriptions—just the text.`;
   return instructions;
 }

@@ -39,6 +39,7 @@ export async function highlightChallengeSentence(context: AppContext) {
   const startIndex =
     context.documentMetaData.currentChallenge?.currentSentenceCoordinates
       ?.startIndex + 1; // +1 because the index is 0 based
+  console.log(`highlight Sentence starting at ${startIndex}`);
   const endIndex =
     context.documentMetaData.currentChallenge?.currentSentenceCoordinates
       ?.endIndex + 1; // +1 because the index is 0 based

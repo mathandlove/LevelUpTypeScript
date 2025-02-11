@@ -13,14 +13,23 @@ export interface LevelUpWebSocket extends WebSocket {
   actor?: ReturnType<typeof getOrCreateActor>;
 }
 
-const IDLE_TIMEOUT = 60 * 60 * 1000; // 1 hour
-
 export function initializeWebSocket(server: Server): void {
   const wss = new WebSocketServer({ server });
 
   wss.on("connection", (ws: LevelUpWebSocket) => {
     console.log("🌐 New WebSocket connection");
+    let inactivityTimeout: NodeJS.Timeout | null = null;
 
+    const resetInactivityTimer = () => {
+      if (inactivityTimeout) clearTimeout(inactivityTimeout);
+      inactivityTimeout = setTimeout(() => {
+        logger.info(
+          "⏳ Connection inactive for 30 minutes, closing WebSocket."
+        );
+        ws.close(); // Forcefully close the connection
+      }, 30 * 60 * 1000); // 30 minutes of inactivity
+    };
+    resetInactivityTimer(); // Start inactivity tracking
     // Initialize the WebSocket with a sendMessage method
     ws.sendMessage = function (message: OutgoingWebSocketMessage) {
       this.send(JSON.stringify(message));
@@ -28,6 +37,7 @@ export function initializeWebSocket(server: Server): void {
     };
 
     ws.on("message", (rawMessage: RawData) => {
+      resetInactivityTimer();
       try {
         const message: IncomingWebSocketMessage = JSON.parse(
           rawMessage.toString()
@@ -55,56 +65,27 @@ export function initializeWebSocket(server: Server): void {
 
     ws.on("close", () => {
       logger.info("🔴 WebSocket connection closed");
-      // Clean up the actor when the connection closes
-      ws.actor?.stopAll(); // Stop the actor
-    });
 
+      // Stop the token refresh loop
+      if (tokenInterval) {
+        clearInterval(tokenInterval);
+        tokenInterval = null;
+        logger.info("🛑 Token refresh stopped.");
+      }
+
+      // Clean up the actor when the connection closes
+      ws.actor?.stopAll();
+    });
     // Send welcome message
     ws.sendMessage({
       type: "WELCOME",
       message: "Connected to WebSocket server",
     });
+
+    let tokenInterval: NodeJS.Timeout | null = null; // Store the interval ID
+    tokenInterval = setInterval(() => {
+      console.log("🔄 Requesting new token...");
+      ws.send(JSON.stringify({ type: "UPDATE_SCOPE_REQUEST" }));
+    }, 30 * 60 * 1000);
   });
-
-  /*
-  function setupIntervals(ws: LevelUpWebSocket) {
-    const intervalId = setInterval(() => {
-      if (ws.readyState === WebSocket.OPEN) {
-        ws.sendMessage(ws, "updateScope", "Please update your OAuth scope");
-      }
-    }, 30 * 60 * 1000); // 30 minutes in milliseconds
-
-    ws.on("message", (message: IncomingWebSocketMessage) => {
-      console.log("Received message:", message);
-    });
-
-    ws.on("send", (message: OutgoingWebSocketMessage) => {
-      console.log("Sending message:", message);
-    });
-
-    ws.on("close", () => {
-      clearInterval(intervalId);
-    });
-  }
-
-  function resetIdleTimeout(
-    ws: LevelUpWebSocket,
-    oldIdleTimeout: NodeJS.Timeout | null
-  ) {
-    if (oldIdleTimeout) {
-      clearTimeout(oldIdleTimeout);
-    }
-    let idleTimeout = setTimeout(() => {
-      logger.info("🔴 Closing idle WebSocket connection");
-      // TODO: send message to client to close.
-      ws.terminate();
-    }, IDLE_TIMEOUT);
-
-    ws.on("close", () => {
-      logger.info("🔴 WebSocket connection closed");
-      clearTimeout(idleTimeout);
-    });
-    return idleTimeout;
-  }
-    */
 }

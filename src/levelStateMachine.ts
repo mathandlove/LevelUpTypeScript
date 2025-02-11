@@ -120,6 +120,24 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           self: (_, __, meta) => meta._sessionid,
         }),
       }),
+      on: {
+        GIVE_TOKEN: {
+          actions: [
+            assign({
+              appState: (context, event) => ({
+                ...context.appState,
+                token: event.payload.token,
+              }),
+            }),
+            (context, event) => {
+              console.log(
+                "💌 Global GIVE_TOKEN Triggered",
+                event.payload.token
+              );
+            },
+          ],
+        },
+      },
       states: {
         error: {
           id: "error",
@@ -151,7 +169,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     assign({
                       appState: (context, event) => ({
                         ...context.appState,
-                        token: event.payload.token,
+                        token: event.payload.token, //I think this is redundant as it's checked globally now.
                         clientId: event.payload.clientId,
                         documentId: event.payload.documentId,
                         ws: context.appState.ws, // Preserve the ws reference
@@ -388,6 +406,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 }),
 
                 sendUIUpdate,
+                (context, event) => {
+                  console.log("💌 Goals set up");
+                },
               ],
               always: {
                 target: "getCurrentText",
@@ -503,6 +524,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   context.appState.flags.studentGoal !== "",
               },
               on: {
+                BUTTON_CLICKED: {
+                  target: "childDone",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "back-button",
+                },
                 SELECT_GOAL: {
                   //Attempting to do two states in one, need to delay until challenge is ready.
                   target: "getChallengeDetails",

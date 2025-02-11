@@ -17,23 +17,23 @@ export function getSentenceStartAndEnd(
     ""
   );
   lowerSentenceToFind = cleanedSentence;
-  const matchStartIndex = lowerFullText.indexOf(lowerSentenceToFind);
+  let matchStartIndex = lowerFullText.indexOf(lowerSentenceToFind);
 
   //if matchStartIndex is -1, try again with only the 50 first characters of the sentenceToFind, and then try again with only the 25 first characters, and then with the 10 characters. If at any point more than one sentence is found return only the first one.
   if (matchStartIndex === -1) {
-    const matchStartIndex = lowerFullText.indexOf(
+    matchStartIndex = lowerFullText.indexOf(
       lowerSentenceToFind.substring(0, 50)
     );
   }
 
   if (matchStartIndex === -1) {
-    const matchStartIndex = lowerFullText.indexOf(
+    matchStartIndex = lowerFullText.indexOf(
       lowerSentenceToFind.substring(0, 25)
     );
   }
 
   if (matchStartIndex === -1) {
-    const matchStartIndex = lowerFullText.indexOf(
+    matchStartIndex = lowerFullText.indexOf(
       lowerSentenceToFind.substring(0, 10)
     );
   }
