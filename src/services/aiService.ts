@@ -179,6 +179,8 @@ export async function addChallengeDetails(
     challenge.modifiedSentences[0],
     context.documentMetaData.currentText
   );
+  if (sentenceCoords.currentSentence) {
+  }
   challenge.modifiedSentences[0] = sentenceCoords.currentSentence;
   challenge.currentSentenceCoordinates = {
     startIndex: sentenceCoords.startIndex,

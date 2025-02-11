@@ -1719,11 +1719,10 @@ function handleStateChange(statePayload) {
   });
 
   // Handle level display
-  if (state.formerLevel) { //On level ups the former level needs to start, then former level becomes level
-    document.querySelector('.pixelated-gradient-text').textContent = `Level ${state.formerLevel}`;
-  }
 
-
+if(state.formerLevel !== state.level){
+  increaseLevel(state.formerLevel,state.level);
+}
 //Handle goal buttons:
 if(state.goalTitles){
 updateGoalButtons(state.goalTitles);
@@ -1850,9 +1849,7 @@ if (!state.waitingAnimationOn) {
   }
 
 
-  if (state.animateLevelUp) {
-increaseLevel(state.formerLevel,state.level);
-}
+
   setTimeout(() => {
             checkScrollOverflow();
           }, 0);

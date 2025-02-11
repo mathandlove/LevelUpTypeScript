@@ -283,6 +283,19 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               }),
               "assignDocMetaDataToUIState",
+              assign({
+                uiState: (context, event) => ({
+                  ...context.uiState,
+                  formerLevel: 1, //Always animate on load
+                }),
+              }),
+              sendUIUpdate,
+              assign({
+                uiState: (context, event) => ({
+                  ...context.uiState,
+                  formerLevel: context.uiState.level,
+                }),
+              }),
             ],
           },
         },
@@ -523,7 +536,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 id: "addChallengeDetails",
                 src: addChallengeDetails,
                 onDone: {
-                  target: "highlightText",
+                  target: "validateSentenceCoords",
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -597,7 +610,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 id: "formatChallengeResponse",
                 src: formatChallengeResponse,
                 onDone: {
-                  target: "showChallengeIdle",
+                  target: "waitForNextButton",
                   actions: assign({
                     documentMetaData: (context, event) => {
                       // Extract challenge data from the event
@@ -639,6 +652,40 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                           ...context.uiState,
                           waitingAnimationOn: true,
                           waitingAnimationText: "Reading Your Paper",
+                        }),
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                ],
+              },
+            },
+            waitForNextButton: {
+              always: {
+                target: "showChallengeIdle",
+                cond: (context, event) => {
+                  return context.appState.flags.nextPushed;
+                },
+              },
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: "childDone",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button",
+                  },
+                  {
+                    target: "showChallengeIdle",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "next-button",
+                    actions: [
+                      assign({
+                        appState: (context, event) => ({
+                          ...context.appState,
+                          flags: {
+                            ...context.appState.flags,
+                            nextPushed: true,
+                          },
                         }),
                       }),
                       sendUIUpdate,
@@ -881,6 +928,14 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     }),
 
                     savePersistentDocData,
+                    "assignDocMetaDataToUIState",
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        formerLevel: context.uiState.level - 1,
+                      }),
+                    }),
+                    sendUIUpdate,
                   ],
                 },
               ],
@@ -964,9 +1019,62 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     cond: (context, event) =>
                       event.payload.buttonId === "share-rubric-button",
                   },
+                  {
+                    cond: (context, event) =>
+                      event.payload.buttonId === "rubric-dropdown",
+                    actions: [
+                      assign({
+                        documentMetaData: (context, event) => {
+                          const reversedRubrics = [
+                            ...context.documentMetaData.savedRubrics,
+                          ].reverse();
+                          const selectedIndex = event.payload.selectedIndex;
+
+                          const newRubricID =
+                            selectedIndex >= reversedRubrics.length
+                              ? context.documentMetaData.defaultRubric
+                                  ?.databaseID
+                              : reversedRubrics[selectedIndex].databaseID;
+
+                          console.log("💫 setRubricID: ", newRubricID);
+
+                          const newRubric = getRubric(context, newRubricID);
+                          const updatedDocumentMetaData = {
+                            ...context.documentMetaData,
+                            currentRubricID: newRubricID,
+                            ...unpackRubric(context, newRubric), // ✅ Pills get updated here
+                          };
+
+                          console.log(
+                            "💫 Pills updated for rubric: ",
+                            newRubric.title
+                          );
+
+                          return updatedDocumentMetaData;
+                        },
+                      }),
+
+                      "assignDocMetaDataToUIState",
+
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          buttonsDisabled:
+                            context.documentMetaData.currentRubricID ===
+                            "starterRubric"
+                              ? ["edit-rubric-button", "share-rubric-button"]
+                              : [],
+                        }),
+                      }),
+
+                      sendUIUpdate,
+                      savePersistentDocData,
+                    ],
+                  },
                 ],
               },
             },
+
             shareRubricPopup: {
               entry: [
                 (context) => {
@@ -1551,6 +1659,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               ...context.uiState,
               lastUpdated: new Date().toISOString(),
               level: context.documentMetaData.level,
+              formerLevel: context.documentMetaData.level,
               pills: context.documentMetaData.pills,
               reflection: {
                 ...context.uiState.reflection,
