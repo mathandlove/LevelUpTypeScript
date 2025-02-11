@@ -323,10 +323,434 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   event.payload.buttonId === "pill-button" &&
                   event.payload.buttonTitle == -1, // -1 ==reflec t
               },
+              {
+                target: "challenge",
+                cond: (context, event) =>
+                  event.payload.buttonId === "pill-button" &&
+                  event.payload.buttonTitle !== -1, // -1 ==reflec t
+
+                actions: [
+                  assign({
+                    documentMetaData: (context, event) => ({
+                      ...context.documentMetaData,
+                      selectedChallengeNumber: event.payload.buttonTitle, // Assign buttonTitle to selectedChallengeNumber
+                    }),
+                  }),
+                ],
+              },
             ],
             CUSTOMIZE_CLICKED: {
               target: "customization",
             },
+          },
+        },
+        challenge: {
+          initial: "getCurrentTextAndGoalSelect",
+          entry: [
+            assign({
+              appState: (context) => ({
+                ...context.appState,
+                flags: {
+                  ...context.appState.flags,
+                  studentGoal: "",
+                  nextPushed: false,
+                },
+              }),
+            }),
+          ],
+          states: {
+            getCurrentTextAndGoalSelect: {
+              entry: [
+                assign({
+                  uiState: (context) => ({
+                    ...context.uiState,
+                    currentPage: "selectGoal-card",
+                    visibleButtons: ["back-button"],
+                    waitingAnimationOn: false,
+                    goalTitles:
+                      context.documentMetaData.pills[
+                        context.documentMetaData.selectedChallengeNumber
+                      ].studentGoalArray,
+                  }),
+                }),
+
+                sendUIUpdate,
+              ],
+              invoke: {
+                id: "getFullText",
+                src: getFullText,
+                onDone: {
+                  target: "getNewChallenge",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        textBeforeEdits: context.documentMetaData.currentText,
+                        currentText: event.data,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+              on: {
+                BUTTON_CLICKED: {
+                  target: "childDone",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "back-button",
+                  actions: [stop("getFullText")],
+                },
+                SELECT_GOAL: {
+                  //Attempting to do two states in one, need to delay until challenge is ready.
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        flags: {
+                          ...context.appState.flags,
+                          studentGoal: event.payload.buttonTitle,
+                        },
+                      }),
+                    }),
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        waitingAnimationOn: true,
+                        waitingAnimationText: "Reading Your Paper",
+                      }),
+                    }),
+                    sendUIUpdate,
+                  ],
+                },
+              },
+            },
+
+            getNewChallenge: {
+              entry: () => {
+                console.log("🔹 Getting new challenge");
+              },
+              invoke: {
+                id: "getNewChallenge",
+                src: getNewChallenge,
+                onDone: {
+                  target: "waitForStudentGoals",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        currentChallenge: event.data,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+              on: {
+                BUTTON_CLICKED: {
+                  target: "childDone",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "back-button",
+                  actions: [stop("getNewChallenge")],
+                },
+                SELECT_GOAL: {
+                  //Attempting to do two states in one, need to delay until challenge is ready.
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        flags: {
+                          ...context.appState.flags,
+                          studentGoal: event.payload.buttonTitle,
+                        },
+                      }),
+                    }),
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        waitingAnimationOn: true,
+                        waitingAnimationText: "Reading Your Paper",
+                      }),
+                    }),
+                    sendUIUpdate,
+                  ],
+                },
+              },
+            },
+            waitForStudentGoals: {
+              always: {
+                target: "getChallengeDetails",
+                cond: (context, event) =>
+                  context.appState.flags.studentGoal !== "",
+              },
+              on: {
+                SELECT_GOAL: {
+                  //Attempting to do two states in one, need to delay until challenge is ready.
+                  target: "getChallengeDetails",
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        flags: {
+                          ...context.appState.flags,
+                          studentGoal: event.payload.buttonTitle,
+                        },
+                      }),
+                    }),
+                  ],
+                },
+              },
+            },
+            getChallengeDetails: {
+              entry: [
+                assign({
+                  documentMetaData: (context, event) => ({
+                    ...context.documentMetaData,
+                    currentChallenge: {
+                      ...context.documentMetaData.currentChallenge,
+                      studentGoal: context.appState.flags.studentGoal,
+                    },
+                  }),
+                }),
+              ],
+              invoke: {
+                id: "addChallengeDetails",
+                src: addChallengeDetails,
+                onDone: {
+                  target: "AiFeelAndFormatChallenge",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        currentChallenge: event.data,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
+
+            AiFeelAndFormatChallenge: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "AI-Feeling",
+                    visibleButtons: ["back-button", "next-button"],
+                    cardMainText:
+                      context.documentMetaData.currentChallenge?.aiFeeling,
+                    waitingAnimationOn: false,
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              invoke: {
+                id: "formatChallengeResponse",
+                src: formatChallengeResponse,
+                onDone: {
+                  target: "showChallengeIdle",
+                  actions: assign({
+                    documentMetaData: (context, event) => {
+                      // Extract challenge data from the event
+                      const challenge = event.data; // Assuming event contains challenge data
+                      return {
+                        ...context.documentMetaData,
+                        currentChallenge: challenge, // Correctly assign challenge object
+                      };
+                    },
+                  }),
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: "childDone",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "back-button",
+                    actions: [stop("formatChallengeResponse")],
+                  },
+                  {
+                    cond: (context, event) =>
+                      event.payload.buttonId === "next-button",
+                    actions: [
+                      assign({
+                        appState: (context, event) => ({
+                          ...context.appState,
+                          flags: {
+                            ...context.appState.flags,
+                            nextPushed: true,
+                          },
+                        }),
+                      }),
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: true,
+                          waitingAnimationText: "Reading Your Paper",
+                        }),
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                ],
+              },
+            },
+            showChallengeIdle: {
+              entry: [
+                assign({
+                  uiState: (context, event) => ({
+                    ...context.uiState,
+                    currentPage: "challenge-card",
+                    visibleButtons: ["skip-button", "check-work-button"],
+                    waitingAnimationOn: false,
+                    cardMainText:
+                      context.documentMetaData.currentChallenge
+                        ?.formattedFeedback,
+                    taskFeedback: undefined,
+                  }),
+                }),
+                (context, event) => {
+                  console.log(
+                    "💫 challengeDisplay: ",
+                    context.documentMetaData.currentChallenge?.formattedFeedback
+                  );
+                },
+                sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: [
+                  {
+                    target: ["childDone"],
+                    cond: (context, event) =>
+                      event.payload.buttonId === "skip-button",
+                  },
+                  {
+                    target: "getUpdatedFullText",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "check-work-button",
+                    actions: [
+                      assign({
+                        uiState: (context, event) => ({
+                          ...context.uiState,
+                          waitingAnimationOn: true,
+                          waitingAnimationText: "Reading Your Changes",
+                        }),
+                      }),
+                      sendUIUpdate,
+                    ],
+                  },
+                ],
+              },
+            },
+            getUpdatedFullText: {
+              invoke: {
+                src: getFullText,
+                onDone: {
+                  target: "evaluateTextChanges",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        textBeforeEdits: context.documentMetaData.currentText,
+                        currentText: event.data,
+                      }),
+                    }),
+                  ],
+                },
+              },
+            },
+            evaluateTextChanges: {
+              entry: [
+                assign({
+                  documentMetaData: (context: AppContext) => {
+                    const {
+                      challengeResponse,
+                      modifiedSentences,
+                      modifiedStartIndex,
+                      modifiedEndIndex,
+                    } = compareNewSentenceToOldSentence(context);
+
+                    const { documentMetaData } = context;
+                    const currentChallenge = documentMetaData.currentChallenge;
+
+                    if (currentChallenge) {
+                      // Create an updated challenge object with the modified data
+                      const updatedChallenge: ChallengeInfo = {
+                        ...currentChallenge,
+                        challengeResponse,
+                        modifiedSentences,
+                        currentSentenceCoordinates: {
+                          startIndex: modifiedStartIndex,
+                          endIndex: modifiedEndIndex,
+                        },
+                      };
+
+                      return {
+                        ...documentMetaData,
+                        currentChallenge: updatedChallenge,
+                      };
+                    } else {
+                      console.warn("No current challenge found.");
+                      return documentMetaData; // Return unchanged metadata if no challenge exists
+                    }
+                  },
+                }),
+              ],
+
+              always: [
+                {
+                  cond: (context) =>
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "valid",
+                  target: "getAIJudgement",
+                },
+                {
+                  cond: (context) =>
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "noChanges",
+                  target: "showChallengeIdle",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedback: "no-changes",
+                      }),
+                    }),
+                  ],
+                },
+                {
+                  cond: (context) =>
+                    context.documentMetaData.currentChallenge
+                      ?.challengeResponse === "tooFar",
+                  target: "showChallengeIdle",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedback: "wrong-location",
+                        disabledButtons: ["check-work-button"],
+                      }),
+                    }),
+                  ],
+                },
+              ],
+            },
+            getAIJudgement: {},
+            childDone: {
+              type: "final",
+            },
+          },
+          onDone: {
+            target: "idleHome",
           },
         },
         customization: {
