@@ -1,4 +1,4 @@
-import { ChallengeInfo, Reflection, Rubric } from "../common/types";
+import { ChallengeInfo, Reflection, Rubric, Topic } from "../common/types";
 import { AppContext } from "../common/appTypes.js";
 
 export async function getFullText(context: AppContext): Promise<string> {
@@ -701,11 +701,10 @@ export async function updateRubricFromGoogleSheet(
   try {
     response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-
       range: "Sheet1", // Adjust if sheet name differs
     });
   } catch (error) {
-    console.error("❌ Error updating rubric from googlesheet:", error);
+    console.error("❌ Error updating rubric from Google Sheet:", error);
     throw error;
   }
 
@@ -719,8 +718,8 @@ export async function updateRubricFromGoogleSheet(
   const gradeLevel = parseInt(rows[1][1], 10) || 0;
 
   // Extract reflection data
-  const includeReflection = rows[3][3]?.toUpperCase() === "TRUE";
-  const askToExplainCopyPaste = rows[3][4]?.toUpperCase() === "TRUE";
+  const includeReflection = rows[3][3]?.toUpperCase() === "YES";
+  const askToExplainCopyPaste = rows[3][4]?.toUpperCase() === "YES";
   const reflectionQuestions = rows[3].slice(5).filter((q) => q);
 
   const reflection: Reflection = {
@@ -735,23 +734,28 @@ export async function updateRubricFromGoogleSheet(
     noInputOnSubmit: false,
   };
 
-  // Extract topics
-  const topics = [];
-  for (let i = 4; i < rows.length; i++) {
+  // Extract topics with student goals
+  const topics: Topic[] = [];
+  const topicsStartRow = 6; // Assuming topics start after row 6
+
+  for (let i = topicsStartRow; i < rows.length; i++) {
     if (rows[i][0]) {
-      // Ensure it's a valid topic row
       topics.push({
         title: rows[i][0],
         description: rows[i][1] || "",
         outOf: rows[i][2] ? parseInt(rows[i][2], 10) : null,
         current: 0,
+        studentGoalArray: [
+          rows[i][3] || "", // Student Goal 1
+          rows[i][4] || "", // Student Goal 2
+          rows[i][5] || "", // Student Goal 3
+        ],
       });
     }
   }
 
   rubric.title = title;
   rubric.gradeLevel = gradeLevel;
-  rubric.topics = topics;
   rubric.reflection = reflection;
   rubric.googleSheetID = spreadsheetId;
   rubric.topics = topics;

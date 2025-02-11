@@ -65,6 +65,7 @@ interface AppState {
   };
   flags: {
     nextPushed: boolean;
+    studentGoal: string;
   };
 }
 
@@ -78,6 +79,7 @@ export const defaultAppState: AppState = {
   levelUpFolderId: "",
   flags: {
     nextPushed: false,
+    studentGoal: "",
   },
 };
 

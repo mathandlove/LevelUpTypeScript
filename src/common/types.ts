@@ -247,9 +247,6 @@ export interface DocumentMetaData {
   rubricLastUpdated: string;
   tempNewRubric?: Rubric;
   tempImportRubricId?: string;
-  flags: {
-    studentGoal?: string;
-  };
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -257,9 +254,6 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   pills: defaultTopics,
   paperScores: [],
   currentText: "",
-  flags: {
-    studentGoal: undefined,
-  },
   textBeforeEdits: "",
   savedActivity: {
     savedReflections: [],
