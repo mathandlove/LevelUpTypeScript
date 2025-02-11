@@ -201,7 +201,12 @@ export interface UIState {
   cardSubtitle?: string;
   cardMainText?: string;
   errorMessage?: string;
-  taskFeedback?: "no-changes" | "wrong-location" | "incorrect" | undefined;
+  taskFeedback?:
+    | "no-changes"
+    | "wrong-location"
+    | "incorrect"
+    | "correct"
+    | undefined;
   taskFeedbackMessage?: string;
   selectedRubric: number;
   listOfAvailableRubrics: Array<String>;

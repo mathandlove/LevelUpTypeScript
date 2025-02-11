@@ -345,7 +345,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           },
         },
         challenge: {
-          initial: "getCurrentTextAndGoalSelect",
+          initial: "setupGoalSelect",
           entry: [
             assign({
               appState: (context) => ({
@@ -359,7 +359,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             }),
           ],
           states: {
-            getCurrentTextAndGoalSelect: {
+            setupGoalSelect: {
               entry: [
                 assign({
                   uiState: (context) => ({
@@ -376,6 +376,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
                 sendUIUpdate,
               ],
+              always: {
+                target: "getCurrentText",
+              },
+            },
+            getCurrentText: {
               invoke: {
                 id: "getFullText",
                 src: getFullText,
@@ -428,9 +433,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
 
             getNewChallenge: {
-              entry: () => {
-                console.log("🔹 Getting new challenge");
-              },
+              //Todo if this gets called too many times, we need to kill the program.
               invoke: {
                 id: "getNewChallenge",
                 src: getNewChallenge,
@@ -520,7 +523,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 id: "addChallengeDetails",
                 src: addChallengeDetails,
                 onDone: {
-                  target: "AiFeelAndFormatChallenge",
+                  target: "highlightText",
                   actions: [
                     assign({
                       documentMetaData: (context, event) => ({
@@ -535,7 +538,47 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
               },
             },
+            validateSentenceCoords: {
+              always: [
+                {
+                  target: "getCurrentText",
+                  cond: (context, event) => {
+                    if (
+                      context.documentMetaData.currentChallenge
+                        ?.currentSentenceCoordinates.startIndex === -1 ||
+                      context.documentMetaData.currentChallenge
+                        ?.currentSentenceCoordinates.endIndex === -1
+                    ) {
+                      return true;
+                    }
+                  },
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        currentChallenge: undefined,
+                      }),
+                    }),
+                  ],
+                },
+                {
+                  target: "highlightText",
+                },
+              ],
+            },
 
+            highlightText: {
+              invoke: {
+                id: "highlightChallengeSentence",
+                src: highlightChallengeSentence,
+                onDone: {
+                  target: "AiFeelAndFormatChallenge",
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
             AiFeelAndFormatChallenge: {
               entry: [
                 assign({
@@ -615,16 +658,16 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     cardMainText:
                       context.documentMetaData.currentChallenge
                         ?.formattedFeedback,
+                  }),
+                }),
+                sendUIUpdate,
+                assign({
+                  //Once a warning has been sent, do not send it again.
+                  uiState: (context, event) => ({
+                    ...context.uiState,
                     taskFeedback: undefined,
                   }),
                 }),
-                (context, event) => {
-                  console.log(
-                    "💫 challengeDisplay: ",
-                    context.documentMetaData.currentChallenge?.formattedFeedback
-                  );
-                },
-                sendUIUpdate,
               ],
               on: {
                 BUTTON_CLICKED: [
@@ -737,14 +780,127 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       uiState: (context, event) => ({
                         ...context.uiState,
                         taskFeedback: "wrong-location",
-                        disabledButtons: ["check-work-button"],
+                        buttonsDisabled: ["check-work-button"],
                       }),
                     }),
                   ],
                 },
               ],
             },
-            getAIJudgement: {},
+            getAIJudgement: {
+              invoke: {
+                src: checkChallengeResponse,
+                onDone: {
+                  target: "checkChallengeResponse",
+                  actions: assign({
+                    uiState: (context, event) => ({
+                      ...context.uiState,
+                      taskFeedback: event.data,
+                    }),
+                  }),
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
+            checkChallengeResponse: {
+              always: [
+                {
+                  target: "getCelebration",
+                  cond: (context) => context.uiState.taskFeedback === "correct",
+                },
+                {
+                  target: "getFailedFeedback",
+                  cond: (context) =>
+                    context.uiState.taskFeedback === "incorrect",
+                },
+              ],
+            },
+            getCelebration: {
+              invoke: {
+                src: getCelebration,
+                onDone: {
+                  target: "levelUpTopic",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedbackMessage: event.data,
+                      }),
+                    }),
+                  ],
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
+            levelUpTopic: {
+              always: [
+                {
+                  target: "#celebrationScreen",
+                  actions: [
+                    assign({
+                      //Increase Topic Score and save.
+                      documentMetaData: (context) => {
+                        const {
+                          selectedChallengeNumber,
+                          pills,
+                          level,
+                          paperScores,
+                        } = context.documentMetaData;
+
+                        //Change paperScores
+                        const pillToUpdate = pills[selectedChallengeNumber];
+                        const targetTitle = pillToUpdate.title;
+                        const updatedPaperScores = paperScores.map((score) =>
+                          score.title === targetTitle
+                            ? { ...score, current: (score.current || 0) + 1 } //
+                            : score
+                        );
+
+                        //Apply paperScores to pills
+                        pills.forEach((topic) => {
+                          //Change the topic.score to updatedPaperScores.score
+                          const existingTopic = updatedPaperScores.find(
+                            (score) => score.title === topic.title
+                          );
+                          if (existingTopic) {
+                            topic.current = existingTopic.current;
+                          }
+                        });
+
+                        return {
+                          ...context.documentMetaData,
+                          pills: pills,
+                          paperScores: updatedPaperScores,
+                          level: level + 1,
+                        };
+                      },
+                    }),
+
+                    savePersistentDocData,
+                  ],
+                },
+              ],
+            },
+            getFailedFeedback: {
+              invoke: {
+                src: getFailedFeedback,
+                onDone: {
+                  target: "showChallengeIdle",
+                  actions: [
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        taskFeedbackMessage: event.data,
+                      }),
+                    }),
+                  ],
+                },
+              },
+            },
             childDone: {
               type: "final",
             },
@@ -1340,6 +1496,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           },
         },
         celebrationScreen: {
+          id: "celebrationScreen",
           entry: [
             assign({
               uiState: (context, event) => {
