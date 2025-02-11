@@ -2,6 +2,12 @@ import OpenAI from "openai";
 
 import { marked } from "marked";
 
+const testMarkdown = `
+**bold**  
+*italic*  
+***bold italic***  
+`;
+
 import { openRouterKey } from "../resources/keys.js";
 
 import { AppContext } from "../common/appTypes.js";
@@ -152,6 +158,7 @@ export async function getNewChallenge(
   const endTime = Date.now();
   const duration = endTime - startTime;
   challenge.aiRawFeedback = openAIStr;
+  console.log("💌 getNewChallenge", challenge.aiRawFeedback);
   return challenge;
 }
 
@@ -288,6 +295,7 @@ export async function formatChallengeResponse(
   }
 
   function preprocessMarkdown(markdownText: string): string {
+    console.log("💌 preprocessMarkdown", markdownText);
     return markdownText.replace(/(\n)(\*|\d+\.)/g, "\n\n$2"); // Ensure extra line break before bullets
   }
 

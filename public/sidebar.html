@@ -154,14 +154,17 @@
         gap: 10px;
         background: #ececec;
         border: none;
-        padding: 8px;
+        padding: 4px;
         width: 90%;
+        margin-bottom: 5px;
         cursor: pointer;
         border-radius: 40px;
         box-sizing: border-box;
         transition: background-color 0.3s ease;
         transition: transform 0.3s ease-in-out;
       }
+
+
 
       .topic-button:hover {
         transform: none;
@@ -542,7 +545,7 @@
       .scroll-container::after {
         content: "";
         display: none;
-        height: 50px;
+        height: var(--scroll-after-height, 50px);
         background: linear-gradient(to bottom, transparent, #ffffff);
         position: sticky;
         bottom: 0;
@@ -636,11 +639,7 @@
         transform: none;
       }
 
-      .topic-button {
-        width: 80%;
-        margin-bottom: 5px;
-        box-sizing: border-box;
-      }
+
 
       /* Add this new style for the challenge complete button */
       #next-button.challenge-complete {
@@ -1227,7 +1226,7 @@ margin-right:10px;
   
           <!-- HOME PAGE CARD -->
           <div class="card" id="home-page" style="display: flex; flex: 1">
-            <div class="scroll-container">
+            <div class="scroll-container" style="--scroll-after-height: 0px;">
               <div class="card-title-home">Select Challenge:</div>
               <div id="pillHolder" style="display: flex; flex-direction: column"></div>
               <a href="#" class="customize-link">Customize</a>
@@ -1258,9 +1257,7 @@ margin-right:10px;
                     <div class="card" id="selectGoal-card" style="display: none; flex: 1">
                       <div class="scroll-container">
                         <div class="card-title">How do you want to improve your paper?</div>
-                        <div class="card-main-text">
                           <div id="goal-buttons-container"></div>
-                        </div>
                       </div>
                     </div>
 
