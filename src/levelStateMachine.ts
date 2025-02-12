@@ -63,11 +63,11 @@ interface ExtendedInterpreter
 const actorStore = new Map<string, ExtendedInterpreter>();
 // Store to track actors with explicit typing
 export function getOrCreateActor(
-  clientId: string,
+  uniqueId: string,
   documentId: string,
   ws: LevelUpWebSocket
 ): ExtendedInterpreter {
-  const key = `${clientId}:${documentId}`;
+  const key = `${uniqueId}:${documentId}`;
 
   if (actorStore.has(key)) {
     return actorStore.get(key)!;
@@ -166,7 +166,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       appState: (context, event) => ({
                         ...context.appState,
                         token: event.payload.token, //I think this is redundant as it's checked globally now.
-                        clientId: event.payload.clientId,
                         documentId: event.payload.documentId,
                         ws: context.appState.ws, // Preserve the ws reference
                       }),
@@ -558,6 +557,14 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         },
                       }),
                     }),
+                    assign({
+                      uiState: (context, event) => ({
+                        ...context.uiState,
+                        waitingAnimationOn: true,
+                        waitingAnimationText: "Reading Your Paper",
+                      }),
+                    }),
+                    sendUIUpdate,
                   ],
                 },
               },
@@ -1841,6 +1848,7 @@ function sendUIUpdate(context: AppContext) {
 }
 
 function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
+  //We are adding a reflection question depending on user's rubric selection on includeAiCopy
   console.log("📌 Unpacking rubric:", rubric?.title);
 
   if (!rubric || !rubric.topics) {
@@ -1903,11 +1911,23 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
     };
   });
 
+  let updatedReflection = { ...rubric.reflection };
+
+  if (updatedReflection.copyPercentIncluded) {
+    const aiQuestion =
+      "How did you use AI in this paper and how was it helpful?";
+
+    if (updatedReflection.question[0] !== aiQuestion) {
+      updatedReflection.question = [aiQuestion, ...updatedReflection.question];
+    }
+    updatedReflection.selectedQuestion = 0;
+  }
+
   return {
     ...context.documentMetaData,
     paperScores: updatedPaperScores, // 🔹 Updated paper scores, including reflection
     pills: updatedPills,
-    reflectionTemplate: rubric.reflection, // 🔹 Update with the new reflection template
+    reflectionTemplate: updatedReflection, // 🔹 Update with the new reflection template
     rubricLastUpdated: rubric.lastUpdated,
     currentRubricID: rubric.databaseID,
   };

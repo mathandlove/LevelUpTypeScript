@@ -52,7 +52,6 @@ export type AppEvent =
 
 interface AppState {
   token: string;
-  clientId: string;
   documentId: string;
   ws: LevelUpWebSocket;
   persistentDataFileId: string;
@@ -71,7 +70,6 @@ interface AppState {
 
 export const defaultAppState: AppState = {
   token: "Waiting for token...",
-  clientId: "Waiting for clientID",
   documentId: "waiting for documentID",
   ws: null,
   persistentDataFileId: null,

@@ -1465,17 +1465,18 @@ margin-right:10px;
 
     <script>
 
-
+//From GoogleAppScripts
+const initialToken = "<?= token ?>";
+let documentId = "<?= documentId ?>";
 // Global variables
-let clientId = null;
-let documentId = null;
+
 let currentToken=null;
-const backendURL = "http://localhost:3000";//"https://3f71-174-63-70-145.ngrok-free.app";
+const backendURL = "http://localhost:3000";
 let currentPillCount = 0;
 let ws = null;  // Global WebSocket instance
 let messageQueue = [];  
 let isReconnecting = false;
-//ngrok http 3000
+
 
 
 const defaultUIState= {
@@ -1497,54 +1498,22 @@ const defaultUIState= {
 async function init() {
 handleStateChange(defaultUIState);
 connectWebSocket();
-getStoredTokenData()
-
-
+if(isGoogleApp()){
+  console.log("🔑 Initial Token Sent to Server");
+  console.log(documentId);
+  receivedTokenData(initialToken);
 }
-async function getDocumentData() {
-  if (!clientId || !documentId) {
-    console.error('No token data available');
-    return null;
+  else{
+    documentId = "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE";
+    sendTokenToServer();
   }
 
-  const payload = {
-    clientId: clientId,
-    documentId: documentId
-  };
 
-  const data= await sendToBackend("/get-data", payload);
-  console.log(data);
-}
-async function sendToBackend(endpoint, payload) {
-  try {
-  const options = {
-    method: "POST",
-    contentType: "application/json",
-    muteHttpExceptions: true,
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'ngrok-skip-browser-warning': 'true',
-        'Origin': window.location.origin
-      },
-      body: JSON.stringify(payload)
-  };
 
-  const response = await fetch(backendURL + endpoint, options);
-  if (!response.ok) {
-      console.error(`Server responded with status: ${response.status}`);
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    try {
-    return await response.json();
-    } catch (e) {
-      return response.text();  // Return as text if not JSON
-    }
-  } catch (e) {
-    console.error("Error:", e.message);
-    throw e;
-  }
+
 }
+
+//For Development Purposes Only
 async function getStoredTokenData() {
   try {
     const response =   await fetch('./tokenData.json');
@@ -1575,7 +1544,6 @@ function connectWebSocket() {
     ws.onopen = () => {
       console.log('🟢 WebSocket Connected');
       isReconnecting = false;
-      sendTokenToServer();
       
       // Process any queued messages
       while (messageQueue.length > 0) {
@@ -1603,7 +1571,7 @@ function connectWebSocket() {
     };
   }
 }
-// Initial connection
+
 
 function sendWebSocketMessage(message) {
   if (ws && ws.readyState === WebSocket.OPEN) {
@@ -1875,14 +1843,10 @@ function updateGoalButtons(goalTitles) {
       type: "SELECT_GOAL",
       payload: {
         buttonTitle: title,
-        clientId: clientId,
         documentId: documentId,
       }
     });
   }
-
-
-
 
 
   function createPillStructure(pills) {
@@ -1986,11 +1950,6 @@ function checkScrollOverflow() {
           }
   }
 
-
-    
-
-  // Handle level-up animation if requested
-
 function disableAllButtons() {
   document.querySelectorAll('button').forEach(button => {
     button.classList.add('no-clicks');
@@ -2028,7 +1987,7 @@ sendTokenToServer();
         if(isGoogleApp()) {
 
     callGoogleAppFunction('updateTokenData', receivedTokenData, googleServerError);
-    //currentToken will be an object with clientId, documentId, and token
+    //currentToken will be an object with  documentId, and token
   }
   else{
     receivedTokenData(await getStoredTokenData());
@@ -2036,13 +1995,11 @@ sendTokenToServer();
   }
 function receivedTokenData(currentToken) {
   if (currentToken) {
-    clientId = currentToken.clientId;
     documentId =  currentToken.documentId;
   }
   sendWebSocketMessage({
     type: "GIVE_TOKEN",
     payload: {
-        clientId: currentToken.clientId,
         documentId: currentToken.documentId,
         token: currentToken.token
     }
@@ -2083,7 +2040,6 @@ function setupEventHandlers() {
             type: 'BUTTON_CLICKED',
             payload: {
               buttonId: buttonId,
-              clientId: clientId,
               documentId: documentId,
               textResponse: document.querySelector('.reflection-textarea')?.value || ''
             }
@@ -2096,7 +2052,6 @@ function setupEventHandlers() {
             payload: {
 
               buttonId: buttonId,
-              clientId: clientId,
               documentId: documentId,
               importDocumentId: inputValue
             }  
@@ -2116,7 +2071,6 @@ function setupEventHandlers() {
             type: 'BUTTON_CLICKED',
             payload: {
               buttonId: buttonId,
-              clientId: clientId,
               documentId: documentId
             }
           });
@@ -2134,7 +2088,6 @@ function setupEventHandlers() {
       sendWebSocketMessage({
         type: 'CUSTOMIZE_CLICKED',
         payload: {
-          clientId: clientId,
           documentId: documentId
         }
       });
@@ -2178,7 +2131,6 @@ if (rubricDropdown) {
       payload: {
         buttonId: "rubric-dropdown",
         selectedIndex: selectedIndex,
-        clientId: clientId,
         documentId: documentId
       }
     });
@@ -2195,7 +2147,6 @@ function handlePillClick(pillButtonId){
           payload: {
             buttonId: 'pill-button',
             buttonTitle: pillButtonId,
-            clientId: clientId,
             documentId: documentId
           }
         });

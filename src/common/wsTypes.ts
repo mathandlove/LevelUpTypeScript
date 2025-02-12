@@ -6,16 +6,11 @@ interface BaseIncomingMessage {
 }
 
 interface BasePayload {
-  clientId: string;
   documentId: string;
 }
 
 function isValidBasePayload(payload: any): payload is BasePayload {
-  return (
-    payload &&
-    typeof payload.clientId === "string" &&
-    typeof payload.documentId === "string"
-  );
+  return payload && typeof payload.documentId === "string";
 }
 
 export interface TokenIncomingMessage extends BaseIncomingMessage {
@@ -54,7 +49,7 @@ export function isValidButtonClickedIncomingMessage(
 export type IncomingWebSocketMessage =
   | {
       type: "GIVE_TOKEN";
-      payload: { token: string; clientId: string; documentId: string };
+      payload: { token: string; documentId: string };
     }
   | {
       type: "BUTTON_CLICKED";
@@ -64,28 +59,24 @@ export type IncomingWebSocketMessage =
         textResponse?: string;
         selectedIndex?: number;
         importDocumentId?: string;
-        clientId: string;
         documentId: string;
       };
     }
   | {
       type: "CUSTOMIZE_CLICKED";
       payload: {
-        clientId: string;
         documentId: string;
       };
     }
   | {
       type: "USER_BACK_ON_TAB";
       payload: {
-        clientId: string;
         documentId: string;
       };
     }
   | {
       type: "SELECT_GOAL";
       payload: {
-        clientId: string;
         documentId: string;
         buttonTitle: string;
       };
@@ -101,7 +92,6 @@ export function isValidIncomingWebSocketMessage(
       return (
         message.payload &&
         typeof message.payload.token === "string" &&
-        typeof message.payload.clientId === "string" &&
         typeof message.payload.documentId === "string"
       );
 
@@ -109,7 +99,6 @@ export function isValidIncomingWebSocketMessage(
       return (
         message.payload &&
         typeof message.payload.buttonId === "string" &&
-        typeof message.payload.clientId === "string" &&
         typeof message.payload.documentId === "string" &&
         (message.payload.buttonTitle === undefined ||
           typeof message.payload.buttonTitle === "number") &&
@@ -118,23 +107,14 @@ export function isValidIncomingWebSocketMessage(
       );
 
     case "CUSTOMIZE_CLICKED":
-      return (
-        message.payload &&
-        typeof message.payload.clientId === "string" &&
-        typeof message.payload.documentId === "string"
-      );
+      return message.payload && typeof message.payload.documentId === "string";
 
     case "USER_BACK_ON_TAB":
-      return (
-        message.payload &&
-        typeof message.payload.clientId === "string" &&
-        typeof message.payload.documentId === "string"
-      );
+      return message.payload && typeof message.payload.documentId === "string";
 
     case "SELECT_GOAL":
       return (
         message.payload &&
-        typeof message.payload.clientId === "string" &&
         typeof message.payload.documentId === "string" &&
         typeof message.payload.buttonTitle === "string"
       );

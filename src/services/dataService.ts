@@ -8,15 +8,14 @@ import {
 } from "../common/types.js";
 import { AppContext } from "../common/appTypes.js";
 import { google } from "googleapis";
-import { jwtDecode } from "jwt-decode";
-import { installDefaultRubric } from "./dataBaseService.js";
-import { drive } from "googleapis/build/src/apis/drive/index.js";
+import { installDefaultRubric, saveUserToDatabase } from "./dataBaseService.js";
 
 //Error Messages
 // Define custom error classes
 
 interface TokenInfoResponse {
   audience: string;
+  email: string;
 }
 
 export async function validateToken(context: AppContext): Promise<boolean> {
@@ -35,6 +34,8 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       url,
       options
     );
+    const email = response.email;
+    await saveUserToDatabase(email);
     return true;
   } catch {
     throw new Error(
@@ -49,7 +50,6 @@ export async function getPersistentDataFileId(context: AppContext): Promise<{
   GoogleServices: object;
 }> {
   const token = context.appState.token;
-  const documentId = context.appState.documentId;
   const oauth2Client = new google.auth.OAuth2();
   oauth2Client.setCredentials({ access_token: token });
 

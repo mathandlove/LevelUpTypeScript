@@ -7,6 +7,7 @@ import {
   IncomingWebSocketMessage,
   OutgoingWebSocketMessage,
 } from "./common/wsTypes.js";
+import { v4 as uuidv4 } from "uuid";
 
 export interface LevelUpWebSocket extends WebSocket {
   sendMessage: (message: OutgoingWebSocketMessage) => void;
@@ -16,7 +17,8 @@ export interface LevelUpWebSocket extends WebSocket {
 export function initializeWebSocket(server: Server): void {
   const wss = new WebSocketServer({ server });
 
-  wss.on("connection", (ws: LevelUpWebSocket) => {
+  wss.on("connection", (ws: LevelUpWebSocket, req) => {
+    const uniqueKey = uuidv4(); //req.headers["sec-websocket-key"];
     console.log("🌐 New WebSocket connection");
     let inactivityTimeout: NodeJS.Timeout | null = null;
 
@@ -43,10 +45,10 @@ export function initializeWebSocket(server: Server): void {
           rawMessage.toString()
         );
         if (isValidIncomingWebSocketMessage(message)) {
-          logger.info("📨 Received message:", message);
+          //logger.info("📨 Received message:", message);
           // Create or get the actor for this connection
           ws.actor = getOrCreateActor(
-            message.payload.clientId,
+            uniqueKey,
             message.payload.documentId,
             ws
           );
