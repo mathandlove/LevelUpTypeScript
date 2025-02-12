@@ -25,6 +25,12 @@ export async function getFullText(context: AppContext): Promise<string> {
     })
     .join("");
 
+  if (text.length < 20) {
+    throw new Error(
+      "We can't offer feedback on your paper until you write it.\n\n\n Come back later!"
+    );
+  }
+
   return text;
 }
 
@@ -201,6 +207,51 @@ export async function createGoogleSheet(
     // Step 4: Apply Formatting (Column Widths, Row Heights, Background Colors, Text Styling)
     const formatRequest = {
       requests: [
+        // Protect Column 0 (Column A)
+        {
+          addProtectedRange: {
+            protectedRange: {
+              range: {
+                sheetId: 0,
+                startColumnIndex: 0,
+                endColumnIndex: 1,
+                startRowIndex: 0,
+                endRowIndex: 4,
+              },
+              description: "Protected Column A",
+              warningOnly: true, // No one can edit except owner
+            },
+          },
+        },
+        // Protect Row 2
+        {
+          addProtectedRange: {
+            protectedRange: {
+              range: {
+                sheetId: 0,
+                startRowIndex: 2,
+                endRowIndex: 3,
+              },
+              description: "Protected Row 3",
+              warningOnly: true,
+            },
+          },
+        },
+        // Protect Row 5
+        {
+          addProtectedRange: {
+            protectedRange: {
+              range: {
+                sheetId: 0,
+                startRowIndex: 5,
+                endRowIndex: 6,
+              },
+              description: "Protected Row 6",
+              warningOnly: true,
+            },
+          },
+        },
+
         {
           repeatCell: {
             range: {
