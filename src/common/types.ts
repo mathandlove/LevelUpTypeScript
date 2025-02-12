@@ -159,6 +159,7 @@ export type ChallengeInfo = {
   };
   aiRawFeedback?: string;
   modifiedSentences: string[]; //Selected Sentence goes in here
+  wrongFeedback?: string[];
   formattedFeedback?: string;
   aiFeeling?: string;
   aiDirections?: string;

@@ -80,8 +80,7 @@ export async function getCelebration(context: AppContext): Promise<string> {
     context.documentMetaData.currentChallenge?.formattedFeedback;
   const challenge = context.documentMetaData.currentChallenge;
 
-  const studentOriginalResponse =
-    challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
+  const studentOriginalResponse = challenge.modifiedSentences[0];
   const studentImprovedResponse =
     challenge.modifiedSentences[challenge.modifiedSentences.length - 1];
 
@@ -109,29 +108,47 @@ export async function checkChallengeResponse(
 ): Promise<string> {
   const challenge = context.documentMetaData.currentChallenge;
   const aiTask = challenge.formattedFeedback;
-  const studentOriginalResponse =
-    challenge.modifiedSentences[challenge.modifiedSentences.length - 2];
+  const studentOriginalResponse = challenge.modifiedSentences[0];
   const studentImprovedResponse =
     challenge.modifiedSentences[challenge.modifiedSentences.length - 1];
   const instructions = getInstructForCheckChallengeResponse();
   const messages = [];
   messages.push({ role: "system", content: instructions });
-  messages.push({ role: "user", content: "1: " + studentOriginalResponse });
+  messages.push({
+    role: "user",
+    content: "Original Sentence: " + studentOriginalResponse,
+  });
   messages.push({ role: "assistant", content: aiTask });
-  messages.push({ role: "user", content: "2: " + studentImprovedResponse });
+  messages.push({
+    role: "user",
+    content: "Student Response: " + studentImprovedResponse,
+  });
 
   const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
   let passed: string;
-  if (openAIStr.includes("1")) {
-    passed = "incorrect";
-  } else if (openAIStr.includes("2")) {
+
+  console.log("💌 checkChallengeResponse", openAIStr);
+  if (containsScore(openAIStr)) {
     passed = "correct";
   } else {
     passed = "incorrect";
   }
   return passed;
+
+  function containsScore(openAIStr: string): boolean {
+    const scores = ["10", "9", "8", "7", "6", "5"];
+
+    // Ensure lowercase comparison
+    const lowerCaseStr = openAIStr.toLowerCase();
+
+    // Check for each score as a standalone number
+    return scores.some((score) => {
+      const regex = new RegExp(`\\b${score}\\b`); // Ensures full number match
+      return regex.test(lowerCaseStr);
+    });
+  }
 }
 
 export async function getNewChallenge(

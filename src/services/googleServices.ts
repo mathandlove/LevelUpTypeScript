@@ -1123,7 +1123,7 @@ export async function addEntryToWritingJournal(
     let isFirstEntry = true;
     for (const entry of entries) {
       const formattedDefinition = `${entry.definition}\n`;
-      const formattedText = `\t${entry.text}\n`; // Start response with a TAB
+      const formattedText = `${entry.text}\n`; // Start response with a TAB
 
       // Insert definition (bold, smaller font)
       requests.push({
@@ -1183,12 +1183,15 @@ export async function addEntryToWritingJournal(
             namedStyleType: "NORMAL_TEXT",
             spaceAbove: { magnitude: 0, unit: "PT" }, // 0pt before
             spaceBelow: { magnitude: 0, unit: "PT" }, // 0pt after
+            indentFirstLine: { magnitude: 36, unit: "PT" }, // ✅ Indent first line
+            indentStart: { magnitude: 36, unit: "PT" }, // ✅ Indent all lines
           },
-          fields: "namedStyleType,spaceAbove,spaceBelow",
+          fields:
+            "namedStyleType,spaceAbove,spaceBelow,indentFirstLine,indentStart",
         },
       });
 
-      insertIndex += entry.text.length + 2; // Account for tab and newlines
+      insertIndex += entry.text.length + 1; // Account for tab and newlines
       isFirstEntry = false; // ✅ First entry logic applied
     }
 
