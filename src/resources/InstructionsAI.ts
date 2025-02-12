@@ -1,5 +1,5 @@
 export function getInstructForCheckChallengeResponse() {
-  const instructions = `A student wrote an original sentence and then a tutor gave that student directions. The student then wrote a response to the directions. Your job is to determine if the student followed the directions. Return a number 1 - 10 based on how well the student followed the directions. 1 being they made no changes. 10 being they made all the changes.`;
+  const instructions = `A student wrote an original sentence and then a tutor gave that student directions. The student then wrote a response to the directions. Your job is to determine if the student followed the directions. Return a number 1 - 10 based on how well the student followed the directions. 1 being they made no changes. 10 being they made all the changes. Only return the number.`;
   return instructions;
 }
 

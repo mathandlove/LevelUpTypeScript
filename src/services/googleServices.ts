@@ -720,8 +720,8 @@ export async function updateRubricFromGoogleSheet(
   const gradeLevel = parseInt(rows[1][1], 10) || 0;
 
   // Extract reflection data
-  const includeReflection = rows[3][3]?.toUpperCase() === "YES";
-  const askToExplainCopyPaste = rows[3][4]?.toUpperCase() === "YES";
+  const includeReflection = rows[3][3]?.toUpperCase() === "TRUE";
+  const askToExplainCopyPaste = rows[3][4]?.toUpperCase() === "TRUE";
   const reflectionQuestions = rows[3].slice(5).filter((q) => q);
 
   const reflection: Reflection = {

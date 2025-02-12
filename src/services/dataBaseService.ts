@@ -11,6 +11,7 @@ import {
 import { firebaseConfig } from "../resources/keys.js";
 import { defaultRubric, Rubric } from "../common/types.js";
 import { AppContext } from "../common/appTypes.js";
+import { admin } from "googleapis/build/src/apis/admin/index.js";
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -108,6 +109,17 @@ export async function installRubric(rubricID: string): Promise<Rubric> {
   }
 }
 
+export async function saveUserToDatabase(email) {
+  const userToSave = {
+    email: email,
+    lastLogin: new Date().toISOString(),
+  };
+
+  await setDoc(doc(db, "users", email), userToSave, { merge: true });
+
+  console.log(`✅ User email saved: ${email}`);
+}
+
 export async function saveRubricToDatabase(rubric: Rubric): Promise<Rubric> {
   const rubricToSave = {
     ...rubric,
@@ -136,5 +148,3 @@ export async function createDefaultRubric(defaultRubric: Rubric) {
     console.error("❌ Error creating default rubric:", error);
   }
 }
-
-// Run this function once to create the default rubric
