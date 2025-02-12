@@ -5,12 +5,10 @@ interface BaseIncomingMessage {
   payload: BasePayload;
 }
 
-interface BasePayload {
-  documentId: string;
-}
+interface BasePayload {}
 
 function isValidBasePayload(payload: any): payload is BasePayload {
-  return payload && typeof payload.documentId === "string";
+  return payload;
 }
 
 export interface TokenIncomingMessage extends BaseIncomingMessage {
@@ -59,25 +57,19 @@ export type IncomingWebSocketMessage =
         textResponse?: string;
         selectedIndex?: number;
         importDocumentId?: string;
-        documentId: string;
       };
     }
   | {
       type: "CUSTOMIZE_CLICKED";
-      payload: {
-        documentId: string;
-      };
+      payload: {};
     }
   | {
       type: "USER_BACK_ON_TAB";
-      payload: {
-        documentId: string;
-      };
+      payload: {};
     }
   | {
       type: "SELECT_GOAL";
       payload: {
-        documentId: string;
         buttonTitle: string;
       };
     };
@@ -99,7 +91,6 @@ export function isValidIncomingWebSocketMessage(
       return (
         message.payload &&
         typeof message.payload.buttonId === "string" &&
-        typeof message.payload.documentId === "string" &&
         (message.payload.buttonTitle === undefined ||
           typeof message.payload.buttonTitle === "number") &&
         (message.payload.textResponse === undefined ||
@@ -107,17 +98,13 @@ export function isValidIncomingWebSocketMessage(
       );
 
     case "CUSTOMIZE_CLICKED":
-      return message.payload && typeof message.payload.documentId === "string";
+      return message.payload;
 
     case "USER_BACK_ON_TAB":
-      return message.payload && typeof message.payload.documentId === "string";
+      return message.payload;
 
     case "SELECT_GOAL":
-      return (
-        message.payload &&
-        typeof message.payload.documentId === "string" &&
-        typeof message.payload.buttonTitle === "string"
-      );
+      return message.payload && typeof message.payload.buttonTitle === "string";
 
     default:
       return false;

@@ -1,3 +1,8 @@
+<script>
+  //From GoogleAppScripts
+const initialToken = <?= token ?>;
+let documentId = <?= documentId ?>;
+</script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -1465,9 +1470,7 @@ margin-right:10px;
 
     <script>
 
-//From GoogleAppScripts
-const initialToken = "<?= token ?>";
-let documentId = "<?= documentId ?>";
+
 // Global variables
 
 let currentToken=null;
@@ -1501,7 +1504,7 @@ connectWebSocket();
 if(isGoogleApp()){
   console.log("🔑 Initial Token Sent to Server");
   console.log(documentId);
-  receivedTokenData(initialToken);
+  receivedTokenData({token: initialToken});
 }
   else{
     documentId = "1FD4A2TCecTWaDxUOAq9nrDIp_TLcZGNA8Y_gSrj8FBE";
@@ -1843,7 +1846,6 @@ function updateGoalButtons(goalTitles) {
       type: "SELECT_GOAL",
       payload: {
         buttonTitle: title,
-        documentId: documentId,
       }
     });
   }
@@ -1978,10 +1980,17 @@ sendTokenToServer();
         }
 
           console.log('🥤 Sent Pop Up Request:', payload);
-
       
+    const shareButton = document.getElementById("share-rubric-button");
+    shareButton.textContent = "Loading";
+    shareButton.disabled = true;
 
-      }
+    setTimeout(() => {
+        shareButton.textContent = "Share"; // Reset after a delay
+        shareButton.disabled = false;
+    }, 8000);
+}
+
 
   async function sendTokenToServer() {
         if(isGoogleApp()) {
@@ -1994,13 +2003,11 @@ sendTokenToServer();
   }
   }
 function receivedTokenData(currentToken) {
-  if (currentToken) {
-    documentId =  currentToken.documentId;
-  }
+
   sendWebSocketMessage({
     type: "GIVE_TOKEN",
     payload: {
-        documentId: currentToken.documentId,
+        documentId: documentId,
         token: currentToken.token
     }
 });
@@ -2040,7 +2047,6 @@ function setupEventHandlers() {
             type: 'BUTTON_CLICKED',
             payload: {
               buttonId: buttonId,
-              documentId: documentId,
               textResponse: document.querySelector('.reflection-textarea')?.value || ''
             }
           });
@@ -2052,7 +2058,6 @@ function setupEventHandlers() {
             payload: {
 
               buttonId: buttonId,
-              documentId: documentId,
               importDocumentId: inputValue
             }  
           });
@@ -2071,7 +2076,6 @@ function setupEventHandlers() {
             type: 'BUTTON_CLICKED',
             payload: {
               buttonId: buttonId,
-              documentId: documentId
             }
           });
         }
@@ -2088,7 +2092,6 @@ function setupEventHandlers() {
       sendWebSocketMessage({
         type: 'CUSTOMIZE_CLICKED',
         payload: {
-          documentId: documentId
         }
       });
     };
@@ -2131,7 +2134,6 @@ if (rubricDropdown) {
       payload: {
         buttonId: "rubric-dropdown",
         selectedIndex: selectedIndex,
-        documentId: documentId
       }
     });
   });
@@ -2147,7 +2149,6 @@ function handlePillClick(pillButtonId){
           payload: {
             buttonId: 'pill-button',
             buttonTitle: pillButtonId,
-            documentId: documentId
           }
         });
       }

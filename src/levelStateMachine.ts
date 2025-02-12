@@ -64,10 +64,9 @@ const actorStore = new Map<string, ExtendedInterpreter>();
 // Store to track actors with explicit typing
 export function getOrCreateActor(
   uniqueId: string,
-  documentId: string,
   ws: LevelUpWebSocket
 ): ExtendedInterpreter {
-  const key = `${uniqueId}:${documentId}`;
+  const key = `${uniqueId}`;
 
   if (actorStore.has(key)) {
     return actorStore.get(key)!;
@@ -1145,9 +1144,21 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       event.payload.buttonId === "edit-rubric-button",
                   },
                   {
-                    target: "shareRubricPopup",
+                    //No transition as we need the popup to be disabled for 5 seconds
                     cond: (context, event) =>
                       event.payload.buttonId === "share-rubric-button",
+                    actions: (context) => {
+                      const currentRubric = getRubric(
+                        context,
+                        context.documentMetaData.currentRubricID
+                      );
+                      sendShareRubricPopup(
+                        context,
+                        currentRubric.databaseID,
+                        currentRubric.title,
+                        "http://buildempathy.com/level-up-add-rubric"
+                      );
+                    },
                   },
                   {
                     cond: (context, event) =>
@@ -1202,26 +1213,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     ],
                   },
                 ],
-              },
-            },
-
-            shareRubricPopup: {
-              entry: [
-                (context) => {
-                  const currentRubric = getRubric(
-                    context,
-                    context.documentMetaData.currentRubricID
-                  );
-                  sendShareRubricPopup(
-                    context,
-                    currentRubric.databaseID,
-                    currentRubric.title,
-                    "https://www.wonder.io" //TODO: Need to make a page that explains what to do!
-                  );
-                },
-              ],
-              always: {
-                target: "customizeHome",
               },
             },
 

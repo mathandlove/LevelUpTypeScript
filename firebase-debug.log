@@ -1,0 +1,42 @@
+[debug] [2025-02-12T23:08:32.110Z] ----------------------------------------------------------------------
+[debug] [2025-02-12T23:08:32.113Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\matha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-02-12T23:08:32.113Z] CLI Version:   13.31.0
+[debug] [2025-02-12T23:08:32.114Z] Platform:      win32
+[debug] [2025-02-12T23:08:32.114Z] Node Version:  v18.16.0
+[debug] [2025-02-12T23:08:32.115Z] Time:          Wed Feb 12 2025 16:08:32 GMT-0700 (Mountain Standard Time)
+[debug] [2025-02-12T23:08:32.115Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-12T23:08:32.124Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-12T23:08:32.125Z] > authorizing via signed-in user (hedman@buildempathy.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\matha\OneDrive\Documents\Consulting\LevelUp\Code\LeveUpBackendNode
+
+[debug] [2025-02-12T23:11:50.843Z] ----------------------------------------------------------------------
+[debug] [2025-02-12T23:11:50.845Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\matha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-02-12T23:11:50.846Z] CLI Version:   13.31.0
+[debug] [2025-02-12T23:11:50.846Z] Platform:      win32
+[debug] [2025-02-12T23:11:50.846Z] Node Version:  v18.16.0
+[debug] [2025-02-12T23:11:50.847Z] Time:          Wed Feb 12 2025 16:11:50 GMT-0700 (Mountain Standard Time)
+[debug] [2025-02-12T23:11:50.848Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-12T23:11:50.858Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-12T23:11:50.858Z] > authorizing via signed-in user (hedman@buildempathy.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\matha\OneDrive\Documents\Consulting\LevelUp\Code\LeveUpBackendNode
+
