@@ -239,7 +239,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         paperJournalId: event.data, //This is the ID of the Google Sheet
                       }),
                     }),
-                    addLevelToDocumentTitle,
                   ],
                 },
                 onError: {
@@ -978,7 +977,75 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         formerLevel: context.uiState.level - 1,
                       }),
                     }),
-                    sendUIUpdate,
+                    (context, event) => {
+                      const today = new Date();
+                      const formattedDate = today
+                        .toLocaleDateString("en-US", {
+                          year: "2-digit",
+                          month: "2-digit",
+                          day: "2-digit",
+                        })
+                        .replace(/\//g, "/"); // Format date as "MM/DD/YY"
+
+                      const challenge =
+                        context.documentMetaData.currentChallenge;
+
+                      if (
+                        !challenge ||
+                        !challenge.modifiedSentences?.length ||
+                        !challenge.aiRawFeedback
+                      ) {
+                        console.warn("❌ No challenge data found.");
+                        return;
+                      }
+
+                      const challengeReflections = [
+                        {
+                          definition: "Original Text:",
+                          text: challenge.modifiedSentences[0] || "",
+                        },
+                        {
+                          definition: "Challenge:",
+                          text: challenge.aiRawFeedback || "",
+                        },
+                        {
+                          definition: "Student Response:",
+                          text: challenge.modifiedSentences[1] || "",
+                        },
+                      ];
+
+                      // Process wrong feedback loop
+                      if (challenge.wrongFeedback?.length) {
+                        for (
+                          let i = 0;
+                          i < challenge.wrongFeedback.length;
+                          i++
+                        ) {
+                          challengeReflections.push({
+                            definition:
+                              "Incorrect - Request for Additional Changes:",
+                            text: challenge.wrongFeedback[i] || "",
+                          });
+
+                          if (challenge.modifiedSentences[i + 2]) {
+                            challengeReflections.push({
+                              definition: "Updated Response:",
+                              text: challenge.modifiedSentences[i + 2] || "",
+                            });
+                          }
+                        }
+                      }
+                      const selectedChallenge =
+                        context.documentMetaData.pills[
+                          context.documentMetaData.selectedChallengeNumber
+                        ];
+                      return addEntryToWritingJournal(
+                        context,
+                        formattedDate + " " + selectedChallenge.title,
+                        challengeReflections,
+                        "challenge"
+                      );
+                    },
                   ],
                 },
               ],
@@ -993,6 +1060,19 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       uiState: (context, event) => ({
                         ...context.uiState,
                         taskFeedbackMessage: event.data,
+                      }),
+                    }),
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        currentChallenge: {
+                          ...context.documentMetaData.currentChallenge,
+                          wrongFeedback: [
+                            ...(context.documentMetaData.currentChallenge
+                              ?.wrongFeedback || []),
+                            event.data,
+                          ],
+                        },
                       }),
                     }),
                   ],

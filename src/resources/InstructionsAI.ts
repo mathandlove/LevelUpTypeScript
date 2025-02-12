@@ -1,6 +1,5 @@
 export function getInstructForCheckChallengeResponse() {
-  const instructions = `Determine whether sentence 1 or 2 followed the directions more.
-output: 1 or 2`;
+  const instructions = `A student wrote an original sentence and then a tutor gave that student directions. The student then wrote a response to the directions. Your job is to determine if the student followed the directions. Return a number 1 - 10 based on how well the student followed the directions. 1 being they made no changes. 10 being they made all the changes.`;
   return instructions;
 }
 
@@ -25,7 +24,7 @@ export function getInstructForGetSelectedSentence() {
 }
 
 export function getInstructForGetAIFeelings(studentGoal: string) {
-  const instructions = `Write a 2 sentence response describing how a reading these sentences feels. Write at a 5th grade level. Start with "Reading this part, I felt" Do not suggest ways to improve. Frame the emotion as a problem around the student's goal of: "${studentGoal}". Refer to the writer as "you"`;
+  const instructions = `Write a 2 sentence response describing how reading these sentences would feel to a reader. Write at a 5th grade level in first person. Start with "Reading this part, I felt" Do not suggest ways to improve. Do not mention the sentence. Do not give answers. Only tell how you feel.`;
   return instructions;
 }
 
@@ -35,7 +34,7 @@ export function getInstructForCriticalThinkingQuestion(studentGoal: string) {
 }
 
 export function getInstructForImproveFeedback(studentGoal: string) {
-  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add emojis, new lines, and bullets in this feedback to make it easier to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
+  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
   return instructions;
 }
 
