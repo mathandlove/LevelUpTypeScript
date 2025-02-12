@@ -28,13 +28,10 @@ import {
   savePersistentArrayData,
 } from "../src/services/dataService.js";
 import {
-  UIState,
-  defaultUIState,
   DocumentMetaData,
   Rubric,
   ChallengeInfo,
 } from "../src/common/types.js";
-import { IncomingWebSocketMessage } from "../src/common/wsTypes.js";
 import {
   checkChallengeResponse,
   getCelebration,
@@ -43,21 +40,20 @@ import {
   addChallengeDetails,
   formatChallengeResponse,
 } from "../src/services/aiService.js";
-import { chatGPTKey } from "../src/resources/keys.js";
-import { OAuth2Client } from "google-auth-library";
 import {
   getFullText,
   highlightChallengeSentence,
   createGoogleSheet,
   updateRubricFromGoogleSheet,
+  getOrCreatePaperJournal,
+  addLevelToDocumentTitle,
+  addEntryToWritingJournal,
 } from "../src/services/googleServices.js";
 import { compareNewSentenceToOldSentence } from "../src/services/docServices.js";
 import {
-  createRubricCopy,
   newRubric,
   saveRubricToDatabase,
 } from "../src/services/dataBaseService.js";
-
 // Update the ExtendedInterpreter interface to use AppEvent
 interface ExtendedInterpreter
   extends Interpreter<AppContext, any, AppEvent, any> {
@@ -217,7 +213,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 src: getOrLoadDocumentMetaData,
 
                 onDone: {
-                  target: "childDone",
+                  target: "addPaperJournal",
                   actions: [
                     assign({
                       documentMetaData: (context, event) =>
@@ -226,6 +222,26 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   ],
                 },
 
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
+            addPaperJournal: {
+              invoke: {
+                src: getOrCreatePaperJournal,
+                onDone: {
+                  target: "childDone",
+                  actions: [
+                    assign({
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        paperJournalId: event.data, //This is the ID of the Google Sheet
+                      }),
+                    }),
+                    addLevelToDocumentTitle,
+                  ],
+                },
                 onError: {
                   target: "#error",
                 },
@@ -314,6 +330,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   formerLevel: context.uiState.level,
                 }),
               }),
+              savePersistentDocData,
             ],
           },
         },
@@ -1533,6 +1550,34 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               always: {
                 target: "childDone",
                 actions: [
+                  savePersistentDocData,
+                  // Generate the title dynamically based on the current date
+                  (context, event) => {
+                    const today = new Date();
+                    const formattedDate = today
+                      .toLocaleDateString("en-US", {
+                        year: "2-digit",
+                        month: "2-digit",
+                        day: "2-digit",
+                      })
+                      .replace(/\//g, "/"); // Ensure proper formatting
+
+                    const reflections = context.uiState.reflection.question.map(
+                      (question, index) => ({
+                        definition: question,
+                        text:
+                          context.uiState.reflection.submittedAnswers[index] ||
+                          "", // Handle empty responses safely
+                      })
+                    );
+
+                    return addEntryToWritingJournal(
+                      context,
+                      formattedDate,
+                      reflections,
+                      "reflection"
+                    );
+                  },
                   // 1. Add reflection to documentMetaData.savedReflections
                   assign({
                     documentMetaData: (context) => ({
@@ -1587,18 +1632,6 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     },
                   }),
 
-                  //3. Clear the reflectionTemplate
-                  assign({
-                    uiState: (context) => ({
-                      ...context.uiState,
-                      reflection: {
-                        ...context.uiState.reflection,
-                        selectedQuestion: 0,
-                        submittedAnswers: [],
-                      },
-                    }),
-                  }),
-
                   // 4. Increase the level in documentMetaData
                   assign({
                     documentMetaData: (context) => ({
@@ -1616,7 +1649,17 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   }),
 
                   "assignDocMetaDataToUIState",
-                  savePersistentDocData,
+
+                  //3. Clear the reflectionTemplate
+                  assign({
+                    uiState: (context) => ({
+                      ...context.uiState,
+                      reflection: {
+                        ...context.uiState.reflection,
+                        selectedQuestion: 0,
+                      },
+                    }),
+                  }),
                 ],
               },
             },
@@ -1655,6 +1698,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 animateLevelUp: false,
               }),
             }),
+            addLevelToDocumentTitle,
           ],
           on: {
             BUTTON_CLICKED: {
@@ -1727,7 +1771,6 @@ function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
     };
   }
 
-  const topicsLength = rubric.topics.length;
   let updatedPaperScores = [...context.documentMetaData.paperScores];
 
   // Ensure all topics have corresponding scores

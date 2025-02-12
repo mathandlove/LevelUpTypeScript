@@ -252,6 +252,7 @@ export interface DocumentMetaData {
   rubricLastUpdated: string;
   tempNewRubric?: Rubric;
   tempImportRubricId?: string;
+  paperJournalId?: string;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
