@@ -35,7 +35,6 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       url,
       options
     );
-
     return true;
   } catch {
     throw new Error(

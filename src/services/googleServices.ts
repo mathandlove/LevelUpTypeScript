@@ -1,5 +1,6 @@
 import { ChallengeInfo, Reflection, Rubric, Topic } from "../common/types";
 import { AppContext } from "../common/appTypes.js";
+import { drive } from "googleapis/build/src/apis/drive";
 
 export async function getFullText(context: AppContext): Promise<string> {
   const { GoogleServices } = context.appState;
@@ -762,4 +763,446 @@ export async function updateRubricFromGoogleSheet(
   rubric.topics = topics;
 
   return rubric;
+}
+
+export async function getOrCreatePaperJournal(context: AppContext) {
+  const { GoogleServices } = context.appState;
+  if (!GoogleServices || !GoogleServices.docs) {
+    throw new Error("GoogleServices is not initialized properly.");
+  }
+  const { drive } = GoogleServices;
+  const { docs } = GoogleServices;
+  const originalDocumentId = context.appState.documentId;
+  const paperJournalId = context.documentMetaData.paperJournalId;
+  if (paperJournalId) {
+    return paperJournalId;
+  } else {
+    try {
+      // 1) Create a new Google Doc, specifying multiple tabs in the request body.
+      //    Each tab has its own title and content (body).
+      const originalDocument = await docs.documents.get({
+        documentId: originalDocumentId,
+      });
+      const createResponse = await docs.documents.create({
+        requestBody: {
+          title: `Writing Journal for ${originalDocument.data.title}`,
+        },
+      });
+
+      // 2) The newly created document ID
+      const newDocumentId = createResponse.data.documentId;
+
+      await drive.files.update({
+        fileId: newDocumentId,
+        addParents: context.appState.levelUpFolderId,
+        removeParents: "root",
+        fields: "id, parents",
+      });
+
+      await drive.permissions.create({
+        fileId: newDocumentId,
+        requestBody: {
+          role: "reader", // "reader" (view-only), "commenter", or "writer"
+          type: "anyone", // Use "user" for specific email addresses
+        },
+      });
+
+      // 6) Insert section headings: "Reflections" & "Challenges"
+      const requests = [
+        {
+          insertText: {
+            location: { index: 1 },
+            text: "Reflections:\n", // Ensures "Reflections:" is its own paragraph
+          },
+        },
+        {
+          insertText: {
+            location: { index: 14 }, // Insert "Challenges:" on a new line
+            text: "Challenges:\n",
+          },
+        },
+
+        {
+          updateParagraphStyle: {
+            range: { startIndex: 1, endIndex: 12 }, // "Reflections" text range
+            paragraphStyle: { namedStyleType: "HEADING_1" },
+            fields: "namedStyleType",
+          },
+        },
+        {
+          updateParagraphStyle: {
+            range: { startIndex: 13, endIndex: 23 }, // "Challenges" text range
+            paragraphStyle: { namedStyleType: "HEADING_1" },
+            fields: "namedStyleType",
+          },
+        },
+      ];
+
+      // 7) Execute batch update request to insert headings
+      await docs.documents.batchUpdate({
+        documentId: newDocumentId,
+        requestBody: { requests },
+      });
+
+      if (!newDocumentId) {
+        throw new Error(
+          "Failed to create a new multi-tab document (no documentId returned)."
+        );
+      }
+      console.log("newDocumentId", newDocumentId);
+      return newDocumentId; // Return or store in context, as needed
+    } catch (error) {
+      console.error("❌ Error creating paper journal with tabs:", error);
+      throw error;
+    }
+  }
+}
+export async function addLevelToDocumentTitle(context: AppContext) {
+  try {
+    const { GoogleServices } = context.appState;
+    if (!GoogleServices || !GoogleServices.docs) {
+      throw new Error("GoogleServices is not initialized properly.");
+    }
+
+    const { docs } = GoogleServices;
+    const documentId = context.appState.documentId;
+    const level = context.uiState.level;
+
+    // 1) Retrieve the document structure
+    const docResponse = await docs.documents.get({
+      documentId,
+    });
+
+    const bodyContent = docResponse.data.body?.content || [];
+    let deleteStartIndex: number | null = null;
+    let deleteEndIndex: number | null = null;
+
+    // 2) Search for previous level title in the first paragraph
+    if (bodyContent.length > 1 && bodyContent[1].paragraph?.elements) {
+      const elements = bodyContent[1].paragraph.elements;
+
+      let textContent = "";
+      let startIndex = bodyContent[1].startIndex;
+      let endIndex = startIndex;
+
+      for (const element of elements) {
+        if (element.textRun?.content) {
+          textContent += element.textRun.content;
+          endIndex += element.textRun.content.length;
+        }
+      }
+
+      // Detect the old title format: "🏆Level X🏆"
+      const levelTitleMatch = textContent.match(/🏆 Level \d+ 🏆.*/);
+
+      if (levelTitleMatch) {
+        deleteStartIndex = startIndex;
+        deleteEndIndex =
+          startIndex + levelTitleMatch.index! + levelTitleMatch[0].length + 2;
+      }
+    }
+
+    const requests: any[] = [];
+
+    // 3) If previous level title exists, delete it
+    if (deleteStartIndex !== null && deleteEndIndex !== null) {
+      requests.push({
+        deleteContentRange: {
+          range: {
+            startIndex: deleteStartIndex,
+            endIndex: deleteEndIndex,
+          },
+        },
+      });
+    }
+
+    // 4) Insert the new level title at the top
+    const newLevelText = `🏆 Level ${level} 🏆    |    Writing Journal\n\n`;
+    const writingJournalText = "Writing Journal"; // The part we want to hyperlink
+    const separatorText = " | ";
+    const writingJournalIndex = newLevelText.indexOf(writingJournalText);
+    const separatorIndex = newLevelText.indexOf(separatorText);
+    requests.push({
+      insertText: {
+        location: { index: 1 },
+        text: newLevelText,
+      },
+    });
+
+    // 5) Apply formatting (center, font color green, font Impact, size 16.5)
+    requests.push({
+      updateTextStyle: {
+        range: {
+          startIndex: 1,
+          endIndex: 1 + newLevelText.length,
+        },
+        textStyle: {
+          foregroundColor: {
+            color: {
+              rgbColor: { red: 106 / 255, green: 168 / 255, blue: 79 / 255 },
+            },
+          },
+          weightedFontFamily: {
+            fontFamily: "Impact",
+          },
+          fontSize: {
+            magnitude: 16.5,
+            unit: "PT",
+          },
+        },
+        fields: "foregroundColor,weightedFontFamily,fontSize",
+      },
+    });
+    const writingJournalUrl = `https://docs.google.com/document/d/${context.documentMetaData.paperJournalId}`;
+    console.log("writingJournalUrl", writingJournalUrl);
+    // 5) Apply formatting for "Writing Journal" (Light blue, Arial, 12.5 pt, Hyperlink)
+    requests.push({
+      updateTextStyle: {
+        range: {
+          startIndex: 1 + writingJournalIndex,
+          endIndex: 1 + writingJournalIndex + writingJournalText.length,
+        },
+        textStyle: {
+          link: { url: writingJournalUrl },
+          foregroundColor: {
+            color: {
+              rgbColor: { red: 109 / 255, green: 158 / 255, blue: 235 / 255 },
+            }, // Light blue
+          },
+          weightedFontFamily: { fontFamily: "Arial" },
+          fontSize: { magnitude: 12.5, unit: "PT" },
+          bold: true,
+        },
+        fields: "link,foregroundColor,weightedFontFamily,fontSize,bold",
+      },
+    });
+
+    // 6) Apply formatting for "|" separator (Light gray)
+    requests.push({
+      updateTextStyle: {
+        range: {
+          startIndex: 1 + separatorIndex,
+          endIndex: 1 + separatorIndex + separatorText.length,
+        },
+        textStyle: {
+          foregroundColor: {
+            color: {
+              rgbColor: { red: 153 / 255, green: 153 / 255, blue: 153 / 255 },
+            }, // Light gray
+          },
+        },
+        fields: "foregroundColor",
+      },
+    });
+
+    // 6) Center align the level title
+    requests.push({
+      updateParagraphStyle: {
+        range: {
+          startIndex: 1,
+          endIndex: 1 + newLevelText.length,
+        },
+        paragraphStyle: {
+          alignment: "CENTER",
+        },
+        fields: "alignment",
+      },
+    });
+
+    // 7) Execute the batch update request
+    await docs.documents.batchUpdate({
+      documentId,
+      requestBody: {
+        requests,
+      },
+    });
+
+    console.log(
+      "✅ Level title updated at the top, centered, green, Impact font, and size 16.5."
+    );
+  } catch (error) {
+    console.error("❌ Error updating document level title:", error);
+    throw error;
+  }
+}
+
+export async function addEntryToWritingJournal(
+  context: AppContext,
+  title: string,
+  entries: { definition: string; text: string }[],
+  entryType: "reflection" | "challenge"
+) {
+  try {
+    const { GoogleServices } = context.appState;
+    if (!GoogleServices || !GoogleServices.docs) {
+      throw new Error("GoogleServices is not initialized properly.");
+    }
+
+    const { docs } = GoogleServices;
+    const journalDocumentId = context.documentMetaData.paperJournalId;
+
+    if (!journalDocumentId) {
+      throw new Error("Writing Journal document ID not found.");
+    }
+
+    // Retrieve the document contents
+    const docResponse = await docs.documents.get({
+      documentId: journalDocumentId,
+    });
+
+    const bodyContent = docResponse.data.body?.content || [];
+    let insertIndex: number | null = null;
+
+    // Define the section header to locate
+    const sectionHeader =
+      entryType === "reflection" ? "Reflections:" : "Challenges:";
+
+    // Locate the section heading index
+    for (const element of bodyContent) {
+      if (element.paragraph?.elements) {
+        const text = element.paragraph.elements
+          .map((el) => el.textRun?.content)
+          .join("")
+          .trim();
+        if (text === sectionHeader) {
+          insertIndex = element.endIndex; // Insert right after the section title
+          break;
+        }
+      }
+    }
+
+    if (insertIndex === null) {
+      throw new Error(
+        `Could not find the "${sectionHeader}" section in the journal.`
+      );
+    }
+
+    const requests: any[] = [];
+
+    // Insert Title (HEADING_3, bold, 0 spacing after)
+    const formattedTitle = `${title}\n`;
+
+    requests.push({
+      insertText: {
+        location: { index: insertIndex },
+        text: formattedTitle,
+      },
+    });
+
+    // Apply HEADING_3 style, bold, and 0 spacing after
+    requests.push({
+      updateParagraphStyle: {
+        range: {
+          startIndex: insertIndex,
+          endIndex: insertIndex + formattedTitle.length,
+        },
+        paragraphStyle: {
+          namedStyleType: "HEADING_3",
+          spaceBelow: { magnitude: 0, unit: "PT" }, // 0pt after
+        },
+        fields: "namedStyleType,spaceBelow",
+      },
+    });
+
+    requests.push({
+      updateTextStyle: {
+        range: {
+          startIndex: insertIndex,
+          endIndex: insertIndex + formattedTitle.length,
+        },
+        textStyle: {
+          bold: true,
+        },
+        fields: "bold",
+      },
+    });
+
+    insertIndex += formattedTitle.length;
+
+    // Insert each entry at the top (newest first)
+    let isFirstEntry = true;
+    for (const entry of entries) {
+      const formattedDefinition = `${entry.definition}\n`;
+      const formattedText = `\t${entry.text}\n`; // Start response with a TAB
+
+      // Insert definition (bold, smaller font)
+      requests.push({
+        insertText: {
+          location: { index: insertIndex },
+          text: formattedDefinition,
+        },
+      });
+
+      requests.push({
+        updateTextStyle: {
+          range: {
+            startIndex: insertIndex,
+            endIndex: insertIndex + entry.definition.length,
+          },
+          textStyle: {
+            fontSize: { magnitude: 10, unit: "PT" }, // Smaller font size
+            bold: true, // Make bold
+          },
+          fields: "fontSize,bold",
+        },
+      });
+
+      // Set paragraph spacing for the definition
+      requests.push({
+        updateParagraphStyle: {
+          range: {
+            startIndex: insertIndex,
+            endIndex: insertIndex + entry.definition.length,
+          },
+          paragraphStyle: {
+            spaceAbove: { magnitude: isFirstEntry ? 3 : 10, unit: "PT" }, // ✅ First entry = 3pt, others = 10pt
+            spaceBelow: { magnitude: 3, unit: "PT" }, // 3pt after
+          },
+          fields: "spaceAbove,spaceBelow",
+        },
+      });
+
+      insertIndex += entry.definition.length + 1;
+
+      // Insert student response (regular text with a tab)
+      requests.push({
+        insertText: {
+          location: { index: insertIndex },
+          text: formattedText,
+        },
+      });
+
+      // Explicitly set response text to "NORMAL_TEXT" to remove heading inheritance
+      requests.push({
+        updateParagraphStyle: {
+          range: {
+            startIndex: insertIndex,
+            endIndex: insertIndex + formattedText.length,
+          },
+          paragraphStyle: {
+            namedStyleType: "NORMAL_TEXT",
+            spaceAbove: { magnitude: 0, unit: "PT" }, // 0pt before
+            spaceBelow: { magnitude: 0, unit: "PT" }, // 0pt after
+          },
+          fields: "namedStyleType,spaceAbove,spaceBelow",
+        },
+      });
+
+      insertIndex += entry.text.length + 2; // Account for tab and newlines
+      isFirstEntry = false; // ✅ First entry logic applied
+    }
+
+    // Execute batch update request
+    await docs.documents.batchUpdate({
+      documentId: journalDocumentId,
+      requestBody: { requests },
+    });
+
+    console.log(
+      `✅ Added new ${entryType} entries under title "${title}" in the "${sectionHeader}" section.`
+    );
+  } catch (error) {
+    console.error("❌ Error updating Writing Journal:", error);
+    throw error;
+  }
 }
