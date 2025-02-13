@@ -1,6 +1,6 @@
 # Ignore specific files
 public/tokenData.json
-src/resources/keys.ts
+functions/src/resources/keys.ts
 
 # Ignore all files in a directory
 dist
