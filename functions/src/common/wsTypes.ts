@@ -1,4 +1,4 @@
-import { UIState, ButtonId } from "./types.js";
+import { UIState } from "./types";
 
 interface BaseIncomingMessage {
   type: "GIVE_TOKEN" | "BUTTON_CLICKED";

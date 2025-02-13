@@ -1,6 +1,5 @@
-import { drive } from "googleapis/build/src/apis/drive";
 import { ChallengeInfo, defaultRubric, Rubric } from "../common/types";
-import { AppContext } from "../common/appTypes.js";
+import { AppContext } from "../common/appTypes";
 
 export function getSentenceStartAndEnd(
   sentenceToFind: string,

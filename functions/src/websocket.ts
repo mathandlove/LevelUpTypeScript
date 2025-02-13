@@ -1,11 +1,11 @@
 import { WebSocketServer, WebSocket, RawData } from "ws";
 import { Server } from "http";
-import { getOrCreateActor } from "./levelStateMachine.js";
+import { getOrCreateActor } from "./levelStateMachine";
 import {
   isValidIncomingWebSocketMessage,
   IncomingWebSocketMessage,
   OutgoingWebSocketMessage,
-} from "./common/wsTypes.js";
+} from "./common/wsTypes";
 import { v4 as uuidv4 } from "uuid";
 
 export interface LevelUpWebSocket extends WebSocket {

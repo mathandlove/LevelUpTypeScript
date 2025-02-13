@@ -1,4 +1,4 @@
-import { defaultTopics } from "../resources/defaulttopics.js";
+import { defaultTopics } from "../resources/defaulttopics";
 // First, define the interface
 
 //websocket Types

@@ -8,9 +8,9 @@ const testMarkdown = `
 ***bold italic***  
 `;
 
-import { openRouterKey } from "../resources/keys.js";
+import { openRouterKey } from "../resources/keys";
 
-import { AppContext } from "../common/appTypes.js";
+import { AppContext } from "../common/appTypes";
 import { ChallengeInfo } from "../common/types";
 
 import {
@@ -31,7 +31,7 @@ import {
   getInstructForGetSelectedSentence,
   getInstructForImproveFeedback,
   getInstructAddEmojisToFeedback,
-} from "../resources/InstructionsAI.js";
+} from "../resources/InstructionsAI";
 import { getSentenceStartAndEnd } from "./docServices";
 
 const openai = new OpenAI({
