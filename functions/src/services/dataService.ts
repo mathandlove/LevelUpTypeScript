@@ -1,14 +1,15 @@
-import fetch, { Response, RequestInit } from "node-fetch";
+import axios from "axios";
+
 import {
   DocumentMetaData,
   defaultDocumentMetaData,
   DocumentMetaDataMap,
   verifyDocumentMetaDataMap,
   Rubric,
-} from "../common/types.js";
-import { AppContext } from "../common/appTypes.js";
+} from "../common/types";
+import { AppContext } from "../common/appTypes";
 import { google } from "googleapis";
-import { installDefaultRubric, saveUserToDatabase } from "./dataBaseService.js";
+import { installDefaultRubric, saveUserToDatabase } from "./dataBaseService";
 
 //Error Messages
 // Define custom error classes
@@ -30,11 +31,11 @@ export async function validateToken(context: AppContext): Promise<boolean> {
     },
   };
   try {
-    const response: TokenInfoResponse = await fetchWithRetriesAndTimeout(
-      url,
-      options
-    );
-    const email = response.email;
+    const response = await axios.post<TokenInfoResponse>(url, {
+      access_token: tokenString,
+    });
+    const email = response.data.email;
+
     await saveUserToDatabase(email);
     return true;
   } catch {
@@ -95,57 +96,6 @@ export async function getOrLoadDocumentMetaData(context: AppContext): Promise<{
   }
 }
 
-interface FetchOptions extends RequestInit {
-  retries?: number; // Number of retry attempts
-  timeout?: number; // Timeout in milliseconds
-}
-
-async function fetchWithRetriesAndTimeout<T = unknown>(
-  url: string,
-  options: FetchOptions = {}
-): Promise<T> {
-  const { retries = 3, timeout = 5000, ...fetchOptions } = options;
-
-  const fetchWithTimeout = (
-    url: string,
-    options: RequestInit,
-    timeout: number
-  ): Promise<Response> => {
-    return Promise.race([
-      fetch(url, options),
-      new Promise<Response>((_, reject) =>
-        setTimeout(() => reject(new Error("Request timeout")), timeout)
-      ),
-    ]);
-  };
-  for (let attempt = 0; attempt < retries; attempt++) {
-    try {
-      const response = await fetchWithTimeout(url, fetchOptions, timeout);
-
-      if (!response.ok) {
-        throw new Error(
-          `Fetch error: ${response.status} ${response.statusText}`
-        );
-      }
-
-      // Assume response.json() returns data of type T
-      return (await response.json()) as T;
-    } catch (error) {
-      if (attempt < retries - 1) {
-        console.warn(
-          `Fetch attempt ${attempt + 1} failed. Retrying...`,
-          (error as Error).message
-        );
-      } else {
-        console.error(`All fetch attempts failed:`, (error as Error).message);
-        throw error;
-      }
-    }
-  }
-
-  // This line is unreachable, but TypeScript requires it.
-  throw new Error("Fetch operation failed unexpectedly.");
-}
 async function createOrGetPersistentDataFileId(oauth2Client: any): Promise<{
   persistentDataFileId: string;
   levelUpFolderId: string;

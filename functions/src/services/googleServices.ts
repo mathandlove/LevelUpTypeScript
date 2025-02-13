@@ -1,7 +1,5 @@
-import { ChallengeInfo, Reflection, Rubric, Topic } from "../common/types";
-import { AppContext } from "../common/appTypes.js";
-import { drive } from "googleapis/build/src/apis/drive";
-
+import { AppContext } from "../common/appTypes";
+import { Reflection, Rubric, Topic } from "../common/types";
 export async function getFullText(context: AppContext): Promise<string> {
   const { GoogleServices } = context.appState;
   const { docs } = GoogleServices;

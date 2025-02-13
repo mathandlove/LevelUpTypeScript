@@ -1,4 +1,4 @@
-import { Topic } from "../common/types.js";
+import { Topic } from "../common/types";
 
 export const defaultTopics: Topic[] = [
   {

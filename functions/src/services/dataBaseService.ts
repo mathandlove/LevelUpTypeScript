@@ -8,10 +8,10 @@ import {
   updateDoc,
   setDoc,
 } from "firebase/firestore";
-import { firebaseConfig } from "../resources/keys.js";
-import { defaultRubric, Rubric } from "../common/types.js";
-import { AppContext } from "../common/appTypes.js";
-import { admin } from "googleapis/build/src/apis/admin/index.js";
+import { firebaseConfig } from "../resources/keys";
+import { defaultRubric, Rubric } from "../common/types";
+import { AppContext } from "../common/appTypes";
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

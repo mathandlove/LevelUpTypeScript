@@ -8,14 +8,14 @@ import {
   sendTo,
 } from "xstate";
 
-import { LevelUpWebSocket } from "./websocket.js";
+import { LevelUpWebSocket } from "./websocket";
 import {
   AppEvent,
   AppContext,
   defaultAppContext,
   defaultAppState,
   ErrorMessageEvent,
-} from "./common/appTypes.js";
+} from "./common/appTypes";
 
 import {
   validateToken,
@@ -26,12 +26,8 @@ import {
   getRubricArray,
   getOrCreateDefaultRubric,
   savePersistentArrayData,
-} from "../src/services/dataService.js";
-import {
-  DocumentMetaData,
-  Rubric,
-  ChallengeInfo,
-} from "../src/common/types.js";
+} from "./services/dataService";
+import { DocumentMetaData, Rubric, ChallengeInfo } from "./common/types";
 import {
   checkChallengeResponse,
   getCelebration,
@@ -39,7 +35,7 @@ import {
   getNewChallenge,
   addChallengeDetails,
   formatChallengeResponse,
-} from "../src/services/aiService.js";
+} from "./services/aiService";
 import {
   getFullText,
   highlightChallengeSentence,
@@ -48,12 +44,9 @@ import {
   getOrCreatePaperJournal,
   addLevelToDocumentTitle,
   addEntryToWritingJournal,
-} from "../src/services/googleServices.js";
-import { compareNewSentenceToOldSentence } from "../src/services/docServices.js";
-import {
-  newRubric,
-  saveRubricToDatabase,
-} from "../src/services/dataBaseService.js";
+} from "./services/googleServices";
+import { compareNewSentenceToOldSentence } from "./services/docServices.js";
+import { newRubric, saveRubricToDatabase } from "./services/dataBaseService.js";
 // Update the ExtendedInterpreter interface to use AppEvent
 interface ExtendedInterpreter
   extends Interpreter<AppContext, any, AppEvent, any> {
