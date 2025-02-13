@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import { initializeWebSocket } from "./websocket.js";
+import { initializeWebSocket } from "./websocket";
 import { createServer } from "http";
 import path from "path";
 

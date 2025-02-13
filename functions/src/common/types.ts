@@ -1,7 +1,4 @@
-import { WebSocket } from "ws";
 import { defaultTopics } from "../resources/defaulttopics.js";
-import { TasksArray, validateTasksArray } from "../resources/schemas.js";
-import { StarterLevelUpRubricId } from "../resources/keys.js";
 // First, define the interface
 
 //websocket Types
