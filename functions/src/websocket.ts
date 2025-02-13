@@ -31,7 +31,6 @@ export function initializeWebSocket(server: Server): void {
     // Initialize the WebSocket with a sendMessage method
     ws.sendMessage = function (message: OutgoingWebSocketMessage) {
       this.send(JSON.stringify(message));
-      console.log(`\n%%% Sending message: ${JSON.stringify(message)}\n`);
     };
 
     ws.on("message", (rawMessage: RawData) => {

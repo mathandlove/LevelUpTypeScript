@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "description": "Firebase Cloud Functions for LevelUp",
   "main": "lib/index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "firebase emulators:start",
-    "deploy": "firebase deploy --only functions",
-    "lint": "echo 'No linting configured' && exit 0",
-    "dev": "nodemon --ext ts --exec \"npm run build && node lib/server.js\""
+"scripts": {
+  "build": "tsc",
+  "docker:build": "gcloud builds submit --tag gcr.io/level-up-external-server/websocket-server",
+  "docker:deploy": "gcloud run deploy websocket-server --image gcr.io/level-up-external-server/websocket-server --platform managed --allow-unauthenticated --region us-central1",
+  "deploy": "npm run docker:build && npm run docker:deploy"
   },
   "engines": {
     "node": "18"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.6",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "firebase": "^11.3.1",
     "firebase-admin": "^11.2.0",
     "firebase-functions": "^4.0.0",
     "googleapis": "^144.0.0",
