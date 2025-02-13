@@ -1,6 +1,5 @@
 import { WebSocketServer, WebSocket, RawData } from "ws";
 import { Server } from "http";
-import logger from "./utils/logger.js";
 import { getOrCreateActor } from "./levelStateMachine.js";
 import {
   isValidIncomingWebSocketMessage,
@@ -25,9 +24,6 @@ export function initializeWebSocket(server: Server): void {
     const resetInactivityTimer = () => {
       if (inactivityTimeout) clearTimeout(inactivityTimeout);
       inactivityTimeout = setTimeout(() => {
-        logger.info(
-          "⏳ Connection inactive for 30 minutes, closing WebSocket."
-        );
         ws.close(); // Forcefully close the connection
       }, 30 * 60 * 1000); // 30 minutes of inactivity
     };
@@ -62,13 +58,10 @@ export function initializeWebSocket(server: Server): void {
     });
 
     ws.on("close", () => {
-      logger.info("🔴 WebSocket connection closed");
-
       // Stop the token refresh loop
       if (tokenInterval) {
         clearInterval(tokenInterval);
         tokenInterval = null;
-        logger.info("🛑 Token refresh stopped.");
       }
 
       // Clean up the actor when the connection closes
