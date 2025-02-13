@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "firebase emulators:start",
-    "deploy": "firebase deploy --only functions"
+    "deploy": "firebase deploy --only functions",
+    "lint": "echo 'No linting configured' && exit 0"
   },
   "engines": {
     "node": "18"
