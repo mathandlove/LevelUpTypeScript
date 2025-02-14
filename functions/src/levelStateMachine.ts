@@ -45,8 +45,8 @@ import {
   addLevelToDocumentTitle,
   addEntryToWritingJournal,
 } from "./services/googleServices";
-import { compareNewSentenceToOldSentence } from "./services/docServices.js";
-import { newRubric, saveRubricToDatabase } from "./services/dataBaseService.js";
+import { compareNewSentenceToOldSentence } from "./services/docServices";
+import { newRubric, saveRubricToDatabase } from "./services/dataBaseService";
 // Update the ExtendedInterpreter interface to use AppEvent
 interface ExtendedInterpreter
   extends Interpreter<AppContext, any, AppEvent, any> {

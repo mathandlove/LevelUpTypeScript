@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Firebase Cloud Functions for LevelUp",
   "main": "lib/index.js",
-"scripts": {
-  "build": "tsc",
-  "docker:build": "gcloud builds submit --tag gcr.io/level-up-external-server/websocket-server",
-  "docker:deploy": "gcloud run deploy websocket-server --image gcr.io/level-up-external-server/websocket-server --platform managed --allow-unauthenticated --region us-central1",
-  "deploy": "npm run docker:build && npm run docker:deploy"
+  "scripts": {
+    "build": "tsc",
+    "docker:build": "gcloud builds submit --tag gcr.io/level-up-external-server/websocket-server",
+    "docker:deploy": "gcloud run deploy websocket-server --image gcr.io/level-up-external-server/websocket-server --platform managed --allow-unauthenticated --region us-central1",
+    "deploy": "npm run docker:build && npm run docker:deploy",
+    "dev": "nodemon src/server.ts"
   },
   "engines": {
     "node": "18"

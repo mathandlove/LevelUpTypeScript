@@ -1537,37 +1537,54 @@ document.addEventListener('DOMContentLoaded', init);
 
 
     <script>
+      let shouldReconnect = true;
           //Websocket
 function connectWebSocket() {
+
   // Only create a new connection if one doesn't exist or is closed
+  if(!shouldReconnect){
+    console.log("🛑 WebSocket reconnection disabled.");
+    return;
+  }
   if (!ws || ws.readyState === WebSocket.CLOSED) {
     const wsUrl = backendURL.replace('http', 'ws');
     ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {
-      console.log('🟢 WebSocket Connected');
-      isReconnecting = false;
-      
-      // Process any queued messages
-      while (messageQueue.length > 0) {
-        const message = messageQueue.shift();
-        sendWebSocketMessage(message);
-      }
-    };
+  console.log('🟢 WebSocket Connected');
+  isReconnecting = false;
+
+  while (messageQueue.length > 0) {
+    const message = messageQueue.shift();
+    sendWebSocketMessage(message);
+  }
+  messageQueue = []; 
+};
 
     ws.onmessage = handleWebSocketMessage;
 
     ws.onclose = () => {
-      console.log('🔴 WebSocket Disconnected');
-      ws = null;
-      
-      // Attempt to reconnect after a delay
-      setTimeout(() => {
-        if (!ws || ws.readyState === WebSocket.CLOSED) {
-          connectWebSocket();
-        }
-      }, 3000);
-    };
+  console.log('🔴 WebSocket Disconnected');
+
+  if (ws) {
+    ws.onmessage = null;
+    ws.onerror = null;
+    ws.onclose = null;
+    ws = null;
+  }
+
+  setTimeout(async () => {
+    if (shouldReconnect && (!ws || ws.readyState === WebSocket.CLOSED)) {
+      newWs = await connectWebSocket(); // Ensure ws is reassigned
+      if(newWs){
+        ws = newWs;
+        await sendTokenToServer();
+      }
+
+    }
+  }, 3000);
+};
+
 
     ws.onerror = (error) => {
       console.error('❌ WebSocket Error:', error);
@@ -1575,6 +1592,7 @@ function connectWebSocket() {
   }
 }
 
+const MAX_QUEUE_SIZE = 10; // Limit queue size
 
 function sendWebSocketMessage(message) {
   if (ws && ws.readyState === WebSocket.OPEN) {
@@ -1595,9 +1613,13 @@ function sendWebSocketMessage(message) {
 }
 
 function queueMessage(message) {
+  if (messageQueue.length >= MAX_QUEUE_SIZE) {
+    messageQueue.shift(); // Remove oldest message if max reached
+  }
   messageQueue.push(message);
   console.log('📩 Message queued. Queue size:', messageQueue.length);
 }
+
 
 function handleWebSocketMessage(event) {
   try {
@@ -1620,6 +1642,11 @@ function handleWebSocketMessage(event) {
         console.log('🔗 Opening external page:', data.payload.url);
         window.open(data.payload.url, '_blank');
         break;
+      case "STOP_RECONNECT":
+        console.log("🛑 Received STOP_RECONNECT. Disabling reconnections.");
+        shouldReconnect = false;
+        ws.close(); // Close the WebSocket
+        break;
       case 'SHARE_RUBRIC_POPUP':
       console.log('🥤 Share rubric popup received:', data.message);
         handleShareRubricPopup(data.payload);
@@ -1633,6 +1660,7 @@ function handleWebSocketMessage(event) {
     console.error('❌ Error processing message:', error);
   }
 }
+
     </script>
     <script>
       let state={};
@@ -1691,8 +1719,8 @@ function handleStateChange(statePayload) {
 if(state.formerLevel !== state.level){
   increaseLevel(state.formerLevel,state.level);
 }
-//Handle goal buttons:
-if(state.goalTitles){
+//Handle goal buttons
+if(state.goalTitles){ 
 updateGoalButtons(state.goalTitles);
 }
 
@@ -1709,9 +1737,6 @@ if (state.pills) {
 //update copyPasted text and time spent text.
 document.getElementById('copyPasted').textContent = state.copypasted+"%";
 document.getElementById('timeSpent').textContent = state.timeSpentHours + " hours and " + state.timeSpentMinutes + " minutes";
-
-
-
 
 
   //Handle task feedback
@@ -1855,11 +1880,29 @@ function updateGoalButtons(goalTitles) {
   const pillHolder = document.getElementById('pillHolder');
   if (!pillHolder) return;
 
-  pillHolder.innerHTML = ''; 
+  // Track existing pills to avoid recreating them
+  const existingPills = Array.from(pillHolder.children).reduce((acc, button) => {
+    const index = button.getAttribute('data-pill-index');
+    acc[index] = button;
+    return acc;
+  }, {});
+
+  // Create or update topic pills
   pills.forEach((pill, index) => {
-    const button = document.createElement('button');
-    button.className = 'topic-button';
-    button.setAttribute('data-pill-index', index.toString());
+    let button;
+    if (existingPills[index]) {
+      // Reuse existing button
+      button = existingPills[index];
+    } else {
+      // Create a new button if not found
+      button = document.createElement('button');
+      button.className = 'topic-button';
+      button.setAttribute('data-pill-index', index.toString());
+      button.onclick = () => handlePillClick(index);
+      pillHolder.appendChild(button);
+    }
+
+    // Update the button content dynamically
     button.innerHTML = `
       <div class="progress-bar">
         <div class="inner-pill"></div>
@@ -1868,15 +1911,20 @@ function updateGoalButtons(goalTitles) {
       </div>
       <span class="label">${pill.title}</span>
     `;
-    button.onclick = () => handlePillClick(index);
-    pillHolder.appendChild(button);
   });
 
-  
+  // Handle the Reflection Button separately
   if (state.reflection.enabled) {
-    const reflectionButton = document.createElement('button');
-    reflectionButton.className = 'topic-button';
-    reflectionButton.setAttribute('data-pill-index', "-1");
+    let reflectionButton = existingPills["-1"];
+
+    if (!reflectionButton) {
+      reflectionButton = document.createElement('button');
+      reflectionButton.className = 'topic-button';
+      reflectionButton.setAttribute('data-pill-index', "-1");
+      reflectionButton.onclick = () => handlePillClick(-1);
+      pillHolder.appendChild(reflectionButton);
+    }
+
     reflectionButton.innerHTML = `
       <div class="progress-bar">
         <div class="inner-pill"></div>
@@ -1885,11 +1933,18 @@ function updateGoalButtons(goalTitles) {
       </div>
       <span class="label">Reflection</span>
     `;
-    reflectionButton.onclick = () => handlePillClick(-1);
-    pillHolder.appendChild(reflectionButton);
   }
 
+  // Remove any extra buttons that were not updated (e.g., if pills are removed)
+  Object.keys(existingPills).forEach((index) => {
+    if (!pills[index] && index !== "-1") {
+      pillHolder.removeChild(existingPills[index]);
+    }
+  });
 }
+
+
+
 
 
 function updatePillProgress(pills) {
