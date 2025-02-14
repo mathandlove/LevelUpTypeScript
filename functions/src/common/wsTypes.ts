@@ -117,7 +117,8 @@ export interface OutgoingWebSocketMessage {
   payload?:
     | UIState
     | { url: string }
-    | { rubricID: string; rubricName: string; rubricLink: string };
+    | { rubricID: string; rubricName: string; rubricLink: string }
+    | undefined;
 }
 
 type WebSocketOutputMessageType =
@@ -125,4 +126,5 @@ type WebSocketOutputMessageType =
   | "WELCOME" // Server welcome message
   | "UPDATE_SCOPE_REQUEST" // Scope updates
   | "EXTERNAL_PAGE_TO_OPEN" // External page to open
-  | "SHARE_RUBRIC_POPUP";
+  | "SHARE_RUBRIC_POPUP"
+  | "STOP_RECONNECT";

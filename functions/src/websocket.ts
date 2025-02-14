@@ -7,6 +7,7 @@ import {
   OutgoingWebSocketMessage,
 } from "./common/wsTypes";
 import { v4 as uuidv4 } from "uuid";
+import { defaultUIState } from "./common/types";
 
 export interface LevelUpWebSocket extends WebSocket {
   sendMessage: (message: OutgoingWebSocketMessage) => void;
@@ -24,9 +25,43 @@ export function initializeWebSocket(server: Server): void {
     const resetInactivityTimer = () => {
       if (inactivityTimeout) clearTimeout(inactivityTimeout);
       inactivityTimeout = setTimeout(() => {
-        ws.close(); // Forcefully close the connection
-      }, 30 * 60 * 1000); // 30 minutes of inactivity
+        handleInactivityTimeout();
+      }, 20 * 60 * 1000); // 20 minutes of inactivity
     };
+
+    function handleInactivityTimeout() {
+      // Send UI Update: Transition to the error page
+      if (!ws || ws.readyState !== WebSocket.OPEN) {
+        console.warn("⚠️ WebSocket already closed or unavailable.");
+        return;
+      }
+      console.log("⏳ 15 minutes of inactivity. Stopping WebSocket.");
+      ws.sendMessage({
+        type: "STATE",
+        payload: {
+          ...defaultUIState,
+          currentPage: "server-error",
+          errorMessage:
+            "You've been disconnected due to inactivity. Please refresh to continue.",
+          visibleButtons: [],
+        },
+      });
+
+      // Send Special WebSocket Message: Stop reconnecting
+      ws.sendMessage({
+        type: "STOP_RECONNECT",
+        payload: undefined,
+      });
+
+      // Close WebSocket and prevent further reconnections
+      setTimeout(stopWebSocketReconnection, 100);
+    }
+
+    function stopWebSocketReconnection() {
+      console.log("⏳ Stopping WebSocket reconnection.");
+      ws.close();
+    }
+
     resetInactivityTimer(); // Start inactivity tracking
     // Initialize the WebSocket with a sendMessage method
     ws.sendMessage = function (message: OutgoingWebSocketMessage) {
