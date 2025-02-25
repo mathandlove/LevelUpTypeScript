@@ -1,13 +1,57 @@
 import { AppContext } from "../common/appTypes";
 import { Reflection, Rubric, Topic } from "../common/types";
+const { google } = require("googleapis");
+
+async function canAccessDocument(docId, auth) {
+  try {
+    // Set up the Drive client with the given auth
+    // (which must have the drive.metadata.readonly or broader scope).
+    const drive = google.drive({ version: "v3", auth });
+
+    const res = await drive.files.list({
+      q: "mimeType='application/vnd.google-apps.document'",
+      fields: "files(id, name)",
+      pageSize: 100,
+    });
+
+    const files = res.data.files || [];
+    const found = files.find((file) => file.id === docId);
+
+    if (found) {
+      console.log(`You have access to: ${found.name} (${found.id})`);
+      return true;
+    } else {
+      console.log(
+        `Doc ID ${docId} was not found in the first page of docs you have access to.`
+      );
+      return false;
+    }
+  } catch (error) {
+    console.error("Error checking access to document:", error);
+    return false;
+  }
+}
+
 export async function getFullText(context: AppContext): Promise<string> {
   const { GoogleServices } = context.appState;
   const { docs } = GoogleServices;
-  const response = await docs.documents.get({
-    documentId: context.appState.documentId,
-  });
-
-  const body = response.data.body?.content;
+  let body = null;
+  try {
+    // Replace this with your actual docId from context (or a test ID).
+    const docId = context.appState.documentId;
+    console.log("Attempting to fetch doc with ID:", docId);
+    await canAccessDocument(docId, GoogleServices.oauth2Client);
+    // This call will fail if you only have document-current scope
+    // and you're trying to fetch a doc that isn't covered by that scope.
+    const response = await docs.documents.get({
+      documentId: docId,
+    });
+    body = response.data.body?.content;
+    console.log("Document fetch successful. Response data:", response.data);
+  } catch (error) {
+    console.error("Error fetching document:", error);
+    // Often, the error will indicate insufficient scopes or forbidden access.
+  }
 
   if (!body) {
     throw new Error("You need text in this document to edit it!");

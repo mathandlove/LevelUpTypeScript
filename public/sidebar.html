@@ -2,6 +2,7 @@
   //From GoogleAppScripts
 //const initialToken = <?= token ?>;
 //let documentId = <?= documentId ?>; 
+console.log = function () {};  // Disable all console.log calls in production
 </script>
 <!DOCTYPE html>
 <html>
@@ -494,6 +495,7 @@
         font-family: "Inter", sans-serif;
         width:60%;
         text-align: center;
+        white-space: pre-line;
       }
 
 
@@ -1220,7 +1222,7 @@ margin-right:10px;
         <!-- BEGIN .button-box (Hot air balloon + spinner + all cards) -->
         <div class="button-box">
           <img
-            src="https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"
+            src="https://wondersa.blob.core.windows.net/levelup/HotAirBalloon.png"
             alt="Hot Air Balloon"
             class="hot-air-balloon"
           />
@@ -1474,7 +1476,7 @@ margin-right:10px;
 // Global variables
 
 let currentToken=null;
-const backendURL = "https://websocket-server-1075091769384.us-central1.run.app/"  //"http://localhost:8080";
+const backendURL = "http://localhost:8080"//"https://websocket-server-1075091769384.us-central1.run.app/"  //"http://localhost:8080";
 let currentPillCount = 0;
 let ws = null;  // Global WebSocket instance
 let messageQueue = [];  
@@ -1485,7 +1487,7 @@ let isReconnecting = false;
 const defaultUIState= {
   currentPage: "home-page",
   waitingAnimationOn: true,
-  waitingAnimationText: "Downloading Hot Air Balloon Fuel",
+  waitingAnimationText: `Downloading \n Hot Air Balloon Fuel`,
   visibleButtons: [],
   buttonsDisabled: [],
   level: 1,
@@ -2303,7 +2305,7 @@ function testMessageQueue() {
       // Start balloon animation
       hotAirBalloon.style.transform = "translateY(-40px)";
       hotAirBalloon.src =
-        "https://wondersa.blob.core.windows.net/levelup/hotAirBaloonFire.png";
+        "https://wondersa.blob.core.windows.net/levelup/HotAirBalloonFire.png";
 
       updateBackgroundImages(targetLevel);
 
@@ -2436,7 +2438,7 @@ function testMessageQueue() {
 
                   hotAirBalloon.style.transform = "translateY(0px)"; // Move back to original position
                   hotAirBalloon.src =
-                    "https://wondersa.blob.core.windows.net/levelup/hotAirBaloon.png"; // Change back to original image
+                    "https://wondersa.blob.core.windows.net/levelup/HotAirBalloon.png"; // Change back to original image
                 }, 100);
               }, 200);
             }, 400);

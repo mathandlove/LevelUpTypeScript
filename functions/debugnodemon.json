@@ -1,0 +1,9 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["dist", "node_modules", "public"],
+  "execMap": {
+    "ts": "tsx --inspect=9229"
+  },
+  "exec": "tsx --inspect=9229 src/server.ts"
+}
