@@ -1,6 +1,7 @@
 # Ignore specific files
 public/tokenData.json
 functions/src/resources/keys.ts
+functions/src/resources/level-up-firebase-key.json
 
 # Ignore all files in a directory
 dist

@@ -8,7 +8,7 @@
     "docker:build": "gcloud builds submit --tag gcr.io/level-up-external-server/websocket-server",
     "docker:deploy": "gcloud run deploy websocket-server --image gcr.io/level-up-external-server/websocket-server --platform managed --allow-unauthenticated --region us-central1",
     "deploy": "npm run docker:build && npm run docker:deploy",
-    "dev": "nodemon src/server.ts"
+    "dev": "npx nodemon --config functions/debugnodemon.json --exec \"npx tsx src/server.ts\""
   },
   "engines": {
     "node": "18"
@@ -19,7 +19,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "firebase": "^11.3.1",
-    "firebase-admin": "^11.2.0",
+    "firebase-admin": "^11.11.1",
     "firebase-functions": "^4.0.0",
     "googleapis": "^144.0.0",
     "jwt-decode": "^4.0.0",

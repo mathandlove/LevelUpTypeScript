@@ -10,6 +10,7 @@ import {
 import { AppContext } from "../common/appTypes";
 import { google } from "googleapis";
 import { installDefaultRubric, saveUserToDatabase } from "./dataBaseService";
+import { error } from "console";
 
 //Error Messages
 // Define custom error classes
@@ -30,19 +31,25 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       "Content-Type": "application/json",
     },
   };
+  let email;
   try {
     const response = await axios.post<TokenInfoResponse>(url, {
       access_token: tokenString,
     });
-    const email = response.data.email;
-
-    await saveUserToDatabase(email);
-    return true;
-  } catch {
+    email = response.data.email;
+  } catch (err) {
+    console.error("Error validating token:", err.message);
     throw new Error(
       "Google servers sent an invalid token. Please refresh the page and try again."
     );
   }
+  try {
+    await saveUserToDatabase(email);
+  } catch (error) {
+    console.error("Error saving user to database:", error.message);
+    throw new Error("Error saving user to database. Please try again later.");
+  }
+  return true;
 }
 
 export async function getPersistentDataFileId(context: AppContext): Promise<{

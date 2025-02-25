@@ -2,24 +2,30 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "name": "nodemon",
-      "program": "${workspaceFolder}/app.js",
-      "request": "launch",
-      "restart": true,
-      "runtimeExecutable": "nodemon",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    },
-
-    {
+      "name": "Debug with Nodemon",
       "type": "node",
       "request": "launch",
-      "name": "Jest single run all tests",
-      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
-      "args": ["--verbose", "-i", "--no-cache"],
+      "cwd": "${workspaceFolder}/functions",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "nodemon",
+        "--config",
+        "functions/debugnodemon.json",
+        "--exec",
+        "tsx src/server.ts"
+      ],
+      "restart": true,
       "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach to Running Server",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"],
       "internalConsoleOptions": "neverOpen"
     }
   ]
