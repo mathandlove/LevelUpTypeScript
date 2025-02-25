@@ -70,7 +70,8 @@ export async function getFailedFeedback(context: AppContext): Promise<string> {
   const model = "google/gemini-2.0-flash-001";
   const returnDataSchema = null;
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
-  return openAIStr;
+  const markedAIStr = await convertMarkdownToHtml(openAIStr);
+  return markedAIStr;
 }
 
 export async function getCelebration(context: AppContext): Promise<string> {
@@ -310,16 +311,16 @@ export async function formatChallengeResponse(
     const html = await convertMarkdownToHtml(openAIStr);
     return html;
   }
+}
 
-  function preprocessMarkdown(markdownText: string): string {
-    console.log("💌 preprocessMarkdown", markdownText);
-    return markdownText.replace(/(\n)(\*|\d+\.)/g, "\n\n$2"); // Ensure extra line break before bullets
-  }
+function preprocessMarkdown(markdownText: string): string {
+  console.log("💌 preprocessMarkdown", markdownText);
+  return markdownText.replace(/(\n)(\*|\d+\.)/g, "\n\n$2"); // Ensure extra line break before bullets
+}
 
-  async function convertMarkdownToHtml(markdownText: string): Promise<string> {
-    const processedMarkdown = preprocessMarkdown(markdownText);
-    return marked.parse(processedMarkdown);
-  }
+async function convertMarkdownToHtml(markdownText: string): Promise<string> {
+  const processedMarkdown = preprocessMarkdown(markdownText);
+  return marked.parse(processedMarkdown);
 }
 
 interface ChatMessage {

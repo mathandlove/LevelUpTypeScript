@@ -67,13 +67,19 @@ export async function getFullText(context: AppContext): Promise<string> {
     })
     .join("");
 
-  if (text.length < 20) {
+  if (!hasEnoughSentences(text, 5)) {
     throw new Error(
-      "We can't offer feedback on your paper until you write it.\n\n\n Come back later!"
+      "We can't offer feedback on your paper until it has at least 5 complete sentences.\n\n\n Open this back up when you are ready!"
     );
   }
-
+  console.log(text);
   return text;
+
+  function hasEnoughSentences(text: string, minSentences: number): boolean {
+    const sentenceRegex = /[^.!?]+[.!?]/g; // Matches sentences ending with ., ?, or !
+    const sentences = text.match(sentenceRegex); // Get all matching sentences
+    return sentences ? sentences.length >= minSentences : false;
+  }
 }
 
 export async function highlightChallengeSentence(context: AppContext) {
