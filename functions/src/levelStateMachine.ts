@@ -3,7 +3,7 @@ import {
   Interpreter,
   createMachine,
   assign,
-  sendParent,
+  raise,
   stop,
   sendTo,
 } from "xstate";
@@ -132,12 +132,14 @@ export function createAppMachine(ws: LevelUpWebSocket) {
           entry: [
             (context, event) => {
               console.log("Entered error state");
+              console.log(event.type);
             },
             assign({
               uiState: (context, event: ErrorMessageEvent) => ({
                 ...context.uiState,
                 currentPage: "server-error",
-                errorMessage: event.data.message,
+                errorMessage:
+                  event.data?.message || "An unknown error occurred.",
                 waitingAnimationOn: false,
                 visibleButtons: [],
               }),
@@ -145,6 +147,23 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
             sendUIUpdate,
           ],
+          on: {
+            error: {
+              actions: [
+                (context, event) => {
+                  console.log("Entered error state");
+                },
+                assign({
+                  uiState: (context, event: ErrorMessageEvent) => ({
+                    ...context.uiState,
+                    errorMessage: event.data.message,
+                  }),
+                }),
+
+                sendUIUpdate,
+              ],
+            },
+          },
         },
         initializeDataStore: {
           initial: "waitingForToken",
@@ -595,6 +614,28 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             validateSentenceCoords: {
               always: [
                 {
+                  target: "#error",
+                  cond: (context, event) => {
+                    if (
+                      (context.documentMetaData.currentChallenge
+                        ?.currentSentenceCoordinates.startIndex === -1 ||
+                        context.documentMetaData.currentChallenge
+                          ?.currentSentenceCoordinates.endIndex === -1) &&
+                      context.appState.challengeRetryCount > 1 //3 strikes and you're out
+                    ) {
+                      return true;
+                    }
+                  },
+                  actions: raise({
+                    type: "error",
+                    data: {
+                      name: "Too many Challenge Attempt Retries",
+                      message:
+                        "It looks like your document is formatted in a way that we can't find sentences to edit. This can happen if you have inappropriate content in your document or you have a strangely formatted document. Please contact support if this problem persists.",
+                    },
+                  }),
+                },
+                {
                   target: "getCurrentText",
                   cond: (context, event) => {
                     if (
@@ -613,10 +654,25 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         currentChallenge: undefined,
                       }),
                     }),
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        challengeRetryCount:
+                          context.appState.challengeRetryCount + 1, //Increment the retry count
+                      }),
+                    }),
                   ],
                 },
                 {
                   target: "highlightText",
+                  actions: [
+                    assign({
+                      appState: (context, event) => ({
+                        ...context.appState,
+                        challengeRetryCount: 0, //Challenge Successful, reset retry count
+                      }), // Increment the retry count
+                    }),
+                  ],
                 },
               ],
             },
@@ -796,6 +852,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       }),
                     }),
                   ],
+                },
+                onError: {
+                  target: "#error",
                 },
               },
             },
