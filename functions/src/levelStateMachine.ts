@@ -621,7 +621,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         ?.currentSentenceCoordinates.startIndex === -1 ||
                         context.documentMetaData.currentChallenge
                           ?.currentSentenceCoordinates.endIndex === -1) &&
-                      context.appState.challengeRetryCount > 1 //3 strikes and you're out
+                      context.appState.challengeRetryCount > 1 //2 strikes and you're out
                     ) {
                       return true;
                     }
@@ -665,6 +665,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 },
                 {
                   target: "highlightText",
+
                   actions: [
                     assign({
                       appState: (context, event) => ({
@@ -678,6 +679,24 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
 
             highlightText: {
+              entry: assign((context, event) => {
+                const startIndex =
+                  context.documentMetaData?.currentChallenge
+                    ?.currentSentenceCoordinates.startIndex;
+                console.log("highlight start " + startIndex);
+                if (startIndex !== undefined) {
+                  ws = context.appState.ws; // Ensure ws is defined
+                  if (ws?.sendMessage) {
+                    ws.sendMessage({
+                      type: "HIGHLIGHT",
+                      payload: startIndex,
+                    });
+                  }
+                }
+
+                return context;
+              }),
+
               invoke: {
                 id: "highlightChallengeSentence",
                 src: highlightChallengeSentence,
@@ -1189,6 +1208,11 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     target: "customizeNew",
                     cond: (context, event) =>
                       event.payload.buttonId === "new-rubric-button",
+                  },
+                  {
+                    target: "customizeHome",
+                    cond: (context, event) =>
+                      event.payload.buttonId === "load-rubric-button",
                   },
                   {
                     target: ["initializeEditRubric"],

@@ -6,9 +6,10 @@ import { AppContext } from "../common/appTypes";
 //$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\matha\OneDrive\Documents\Consulting\LevelUp\Code\LeveUpBackendNode\functions\src\resources\level-up-firebase-key.json"
 
 // Initialize Firebase Admin SDK (only once)
-if (!admin.apps.length) {
-  admin.initializeApp();
-}
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  projectId: "level-up-external-server", // Updated to match the new Firestore project
+});
 
 const db = admin.firestore();
 const RUBRIC_COLLECTION = "rubrics";

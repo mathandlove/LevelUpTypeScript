@@ -10,7 +10,6 @@ import {
 import { AppContext } from "../common/appTypes";
 import { google } from "googleapis";
 import { installDefaultRubric, saveUserToDatabase } from "./dataBaseService";
-import { error } from "console";
 
 //Error Messages
 // Define custom error classes
@@ -43,12 +42,14 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       "Google servers sent an invalid token. Please refresh the page and try again."
     );
   }
-  try {
+  //Took out saving user's email address to database to comply with COPPA
+
+  /*try {
     await saveUserToDatabase(email);
   } catch (error) {
     console.error("Error saving user to database:", error.message);
     throw new Error("Error saving user to database. Please try again later.");
-  }
+  }*/
   return true;
 }
 

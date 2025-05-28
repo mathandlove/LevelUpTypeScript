@@ -1,7 +1,7 @@
 <script>
   //From GoogleAppScripts
-//const initialToken = <?= token ?>;
-//let documentId = <?= documentId ?>; 
+const initialToken = <?= token ?>;
+let documentId = <?= documentId ?>; 
 console.log = function () {};  // Disable all console.log calls in production
 </script>
 <!DOCTYPE html>
@@ -1476,7 +1476,7 @@ margin-right:10px;
 // Global variables
 
 let currentToken=null;
-const backendURL = "http://localhost:8080"//"https://websocket-server-1075091769384.us-central1.run.app/"  //"http://localhost:8080";
+const backendURL = "http://localhost:8080"; //"https://websocket-server-1075091769384.us-central1.run.app/"  //"http://localhost:8080";
 let currentPillCount = 0;
 let ws = null;  // Global WebSocket instance
 let messageQueue = [];  
@@ -1502,6 +1502,7 @@ const defaultUIState= {
 
 async function init() {
 handleStateChange(defaultUIState);
+
 connectWebSocket();
 if(isGoogleApp()){
   console.log("🔑 Initial Token Sent to Server");
@@ -1632,6 +1633,9 @@ function handleWebSocketMessage(event) {
       case 'WELCOME':
         console.log('👋 Connected to server');
         break;
+        case 'HIGHLIGHT':
+        console.log('🔍 Highlight message received:')
+        callGoogleAppFunction('moveCursorToCharacterIndex',null,null,data.payload);
       case 'UPDATE_SCOPE_REQUEST':
         console.log('🔔 Update scope message received:', data.message);
         handleUpdateScope();
@@ -2447,4 +2451,4 @@ function testMessageQueue() {
       }, 200);
     }
   }
-</script>
+</script>s

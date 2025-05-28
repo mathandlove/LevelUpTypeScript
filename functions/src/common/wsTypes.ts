@@ -118,6 +118,7 @@ export interface OutgoingWebSocketMessage {
     | UIState
     | { url: string }
     | { rubricID: string; rubricName: string; rubricLink: string }
+    | number
     | undefined;
 }
 
@@ -127,4 +128,5 @@ type WebSocketOutputMessageType =
   | "UPDATE_SCOPE_REQUEST" // Scope updates
   | "EXTERNAL_PAGE_TO_OPEN" // External page to open
   | "SHARE_RUBRIC_POPUP"
-  | "STOP_RECONNECT";
+  | "STOP_RECONNECT"
+  | "HIGHLIGHT";

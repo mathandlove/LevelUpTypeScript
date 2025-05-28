@@ -1,5 +1,6 @@
-const backendURL = "https://3f71-174-63-70-145.ngrok-free.app";
-//don't forget white list
+function onInstall(e) {
+  onOpen(e);
+}
 
 function openRubricDialog() {
   var html = HtmlService.createHtmlOutputFromFile("rubricEditor")
@@ -10,11 +11,24 @@ function openRubricDialog() {
 
 function onOpen() {
   const ui = DocumentApp.getUi();
-  ui.createMenu("🏆 Level Up")
-    .addItem("Send Token to Server", "sendTokenToServer")
-    .addItem("🏆 Level Up 🏆", "showSidebar")
-    .addItem("Share Rubric", "openSharePopUp")
+  ui.createMenu("Level Up")
+    .addItem("🏆 New Session 🏆", "showSidebar")
+    .addItem("GetToken", "updateTokenData")
+    .addItem("Pop Up", "openSharePopUp")
+    .addItem("Move Cursor", "moveCursorToCharacterIndex")
     .addToUi();
+}
+
+async function showSidebar() {
+  const template = HtmlService.createTemplateFromFile("sidebar");
+  const token = ScriptApp.getOAuthToken(); // Fetch the token
+  const doc = DocumentApp.getActiveDocument();
+  template.documentId = doc.getId();
+  template.token = token; // Pass the token to the sidebar
+  const html = template.evaluate().setTitle("Level Up").setWidth(300);
+  const uid = DocumentApp.getUi();
+  PropertiesService.getScriptProperties().setProperty("UID", uid);
+  DocumentApp.getUi().showSidebar(html);
 }
 
 function openSharePopUp(
@@ -30,104 +44,55 @@ function openSharePopUp(
   template.sWebpageLink = sWebpageLink;
 
   var html = template.evaluate().setWidth(400).setHeight(350);
-  DocumentApp.getUi().showModalDialog(html, "Share Your Rubric");
-}
-
-function oAuthGetter() {
-  const ui = DocumentApp.getUi();
-  const token = ScriptApp.getOAuthToken();
-  ui.alert(token);
-}
-
-async function showSidebar() {
-  const template = HtmlService.createTemplateFromFile("sidebar");
-  //const topics= await stateManager.loadTopics()
-  //template.topics = JSON.stringify(topics);
-
-  const html = template.evaluate().setTitle("Level Up").setWidth(300);
-
-  DocumentApp.getUi().showSidebar(html);
-}
-
-function sendTokenToServer(update = false) {
-  const token = ScriptApp.getOAuthToken();
-  const documentId = DocumentApp.getActiveDocument().getId();
-
-  const payload = {
-    token: token,
-    documentId: documentId,
-  };
-  console.log(payload);
-  try {
-    var response = "";
-    if (!update) {
-      response = sendToBackend("/store-token", payload);
-    } else {
-      response = sendToBackend("/update-token", payload);
-    }
-    Logger.log(response);
-    return response;
-  } catch (error) {
-    Logger.log("Error storing token:", error);
-    throw error;
-  }
-}
-
-// Function to update token on the server
-function updateTokenForServer() {
-  var newToken = ScriptApp.getOAuthToken();
-
-  if (!cachedToken) {
-    cachedToken = newToken; // Initialize on first call
+  const doc = DocumentApp.getActiveDocument();
+  if (!doc) {
+    Logger.log(
+      "No active doc recognized. Possibly not running in doc context or insufficient permissions."
+    );
     return;
   }
-
-  var url = "https://your-backend-url.com/update-token";
-
-  var options = {
-    method: "post",
-    contentType: "application/json",
-    payload: JSON.stringify({ oldToken: cachedToken, newToken: newToken }),
-  };
-
-  // Send the tokens to the server
-  UrlFetchApp.fetch(url, options);
-
-  // Update cachedToken to the new token
-  cachedToken = newToken;
+  const uid =
+    PropertiesService.getScriptProperties().getProperty("ACTIVE_DOC_ID");
+  uid.showModalDialog(html, "Share Your Rubric");
 }
 
 function updateTokenData() {
   var newToken = ScriptApp.getOAuthToken();
-  const documentId = DocumentApp.getActiveDocument().getId();
+  console.log(newToken);
+  const documentId = DocumentApp.getActiveDocument().getId(); //todo i won't be able to call this from server side i believe.
   return { token: newToken, documentId: documentId, clientId: "" };
 }
-
-function getDocumentAndClientInfo() {
-  // Get the active document's ID
-
-  const clientId = Session.getActiveUser().getEmail();
-
-  return {
-    documentId: documentId,
-    clientId: clientId,
-  };
+function getActiveDocument() {
+  DocumentApp.getActiveDocument();
 }
 
-function sendToBackend(endpoint, payload) {
-  const serverUrl = backendURL;
-  const url = serverUrl + endpoint;
-  const options = {
-    method: "POST",
-    contentType: "application/json",
-    payload: JSON.stringify(payload),
-  };
+function logSelectedDocument(docId) {
+  Logger.log("Selected Document ID: " + docId);
+}
 
-  try {
-    const response = UrlFetchApp.fetch(url, options);
-    return response.getContentText();
-  } catch (e) {
-    Logger.log("Error:", e.message);
-    throw e;
+function moveCursorToCharacterIndex(targetCharIndex = 2) {
+  const doc = DocumentApp.getActiveDocument();
+  const body = doc.getBody();
+  let charCount = 0;
+
+  for (let i = 0; i < body.getNumChildren(); i++) {
+    const element = body.getChild(i);
+
+    if (element.getType() === DocumentApp.ElementType.PARAGRAPH) {
+      const textElement = element.asParagraph().editAsText();
+      const text = textElement.getText();
+      const textLength = text.length;
+
+      if (charCount + textLength >= targetCharIndex) {
+        const offset = targetCharIndex - charCount;
+        const position = doc.newPosition(textElement, offset);
+        doc.setCursor(position);
+        return;
+      }
+
+      charCount += textLength;
+    }
   }
+
+  Logger.log("Character index out of bounds.");
 }
