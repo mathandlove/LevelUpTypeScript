@@ -182,7 +182,8 @@ export interface UIState {
     | "example-card"
     | "challenge-feedback-card"
     | "customize-card"
-    | "customize-card-edit-newWindow";
+    | "customize-card-edit-newWindow"
+    | "share-card";
   waitingAnimationOn: boolean;
   waitingAnimationText: string;
   visibleButtons: ButtonId[]; // Now enforces specific button IDs
@@ -208,8 +209,10 @@ export interface UIState {
   taskFeedbackMessage?: string;
   selectedRubric: number;
   listOfAvailableRubrics: Array<String>;
+  currentRubricName?: string; // Name of the current rubric
+  currentRubricCode?: string;
+  rubircCopyEmail?: string; // Email to send rubric copy to
   // Challenge card content
-
   importError?: string;
 }
 // Then define any constants

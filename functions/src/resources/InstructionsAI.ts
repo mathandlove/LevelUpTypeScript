@@ -24,7 +24,7 @@ export function getInstructForGetSelectedSentence() {
 }
 
 export function getInstructForGetAIFeelings(studentGoal: string) {
-  const instructions = `Write a 2 sentence response describing how reading these sentences would feel to a reader. Write at a 5th grade level in first person. Start with "Reading this part, I felt" Do not suggest ways to improve. Do not mention the sentence. Do not give answers. Only tell how you feel.`;
+  const instructions = `Write a 1 sentence response describing how reading these sentences would feel to a reader. Write at a 5th grade level in first person. Start with "Reading this part, I felt" Do not suggest ways to improve. Do not mention the sentence. Do not give answers. Only tell how you feel. Be specific about this text.`;
   return instructions;
 }
 
@@ -34,11 +34,11 @@ export function getInstructForCriticalThinkingQuestion(studentGoal: string) {
 }
 
 export function getInstructForImproveFeedback(studentGoal: string) {
-  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback"`;
+  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not mention what the student is trying to do. Do not mention their motivation. Do not greet them. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback. All of the feedback is less than 30 words."`;
   return instructions;
 }
 
 export function getInstructAddEmojisToFeedback() {
-  const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Return ONLY the revised text. No intros, no explanations, no formatting descriptions—just the text.`;
+  const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Return ONLY the revised text. No intros, no explanations, no formatting descriptions—just the text. Do not talk about the student's motivation.`;
   return instructions;
 }

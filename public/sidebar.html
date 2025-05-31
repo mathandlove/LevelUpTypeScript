@@ -299,6 +299,16 @@ console.log = function () {};  // Disable all console.log calls in production
   color: #333; /* Slightly darker text for readability */
 }
 
+.static-main-text {
+        margin: 0;
+        font-size: 12px;
+        font-weight: normal;
+        flex: 0 1 auto;
+  font-size: 14px;
+  line-height: 1.6; /* Adjust line spacing */
+  color: #333; /* Slightly darker text for readability */
+}
+
 /* Adjust unordered list (bullets) indentation */
 .card-main-text ul {
   list-style-type: disc !important; /* Ensures normal bullet points (●) */
@@ -1373,6 +1383,23 @@ margin-right:10px;
 
   
           <!-- CUSTOMIZE CARD (EDIT / NEW WINDOW) -->
+<!-- SHARE CARD -->
+<div class="card" id="share-card" style="display: none; flex: 1;">
+  <div class="scroll-container">
+    <div class="card-title">Share Your Rubric</div>
+    <div class="static-main-text">
+      <p>Students can use this code to import your rubric into their document:</p>
+      <div class="rubric-info-box">
+                Rubric ID: <strong><span id="shareRubricId"  style="font-size: 18px; user-select: text">LVL-UGH2L</span></strong><br />
+        <p></p>
+        <strong> <a href="http://buildempathy.com/level-up-add-rubric" target="_blank">Find Out More About Sharing This Rubric</a>
+      <p></p>
+        </div>
+         <button class="level-up-button"   id="copy-button"  style="font-size: 18px; padding: 12px 20px;">Copy</button>
+    </div>
+  </div>
+</div>
+          
 <!-- CUSTOMIZE CARD -->
 
 <div class="card" id="customize-card" style="display: none; flex: 1;">
@@ -1502,7 +1529,6 @@ const defaultUIState= {
 
 async function init() {
 handleStateChange(defaultUIState);
-
 connectWebSocket();
 if(isGoogleApp()){
   console.log("🔑 Initial Token Sent to Server");
@@ -1702,7 +1728,29 @@ function handleStateChange(statePayload) {
       errorMessageElement.innerHTML = state.errorMessage;
     }
 
+
+
   }
+  //handle rubric info
+  if (state.currentPage === 'share-card') {
+    if (state.currentRubricName) {
+      const titleEl = currentCard.querySelector('.card-title');
+      if (titleEl) {
+        titleEl.textContent = state.currentRubricName;
+      }
+    }
+
+    const idEl = currentCard.querySelector('#shareRubricId');
+    if (idEl && state.currentRubricId) {
+      idEl.textContent = state.currentRubricId;
+    }
+
+    const linkEl = currentCard.querySelector('#shareRubricLink');
+    if (linkEl && state.currentRubricLink) {
+      linkEl.href = state.currentRubricLink;
+    }
+  }
+
 
   // Handle loading spinner
   document.getElementById('spinner-overlay').style.display = 
@@ -1766,7 +1814,7 @@ document.getElementById('timeSpent').textContent = state.timeSpentHours + " hour
         alertDiv.className = "alert-message info";
         alertDiv.innerHTML = `⚠️ Please only edit around the highlighted sentence during Level Up.
 
-        I can't find the original sentence now, and we'll need to choose a new challenge.`;
+        I can't find the original sentence now, and we'll need to choose a new challenge.`
       }
       break;
       case 'incorrect':
@@ -2095,7 +2143,7 @@ function isGoogleApp() {
     <script>
 function setupEventHandlers() {
   // Button clicks
-  ['next-button', 'back-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button', 'edit-rubric-button','new-rubric-button','start-edits-button','share-rubric-button','load-rubric-button','save'].forEach(buttonId => {
+  ['next-button', 'copy-button', 'back-button','copy-button', 'check-work-button', 'home-button', 'skip-button', 'submit-button', 'edit-rubric-button','new-rubric-button','start-edits-button','share-rubric-button','load-rubric-button','save'].forEach(buttonId => {
     const button = document.getElementById(buttonId);
     if (button) {
       button.onclick = () => {
@@ -2123,7 +2171,7 @@ function setupEventHandlers() {
             }  
           });
           }
-          else{
+      else{
             state.importError = "Missing Rubric ID.";
             handleStateChange(state);
           }
@@ -2131,6 +2179,24 @@ function setupEventHandlers() {
 
 
         }
+
+                  else if (buttonId === 'copy-button') {
+            console.log("📄 Copying Rubric ID message to clipboard...");
+  const title = state.currentRubricName || "Custom Rubric";
+  const id = document.getElementById("shareRubricId")?.innerText || "LVL-XXXXX";
+  const link= "http://buildempathy.com/level-up-add-rubric";
+
+  const message = `You have been invited to access the "${title}" rubric with the following rubric code: ${id}\n\nTo install Level Up and add this custom rubric, follow the instructions at: ${link}`;
+
+  navigator.clipboard.writeText(message).then(() => {
+    alert("📄 Rubric ID message copied to clipboard.");
+  }).catch((err) => {
+    console.error("Failed to copy message:", err);
+    alert("❌ Failed to copy message. Please try again.");
+  });
+}
+    
+
         else {
           sendWebSocketMessage({
 
@@ -2257,6 +2323,8 @@ function testMessageQueue() {
     
 
 }
+
+
 </script>
 
 <script>

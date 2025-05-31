@@ -11,11 +11,8 @@ function openRubricDialog() {
 
 function onOpen() {
   const ui = DocumentApp.getUi();
-  ui.createMenu("Level Up")
+  ui.createMenu("🏆 Level Up 🏆")
     .addItem("🏆 New Session 🏆", "showSidebar")
-    .addItem("GetToken", "updateTokenData")
-    .addItem("Pop Up", "openSharePopUp")
-    .addItem("Move Cursor", "moveCursorToCharacterIndex")
     .addToUi();
 }
 

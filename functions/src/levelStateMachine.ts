@@ -1221,20 +1221,9 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                   },
                   {
                     //No transition as we need the popup to be disabled for 5 seconds
+                    target: "shareRubricDisplay",
                     cond: (context, event) =>
                       event.payload.buttonId === "share-rubric-button",
-                    actions: (context) => {
-                      const currentRubric = getRubric(
-                        context,
-                        context.documentMetaData.currentRubricID
-                      );
-                      sendShareRubricPopup(
-                        context,
-                        currentRubric.databaseID,
-                        currentRubric.title,
-                        "http://buildempathy.com/level-up-add-rubric"
-                      );
-                    },
                   },
                   {
                     cond: (context, event) =>
@@ -1289,6 +1278,36 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     ],
                   },
                 ],
+              },
+            },
+            shareRubricDisplay: {
+              entry: [
+                assign((context) => {
+                  const rubric = getRubric(
+                    context,
+                    context.documentMetaData.currentRubricID
+                  );
+                  console.log("💫 Sharing Rubric: ", rubric);
+
+                  return {
+                    uiState: {
+                      ...context.uiState,
+                      currentPage: "share-card",
+                      waitingAnimationOn: false,
+                      visibleButtons: ["back-button"],
+                      currentRubricName: rubric.title,
+                      currentRubricId: rubric.databaseID,
+                    },
+                  };
+                }),
+                sendUIUpdate,
+              ],
+              on: {
+                BUTTON_CLICKED: {
+                  target: "customizeHome",
+                  cond: (context, event) =>
+                    event.payload.buttonId === "back-button",
+                },
               },
             },
 

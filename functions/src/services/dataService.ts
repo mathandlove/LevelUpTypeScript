@@ -393,6 +393,6 @@ export const getRubric = (context: AppContext, databaseID: string) => {
   if (savedRubric == null) {
     throw new Error("No rubric found with databaseID: " + databaseID);
   }
-
+  console.log("returning savedRubric with databaseID:", savedRubric.databaseID);
   return savedRubric || null; // Return the found savedRubric or null if none found
 };
