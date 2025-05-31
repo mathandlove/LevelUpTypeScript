@@ -22,6 +22,7 @@ interface AppState {
   ws: LevelUpWebSocket;
   persistentDataFileId: string;
   levelUpFolderId: string;
+  domain: string; // Domain for the Google Workspace
   GoogleServices: {
     oauth2Client: OAuth2Client; // Authenticated OAuth2 client
     drive: any; // Google Drive API client
@@ -39,6 +40,7 @@ export const defaultAppState: AppState = {
   token: "Waiting for token...",
   documentId: "waiting for documentID",
   ws: null,
+  domain: null,
   persistentDataFileId: null,
   GoogleServices: null,
   levelUpFolderId: "",

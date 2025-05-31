@@ -185,6 +185,7 @@ export async function createGoogleSheet(
         },
       },
     });
+
     const spreadsheetId = response.data.spreadsheetId;
     rubric.googleSheetID = spreadsheetId;
     await drive.files.update({
@@ -193,6 +194,17 @@ export async function createGoogleSheet(
       removeParents: "root",
       fields: "id, parents",
     });
+
+    await drive.permissions.create({
+      fileId: spreadsheetId,
+      requestBody: {
+        role: "reader", // or "writer" if you'd like them to edit
+        type: "domain",
+        domain: context.appState.domain,
+        allowFileDiscovery: false, // prevents search indexing
+      },
+    });
+
     //const spreadsheetId = "1wywByFIX6LYYB0MK958a3iXKpIXObSWa4l3R8npyPeE";
 
     // Step 3: Populate the sheet with data
@@ -901,8 +913,10 @@ export async function getOrCreatePaperJournal(context: AppContext) {
       await drive.permissions.create({
         fileId: newDocumentId,
         requestBody: {
-          role: "reader", // "reader" (view-only), "commenter", or "writer"
-          type: "anyone", // Use "user" for specific email addresses
+          role: "reader", // or "writer", "commenter"
+          type: "domain",
+          domain: context.appState.domain,
+          allowFileDiscovery: false, // Keeps it hidden from internal search
         },
       });
 

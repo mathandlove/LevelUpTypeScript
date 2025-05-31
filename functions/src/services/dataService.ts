@@ -19,18 +19,11 @@ interface TokenInfoResponse {
   email: string;
 }
 
-export async function validateToken(context: AppContext): Promise<boolean> {
+export async function validateToken(context: AppContext): Promise<string> {
   const tokenString = context.appState.token;
-  const requestBody = JSON.stringify({ access_token: tokenString });
   const url = "https://www.googleapis.com/oauth2/v1/tokeninfo";
-  const options = {
-    method: "POST",
-    body: requestBody,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  let email;
+  let email: string;
+
   try {
     const response = await axios.post<TokenInfoResponse>(url, {
       access_token: tokenString,
@@ -42,15 +35,19 @@ export async function validateToken(context: AppContext): Promise<boolean> {
       "Google servers sent an invalid token. Please refresh the page and try again."
     );
   }
-  //Took out saving user's email address to database to comply with COPPA
 
-  /*try {
-    await saveUserToDatabase(email);
-  } catch (error) {
-    console.error("Error saving user to database:", error.message);
-    throw new Error("Error saving user to database. Please try again later.");
-  }*/
-  return true;
+  // Extract domain from email
+  const domain = email?.split("@")[1];
+  if (!domain) {
+    throw new Error(
+      "We don't have access to your Google Account Email. We need this to set document permissions to your domain. (e.g. @myscholl.edu)"
+    );
+  }
+
+  // You can optionally store it in context:
+  // context.appState.userDomain = domain;
+
+  return domain;
 }
 
 export async function getPersistentDataFileId(context: AppContext): Promise<{

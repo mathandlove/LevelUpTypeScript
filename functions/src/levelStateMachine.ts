@@ -191,6 +191,12 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
                 onDone: {
                   target: "loadingPersistentData",
+                  actions: assign({
+                    appState: (context, event) => ({
+                      ...context.appState,
+                      domain: event.data, // event.data is the domain string
+                    }),
+                  }),
                 },
                 onError: {
                   target: "#error",
