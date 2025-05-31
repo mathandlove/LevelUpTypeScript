@@ -1,3 +1,4 @@
+import { spread } from "axios";
 import { AppContext } from "../common/appTypes";
 import { Reflection, Rubric, Topic } from "../common/types";
 const { google } = require("googleapis");
@@ -195,15 +196,28 @@ export async function createGoogleSheet(
       fields: "id, parents",
     });
 
-    await drive.permissions.create({
-      fileId: spreadsheetId,
-      requestBody: {
-        role: "reader", // or "writer" if you'd like them to edit
-        type: "domain",
-        domain: context.appState.domain,
-        allowFileDiscovery: false, // prevents search indexing
-      },
-    });
+    const domain = context.appState.domain;
+
+    if (domain === "gmail.com") {
+      await drive.permissions.create({
+        fileId: spreadsheetId,
+        requestBody: {
+          role: "reader",
+          type: "anyone",
+          allowFileDiscovery: false,
+        },
+      });
+    } else {
+      await drive.permissions.create({
+        fileId: spreadsheetId,
+        requestBody: {
+          role: "reader",
+          type: "domain",
+          domain,
+          allowFileDiscovery: false,
+        },
+      });
+    }
 
     //const spreadsheetId = "1wywByFIX6LYYB0MK958a3iXKpIXObSWa4l3R8npyPeE";
 
@@ -910,15 +924,28 @@ export async function getOrCreatePaperJournal(context: AppContext) {
         fields: "id, parents",
       });
 
-      await drive.permissions.create({
-        fileId: newDocumentId,
-        requestBody: {
-          role: "reader", // or "writer", "commenter"
-          type: "domain",
-          domain: context.appState.domain,
-          allowFileDiscovery: false, // Keeps it hidden from internal search
-        },
-      });
+      const domain = context.appState.domain;
+
+      if (domain === "gmail.com") {
+        await drive.permissions.create({
+          fileId: newDocumentId,
+          requestBody: {
+            role: "reader",
+            type: "anyone",
+            allowFileDiscovery: false,
+          },
+        });
+      } else {
+        await drive.permissions.create({
+          fileId: newDocumentId,
+          requestBody: {
+            role: "reader",
+            type: "domain",
+            domain,
+            allowFileDiscovery: false,
+          },
+        });
+      }
 
       // 6) Insert section headings: "Reflections" & "Challenges"
       const requests = [
