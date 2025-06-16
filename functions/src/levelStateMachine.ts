@@ -46,7 +46,11 @@ import {
   addEntryToWritingJournal,
 } from "./services/googleServices";
 import { compareNewSentenceToOldSentence } from "./services/docServices";
-import { newRubric, saveRubricToDatabase } from "./services/dataBaseService";
+import {
+  newRubric,
+  saveRubricToDatabase,
+  installRubric,
+} from "./services/dataBaseService";
 // Update the ExtendedInterpreter interface to use AppEvent
 interface ExtendedInterpreter
   extends Interpreter<AppContext, any, AppEvent, any> {
@@ -1213,7 +1217,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                       event.payload.buttonId === "new-rubric-button",
                   },
                   {
-                    target: "customizeHome",
+                    target: "importNewRubric",
                     cond: (context, event) =>
                       event.payload.buttonId === "load-rubric-button",
                   },
@@ -1283,6 +1287,44 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 ],
               },
             },
+            importNewRubric: {
+              entry: [
+                assign({
+                  uiState: (context) => ({
+                    ...context.uiState,
+                    waitingAnimationOn: true,
+                    waitingAnimationText: "Importing Rubric...",
+                  }),
+                }),
+                sendUIUpdate,
+              ],
+              invoke: {
+                src: async (context, event) => {
+                  if (event.type !== "BUTTON_CLICKED") {
+                    throw new Error("Unexpected event type");
+                  }
+                  const importId = event.payload.importDocumentId;
+                  if (!importId) {
+                    throw new Error("Missing importDocumentId");
+                  }
+                  return installRubric(importId);
+                },
+
+                onDone: {
+                  target: "saveNewRubric",
+                  actions: assign({
+                    documentMetaData: (context, event) => ({
+                      ...context.documentMetaData,
+                      tempNewRubric: event.data,
+                    }),
+                  }),
+                },
+                onError: {
+                  target: "#error",
+                },
+              },
+            },
+
             shareRubricDisplay: {
               entry: [
                 assign((context) => {
