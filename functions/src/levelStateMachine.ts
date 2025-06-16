@@ -1001,7 +1001,26 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                         ...context.uiState,
                         taskFeedbackMessage: event.data,
                       }),
+                      documentMetaData: (context, event) => ({
+                        ...context.documentMetaData,
+                        previousReviewedSentences: [
+                          ...(context.documentMetaData
+                            .previousReviewedSentences ?? []),
+                          {
+                            sentence:
+                              context.documentMetaData.currentChallenge?.modifiedSentences.at(
+                                -1
+                              ),
+                          },
+                        ],
+                      }),
                     }),
+                    (context, event) => {
+                      console.log(
+                        "Updated previousReviewedSentences:",
+                        context.documentMetaData.previousReviewedSentences
+                      );
+                    },
                   ],
                 },
                 onError: {
@@ -1165,6 +1184,23 @@ export function createAppMachine(ws: LevelUpWebSocket) {
             },
             childDone: {
               type: "final",
+              entry: [
+                assign({
+                  documentMetaData: (context, event) => ({
+                    ...context.documentMetaData,
+                    previousReviewedSentences: [
+                      ...(context.documentMetaData.previousReviewedSentences ??
+                        []),
+                      {
+                        sentence:
+                          context.documentMetaData.currentChallenge?.modifiedSentences.at(
+                            -1
+                          ),
+                      },
+                    ],
+                  }),
+                }),
+              ],
             },
           },
           onDone: {

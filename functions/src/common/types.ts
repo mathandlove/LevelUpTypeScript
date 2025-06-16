@@ -16,6 +16,7 @@ export type ButtonId =
   | "save-rubric-button"
   | "start-edits-button"
   | "new-rubric-button"
+  | "load-rubric-button"
   | "save";
 
 export interface Topic {
@@ -254,6 +255,9 @@ export interface DocumentMetaData {
   tempNewRubric?: Rubric;
   tempImportRubricId?: string;
   paperJournalId?: string;
+  previousReviewedSentences: Array<{
+    sentence: string;
+  }>;
 }
 
 export const defaultDocumentMetaData: DocumentMetaData = {
@@ -271,6 +275,7 @@ export const defaultDocumentMetaData: DocumentMetaData = {
   savedRubrics: [],
   currentRubricID: "starterRubric",
   rubricLastUpdated: new Date().toISOString(),
+  previousReviewedSentences: [],
 };
 
 export interface DocumentMetaDataMap {

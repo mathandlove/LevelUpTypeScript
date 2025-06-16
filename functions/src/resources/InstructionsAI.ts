@@ -24,19 +24,36 @@ export function getInstructForGetSelectedSentence() {
 }
 
 export function getInstructForGetAIFeelings(studentGoal: string) {
-  const instructions = `Write a 1 sentence response describing how reading these sentences would feel to a reader. Write at a 5th grade level in first person. Start with "Reading this part, I felt" Do not suggest ways to improve. Do not mention the sentence. Do not give answers. Only tell how you feel. Be specific about this text.`;
+  const instructions = `Write a 1 sentence response describing how reading the student's sentence feels as a reader. Write at a 9th grade level in first person. Start with "Reading this part, I felt" Do not suggest ways to improve. Do not mention the sentence. Do not give answers. Only tell how you feel. Be specific about this text. Use the teacher feedback to determine the negative feeling the reader would have. Typical examples: "I felt confused.", "I felt like I wanted to know more.", "I felt lost."`;
   return instructions;
 }
 
 export function getInstructForCriticalThinkingQuestion(studentGoal: string) {
-  const instructions = `Give a question to for the beginning of the feedback to encourage me to critically think. Make the question appropriate for a 5th grade student. Only give the question, no introduction or previous feedback.`;
+  const instructions = `Give a question to for the beginning of the feedback to encourage me to critically think. Make the question appropriate for a 9th grade student. Only give the question, no introduction or previous feedback.`;
   return instructions;
 }
 
 export function getInstructForImproveFeedback(studentGoal: string) {
-  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not mention what the student is trying to do. Do not mention their motivation. Do not greet them. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback. All of the feedback is less than 30 words."`;
+  const instructions = `
+You are an excellent tutor for a 9th grade student.
+
+Rewrite the following feedback to make it more friendly, fun, and easy for the student to understand. 
+
+Do not change the meaning of the feedback. Keep all the specific advice. Do not turn it into a general writing skill category. Do not say things like "use stronger words" or "be more specific." Instead, keep the exact suggestion, but explain it simply.
+
+Rules:
+- Only rewrite feedback that addresses ONE issue at a time (the one already provided).
+- Do not greet the student.
+- Do not mention motivation or intentions.
+- Do not give any answers or examples.
+- Make it fun: use emojis, bullets, and short sentences.
+- Limit to less than 30 words.
+- Do not say you're improving feedback.
+  `;
   return instructions;
 }
+// Incoprporating student feedback.
+//  const instructions = `Improve your feedback as if you were an excellent tutor for a 5th grade student. Do not mention what the student is trying to do. Do not mention their motivation. Do not greet them. Do not provide answers or examples. Only ask the student to improve *ONE THING*. Add lots of emojis, new lines, and bullets in this feedback to make it easier and fun to read. Frame the feedback around the students goals, "${studentGoal}". Do not mention that you are "improving feedback. All of the feedback is less than 30 words."`;
 
 export function getInstructAddEmojisToFeedback() {
   const instructions = `Add lots of emojis, bold, italliacs, and new lines in this feedback to make it easier and fun to read. If you list things add bullets. Do not add any new words to the feedback: it should be the same feedback as before. Return ONLY the revised text. No intros, no explanations, no formatting descriptions—just the text. Do not talk about the student's motivation.`;

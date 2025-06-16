@@ -166,6 +166,21 @@ export async function getNewChallenge(
   );
   const messages = [];
   messages.push({ role: "system", content: instructions });
+
+  // 2️⃣ Add the exclusion list if any sentences have been reviewed
+  const exclusionList =
+    context.documentMetaData.previousReviewedSentences?.slice(-4) ?? [];
+
+  if (exclusionList.length > 0) {
+    const exclusionText =
+      "You have already provided feedback on the following sentences. Do not select these again unless no other strong candidates exist:\n\n" +
+      exclusionList
+        .map((item, index) => `${index + 1}. "${item.sentence}"`)
+        .join("\n");
+
+    messages.push({ role: "system", content: exclusionText });
+  }
+
   messages.push({
     role: "user",
     content: "Text: " + context.documentMetaData.currentText,
@@ -189,18 +204,18 @@ export async function addChallengeDetails(
 
   let challenge = context.documentMetaData.currentChallenge;
 
-  const [selectedSentence, aiFeeling, criticalThinkingQuestion] =
+  const [selectedSentence, aiFeeling] = //criticalThinkingQuestion
     await Promise.all([
       getSelectedSentence(context),
       getAIFeelings(context),
-      getCriticalThinkingQuestion(context),
+      //getCriticalThinkingQuestion(context),
     ]);
 
   // Assign the results once all promises have resolved
   challenge.modifiedSentences[0] = selectedSentence;
   challenge.aiFeeling = aiFeeling;
-  challenge.aiRawFeedback =
-    criticalThinkingQuestion + (challenge.aiRawFeedback ?? "");
+  //challenge.aiRawFeedback =
+  // criticalThinkingQuestion + (challenge.aiRawFeedback ?? "");
 
   const sentenceCoords = getSentenceStartAndEnd(
     challenge.modifiedSentences[0],
@@ -238,9 +253,11 @@ export async function addChallengeDetails(
     messages.push({ role: "system", content: instructions });
     messages.push({
       role: "assistant",
-      content: context.documentMetaData.currentChallenge.aiRawFeedback,
+      content:
+        "Teacher feedback: " +
+        context.documentMetaData.currentChallenge.aiRawFeedback,
     });
-    const model = "google/gemini-2.0-flash-001";
+    const model = "openai/gpt-4.1";
     const returnDataSchema = null;
     const openAIStr = await callOpenAI(messages, model, returnDataSchema);
     return openAIStr;
@@ -269,7 +286,7 @@ export async function formatChallengeResponse(
   context: AppContext
 ): Promise<ChallengeInfo> {
   const challenge = context.documentMetaData.currentChallenge;
-  const improvedFeedback = await improveFeedback(context);
+  const improvedFeedback = await improveFeedback(context); //Student goal wasn't adding anything
   const emojifiedFeedback = await emojifyFeedback(context, improvedFeedback);
   challenge.formattedFeedback = emojifiedFeedback;
 
@@ -287,7 +304,7 @@ export async function formatChallengeResponse(
       role: "assistant",
       content: context.documentMetaData.currentChallenge.aiRawFeedback,
     });
-    const model = "google/gemini-2.0-flash-001";
+    const model = "openai/gpt-4.1";
     const returnDataSchema = null;
     const openAIStr = await callOpenAI(messages, model, returnDataSchema);
     return openAIStr;
@@ -307,7 +324,7 @@ export async function formatChallengeResponse(
       role: "assistant",
       content: feedback,
     });
-    const model = "google/gemini-2.0-flash-001";
+    const model = "openai/gpt-4.1";
     const returnDataSchema = null;
     const openAIStr = await callOpenAI(messages, model, returnDataSchema);
     const html = await convertMarkdownToHtml(openAIStr);
