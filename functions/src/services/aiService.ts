@@ -130,7 +130,7 @@ export async function checkChallengeResponse(
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
   let passed: string;
 
-  console.log("💌 checkChallengeResponse", openAIStr);
+  //console.log("💌 checkChallengeResponse", openAIStr);
   if (containsScore(openAIStr)) {
     passed = "correct";
   } else {
@@ -155,6 +155,7 @@ export async function checkChallengeResponse(
 export async function getNewChallenge(
   context: AppContext
 ): Promise<ChallengeInfo> {
+  console.log("💌 getNewChallenge");
   let challenge: ChallengeInfo = {
     modifiedSentences: [],
   };
@@ -169,14 +170,15 @@ export async function getNewChallenge(
     role: "user",
     content: "Text: " + context.documentMetaData.currentText,
   });
-  const model = "google/gemini-2.0-flash-001";
+  const model = "openai/gpt-4.1";
   const returnDataSchema = null;
   const startTime = Date.now();
+  console.log(messages);
   const openAIStr = await callOpenAI(messages, model, returnDataSchema);
   const endTime = Date.now();
   const duration = endTime - startTime;
   challenge.aiRawFeedback = openAIStr;
-  console.log("💌 getNewChallenge", challenge.aiRawFeedback);
+  console.log("💌 rawfeedback: ", challenge.aiRawFeedback);
   return challenge;
 }
 
@@ -314,7 +316,7 @@ export async function formatChallengeResponse(
 }
 
 function preprocessMarkdown(markdownText: string): string {
-  console.log("💌 preprocessMarkdown", markdownText);
+  //console.log("💌 preprocessMarkdown", markdownText);
   return markdownText.replace(/(\n)(\*|\d+\.)/g, "\n\n$2"); // Ensure extra line break before bullets
 }
 
@@ -331,7 +333,9 @@ interface ChatMessage {
 async function callOpenAI(
   messages: ChatMessage[],
   model: string,
-  dataSchema: any = null
+  dataSchema: any = null,
+  temperature: number = 0.9,
+  top_p: number = 0.95
 ): Promise<string> {
   try {
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -342,6 +346,8 @@ async function callOpenAI(
     const body: OpenAI.ChatCompletionCreateParamsNonStreaming = {
       model,
       messages,
+      temperature,
+      top_p,
     };
 
     // Make the API request

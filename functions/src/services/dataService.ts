@@ -40,7 +40,7 @@ export async function validateToken(context: AppContext): Promise<string> {
   const domain = email?.split("@")[1];
   if (!domain) {
     throw new Error(
-      "We don't have access to your Google Account Email. We need this to set document permissions to your domain. (e.g. @myscholl.edu)"
+      "We don't have access to your Google Account Email adress. We need this to set document permissions to your domain. (e.g. @myscholl.edu)"
     );
   }
 
@@ -198,9 +198,7 @@ export async function getRubricArray(
       context.appState.GoogleServices.oauth2Client,
       context.appState.persistentDataFileId
     );
-    console.log(
-      "Retrieved Rubric Array of size: " + metaDocRecords["rubricArray"].length
-    );
+    //console.log("Retrieved Rubric Array of size: " + metaDocRecords["rubricArray"].length);
     return metaDocRecords["rubricArray"] as Array<Rubric>;
   } catch (error) {
     console.error(
@@ -332,9 +330,7 @@ export async function savePersistentArrayData(context: AppContext) {
     console.error("Error saving persistent data:", error);
     throw error;
   }
-  console.log(
-    `Rubric Array saved to persistent data: ${context.documentMetaData.savedRubrics.length} entries`
-  );
+  //console.log( `Rubric Array saved to persistent data: ${context.documentMetaData.savedRubrics.length} entries`);
 }
 
 export async function savePersistentDocData(context: AppContext) {
@@ -390,6 +386,6 @@ export const getRubric = (context: AppContext, databaseID: string) => {
   if (savedRubric == null) {
     throw new Error("No rubric found with databaseID: " + databaseID);
   }
-  console.log("returning savedRubric with databaseID:", savedRubric.databaseID);
+  //console.log("returning savedRubric with databaseID:", savedRubric.databaseID);
   return savedRubric || null; // Return the found savedRubric or null if none found
 };

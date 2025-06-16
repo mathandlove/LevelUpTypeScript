@@ -19,12 +19,12 @@ async function canAccessDocument(docId, auth) {
     const found = files.find((file) => file.id === docId);
 
     if (found) {
-      console.log(`You have access to: ${found.name} (${found.id})`);
+      //console.log(`You have access to: ${found.name} (${found.id})`);
       return true;
     } else {
-      console.log(
-        `Doc ID ${docId} was not found in the first page of docs you have access to.`
-      );
+      //console.log(
+      //`Doc ID ${docId} was not found in the first page of docs you have access to.`
+      //);
       return false;
     }
   } catch (error) {
@@ -40,7 +40,7 @@ export async function getFullText(context: AppContext): Promise<string> {
   try {
     // Replace this with your actual docId from context (or a test ID).
     const docId = context.appState.documentId;
-    console.log("Attempting to fetch doc with ID:", docId);
+    //console.log("Attempting to fetch doc with ID:", docId);
     await canAccessDocument(docId, GoogleServices.oauth2Client);
     // This call will fail if you only have document-current scope
     // and you're trying to fetch a doc that isn't covered by that scope.
@@ -48,7 +48,7 @@ export async function getFullText(context: AppContext): Promise<string> {
       documentId: docId,
     });
     body = response.data.body?.content;
-    console.log("Document fetch successful. Response data:", response.data);
+    //console.log("Document fetch successful. Response data:", response.data);
   } catch (error) {
     console.error("Error fetching document:", error);
     // Often, the error will indicate insufficient scopes or forbidden access.
@@ -73,7 +73,7 @@ export async function getFullText(context: AppContext): Promise<string> {
       "We can't offer feedback on your paper until it has at least 5 complete sentences.\n\n\n Open this back up when you are ready!"
     );
   }
-  console.log(text);
+  //console.log(text);
   return text;
 
   function hasEnoughSentences(text: string, minSentences: number): boolean {
@@ -95,7 +95,7 @@ export async function highlightChallengeSentence(context: AppContext) {
   const startIndex =
     context.documentMetaData.currentChallenge?.currentSentenceCoordinates
       ?.startIndex + 1; // +1 because the index is 0 based
-  console.log(`highlight Sentence starting at ${startIndex}`);
+  //console.log(`highlight Sentence starting at ${startIndex}`);
   const endIndex =
     context.documentMetaData.currentChallenge?.currentSentenceCoordinates
       ?.endIndex + 1; // +1 because the index is 0 based
@@ -806,9 +806,9 @@ export async function createGoogleSheet(
       requestBody: formatRequest,
     });
 
-    console.log(
-      "Sheet formatted successfully with exact column sizes, row heights, and text styling!"
-    );
+    // console.log(
+    //   "Sheet formatted successfully with exact column sizes, row heights, and text styling!"
+    //);
   } catch (error) {
     console.error("❌ Error creating googlesheet:", error);
     throw error;
@@ -989,7 +989,7 @@ export async function getOrCreatePaperJournal(context: AppContext) {
           "Failed to create a new multi-tab document (no documentId returned)."
         );
       }
-      console.log("newDocumentId", newDocumentId);
+      //console.log("newDocumentId", newDocumentId);
       return newDocumentId; // Return or store in context, as needed
     } catch (error) {
       console.error("❌ Error creating paper journal with tabs:", error);
@@ -1094,7 +1094,7 @@ export async function addLevelToDocumentTitle(context: AppContext) {
       },
     });
     const writingJournalUrl = `https://docs.google.com/document/d/${context.documentMetaData.paperJournalId}`;
-    console.log("writingJournalUrl", writingJournalUrl);
+    //console.log("writingJournalUrl", writingJournalUrl);
     // 5) Apply formatting for "Writing Journal" (Light blue, Arial, 12.5 pt, Hyperlink)
     requests.push({
       updateTextStyle: {
@@ -1157,9 +1157,7 @@ export async function addLevelToDocumentTitle(context: AppContext) {
       },
     });
 
-    console.log(
-      "✅ Level title updated at the top, centered, green, Impact font, and size 16.5."
-    );
+    //console.log( "✅ Level title updated at the top, centered, green, Impact font, and size 16.5.");
   } catch (error) {
     console.error("❌ Error updating document level title:", error);
     throw error;
@@ -1341,9 +1339,7 @@ export async function addEntryToWritingJournal(
       requestBody: { requests },
     });
 
-    console.log(
-      `✅ Added new ${entryType} entries under title "${title}" in the "${sectionHeader}" section.`
-    );
+    //console.log( `✅ Added new ${entryType} entries under title "${title}" in the "${sectionHeader}" section.` );
   } catch (error) {
     console.error("❌ Error updating Writing Journal:", error);
     throw error;

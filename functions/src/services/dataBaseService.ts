@@ -49,7 +49,7 @@ export async function newRubric(context: AppContext): Promise<Rubric> {
 
   try {
     await db.collection(RUBRIC_COLLECTION).doc(shortID).set(rubric);
-    console.log(`✅ Rubric saved with ID: ${shortID}`);
+    //console.log(`✅ Rubric saved with ID: ${shortID}`);
   } catch (error) {
     console.error("❌ Error saving rubric:", error);
   }
@@ -117,7 +117,7 @@ export async function saveUserToDatabase(email: string) {
     .collection(USERS_COLLECTION)
     .doc(email)
     .set(userToSave, { merge: true });
-  console.log(`✅ User email saved: ${email}`);
+  //console.log(`✅ User email saved: ${email}`);
 }
 
 // ✅ Save a rubric to Firestore
@@ -131,7 +131,7 @@ export async function saveRubricToDatabase(rubric: Rubric): Promise<Rubric> {
     .collection(RUBRIC_COLLECTION)
     .doc(rubric.databaseID)
     .set(rubricToSave);
-  console.log("✅ Rubric updated successfully!");
+  //console.log("✅ Rubric updated successfully!");
   return rubric;
 }
 
@@ -147,7 +147,7 @@ export async function createDefaultRubric(defaultRubric: Rubric) {
       .collection(RUBRIC_COLLECTION)
       .doc(defaultRubric.databaseID)
       .set(defaultRubric);
-    console.log("✅ Default rubric created!");
+    //console.log("✅ Default rubric created!");
   } catch (error) {
     console.error("❌ Error creating default rubric:", error);
   }

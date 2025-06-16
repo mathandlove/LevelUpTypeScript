@@ -70,7 +70,7 @@ export function getOrCreateActor(
       console.log(`🔄 State Changed:`, state.value); //[${key}]
     })
     .onStop(() => {
-      console.log(`🛑 [${key}] Actor stopped`);
+      //console.log(`🛑 [${key}] Actor stopped`);
     })
     .start();
 
@@ -118,10 +118,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
               }),
             }),
             (context, event) => {
-              console.log(
-                "💌 Global GIVE_TOKEN Triggered",
-                event.payload.token
-              );
+              //console.log("💌 Global GIVE_TOKEN Triggered",event.payload.token );
             },
           ],
         },
@@ -439,7 +436,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
 
                 sendUIUpdate,
                 (context, event) => {
-                  console.log("💌 Goals set up");
+                  //console.log("💌 Goals set up");
                 },
               ],
               always: {
@@ -689,7 +686,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 const startIndex =
                   context.documentMetaData?.currentChallenge
                     ?.currentSentenceCoordinates.startIndex;
-                console.log("highlight start " + startIndex);
+                //console.log("highlight start " + startIndex);
                 if (startIndex !== undefined) {
                   ws = context.appState.ws; // Ensure ws is defined
                   if (ws?.sendMessage) {
@@ -1248,7 +1245,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                                   ?.databaseID
                               : reversedRubrics[selectedIndex].databaseID;
 
-                          console.log("💫 setRubricID: ", newRubricID);
+                          //console.log("💫 setRubricID: ", newRubricID);
 
                           const newRubric = getRubric(context, newRubricID);
                           const updatedDocumentMetaData = {
@@ -1257,10 +1254,10 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                             ...unpackRubric(context, newRubric), // ✅ Pills get updated here
                           };
 
-                          console.log(
-                            "💫 Pills updated for rubric: ",
-                            newRubric.title
-                          );
+                          //console.log(
+                          //   "💫 Pills updated for rubric: ",
+                          //   newRubric.title
+                          // );
 
                           return updatedDocumentMetaData;
                         },
@@ -1293,7 +1290,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                     context,
                     context.documentMetaData.currentRubricID
                   );
-                  console.log("💫 Sharing Rubric: ", rubric);
+                  //console.log("💫 Sharing Rubric: ", rubric);
 
                   return {
                     uiState: {
@@ -1367,7 +1364,7 @@ export function createAppMachine(ws: LevelUpWebSocket) {
                 onDone: {
                   actions: [
                     () => {
-                      console.log("🔹 New Rubric Created");
+                      // console.log("🔹 New Rubric Created");
                     },
                     assign({
                       documentMetaData: (context, event) => ({
@@ -1941,7 +1938,7 @@ function sendUIUpdate(context: AppContext) {
 
 function unpackRubric(context: AppContext, rubric: Rubric): DocumentMetaData {
   //We are adding a reflection question depending on user's rubric selection on includeAiCopy
-  console.log("📌 Unpacking rubric:", rubric?.title);
+  //console.log("📌 Unpacking rubric:", rubric?.title);
 
   if (!rubric || !rubric.topics) {
     console.error("❌ Error: Could not find rubric or it has no topics.");
